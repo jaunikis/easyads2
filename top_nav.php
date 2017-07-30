@@ -8,11 +8,11 @@
                <span class="icon-bar"></span>
                <span class="icon-bar"></span>
                </button>
-               <a class="navbar-brand" href="easyads.ie"><img alt="logo" src="/images/logo2.png" ></a>
+               <a class="navbar-brand" href="/"><img alt="logo" src="/images/logo2.png" ></a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                <ul class="nav navbar-nav">
-                  <li><a href="/home">Home</a></li>
+                  <li><a href="/">Home</a></li>
 				  <li><a href="/items">All Adverts</a></li>
                   <li><a href="/blog">Blog</a></li>
                   <li><a href="/faq">FAQ</a></li>

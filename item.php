@@ -10,7 +10,7 @@ parse_str($segments[1]);
 //$item=$_SESSION['last_id'];
 require_once ('incl/server.php');
 require_once ('incl/elapsed.php');
-$sql="SELECT id,title,cover1file,price,cat1,cat2,make,model,engine,fuel,year,transmission,bodyType,color,location,condition2,ad_views,description,saved,phone,name,user,timestamp2 FROM skelbimai WHERE id='$item'";
+$sql="SELECT * FROM skelbimai WHERE id='$item'";
 $result=sqlconnect($sql);
 while ($row = $result->fetch_assoc()) {
 	$id=$row['id'];
@@ -39,7 +39,10 @@ while ($row = $result->fetch_assoc()) {
 	$name=$row['name'];
 	$user=$row['user'];
 	$timestamp2=$row['timestamp2'];
-	
+	$currency=$row['currency'];
+	$mileage=$row['mileage'];
+	$mileage_type=$row['mileage_type'];
+	$tax=$row['tax'];
 }
 
 	$images1=[];
@@ -72,22 +75,30 @@ include('reklama.php');
                         <div class="widget-body">
 <?php
 			require_once ('incl/server.php');
-			$sql="SELECT id,title,price,cover1file FROM skelbimai ORDER BY id DESC LIMIT 5";
+			$sql="SELECT id,title,price,currency,cover1file FROM skelbimai ORDER BY id DESC LIMIT 5";
 			$result=sqlconnect($sql);
 			while ($row = $result->fetch_assoc()) {
 				$id2=$row['id'];
 				$title2=$row['title'];
 				$cover2=$row['cover1file'];if($cover2==''){$cover2='no-image.png';}
 				$price2=$row['price'];
+				$currency2=$row['currency'];
 ?>
 						   <div class="similar-ads">
-                              <a href="/easyads/items?item=<?php echo $id2;?>">
+                              <a href="/items?item=<?php echo $id2;?>">
                                  <div class="similar-ad-left">
                                     <img class="img-responsive img-center" src="<?php echo 'ads_images/'.$cover2;?>" alt="">
                                  </div>
                                  <div class="similar-ad-right">
                                     <h4><?php echo strip_tags($title2);?></h4>
-                                    <p>€ <?php echo $price2;?></p>
+							<?php
+								$curr2='';
+								if($price2!='0'){
+									if($currency2=='eur'){$curr2='€ ';}
+									if($currency2=='gbp'){$curr2='£ ';}
+								}else{$price2='No Price';}
+							?>
+                                    <p style="color:steelBlue;"><?php echo $curr2.$price2;?></p>
                                  </div>
                                  <div class="clearfix"></div>
                               </a>
@@ -197,22 +208,29 @@ echo '<div class="item"><a onclick="large_photos('.$i.');" style="cursor:zoom-in
                </div>
                <div class="col-lg-3 col-md-3 col-sm-3">
                   <div class="price-widget short-widget">
-                     <i class="fa fa-euro"></i>
-                     <strong><?php echo $price; ?></strong>
+				  <?php
+								$curr='';
+								if($price!='0'){
+									if($currency=='eur'){echo '<i class="fa fa-eur"></i>';}
+									if($currency=='gbp'){echo '<i class="fa fa-gbp"></i>';}
+								}else{$price='No Price';}
+					?>
+                     
+                     <?php echo $price; ?>
                   </div>
                   <div class="widget user-widget">
                      <div class="widget-body text-center">
-                        <img class="user-dp" alt="User Image" src="/easyads/images/user3.png">
+                        <img class="user-dp" alt="User Image" src="/images/user3.png">
                         <h2 class="seller-name"><?php echo strip_tags($user);?></h2>
-                        <p class="seller-detail">Location: <strong>Cavan</strong><br>
-                           Joined : <strong>21 March 2017</strong>
+                        <p class="seller-detail">Location: <strong><?php echo $location;?></strong><br>
+                          
                         </p>
                      </div>
                      <div class="widget-footer">
                         <div class="row">
                            <div class="col-sm-12">    
-                              <button class="btn btn-info btn-block"><i class="fa fa-whatsapp"></i> <?php echo $phone.' '.$name;?></button>
-                              <button class="btn btn-warning btn-block"><i class="fa fa-envelope"></i> Send Message</button>
+                              <button class="btn btn-info btn-block"><i class="fa fa-whatsapp"></i> <?php echo $phone;?></button>
+                            <?php  //<button class="btn btn-warning btn-block"><i class="fa fa-envelope"></i> Send Message</button> ?>
                            </div>
                         </div>
                      </div>
@@ -271,7 +289,7 @@ echo '<div class="item"><a onclick="large_photos('.$i.');" style="cursor:zoom-in
 		</div>
 	</div>
 	 
-	  <img id="wait" style="display:none;" class="waitas" src='/easyads/images/loading3.gif'/>
+	  <img id="wait" style="display:none;" class="waitas" src='/images/loading3.gif'/>
 <script>
 var report_ad_modal=document.getElementById('report_ad_modal');
 
@@ -292,7 +310,7 @@ $("#report_ad_button2").click(function(){
 	$.ajax({
 		type: "POST",
 		data: {id:id,reason:reason,reason2:reason2},
-		url: "/easyads/incl/report_ad.php",
+		url: "/incl/report_ad.php",
 		success: function(msg){
 			//$("#wait").hide();
 			//$("#darken").hide();
@@ -302,7 +320,7 @@ $("#report_ad_button2").click(function(){
 			$("#report_success").show();
 			//setTimeout('', 2000);
 			report_ad_modal.style.display = "none";
-			//window.location = "/easyads/items?item="+msg;
+			//window.location = "/items?item="+msg;
 			//document.getElementById("forma").submit();
 		}
 	});
@@ -463,7 +481,7 @@ function save_ad(a,id){
 		   }
         };
 		
-        xmlhttp.open("GET", "/easyads/incl/save_ad.php?id=" + id, true);
+        xmlhttp.open("GET", "/incl/save_ad.php?id=" + id, true);
         xmlhttp.send();
 		wait.style.display="block";
 		

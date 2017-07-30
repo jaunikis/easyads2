@@ -16,7 +16,7 @@
                            <input type="text" class="form-control border-form" placeholder="Search">
                         </div>
 						
-                        <button onclick="location.href='/easyads/'" type="button" class="btn btn-default btn-large home1">Go Home</button>
+                        <button onclick="location.href='/'" type="button" class="btn btn-default btn-large home1">Go Home</button>
                         <button type="submit" class="btn btn-default btn-large">Search</button>
                      </form>
 					 <br><br>

@@ -48,9 +48,9 @@ $json = json_decode($string, true);
 					$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 					$segments = explode('?', $actual_link);
 					if(count($segments)>1){parse_str($segments[1]);}
-					echo '<li><a href="/easyads/">Home</a></li>';
+					echo '<li><a href="/">Home</a></li>';
 					echo '<li><i class="fa fa-angle-right" aria-hidden="true"></i></li>';
-					echo '<li><a href="/easyads/items">All items</a></li>';
+					echo '<li><a href="/items">All items</a></li>';
 					if(isset($item)){
 						require_once ('incl/server.php');
 						$sql="SELECT * FROM skelbimai WHERE id='$item'";
@@ -62,21 +62,22 @@ $json = json_decode($string, true);
 							$model=$row['model'];
 							
 						}
-						$link='easyads/items/'.$cat1;
-						echo '<li><i class="fa fa-angle-right" aria-hidden="true"></i></li>';
-						echo '<li><a href="/'.$link.'">'.str_replace("%20"," ",$cat1).'</a></li>';
 						
-						$link.='/'.$cat2;
+						$link='items/'.str_replace(' ','-',$cat1);
 						echo '<li><i class="fa fa-angle-right" aria-hidden="true"></i></li>';
-						echo '<li><a href="/'.$link.'">'.$cat2.'</a></li>';
+						echo '<li><a href="/'.$link.'">'.str_replace("-"," ",$cat1).'</a></li>';
 						
-						if($make!==''){$link.='/'.$make;
+						$link.='/'.str_replace(' ','-',$cat2);
+						echo '<li><i class="fa fa-angle-right" aria-hidden="true"></i></li>';
+						echo '<li><a href="/'.$link.'">'.str_replace("-"," ",$cat2).'</a></li>';
+						
+						if($make!==''){$link.='/'.str_replace(' ','-',$make);
 							echo '<li><i class="fa fa-angle-right" aria-hidden="true"></i></li>';
-							echo '<li><a href="/'.$link.'">'.$make.'</a></li>';
+							echo '<li><a href="/'.$link.'">'.str_replace("-"," ",$make).'</a></li>';
 							}
-						if($model!==''){$link.='/'.$model;
+						if($model!==''){$link.='/'.str_replace(' ','-',$model);
 							echo '<li><i class="fa fa-angle-right" aria-hidden="true"></i></li>';
-							echo '<li><a href="/'.$link.'">'.$model.'</a></li>';
+							echo '<li><a href="/'.$link.'">'.str_replace("-"," ",$model).'</a></li>';
 							}
 						
 					}else{					
@@ -84,12 +85,12 @@ $json = json_decode($string, true);
 						$segments = explode('/', $path);
 						//echo $segments[1];
 						
-						$link=$segments[1].'/'.$segments[2];
-						for($a=3;$a<count($segments);$a++){
+						$link=$segments[1];
+						for($a=2;$a<count($segments);$a++){
 							if($segments[$a]){
 								$link.='/'.$segments[$a];
 								echo '<li><i class="fa fa-angle-right" aria-hidden="true"></i></li>';
-								echo '<li><a href="/'.$link.'">'.str_replace("%20"," ",$segments[$a]).'</a></li>';
+								echo '<li><a href="/'.$link.'">'.str_replace("-"," ",$segments[$a]).'</a></li>';
 							}
 						}
 					}

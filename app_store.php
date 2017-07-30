@@ -10,21 +10,21 @@
                   <div class="row inner app-icons">
                      <div class="col-xs-4">
                         <a href="#" class="app-store">
-                           <img src="/easyads/images/android.png" alt="Google play">
+                           <img src="/images/android.png" alt="Google play">
                            <span>download on</span>
                            <h4>Google Play</h4>
                         </a>
                      </div>
                      <div class="col-xs-4">
                         <a href="#" class="app-store">
-                           <img src="/easyads/images/apple.png" alt="Apple store">
+                           <img src="/images/apple.png" alt="Apple store">
                            <span>download on</span>
                            <h4>Apple Store</h4>
                         </a>
                      </div>
                      <div class="col-xs-4">
                         <a href="#" class="app-store">
-                           <img src="/easyads/images/win.png" alt="windows store">
+                           <img src="/images/win.png" alt="windows store">
                            <span>download on</span>
                            <h4>Windows Store</h4>
                         </a>
@@ -33,7 +33,7 @@
                </div>
                <div class="hidden-xs col-sm-4 col-md-5 pull-right">
                   <div class="action-mock">
-                     <img src="/easyads/images/app-mock.png" alt="download apps">
+                     <img src="/images/app-mock.png" alt="download apps">
                   </div>
                </div>
             </div>

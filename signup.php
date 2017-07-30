@@ -5,7 +5,7 @@
                <div class="col-sm-4 col-sm-offset-4">
                   <div class="login-panel widget">
                      <div class="login-body">
-                        <form action="/easyads/signup2.php" method="post" onsubmit="return validateForm()">
+                        <form action="/signup2.php" method="post" onsubmit="return validateForm()">
                            <div id="email" class="form-group">
                               <input type="text" name="email" onkeyup="check_email(this.value)" placeholder="Email Address" class="form-control">
 							<span id="email2" class=""></span>
@@ -38,7 +38,7 @@
 						</form>
                      </div>
                   </div>
-                  <p class="text-center"><a href="/easyads/login"><strong>Have an account? </strong></a></p>
+                  <p class="text-center"><a href="/login"><strong>Have an account? </strong></a></p>
                </div>
             </div>
          </div>
@@ -97,7 +97,7 @@
 		// Create our XMLHttpRequest object
 		var hr = new XMLHttpRequest();
 		// Create some variables we need to send to our PHP file
-		var url = "/easyads/check_email.php";
+		var url = "/check_email.php";
 		var vars = "email="+email;
 		hr.open("POST", url, true);
 		hr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -115,7 +115,7 @@
 						if(return_data=="uzimtas"){
 							document.getElementById("email").className = "form-group has-error has-feedback";
 							document.getElementById("email2").className = "glyphicon glyphicon-remove form-control-feedback";
-							document.getElementById("email33").innerHTML = '<div class="alert alert-warning"><strong>Email address exists!</strong> Please <a href="/easyads/login">login.</a><br>If you forget the password press <a href="/easyads/forget">here.</a></div>';
+							document.getElementById("email33").innerHTML = '<div class="alert alert-warning"><strong>Email address exists!</strong> Please <a href="/login">login.</a><br>If you forget the password press <a href="/forget">here.</a></div>';
 							}else{
 								document.getElementById("email").className = "form-group";
 								document.getElementById("email2").className = "";

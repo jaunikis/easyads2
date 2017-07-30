@@ -14,7 +14,7 @@ $json = json_decode($string, true);
                <div class="main-search-box text-center">
                   <h1 class="intro-title" >Sell or Advertise everything online with Easyads.ie classified</h1>
                   <p class="sub-title">Buy and sell everything from used cars to mobile phones and computers, or search for property, jobs and more</p>
-                  <form action="/easyads/items">
+                  <form action="/items">
                      <div class="col-md-4 col-sm-4 search-input">
                         <input name="search" type="text" placeholder="What are you looking for...?" class="form-control input-lg search-form">
                      </div>
@@ -51,19 +51,19 @@ $json = json_decode($string, true);
                </div>
                <div class="top-categories">
                   <h4>Popular Categories</h4>
-                  <a href="/easyads/items/Cars & Motor/Cars">
+                  <a href="/items/Cars & Motor/Cars">
                   <i class="fa fa-car"></i>Cars
                   </a>
-                  <a href="/easyads/items/Jobs">
+                  <a href="/items/Jobs">
                   <i class="fa fa-briefcase"></i>Jobs
                   </a>
-                  <a href="/easyads/items/Electronics/Mobile phones">
+                  <a href="/items/Electronics/Mobile phones">
                   <i class="fa fa-mobile"></i>Mobiles
                   </a>
-                  <a href="/easyads/items/Electronics/Laptops">
+                  <a href="/items/Electronics/Laptops">
                   <i class="fa fa-laptop"></i>Laptop
                   </a>
-                  <a href="/easyads/items/Real Estate">
+                  <a href="/items/Real Estate">
                   <i class="fa fa-building-o"></i>Property
                   </a>
                </div>

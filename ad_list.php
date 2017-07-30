@@ -5,23 +5,6 @@
 require_once ('incl/server.php');
 require_once ('incl/elapsed.php');
 
-//pataisome timestamp2 bump skelbimuose
-$date = new DateTime();
-$current=$date->getTimestamp();
-$sql="SELECT id, timestamp2, valid_till, bump_days FROM skelbimai WHERE ($current-timestamp2)>(bump_days*86400) ORDER BY id DESC";
-$result=sqlconnect($sql);
-$ad_count = $result->num_rows;
-//echo 'total: '.$ad_count.'<hr>';
-while ($row = $result->fetch_assoc()) {
-	$id=$row['id'];
-	$timestamp2=$row['timestamp2'];
-	$valid_till=$row['valid_till'];
-	$bump_days=$row['bump_days'];if($bump_days==0){$bump_days=3;}
-	$new_timestamp=$current-(($current-$timestamp2)%($bump_days*86400));
-	$sql="UPDATE skelbimai SET timestamp2='$new_timestamp' WHERE id='$id'";
-	sqlconnect($sql);
-}
-
 			$path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 			$segments = explode('/', $path);
 			
@@ -62,10 +45,11 @@ while ($row = $result->fetch_assoc()) {
 					$cat1='"'.$_SESSION['cat1'].'"';
 				}
 			}
-			if(isset($segments[3])){if($segments[3]!==''){$cat1='"'.str_replace("%20"," ",$segments[3]).'"';}}
-			if(isset($segments[4])){if($segments[4]!==''){$cat2='"'.str_replace("%20"," ",$segments[4]).'"';}}
-			if(isset($segments[5])){if($segments[5]!==''){$make='"'.str_replace("%20"," ",$segments[5]).'"';}}
-			if(isset($segments[6])){if($segments[6]!==''){$model='"'.str_replace("%20"," ",$segments[6]).'"';}}
+			if(isset($segments[2])){if($segments[2]!==''){$cat1='"'.str_replace("-"," ",$segments[2]).'"';}}
+			if($cat1=='"Cars"'){$cat1='"Cars & Motor"';$cat2='"Cars"';}
+			if(isset($segments[3])){if($segments[3]!==''){$cat2='"'.str_replace("-"," ",$segments[3]).'"';}}
+			if(isset($segments[4])){if($segments[4]!==''){$make='"'.str_replace("-"," ",$segments[4]).'"';}}
+			if(isset($segments[5])){if($segments[5]!==''){$model='"'.str_replace("-"," ",$segments[5]).'"';}}
 			//echo '<h1>'.$search.'</h1>';
 			
 			$sort='timestamp2 DESC';$sortTxt='Recently Published';
@@ -137,7 +121,7 @@ include('left_search.php');
 				$id=$row['id'];
 				$title=$row['title'];
 				$cover=$row['cover1file'];if($cover==''){$cover='no-image.png';}
-				$price=$row['price'];
+				$price=$row['price'];if($price=='0'){$price='No Price';}
 				$location=$row['location'];
 				$timestamp=$row['timestamp'];
 				$condition2=$row['condition2'];
@@ -145,23 +129,28 @@ include('left_search.php');
 				$model=$row['model'];
 				$timestamp2=$row['timestamp2'];
 				$cat1=$row['cat1'];
-				$cat2=$row['cat2'];
-			
+				$currency=$row['currency'];
 				?>
 					   <div class="item">
                            <div class="item-ads-grid icon-blue list-view">
                               <div class="item-badge-grid featured-ads">
                                  <a href="#">HOT</a>
                               </div>
-							  <a href="/easyads/items?item=<?php echo $id; ?>">
+							  <a href="/items?item=<?php echo $id; ?>">
                               <div class="item-img-grid">
-                                 <img alt="" width="220" src="<?php echo '/easyads/ads_images/'.$cover; ?>" class="img-responsive img-center">
+                                 <img alt="" width="220" src="<?php echo '/ads_images/'.$cover; ?>" class="img-responsive img-center">
                               </div>
                               <div class="item-title">
                                  
                                     <h4><?php echo strip_tags($title); ?></h4>
-                                 
-                                 <h3>€ <?php echo $price; ?></h3>
+                            <?php
+								$curr='';
+								if($price!='No Price'){
+									if($currency=='eur'){$curr='€ ';}
+									if($currency=='gbp'){$curr='£ ';}
+								}
+							?>
+                                 <h3><?php echo $curr.$price; ?></h3>
                               </div>
                               <div class="item-meta">
                                  <ul>

@@ -144,7 +144,7 @@ function resize(th){
 		$.ajax({
 		type: "POST",
 		data: {dataurl:dataurl,dataurl2:dataurl2},
-		url: "/easyads/incl/upload_image.php",
+		url: "/incl/upload_image.php",
 		success: function(msg){
 			//$("#description").val(msg);
 			//alert(nr2);

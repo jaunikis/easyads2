@@ -39,9 +39,9 @@
 						<?php
 						$categ=$_SESSION["categ"];
 						$cat_count2=$_SESSION["cat_count2"];
-                        echo '<li><a href="/items/'.$categ[0].'"><span>'.$cat_count2[0].'</span> '.$categ[0].'</a></li>';
+                        echo '<li><a href="/items/Cars-&-Motor/'.$categ[0].'"><span>'.$cat_count2[0].'</span> '.$categ[0].'</a></li>';
 						for($i=1;$i<count($categ);$i++){
-							 echo '<li><a href="/items/'.$categ[$i].'"><span>'.$cat_count2[$i].'</span> '.$categ[$i].'</a></li>';
+							 echo '<li><a href="/items/'.str_replace(' ','-',$categ[$i]).'"><span>'.$cat_count2[$i].'</span> '.$categ[$i].'</a></li>';
 						}
 						?>
                            

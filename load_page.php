@@ -31,5 +31,5 @@ for($a=1;$a<count($segments);$a++){
 $_SESSION['adresas']=$segments;
 
 
-header('Location: /easyads/'); 
+header('Location: /'); 
 ?>

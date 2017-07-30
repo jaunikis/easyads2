@@ -122,5 +122,5 @@ transmission='$transmission',bodyType='$bodyType',color='$color',price='$price',
 name='$name',email='$email',phone='$phone' WHERE id='$ad_id'";
 $result=sqlconnect($sql);
 
-header("Location: /easyads/my_ads");
+header("Location: /my_ads");
 ?>

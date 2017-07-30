@@ -4,7 +4,7 @@
 			<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
                   <div class="widget brown-widget">
                      <div class="widget-header">
-                        <a href="/easyads/items/Motor/Cars"><h1><i class="fa fa-car shortcut-icon icon-orange"></i> Cars</h1></a>
+                        <a href="/items/Motor/Cars"><h1><i class="fa fa-car shortcut-icon icon-orange"></i> Cars</h1></a>
                      </div>
                      <div class="widget-body">
                         <ul class="trends">
@@ -22,7 +22,7 @@
 				$make=$row['make'];
 				$count_id=$row['COUNT(id)'];
 ?>   				
-                           <li><a href="/easyads/items/Motor/Cars/<?php echo $make;?>"><?php echo $make;?> <span class="item-numbers"><?php echo $count_id;?></span></a></li>
+                           <li><a href="/items/Motor/Cars/<?php echo $make;?>"><?php echo $make;?> <span class="item-numbers"><?php echo $count_id;?></span></a></li>
                            
 			<?php } ?>			   
                         </ul>

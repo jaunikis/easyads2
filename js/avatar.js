@@ -104,7 +104,7 @@ function avatar(th){
 				$.ajax({
 				type: "POST",
 				data: {dataurl:dataurl,user:user},
-				url: "/easyads/incl/upload_avatar.php",
+				url: "/incl/upload_avatar.php",
 				success: function(msg){
 					//$("#description").val(msg);
 					//alert(msg);

@@ -9,7 +9,7 @@
 									<button class="btn-facebook login-icons btn-lg btn-block"> <i class="fa fa-facebook"></i> Login With Facebook</button>
 									<button class="btn-google login-icons btn-lg btn-block"> <i class="fa fa-google"></i> Login With Google</button>
 								</div>
-								<form action="/easyads/login2.php" method="post">
+								<form action="/login2.php" method="post">
 									<div class="form-group">
 										<input name="email" type="text" placeholder="Email or Username" class="form-control">
 									</div>
@@ -33,7 +33,7 @@
 								<div class="clearfix"></div>
 							</div>
 						</div>
-						<p class="text-center">Don't have an account? <a href="/easyads/signup"><strong>Signup</strong></a></p>
+						<p class="text-center">Don't have an account? <a href="/signup"><strong>Signup</strong></a></p>
 					</div>
 				</div>
 			</div>

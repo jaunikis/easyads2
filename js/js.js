@@ -44,7 +44,7 @@ function click_remove(th,xx){
 		$.ajax({
 			type: "POST",
 			data: {i,i},
-			url: "/easyads/incl/remove_image.php",
+			url: "/incl/remove_image.php",
 			success: function(msg){
 				//alert(msg);
 			}
@@ -60,7 +60,7 @@ function click_remove(th,xx){
 		$.ajax({
 			type: "POST",
 			data: {i,i},
-			url: "/easyads/incl/remove_image_from_update.php",
+			url: "/incl/remove_image_from_update.php",
 			success: function(msg){
 				//alert(msg);
 			}
@@ -110,7 +110,7 @@ function click_rotate_update(th,id){
 	//alert(fileName2);
 	
 	//rotate image1
-	img3.src='/easyads/ads_images/'+fileName2;
+	img3.src='/ads_images/'+fileName2;
 	img3.onload=function(){
 		//alert(img3.src);
 		//document.body.appendChild(img);
@@ -155,7 +155,7 @@ function click_rotate_update(th,id){
 	//rotate image2
 	canvas2 = document.createElement('canvas');
 		var img=document.createElement('img');
-			img.src='/easyads/ads_images/'+fileName2;
+			img.src='/ads_images/'+fileName2;
 			img.onload=function(){
 			//document.body.appendChild(img);
 			//alert(img.width);
@@ -177,11 +177,11 @@ function click_rotate_update(th,id){
 		$.ajax({
 		type: "POST",
 		data: {id:id,cov:cov,images1:images11,images2:images22,fileName1:fileName1,fileName2:fileName2},
-		url: "/easyads/incl/rotate_image_update.php",
+		url: "/incl/rotate_image_update.php",
 		success: function(msg){
 			//alert(msg);
 			//document.getElementById(i).style.opacity="1";
-			th.previousSibling.previousSibling.src='/easyads/ads_images/'+msg;
+			th.previousSibling.previousSibling.src='/ads_images/'+msg;
 			par.style.opacity="1";
 		}
 	});
@@ -276,7 +276,7 @@ function click_rotate(th){
 		$.ajax({
 		type: "POST",
 		data: {i:i,images1:images1[i],images2:images2[i]},
-		url: "/easyads/incl/rotate_image.php",
+		url: "/incl/rotate_image.php",
 		success: function(msg){
 			//alert(msg);
 			document.getElementById(i).style.opacity="1";
