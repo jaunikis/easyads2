@@ -30,7 +30,7 @@ $_SESSION['photo_blob']=$row['photo_blob'];
 		if(isset($_SESSION['link'])){ 
 	 header('Location: '.$_SESSION['link']);
 	 }else{
-		header('Location: /easyads/');
+		header('Location: /');
 	 }
 		exit;
 }
@@ -38,7 +38,7 @@ $_SESSION['photo_blob']=$row['photo_blob'];
 }
  //echo md5("as");
  
- header('Location: /easyads/login');
+ header('Location: /login');
 	 
 	
 

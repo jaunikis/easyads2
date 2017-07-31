@@ -27,5 +27,5 @@ $sql="UPDATE users SET name='$name', phone='$phone', location='$location' WHERE 
 	$_SESSION['user']=$name;
 	$_SESSION['phone']=$phone;
 	$_SESSION['location']=$location;
-header('Location: /easyads/my_details');
+header('Location: /my_details');
 ?>

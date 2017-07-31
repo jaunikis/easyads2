@@ -4,7 +4,7 @@
                         <h1>My Account</h1>
                      </div>
                      <div class="widget-body">
-                        <form action="/easyads/my_details2.php" method="post" class="row">
+                        <form action="/my_details2.php" method="post" class="row">
                            <div class="form-group">
                               <label class="col-sm-3 control-label">Username (Email) <span class="required">*</span></label>
                               <div class="col-sm-9">
@@ -77,7 +77,7 @@
                            <div class="form-group">
                               <div class="col-sm-offset-3 col-sm-9">
                                  <button class="btn btn-success" type="submit"><i class="fa fa-save"></i> Save Update</button>
-                                 <a href="/easyads/my_details"><button class="btn btn-danger" type="button"><i class="fa fa-close"></i> Cancel</button></a>
+                                 <a href="/my_details"><button class="btn btn-danger" type="button"><i class="fa fa-close"></i> Cancel</button></a>
                               </div>
                            </div>
                         </form>
@@ -89,7 +89,7 @@
       </section>
       <!-- End Settings -->
 	  
-<script src="/easyads/js/avatar.js"></script>
+<script src="/js/avatar.js"></script>
 	  
 <script>
 function check_password(password){
@@ -98,7 +98,7 @@ function check_password(password){
 		// Create our XMLHttpRequest object
 		var hr = new XMLHttpRequest();
 		// Create some variables we need to send to our PHP file
-		var url = "/easyads/check_password.php";
+		var url = "/check_password.php";
 		var vars = "email="+email+"&password="+password;
 		hr.open("POST", url, true);
 		hr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");

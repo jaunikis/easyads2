@@ -8,25 +8,25 @@
       <meta name="author" content="Marius Vorosilovas">
       <title>Easyads classified free adverts</title>
       
-	 <script src="/easyads/js/jquery-3.2.1.js"></script>
+	 <script src="/js/jquery-3.2.1.js"></script>
 	  
 	  <!-- Favicon Icon -->
-      <link rel="apple-touch-icon" sizes="76x76" href="/easyads/images/apple-icon.png">
-      <link rel="icon" type="image/png" href="/easyads/images/favicon.png">
+      <link rel="apple-touch-icon" sizes="76x76" href="/images/apple-icon.png">
+      <link rel="icon" type="image/png" href="/images/favicon.png">
       <!-- Bootstrap CSS -->    
-	  <link href="/easyads/css/bootstrap.min.css" rel="stylesheet">
+	  <link href="/css/bootstrap.min.css" rel="stylesheet">
 	  <!-- Google Font -->
       <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:regular,700,600&amp;latin" type="text/css" />
       <!-- Custom CSS -->
-      <link href="/easyads/css/style.css" rel="stylesheet">
-	  <link href="/easyads/css/style2.css" rel="stylesheet">
+      <link href="/css/style.css" rel="stylesheet">
+	  <link href="/css/style2.css" rel="stylesheet">
 	  <!-- favourites, myads CSS -->
-      <link href="/easyads/css/myfav.css" rel="stylesheet">
+      <link href="/css/myfav.css" rel="stylesheet">
       <!-- Owl Carousel -->
-      <link rel="stylesheet" href="/easyads/plugins/owl-carousel/owl.carousel.css">
-      <link rel="stylesheet" href="/easyads/plugins/owl-carousel/owl.theme.css">
+      <link rel="stylesheet" href="/plugins/owl-carousel/owl.carousel.css">
+      <link rel="stylesheet" href="/plugins/owl-carousel/owl.theme.css">
       <!-- Font Awesome   -->
-      <link href="/easyads/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+      <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	  
    </head>
    
@@ -155,6 +155,9 @@
    <body>
 <?php
 session_start();
+require_once ('incl/server.php');
+require('incl/pataisom_timestamp.php');
+
 if(isset($_COOKIE['user'])){$_SESSION['user']=$_COOKIE['user'];}
 //require_once ('incl/defined_vars.php');
 
@@ -163,13 +166,14 @@ $segments = explode('/', $path);
 //echo($path);
 //echo $segments[3];
 //for($a=1;$a<count($segments);$a++){echo $a.'  -  '.$segments[$a].'<br>';}
-
-switch($segments[2]){
+$segm='';
+if(isset($segments[1])){$segm=$segments[1];}
+switch($segm){
 case 'blog':
     require('top_nav.php');
 	$_SESSION['heading']='Blog';
     require('breadcumb.php');
-    if(isset($segments[3])){require('blog1.php');}else{require('blog.php');}
+    if(isset($segments[2])){require('blog1.php');}else{require('blog.php');}
     require('footer_short.php');
     break;
 case 'edit':
@@ -263,16 +267,16 @@ case 'items':
 }
 ?>
       <!-- Post Ad -->	
-      <a href="/easyads/post_ad/" data-toggle="tooltip" data-placement="left" title="Post Your Ad" class="btn btn-primary btn-lg post-free-add-btn" style="z-index: 2;"><i class="fa fa-pencil"></i></a>
+      <a href="/post_ad/" data-toggle="tooltip" data-placement="left" title="Post Your Ad" class="btn btn-primary btn-lg post-free-add-btn" style="z-index: 2;"><i class="fa fa-pencil"></i></a>
       <!-- jQuery -->
       
       <!-- Custom js--> 
-      <script src="/easyads/js/custom.js"></script>
+      <script src="/js/custom.js"></script>
       <!-- Bootstrap JavaScript <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>  -->
-	  <script src="/easyads/js/bootstrap.min.js"></script>
+	  <script src="/js/bootstrap.min.js"></script>
       
       <!-- Owl Carousel -->
-      <script src="/easyads/plugins/owl-carousel/owl.carousel2.js"></script>
+      <script src="/plugins/owl-carousel/owl.carousel2.js"></script>
 
    </body>
 </html>

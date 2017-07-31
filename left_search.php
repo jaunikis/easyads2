@@ -247,13 +247,13 @@ while ($row = $result3->fetch_assoc()) {
  $(function(){
 	//alert('ok');
 	
-	//$.ajax({url: "/easyads/incl/get_ad_list.php", success: function(result){
+	//$.ajax({url: "/incl/get_ad_list.php", success: function(result){
         //$("#test").html(result);
 	//	AdList = JSON.parse(result);
 	//	alert(AdList.name);
 	//}});
 	
-	// $.post("/easyads/incl/get_ad_list.php",
+	// $.post("/incl/get_ad_list.php",
     //    {
     //      cat1: "Pets",
    //       cat2: "Cars"
@@ -266,7 +266,7 @@ while ($row = $result3->fetch_assoc()) {
 	
 	if($("#cat2").val()=='Cars'){$("#cars").css("display","block");}
 	
-	$.ajax({url: "/easyads/categories-list.txt", success: function(result){
+	$.ajax({url: "/categories-list.txt", success: function(result){
         //$("#test").html(result);
 		myObj = JSON.parse(result);
 	
@@ -310,7 +310,7 @@ while ($row = $result3->fetch_assoc()) {
 	});
 	
 	$("#cat1").change(function(){ 
-		
+		//alert('cat1 change');
 		$("#cat2").empty();
 		$("#cat3").empty();
 		$("#cat4").empty();
@@ -333,9 +333,9 @@ while ($row = $result3->fetch_assoc()) {
 		//$("#refine").submit();
 		var link='';
 		if($("#cat1").val()=='Cars'){
-			link='Cars & Motor/Cars';
+			link='Cars-&-Motor/Cars';
 		}else{
-			if($("#cat1").val()!=='All Category'){link=$("#cat1").val();}
+			if($("#cat1").val()!=='All Category'){li=$("#cat1").val();link=li.replace(/ /g, "-");}
 		}
 		var vars='?';
 		if($("#location").val().substring(0,3)!=='All'){vars+='&location='+$("#location").val();}
@@ -349,7 +349,7 @@ while ($row = $result3->fetch_assoc()) {
 		if(sort==' High Price First '){vars+='&sortBy=priceHigh';}
 		
 		if(vars=='?'){vars='';}
-		window.location.href = "/easyads/items/"+link+vars;
+		window.location.href = "/items/"+link+vars;
 	}); // cat1.change
 	
 	
@@ -375,9 +375,9 @@ while ($row = $result3->fetch_assoc()) {
 			$("#cat3").append(item);
 		}
 			//$("#refine").submit();
-			var link=$("#cat1").val();
+			var li=$("#cat1").val();link=li.replace(/ /g, "-");
 			//alert(link);
-			if($("#cat2").val().substring(0,3)!=='All'){link+='/'+$("#cat2").val();}
+			if($("#cat2").val().substring(0,3)!=='All'){li='/'+$("#cat2").val(); link+=li.replace(/ /g, "-");}
 			//alert(link);
 			var vars='?';
 		if($("#location").val().substring(0,3)!=='All'){vars+='&location='+$("#location").val();}
@@ -391,7 +391,7 @@ while ($row = $result3->fetch_assoc()) {
 		if(sort==' High Price First '){vars+='&sortBy=priceHigh';}
 		
 		if(vars=='?'){vars='';}
-			window.location.href = "/easyads/items/"+link+vars;
+			window.location.href = "/items/"+link+vars;
 	}); //cat2.change
 	
 	$("#cat3").change(function(){
@@ -413,9 +413,9 @@ while ($row = $result3->fetch_assoc()) {
 			$("#cat4").append(item);
 		}
 			//$("#refine").submit();
-			var link=$("#cat1").val();
-			link+='/'+$("#cat2").val();
-			if($("#cat3").val().substring(0,3)!=='All'){link+='/'+$("#cat3").val();}
+			var li=$("#cat1").val(); link=li.replace(/ /g, "-");
+			li='/'+$("#cat2").val(); link+=li.replace(/ /g, "-");
+			if($("#cat3").val().substring(0,3)!=='All'){li='/'+$("#cat3").val(); link+=li.replace(/ /g, "-");}
 			var vars='?';
 		if($("#location").val().substring(0,3)!=='All'){vars+='&location='+$("#location").val();}
 		if($("#yearMin").val().substring(0,2)!=='No'){vars+='&yearMin='+$("#yearMin").val();}
@@ -428,7 +428,7 @@ while ($row = $result3->fetch_assoc()) {
 		if(sort==' High Price First '){vars+='&sortBy=priceHigh';}
 		
 		if(vars=='?'){vars='';}
-			window.location.href = "/easyads/items/"+link+vars;
+			window.location.href = "/items/"+link+vars;
 	}); // cat3.change
 	
 	$("#cat4").change(function(){
@@ -448,7 +448,7 @@ while ($row = $result3->fetch_assoc()) {
 		if(sort==' High Price First '){vars+='&sortBy=priceHigh';}
 		
 		if(vars=='?'){vars='';}
-			window.location.href = "/easyads/items/"+link+vars;
+			window.location.href = "/items/"+link+vars;
 	}); // cat4 change
 	
 	$("#yearMin").change(function(){

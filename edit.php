@@ -20,9 +20,9 @@ $ad_id=intval($segments[3]);
 //tikrinam ar user login
 if(!isset($_SESSION['user'])){
 	//echo '<h2>nera user</h2>';
-	$_SESSION['link']='/easyads/items';
-	//header('Location: /easyads/login');
-	echo('<script>location.href = "/easyads/login";</script>');
+	$_SESSION['link']='/items';
+	//header('Location: /login');
+	echo('<script>location.href = "/login";</script>');
 }
 
 //tikrinam ar useriui priklauso skelbimas
@@ -32,7 +32,7 @@ while ($row = $result_my_ads->fetch_assoc()) {
 	if($ad_id==$id){$x='ok';}
 }
 if(!$x=='ok'){
-	echo('<script>location.href = "/easyads/my_ads";</script>');
+	echo('<script>location.href = "/my_ads";</script>');
 }
 
 
@@ -81,7 +81,7 @@ $string = file_get_contents("categories-list.txt");
 $json = json_decode($string, true);
 echo '<br><br><br>';
 ?>
-<link href="/easyads/css/style2.css" rel="stylesheet">
+<link href="/css/style2.css" rel="stylesheet">
 		<!-- Create Post -->
 		<section class="create-post">
 			<div class="container">
@@ -89,7 +89,7 @@ echo '<br><br><br>';
 					<div class="col-sm-8">
 						<div class="login-panel widget top-space">
 							<div class="login-body">
-								<form id="forma" action="/easyads/save_edit_ad2.php" method="POST" class="row">
+								<form id="forma" action="/save_edit_ad2.php" method="POST" class="row">
 									<div class="form-group">
 										<label class="col-sm-3 control-label">Ad Title <span class="required">*</span></label>
 										<div class="col-sm-9">
@@ -290,7 +290,7 @@ for($i=date("Y")-20;$i<date("Y")+1;$i++){
 	$x='';if($images1[$i]==$cover){$x='check-';}
 	?>
 	<div id="<?php echo $images1id[$i];?>" class="img-div">
-	<img class="img" src="<?php echo '/easyads/ads_images/'.$images1[$i]; ?>">
+	<img class="img" src="<?php echo '/ads_images/'.$images1[$i]; ?>">
 	<div onclick="click_rotate_update(this,'<?php echo $id; ?>')" class="mygt mygt-left"><i class="fa fa-refresh symb" aria-hidden="true"></i></div>
 	<div onclick="click_remove(this,'update')" class="mygt mygt-right"><i class="fa fa-times symb" aria-hidden="true"></i></div>
 	<div onclick="click_cover(this)" class="mygt mygt-left-bottom"><i class="fa fa-<?php echo $x;?>square-o symb" aria-hidden="true"></i></div>
@@ -370,7 +370,7 @@ for($i=date("Y")-20;$i<date("Y")+1;$i++){
 		<!-- End Create Post -->
 		
 		<div id="darken" class="darken"></div>
-		<img id="wait" class="waitas" src='/easyads/images/loading3.gif'/>
+		<img id="wait" class="waitas" src='/images/loading3.gif'/>
 
 <script>
 nr=document.getElementById("images-div").childElementCount-1;
@@ -378,9 +378,9 @@ nr2=nr;
 	//alert(nr);
 </script>
 		
-<script src="/easyads/js/ads_categories.js"></script>
-<script src="/easyads/js/js.js"></script>
-<script src="/easyads/js/image_resize.js"></script>
+<script src="/js/ads_categories.js"></script>
+<script src="/js/js.js"></script>
+<script src="/js/image_resize.js"></script>
 
 
 

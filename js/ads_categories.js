@@ -1,4 +1,4 @@
-$.ajax({url: "/easyads/categories-list.txt", success: function(result){
+$.ajax({url: "/categories-list.txt", success: function(result){
     //$("#test").html(result);
 	myObj = JSON.parse(result);
 	
@@ -7,7 +7,7 @@ $.ajax({url: "/easyads/categories-list.txt", success: function(result){
 		//alert(str);
 		if(str==''){$("#txtHint").text('nera');}
 		if($("#txtHint").text()!=='stop'){
-			$.ajax({url: "/easyads/incl/gethint.php?q=" + str, success: function(result){
+			$.ajax({url: "/incl/gethint.php?q=" + str, success: function(result){
 				$("#txtHint").text(result);
 				if(result!=='nera'){
 					var array = result.split('/');

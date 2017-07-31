@@ -13,7 +13,7 @@
 								</div>
 							</div>
 							<div class="panel-image">
-								<img class="img-responsive" src="/easyads/images/blog/blog-01.jpg" alt="">
+								<img class="img-responsive" src="/images/blog/blog-01.jpg" alt="">
 							</div>
 							<div class="panel-body">
 							<h4>

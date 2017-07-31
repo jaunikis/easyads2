@@ -11,7 +11,7 @@
 							<div class="panel-heading">
 								<div class="media clearfix">
 									<a class="pull-left">
-									<img src="/easyads/images/blog/blog-01.jpg"
+									<img src="/images/blog/blog-01.jpg"
 									</a>
 									<div class="media-body">
 										<small>Created by: <span class="font-bold">Mark Word</span> </small>
@@ -21,7 +21,7 @@
 								</div>
 							</div>
 							<div class="panel-body">
-								<a href="/easyads/blog/Simple-Tips-to-Creating-An-Effective-Ad">
+								<a href="/blog/Simple-Tips-to-Creating-An-Effective-Ad">
 									<h4>Simple Tips to Creating An Effective Ad</h4>
 								</a>
 								<h5>What Makes You Stand Out From Your Competition?</h5>
@@ -31,7 +31,7 @@
 								<p>
 									So, what will make your potential customers buy your company’s product or service versus going with one of your competitors? That’s what you have to figure out and focus on with your advertisement. Show your potential customers why your business is their number one choice and why they shouldn’t even consider your competitors. Then, there is a good chance that they won’t.
 								</p>
-								<a href="/easyads/blog/Simple-Tips-to-Creating-An-Effective-Ad" class="btn btn-primary btn-xs">Read more</a>
+								<a href="/blog/Simple-Tips-to-Creating-An-Effective-Ad" class="btn btn-primary btn-xs">Read more</a>
 							</div>
 							<div class="panel-footer">
 								<span class="pull-right">

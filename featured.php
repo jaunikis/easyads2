@@ -11,7 +11,7 @@ $result=sqlconnect($sql);
             <div class="row">
                <div class="col-md-12">
                   <div class="carousel-section-header">
-                     <h1>Featured Items <a href="/easyads/items" class="btn btn-md btn-primary pull-right">Show More Items <b><?php echo $ad_count; ?></b> <i class="fa fa-arrow-right"></i></a></h1>
+                     <h1>Featured Items <a href="/items" class="btn btn-md btn-primary pull-right">Show More Items <b><?php echo $ad_count; ?></b> <i class="fa fa-arrow-right"></i></a></h1>
                   </div>
                   <div id="owl-carousel-featured" class="owl-carousel owl-carousel-featured">
 <?php
@@ -46,7 +46,7 @@ $result=sqlconnect($sql);
 									echo '<div class="item-badge-grid '.$featured_ad.'">'.$banner.'</div>';
 								}
 							?>
-							  <a href="/easyads/items?item=<?php echo $id;?>">
+							  <a href="/items?item=<?php echo $id;?>">
                               <div class="item-img-grid">
                                  <img alt="" width="100%" height="200px" src="<?php echo 'ads_images/'.$cover;?>" class="img-responsive img-center img-thumbnail">
                               

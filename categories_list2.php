@@ -43,7 +43,7 @@ while ($row = $result->fetch_assoc()) {
                      </div>
                      <div class="widget-body">
                         <ul class="trends">
-						<li><a href="#">Cars <span class="item-numbers"><?php echo $count_cars;?></span></a></li>
+						<li><a href="/items/Cars-&-Motor/Cars">Cars <span class="item-numbers"><?php echo $count_cars;?></span></a></li>
 		<?php
 $sql="SELECT COUNT(id), cat1
 FROM skelbimai
@@ -56,8 +56,9 @@ while ($row = $result->fetch_assoc()) {
 	$count_id=$row['COUNT(id)'];
 	$categ[]=$cat1;
 	$cat_count2[]=$count_id;
+	
 ?>	
-                           <li><a href="/easyads/items/<?php echo $cat1.'">'.$cat1;?> <span class="item-numbers"><?php echo $count_id;?></span></a></li>
+                           <li><a href="/items/<?php echo str_replace(' ','-',$cat1).'">'.$cat1;?> <span class="item-numbers"><?php echo $count_id;?></span></a></li>
 <?php } 
 $_SESSION['categ']=$categ;
 $_SESSION['cat_count2']=$cat_count2;
@@ -69,7 +70,7 @@ $_SESSION['cat_count2']=$cat_count2;
                <div class="col-lg-9 col-md-9 col-sm-9">
                   <div class="single-categorie">
 				  <div class="carousel-section-header">
-                     <h1>Latest Ads <a href="/easyads/items" class="btn btn-md btn-primary pull-right">Show All Ads <b><?php echo $ad_count; ?></b> <i class="fa fa-arrow-right"></i></a></h1>
+                     <h1>Latest Ads <a href="/items" class="btn btn-md btn-primary pull-right">Show All Ads <b><?php echo $ad_count; ?></b> <i class="fa fa-arrow-right"></i></a></h1>
                   </div>
                      <div id="owl-carousel-featured" class="owl-carousel categories-list-page">
     <?php
@@ -91,7 +92,7 @@ $_SESSION['cat_count2']=$cat_count2;
 				$color=$col[$x];
 	?>
 						<div class="item">
-						<a href="/easyads/items?item=<?php echo $id;?>">
+						<a href="/items?item=<?php echo $id;?>">
                            <div class="item-ads-grid icon-<?php echo $color;?>">
                               <div class="item-img-grid">
                                  <img alt="" src="<?php echo 'ads_images/'.$cover;?>" class="img-responsive img-center">
@@ -104,7 +105,7 @@ $_SESSION['cat_count2']=$cat_count2;
                               <div class="item-meta">
                                  <ul>
                                     <li class="item-date"><i class="fa fa-clock-o"></i> <?php echo elapsed($timestamp2); ?></li>
-                                    <li class="item-cat"><i class="fa fa-list-ul"></i> <a href="/easyads/items/<?php echo $cat1;?>"><?php echo $cat1; ?></a> > <a href="/easyads/items/<?php echo $cat1.'/'.$cat2;?>"><?php echo $cat2; ?></a></li>
+                                    <li class="item-cat"><i class="fa fa-list-ul"></i> <a href="/items/<?php echo $cat1;?>"><?php echo $cat1; ?></a> > <a href="/items/<?php echo $cat1.'/'.$cat2;?>"><?php echo $cat2; ?></a></li>
                                     <li class="item-location"><a href="categories.html"><i class="fa fa-map-marker"></i> <?php echo $location; ?> </a></li>
                                     
                                  </ul>

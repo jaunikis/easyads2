@@ -7,7 +7,7 @@
 				   
                         
 <?php
-if(!isset($_SESSION['email'])){$_SESSION['link']='/easyads/my_ads';echo('<script>window.location = "/easyads/login";</script>');exit;}
+if(!isset($_SESSION['email'])){$_SESSION['link']='/my_ads';echo('<script>window.location = "/login";</script>');exit;}
 
 $email=$_SESSION['email'];
 require_once ('incl/server.php');
@@ -38,7 +38,7 @@ while ($row = $result->fetch_assoc()) {
 		<img class="list-image" src="<?php echo 'ads_images/'.$cover; ?>" class="" alt="<?php echo $title;?>">
 	
 	
-		<div class=""><a href="/easyads/items?item=<?php echo $id; ?>"><strong><?php echo $title;?></strong></a></div>
+		<div class=""><a href="/items?item=<?php echo $id; ?>"><strong><?php echo $title;?></strong></a></div>
                                     <div class="">
 										<div><span class=""><?php echo substr($description, 0, 44); ?>...</span></div>
 									
@@ -71,7 +71,7 @@ while ($row = $result->fetch_assoc()) {
          </div>
       </section>
       <!-- End Favourite Ads -->
-	  <div id="wait" style="display:none;width:69px;height:89px;border:1px solid black;position:absolute;top:50%;left:50%;padding:2px;"><img src='/easyads/images/loading3.gif' width="64" height="64" /><br>Loading..</div>
+	  <div id="wait" style="display:none;width:69px;height:89px;border:1px solid black;position:absolute;top:50%;left:50%;padding:2px;"><img src='/images/loading3.gif' width="64" height="64" /><br>Loading..</div>
 	  
 <script>
 function unfavourite(a,th){
@@ -79,7 +79,7 @@ function unfavourite(a,th){
 var hr = new XMLHttpRequest();
 		// Create some variables we need to send to our PHP file
 		var wait=document.getElementById("wait");
-		var url = "/easyads/incl/unfavourite.php";
+		var url = "/incl/unfavourite.php";
 		var vars = "unfav="+a;
 		hr.open("POST", url, true);
 		hr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");

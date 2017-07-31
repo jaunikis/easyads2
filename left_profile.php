@@ -1,5 +1,5 @@
 <?php
-if(!isset($_SESSION['email'])){$_SESSION['link']='/easyads/my_ads';echo('<script>window.location = "/easyads/login";</script>');exit;}
+if(!isset($_SESSION['email'])){$_SESSION['link']='/my_ads';echo('<script>window.location = "/login";</script>');exit;}
 
 $email=$_SESSION['email'];
 require_once ('incl/server.php');
@@ -35,7 +35,7 @@ $favourite = $result_favourite->num_rows;
                            <i class="fa fa-camera"></i>
                            </a>
 				<?php
-					if($_SESSION['photo_blob']==''){echo'<img id="avatar_image" class="profile-dp" alt="User Image" src="/easyads/images/user3.png">';
+					if($_SESSION['photo_blob']==''){echo'<img id="avatar_image" class="profile-dp" alt="User Image" src="/images/user3.png">';
 						}else{
 						echo'<img id="avatar_image" class="profile-dp" alt="User Image" src="'.$_SESSION['photo_blob'].'">';
 					}
@@ -46,21 +46,21 @@ $favourite = $result_favourite->num_rows;
                            </div>
                         </div>
                         <div class="list-group">
-                           <a class="list-group-item" href="/easyads/my_ads">
+                           <a class="list-group-item" href="/my_ads">
                            <span class="label label-info"><?php echo $my_ads; ?></span>
                            <i class="fa fa-fw fa-pencil"></i> My Ads
                            </a>
-                           <a class="list-group-item" href="/easyads/favourite">
+                           <a class="list-group-item" href="/favourite">
                            <span class="label label-success"><?php echo $favourite; ?></span>
                            <i class="fa fa-fw fa-heart"></i> Favourite Ads
                            </a>
                            <a class="list-group-item" href="ad-alerts.html">
                            <i class="fa fa-fw fa-clock-o"></i> Ad Alerts
                            </a>
-                           <a class="list-group-item" href="/easyads/my_details">
+                           <a class="list-group-item" href="/my_details">
                            <i class="fa fa-fw fa-gear"></i> My Details
                            </a>
-                           <a class="list-group-item" href="/easyads/logout.php">
+                           <a class="list-group-item" href="/logout.php">
                            <i class="fa fa-fw fa-power-off"></i> Log Out</a>
                            </a>
                         </div>

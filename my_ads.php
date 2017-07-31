@@ -24,7 +24,7 @@ while ($row = $result_my_ads->fetch_assoc()) {
 							<div class="remas">  
                             <img class="list-image" src="<?php echo 'ads_images/'.$cover; ?>" alt=""></td>
                                 
-                        <div class=""><a data-placement="top" data-toggle="tooltip" data-original-title="View Ad" href="/easyads/items?item=<?php echo $id; ?>"><strong><?php echo $title;?></strong></a>
+                        <div class=""><a data-placement="top" data-toggle="tooltip" data-original-title="View Ad" href="/items?item=<?php echo $id; ?>"><strong><?php echo $title;?></strong></a>
 						
 						
 						
@@ -51,7 +51,7 @@ while ($row = $result_my_ads->fetch_assoc()) {
 										}
 								?>
 							<span> | </span>
-							<a href="/easyads/edit/<?php echo $id;?>"><span style="cursor:pointer;" class="label label-primary" title="" data-placement="top" data-toggle="tooltip" data-original-title="Edit Ad">Edit: <i class="fa fa-pencil"></i></span></a>
+							<a href="/edit/<?php echo $id;?>"><span style="cursor:pointer;" class="label label-primary" title="" data-placement="top" data-toggle="tooltip" data-original-title="Edit Ad">Edit: <i class="fa fa-pencil"></i></span></a>
 							<span> | </span>
 							<span style="cursor:pointer;" class="label label-danger" onclick="delete_ad(<?php echo $id; ?>,this)" title="" data-placement="top" data-toggle="tooltip"  data-original-title="Delete"><i class="fa fa-trash"></i></span>
 							<span style="color:white">.</span>
@@ -75,7 +75,7 @@ while ($row = $result_my_ads->fetch_assoc()) {
          </div>
       </section>
       <!-- End My Ads -->
-	  <div id="wait" style="display:none;width:69px;height:89px;border:1px solid black;position:absolute;top:50%;left:50%;padding:2px;"><img src='/easyads/images/loading3.gif' width="64" height="64" /><br>Loading..</div>
+	  <div id="wait" style="display:none;width:69px;height:89px;border:1px solid black;position:absolute;top:50%;left:50%;padding:2px;"><img src='/images/loading3.gif' width="64" height="64" /><br>Loading..</div>
 
 <script>
 function enable_disable(id,th){
@@ -102,7 +102,7 @@ function enable_disable(id,th){
 	//if(r==true){
 	var hr = new XMLHttpRequest();
 		// Create some variables we need to send to our PHP file
-		var url = "/easyads/incl/enable_disable.php";
+		var url = "/incl/enable_disable.php";
 		var vars = "ad_id="+id+"&ad_status="+th.className;
 		hr.open("POST", url, true);
 		hr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -114,7 +114,7 @@ function enable_disable(id,th){
 				var return_data = hr.responseText;
 				wait.style.display="none";
 				//alert(return_data);
-				//window.location = "/easyads/my_ads";
+				//window.location = "/my_ads";
 			}
 		}
 		// Send the data to PHP now... and wait for response to update the status div
@@ -129,7 +129,7 @@ function delete_ad(id,th){
 	if(r==true){
 	var hr = new XMLHttpRequest();
 		// Create some variables we need to send to our PHP file
-		var url = "/easyads/incl/delete_ad.php";
+		var url = "/incl/delete_ad.php";
 		var vars = "ad_id="+id;
 		hr.open("POST", url, true);
 		hr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -141,7 +141,7 @@ function delete_ad(id,th){
 				var return_data = hr.responseText;
 				var p=th.parentNode.parentNode;
 				p.parentNode.removeChild(p);
-				//window.location = "/easyads/my_ads";
+				//window.location = "/my_ads";
 				wait.style.display="none";
 				
 			}

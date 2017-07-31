@@ -4,9 +4,9 @@ if(isset($_SESSION['images2'])){unset($_SESSION['images2']);}
 
 if(!isset($_SESSION['user'])){
 	//echo '<h2>nera user</h2>';
-	$_SESSION['link']='/easyads/post';
-	//header('Location: /easyads/login');
-	//echo('<script>location.href = "/easyads/login";</script>');
+	$_SESSION['link']='/post';
+	//header('Location: /login');
+	//echo('<script>location.href = "/login";</script>');
 	}
 $string = file_get_contents("categories-list.txt");
 $json = json_decode($string, true);
@@ -18,11 +18,11 @@ $json = json_decode($string, true);
 					<div class="col-sm-8 col-sm-offset-2">
 						<div class="login-panel widget top-space">
 							<div class="login-body">
-								<form id="forma" action="/easyads/save_ad2.php" method="POST" class="row">
+								<form id="forma" action="/save_ad2.php" method="POST" class="row">
 									<div class="form-group">
 										<label class="col-sm-3 control-label">Ad Title <span class="required">*</span></label>
 										<div class="col-sm-9">
-											<input name="title" id="title" type="text" placeholder="What are you selling e.g. Apple iPhone SE 2017" required="required" class="form-control border-form">
+											<input name="title" id="title" type="text" placeholder="What are you selling e.g. Apple iPhone SE 2017" required="required" class="form-control1 border-form">
 											<p style="Display:none;">Suggestions: <span id="txtHint"></span></p>	
 										</div>
 									</div>
@@ -31,7 +31,7 @@ $json = json_decode($string, true);
 									<div class="form-group">
 										<label class="col-sm-3 control-label">Category <span class="required">*</span></label>
 										<div class="col-sm-9">
-											<select name="cat1" id="cat1" class="form-control border-form">
+											<select name="cat1" id="cat1" class="form-control1 border-form">
 												<option selected >Please Choose</option>
 			<?php
 				for($i=0;$i<count($json['cat1']);$i++){
@@ -131,7 +131,7 @@ for($i=date("Y")-20;$i<date("Y")+1;$i++){
 									<div class="form-group" id="color1">
 										<label class="col-sm-3 control-label">Color </label>
 										<div class="col-sm-9">
-											<select name="color" id="color" class="form-control border-form">
+											<select name="color" id="color" class="border-form">
 												<option value="0" disabled selected style="display: none;">Please Choose</option>
 												<option <?php if(isset($color)){if($color=='Black'){echo 'selected';}} ?>>Black</option>
 													<option>White</option>
@@ -168,8 +168,12 @@ for($i=date("Y")-20;$i<date("Y")+1;$i++){
 										<label class="col-sm-3 control-label">Price <span class="required">*</span></label>
 										<div class="col-sm-9">
 											<div class="input-group">
-												<span class="input-group-addon"><i class="fa fa-euro"></i></span>
-												<input id="price" name="price" type="text" placeholder="e.g. 999" required="required" class="form-control border-form">
+												
+												<input id="price" name="price" type="text" placeholder="e.g. 999" class="form-control1 border-form">
+												<select id="currency" name="currency"  class="form-control1 form-control1-cur border-form">
+												<option selected="">eur</option>
+												<option>gbp</option>
+												</select>
 											</div>
 										</div>
 									</div>
@@ -196,21 +200,17 @@ for($i=date("Y")-20;$i<date("Y")+1;$i++){
 		
 			
 									<div class="form-group">
-										<label class="col-sm-3 control-label">Location <span class="required">*</span></label>
+										<label class="col-sm-3 control-label">Location</label>
 										<div class="col-sm-9">
 											<select id="location" name="location" class="form-control border-form">
 												<option selected="">All Locations</option>
 			  <?php
-			  $rand=rand(0,count($json["locations"]));
+			  
 			  
 				for($i=0;$i<count($json["locations"]);$i++){
 					//if(isset($_SESSION['location'])){if($json["locations"][$i]==$_SESSION['location']){
-						if($rand==$i){
-						echo '<option selected="">'.$json["locations"][$i].'</option>';
-					}else{
 						echo '<option>'.$json["locations"][$i].'</option>';
 					}
-				}
 				//}
 				
             ?>
@@ -218,28 +218,28 @@ for($i=date("Y")-20;$i<date("Y")+1;$i++){
 										</div>
 									</div>
 									<div class="form-group">
-										<label class="col-sm-3 control-label">Ad Description <span class="required">*</span></label>
+										<label class="col-sm-3 control-label">Ad Description</label>
 										<div class="col-sm-9">
-											<textarea id="description" name="description" value="description1" placeholder="Include the brand, model, age and any included accessories." class="form-control border-form"></textarea>
+											<textarea style="line-height: 110%" rows="8" id="description" name="description" value="description1" placeholder="Include the brand, model, age and any included accessories." class="form-control border-form"></textarea>
 										</div>
 									</div>
 									<div class="form-group">
-										<label class="col-sm-3 control-label">Your Name <span class="required">*</span></label>
+										<label class="col-sm-3 control-label">Your Name</label>
 										<div class="col-sm-9">
-											<input id="name" name="name" type="text" placeholder="e.g. Jhone Doe" value="<?php if(isset($_SESSION['user'])){echo $_SESSION['user'];} ?>" class="form-control border-form">
+											<input id="name" name="name" type="text" value="<?php if(isset($_SESSION['user'])){echo $_SESSION['user'];} ?>" class="form-control border-form">
 										</div>
 									</div>
 									<div class="form-group">
-										<label class="col-sm-3 control-label">Your email </label>
+										<label class="col-sm-3 control-label">Your email <span class="required">*</span></label>
 										<div class="col-sm-9">
-											<input id="email" name="email" type="text" placeholder="e.g. jon@gmail.com" value="<?php if(isset($_SESSION['email'])){echo $_SESSION['email'];} ?>" class="form-control border-form">
+											<input id="email" name="email" type="text" value="<?php if(isset($_SESSION['email'])){echo $_SESSION['email'];} ?>" class="form-control border-form">
 										</div>
 									</div>
 									<div class="form-group">
 										<label class="col-sm-3 control-label">Phone number <span class="required">*</span></label>
 										<div class="col-sm-9">
 											<div class="input-group">
-												<input id="phone" name="phone" type="text" placeholder="e.g. 123456789" value="<?php if(isset($_SESSION['phone'])){echo $_SESSION['phone'];} ?>" class="form-control border-form">
+												<input id="phone" name="phone" type="text" value="<?php if(isset($_SESSION['phone'])){echo $_SESSION['phone'];} ?>" class="form-control border-form">
 											</div>
 										</div>
 									</div>
@@ -349,30 +349,22 @@ for($i=date("Y")-20;$i<date("Y")+1;$i++){
 </div>
 		
 		<div id="darken" class="darken"></div>
-		<img id="wait" class="waitas" src='/easyads/images/loading3.gif'/>
+		<img id="wait" class="waitas" src='/images/loading3.gif'/>
 		
-<script src="/easyads/js/ads_categories.js"></script>
-<script src="/easyads/js/js.js"></script>
+<script src="/js/ads_categories.js"></script>
+<script src="/js/js.js"></script>
 
 <script>
 cover=0;
 nr=0;
 nr2=0;
 
-var tekstas=Math.floor((Math.random() * 999999) + 111111);
-$("#phone").val(tekstas);
+//var tekstas=Math.floor((Math.random() * 999999) + 111111);$("#phone").val(tekstas);
+//var tekstas=Math.floor((Math.random() * 260000) + 1);$("#price").val(tekstas);
+//var tekstas=Math.random().toString(36).substr(2, 8);$("#title").val(tekstas);
+//var tekstas=Math.random().toString(36).substr(2, 15)+' '+Math.random().toString(36).substr(2, 15)+' ';$("#description").val(tekstas);
+//var len2=$("#cat1 option").length;var x=Math.floor((Math.random() * (len2-1)) + 2);$("#cat1 option:eq("+x+")").prop('selected', true);
 
-var tekstas=Math.floor((Math.random() * 260000) + 1);
-$("#price").val(tekstas);
-
-var tekstas=Math.random().toString(36).substr(2, 8);
-$("#title").val(tekstas);
-var tekstas=Math.random().toString(36).substr(2, 15)+' '+Math.random().toString(36).substr(2, 15)+' ';
-$("#description").val(tekstas);
-
-var len2=$("#cat1 option").length
-var x=Math.floor((Math.random() * (len2-1)) + 2);
-$("#cat1 option:eq("+x+")").prop('selected', true);
 //change_cat1();
 
 jQuery.fn.center = function () {
@@ -452,12 +444,12 @@ function save(){
 				color:color,price:price,location:location,description:description,
 				name:name,email:email,phone:phone,
 				images1:images1,images2:images2},
-		url: "/easyads/save_ad.php",
+		url: "/save_ad.php",
 		success: function(msg){
 			$("#wait").hide();
 			$("#darken").hide();
 			alert(msg);
-			//window.location = "/easyads/items?item="+msg;
+			//window.location = "/items?item="+msg;
 			//document.getElementById("forma").submit();
 		}
 	});
@@ -497,7 +489,7 @@ function showHint(str) {
 						}			
             }
         };
-        xmlhttp.open("GET", "/easyads/gethint.php?q=" + str, true);
+        xmlhttp.open("GET", "/gethint.php?q=" + str, true);
         xmlhttp.send();
     }
 }
@@ -627,7 +619,7 @@ function model_parinkimas(){
             }
         };
 		
-        xmlhttp.open("GET", "/easyads/deletefromsession.php?x=" + x, true);
+        xmlhttp.open("GET", "/deletefromsession.php?x=" + x, true);
         xmlhttp.send();
 	}
     }
@@ -637,14 +629,14 @@ function model_parinkimas(){
 </script>	
 
 
-	<script src="/easyads/js/image_resize.js"></script>
-<!--	<script src="/easyads/js/canvas-to-blob.min.js"></script>
-	<script src="/easyads/js/resize.js"></script>
-	<script src="/easyads/js/app.js"></script>		-->
+	<script src="/js/image_resize.js"></script>
+<!--	<script src="/js/canvas-to-blob.min.js"></script>
+	<script src="/js/resize.js"></script>
+	<script src="/js/app.js"></script>		-->
 
 	
 		
 		
 		
 		<!-- Filestyle -->
-		<script src="/easyads/plugins/bootstrap-filestyle/bootstrap-filestyle.js"></script>
+		<script src="/plugins/bootstrap-filestyle/bootstrap-filestyle.js"></script>

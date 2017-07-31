@@ -16,7 +16,7 @@ $links=explode('/',$segments2[0]);
 							</div>
 							<div class="page_pagination">
 								<ul>
-									<li><a href="/easyads/">Home</a></li>
+									<li><a href="/">Home</a></li>
 									<li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
 									<li><?php echo $_SESSION['heading'];?></li>
 							<?php

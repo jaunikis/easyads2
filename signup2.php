@@ -39,6 +39,6 @@ session_start();
 $_SESSION['user']=$name;
 $_SESSION['email']=$email;
 $_SESSION['location']='All Locations';
-header('Location: /easyads/');
+header('Location: /');
 
 ?>
