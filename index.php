@@ -27,7 +27,8 @@
       <link rel="stylesheet" href="/plugins/owl-carousel/owl.theme.css">
       <!-- Font Awesome   -->
       <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-	  
+	  <?php session_start();?>
+	  <?php include_once("incl/analytics_tracking.php");?> 
    </head>
    
    <style>
@@ -152,9 +153,12 @@
    </style>
    
    
-   <body>
+<body>
 <?php
-session_start();
+
+
+
+
 require_once ('incl/server.php');
 require('incl/pataisom_timestamp.php');
 
@@ -267,15 +271,7 @@ case 'items':
 }
 ?>
 
-<script>
-	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-	  ga('create', 'UA-103816331-1', 'auto');
-	  ga('send', 'pageview');
-</script>
 	  
 	  <!-- Post Ad -->	
       <a href="/post_ad/" data-toggle="tooltip" data-placement="left" title="Post Your Ad" class="btn btn-primary btn-lg post-free-add-btn" style="z-index: 2;"><i class="fa fa-pencil"></i></a>
@@ -289,6 +285,6 @@ case 'items':
       <!-- Owl Carousel -->
       <script src="/plugins/owl-carousel/owl.carousel2.js"></script>
 
-	  
+	
    </body>
 </html>
