@@ -13,7 +13,7 @@ if(isset($_SESSION['images_to_delete'])){unset($_SESSION['images_to_delete']);}
 require_once ('incl/server.php');
 $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $segments = explode('/', $path);
-$ad_id=intval($segments[3]);
+$ad_id=intval($segments[2]);
 //echo $ad_id;
 
 

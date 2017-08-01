@@ -8,7 +8,7 @@
       <meta name="author" content="Marius Vorosilovas">
       <title>Easyads classified free adverts</title>
       
-	 <script src="/easyads/js/jquery-3.2.1.js"></script>
+	 <script src="/js/jquery-3.2.1.js"></script>
 	  
 	  <!-- Favicon Icon -->
       <link rel="apple-touch-icon" sizes="76x76" href="/images/apple-icon.png">

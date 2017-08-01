@@ -51,19 +51,19 @@ $json = json_decode($string, true);
                </div>
                <div class="top-categories">
                   <h4>Popular Categories</h4>
-                  <a href="/items/Cars & Motor/Cars">
+                  <a href="/items/Cars-&-Motor/Cars">
                   <i class="fa fa-car"></i>Cars
                   </a>
                   <a href="/items/Jobs">
                   <i class="fa fa-briefcase"></i>Jobs
                   </a>
-                  <a href="/items/Electronics/Mobile phones">
+                  <a href="/items/Electronics/Mobile-phones">
                   <i class="fa fa-mobile"></i>Mobiles
                   </a>
                   <a href="/items/Electronics/Laptops">
                   <i class="fa fa-laptop"></i>Laptop
                   </a>
-                  <a href="/items/Real Estate">
+                  <a href="/items/Real-Estate">
                   <i class="fa fa-building-o"></i>Property
                   </a>
                </div>

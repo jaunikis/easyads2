@@ -221,7 +221,7 @@ echo '<div class="item"><a onclick="large_photos('.$i.');" style="cursor:zoom-in
                   <div class="widget user-widget">
                      <div class="widget-body text-center">
                         <img class="user-dp" alt="User Image" src="/images/user3.png">
-                        <h2 class="seller-name"><?php echo strip_tags($user);?></h2>
+                        <h2 class="seller-name"><?php echo strip_tags($name);?></h2>
                         <p class="seller-detail">Location: <strong><?php echo $location;?></strong><br>
                           
                         </p>

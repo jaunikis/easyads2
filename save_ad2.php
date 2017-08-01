@@ -18,7 +18,7 @@ $description='';
 if(isset($_SESSION['user'])){$user=$_SESSION['user'];}
 
 if(isset($_POST['cover'])){$cover=$_POST['cover'];if($cover==''){$cover=0;}}
-if(isset($_POST['title'])){$title=strip_tags($_POST['title']);}
+if(isset($_POST['title'])){$title=strip_tags(addslashes($_POST['title']));}
 if(isset($_POST['cat1'])){$cat1=$_POST['cat1'];}
 if(isset($_POST['cat2'])){$cat2=$_POST['cat2'];}
 if(isset($_POST['make'])){$make=$_POST['make'];}
@@ -28,15 +28,15 @@ if(isset($_POST['fuel'])){$fuel=$_POST['fuel'];}
 if(isset($_POST['transmission'])){$transmission=$_POST['transmission'];}
 if(isset($_POST['bodyType'])){$bodyType=$_POST['bodyType'];}
 if(isset($_POST['color'])){$color=$_POST['color'];}
-if(isset($_POST['price'])){$price=strip_tags($_POST['price']);if($price=''){$price=0;}}
+if(isset($_POST['price'])){$price=strip_tags(addslashes($_POST['price']));if($price=''){$price=0;}}
 if(isset($_POST['location'])){$location=$_POST['location'];}
-if(isset($_POST['description'])){$description=strip_tags($_POST['description']);}
-if(isset($_POST['name'])){$name=strip_tags($_POST['name']);}
-if(isset($_POST['email'])){$email=strip_tags($_POST['email']);}
-if(isset($_POST['phone'])){$phone=strip_tags($_POST['phone']);}
-if(isset($_POST['currency'])){$currency=strip_tags($_POST['currency']);}
-if(isset($_POST['mileage'])){$mileage=strip_tags($_POST['mileage']);}
-if(isset($_POST['tax'])){$tax=strip_tags($_POST['tax']);}
+if(isset($_POST['description'])){$description=strip_tags(addslashes($_POST['description']));}
+if(isset($_POST['name'])){$name=strip_tags(addslashes($_POST['name']));}
+if(isset($_POST['email'])){$email=strip_tags(addslashes($_POST['email']));}
+if(isset($_POST['phone'])){$phone=strip_tags(addslashes($_POST['phone']));}
+if(isset($_POST['currency'])){$currency=strip_tags(addslashes($_POST['currency']));}
+if(isset($_POST['mileage'])){$mileage=strip_tags(addslashes($_POST['mileage']));}
+if(isset($_POST['tax'])){$tax=strip_tags(addslashes($_POST['tax']));}
 
 $cover=intval($cover);
 $images1file=$_SESSION['images1'];
