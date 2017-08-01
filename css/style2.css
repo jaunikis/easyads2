@@ -311,8 +311,10 @@ input[type=text], select {
 }
 
 .form-control1-cur {
-	width:60px;
-	color:steelBlue;
+	width:68px;
+	color:grey;
+	margin-left:10px;
+	position:absolute;
 	display:inline;
 }
 

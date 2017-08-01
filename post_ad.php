@@ -171,8 +171,8 @@ for($i=date("Y")-20;$i<date("Y")+1;$i++){
 												
 												<input id="price" name="price" type="text" placeholder="e.g. 999" class="form-control1 border-form">
 												<select id="currency" name="currency"  class="form-control1 form-control1-cur border-form">
-												<option selected="">eur</option>
-												<option>gbp</option>
+												<option value="eur" selected="">€</option>
+												<option value="gbp">£</option>
 												</select>
 											</div>
 										</div>
