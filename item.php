@@ -33,7 +33,7 @@ while ($row = $result->fetch_assoc()) {
 	$ad_views=$row['ad_views']; $ad_views++;
 		$sql="UPDATE skelbimai SET ad_views='$ad_views' WHERE id='$item'";
 		$result2=sqlconnect($sql);
-	$description=$row['description'];
+	$description=$row['description'];$description = nl2br(htmlentities($description, ENT_QUOTES, 'UTF-8'));
 	$saved=$row['saved'];
 	$phone=$row['phone'];
 	$name=$row['name'];
@@ -177,7 +177,7 @@ echo '<div class="item"><a onclick="large_photos('.$i.');" style="cursor:zoom-in
 				?>
                                  <h4><strong>Description</strong></h4>
                                  <p>
-                                   <?php echo strip_tags($description);?> 
+                                   <?php echo $description;?> 
 								</p>
                               </div>
                               <div class="item-footer">
