@@ -22,7 +22,7 @@ $json = json_decode($string, true);
 									<div class="form-group">
 										<label class="col-sm-3 control-label">Ad Title <span class="required">*</span></label>
 										<div class="col-sm-9">
-											<input name="title" id="title" type="text" placeholder="What are you selling e.g. Apple iPhone SE 2017" required="required" class="form-control border-form">
+											<input name="title" id="title" type="text" placeholder="What are you selling e.g. Apple iPhone SE 2017" required="required" class="form-control1 border-form">
 											<p style="Display:none;">Suggestions: <span id="txtHint"></span></p>	
 										</div>
 									</div>
@@ -31,7 +31,7 @@ $json = json_decode($string, true);
 									<div class="form-group">
 										<label class="col-sm-3 control-label">Category <span class="required">*</span></label>
 										<div class="col-sm-9">
-											<select name="cat1" id="cat1" class="form-control border-form">
+											<select name="cat1" id="cat1" class="form-control1 border-form">
 												<option selected >Please Choose</option>
 			<?php
 				for($i=0;$i<count($json['cat1']);$i++){
@@ -131,7 +131,7 @@ for($i=date("Y")-20;$i<date("Y")+1;$i++){
 									<div class="form-group" id="color1">
 										<label class="col-sm-3 control-label">Color </label>
 										<div class="col-sm-9">
-											<select name="color" id="color" class="form-control border-form">
+											<select name="color" id="color" class="border-form">
 												<option value="0" disabled selected style="display: none;">Please Choose</option>
 												<option <?php if(isset($color)){if($color=='Black'){echo 'selected';}} ?>>Black</option>
 													<option>White</option>
@@ -168,8 +168,12 @@ for($i=date("Y")-20;$i<date("Y")+1;$i++){
 										<label class="col-sm-3 control-label">Price <span class="required">*</span></label>
 										<div class="col-sm-9">
 											<div class="input-group">
-												<span class="input-group-addon"><i class="fa fa-euro"></i></span>
-												<input id="price" name="price" type="text" placeholder="e.g. 999" class="form-control border-form">
+												
+												<input id="price" name="price" type="text" placeholder="e.g. 999" class="form-control1 border-form">
+												<select id="currency" name="currency"  class="form-control1 form-control1-cur border-form">
+												<option value="eur" selected="">€</option>
+												<option value="gbp">£</option>
+												</select>
 											</div>
 										</div>
 									</div>

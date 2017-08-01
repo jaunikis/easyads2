@@ -16,6 +16,7 @@ node_modules/
 /ads_images/*
 /tempimages/*
 /ads_temp_images/*
+/old/*
 server.php
 .DS_Store
 Thumbs.db
