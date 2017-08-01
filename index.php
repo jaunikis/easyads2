@@ -4,9 +4,9 @@
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="description" content="Ireland Free classified adverts, free car ads">
+      <meta name="description" content="Ireland's Free and easy classified adverts, free car ads, sell and buy adverts">
       <meta name="author" content="Marius Vorosilovas">
-      <title>Easyads classified free adverts</title>
+      <title>Free and easy classified adverts online</title>
       
 	 <script src="/js/jquery-3.2.1.js"></script>
 	  
@@ -266,7 +266,18 @@ case 'items':
     break;
 }
 ?>
-      <!-- Post Ad -->	
+
+<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-103816331-1', 'auto');
+	  ga('send', 'pageview');
+</script>
+	  
+	  <!-- Post Ad -->	
       <a href="/post_ad/" data-toggle="tooltip" data-placement="left" title="Post Your Ad" class="btn btn-primary btn-lg post-free-add-btn" style="z-index: 2;"><i class="fa fa-pencil"></i></a>
       <!-- jQuery -->
       
@@ -278,5 +289,6 @@ case 'items':
       <!-- Owl Carousel -->
       <script src="/plugins/owl-carousel/owl.carousel2.js"></script>
 
+	  
    </body>
 </html>
