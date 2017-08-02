@@ -58,7 +58,7 @@ if(isset($_SESSION['user_id'])){
 		echo '<div class="user-login pull-right">
                   <a href="/signup">REGISTER</a>
                   <span>or</span>  
-                  <a class="btn btn-md btn-primary" href="/login/">Sign In</a>
+                  <a class="btn btn-md btn-primary" href="/login/">Log In</a>
                </div>';
 			   }
 ?>

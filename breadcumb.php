@@ -20,9 +20,9 @@ $links=explode('/',$segments2[0]);
 									<li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
 									<li><?php echo $_SESSION['heading'];?></li>
 							<?php
-								if(isset($links[5])){
+								if(isset($links[4])&&$_SESSION['heading']!='Post your ad'){
 									echo '<li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
-									<li>'.str_replace("-"," ",$links[5]).'</li>';
+									<li>'.str_replace("-"," ",$links[4]).'</li>';
 								}
 							?>
 								</ul>

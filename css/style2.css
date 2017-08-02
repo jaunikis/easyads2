@@ -330,3 +330,7 @@ input[type=text], select {
 :-moz-placeholder { /* Firefox 18- */
   color: silver;
 }
+.post_ad_success{
+	color:steelBlue;
+	font-weight:bold;
+}

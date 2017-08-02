@@ -16,8 +16,6 @@ $name='';$email='';$phone='';
 $transmission='';$bodyType='';$color='';
 $description='';
 
-if(isset($_SESSION['user_id'])){$user_id=$_SESSION['user_id'];}
-
 if(isset($_POST['cover'])){$cover=$_POST['cover'];if($cover==''){$cover=0;}}
 if(isset($_POST['title'])){$title=strip_tags(addslashes($_POST['title']));}
 if(isset($_POST['cat1'])){$cat1=$_POST['cat1'];}
@@ -44,10 +42,9 @@ $images1file=$_SESSION['images1'];
 $images2file=$_SESSION['images2'];
 
 function generateRandomString($length = 10) {
-    return substr(str_shuffle(str_repeat($x='123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNPQRSTUVWXYZ', ceil($length/strlen($x)) )),1,$length);
+    return substr(str_shuffle(str_repeat($x='123456789abcdefghijklmnopqrstuvwxyz+-', ceil($length/strlen($x)) )),1,$length);
 }
-$ad_code='';
-if(!isset($_SESSION['user_id'])){$ad_code=generateRandomString(6);}
+$ad_code=generateRandomString(6);
 
 $valid_till=intval($timestamp2+(86400*60));
 
@@ -79,13 +76,15 @@ $ad_id=sqlconnect($sql);
 		//echo $result.'   ';
 		$_SESSION['last_id']=$result;
 		$_SESSION['ad_id']=$ad_id;
+		$_SESSION['ad_code']=$ad_code;
 		
 		
 	}
+	
 //echo $ad_id;
 	//echo 'id:'.$ad_id.' cover:'.$cover;
 	//echo '<p><a href="/items">easyads/items</a></p>';
-	header("Location: /items");
+	header("Location: /post_ad/success");
 	
 	
 ?>

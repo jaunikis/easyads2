@@ -90,7 +90,7 @@ $json = json_decode($string, true);
 							if($segments[$a]){
 								$link.='/'.$segments[$a];
 								echo '<li><i class="fa fa-angle-right" aria-hidden="true"></i></li>';
-								echo '<li><a href="/'.$link.'">'.str_replace("-"," ",$segments[$a]).'</a></li>';
+								echo '<li>namas<a href="/'.$link.'">'.str_replace("-"," ",$segments[$a]).'</a></li>';
 							}
 						}
 					}

@@ -229,6 +229,14 @@ case 'signup':
     break;
   case 'post_ad':
   case 'post':
+	if(isset($segments[2])){if($segments[2]=='success'){
+		require('top_nav.php');
+		$_SESSION['heading']='Post your ad';
+		require('breadcumb.php');
+		require('post_ad_success.php');
+		require('footer_short.php');
+		break;
+	}}
     require('top_nav.php');
 	$_SESSION['heading']='Post your ad';
     require('breadcumb.php');
