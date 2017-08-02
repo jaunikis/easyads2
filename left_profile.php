@@ -1,16 +1,16 @@
 <?php
-if(!isset($_SESSION['email'])){$_SESSION['link']='/my_ads';echo('<script>window.location = "/login";</script>');exit;}
+if(!isset($_SESSION['user_id'])){$_SESSION['link']='/my_ads';echo('<script>window.location = "/login";</script>');exit;}
 
-$email=$_SESSION['email'];
+$user_id=$_SESSION['user_id'];
 require_once ('incl/server.php');
 require_once ('incl/elapsed.php');
 //my_ads
-$sql="SELECT * FROM skelbimai WHERE email='$email' ORDER BY id DESC";
+$sql="SELECT * FROM skelbimai WHERE user_id='$user_id' ORDER BY id DESC";
 $result_my_ads=sqlconnect($sql);
 $my_ads = $result_my_ads->num_rows;
 
 //saved
-$sql="SELECT saved FROM users WHERE email='$email'";
+$sql="SELECT saved FROM users WHERE id='$user_id'";
 $result=sqlconnect($sql);
 $row = $result->fetch_assoc();
 $saved=$row['saved'];

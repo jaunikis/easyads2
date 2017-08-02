@@ -18,7 +18,7 @@ $ad_id=intval($segments[2]);
 
 
 //tikrinam ar user login
-if(!isset($_SESSION['user'])){
+if(!isset($_SESSION['user_id'])){
 	//echo '<h2>nera user</h2>';
 	$_SESSION['link']='/items';
 	//header('Location: /login');
@@ -37,7 +37,7 @@ if(!$x=='ok'){
 
 
 //db skelbimai result
-$sql="SELECT id,title,cover1file,price,cat1,cat2,make,model,year,fuel,transmission,bodyType,color,location,condition2,ad_views,description,saved,phone,name,user,timestamp2 FROM skelbimai WHERE id='$ad_id'";
+$sql="SELECT id,title,cover1file,price,cat1,cat2,make,model,year,fuel,transmission,bodyType,color,location,condition2,ad_views,description,saved,phone,name,user_id,timestamp2 FROM skelbimai WHERE id='$ad_id'";
 $result=sqlconnect($sql);
 $row = $result->fetch_assoc();
 $id=$row['id'];
@@ -61,7 +61,7 @@ $description=$row['description'];
 $saved=$row['saved'];
 $phone=$row['phone'];
 $name=$row['name'];
-$user=$row['user'];
+$user_id=$row['user_id'];
 $timestamp2=$row['timestamp2'];
 
 //db images result
@@ -93,7 +93,7 @@ echo '<br><br><br>';
 									<div class="form-group">
 										<label class="col-sm-3 control-label">Ad Title <span class="required">*</span></label>
 										<div class="col-sm-9">
-											<input name="title" value="<?php echo $title;?>" id="title" type="text" placeholder="What are you selling e.g. Apple iPhone SE 2017" required="required" class="form-control border-form">
+											<input name="title" value="<?php echo $title;?>" id="title2" type="text" placeholder="What are you selling e.g. Apple iPhone SE 2017" required="required" class="form-control border-form">
 											<p style="Display:none;">Suggestions: <span id="txtHint"></span></p>	
 										</div>
 									</div>
@@ -336,13 +336,13 @@ for($i=date("Y")-20;$i<date("Y")+1;$i++){
 									<div class="form-group">
 										<label class="col-sm-3 control-label">Your Name <span class="required">*</span></label>
 										<div class="col-sm-9">
-											<input value="<?php echo $name;?>" id="name" name="name" type="text" placeholder="e.g. Jhone Doe" value="<?php if(isset($_SESSION['user'])){echo $_SESSION['user'];} ?>" class="form-control border-form">
+											<input id="name" name="name" type="text" placeholder="e.g. Jhone Doe" value="<?php if(isset($_SESSION['user_name'])){echo $_SESSION['user_name'];} ?>" class="form-control border-form">
 										</div>
 									</div>
 									<div class="form-group">
 										<label class="col-sm-3 control-label">Your email </label>
 										<div class="col-sm-9">
-											<input value="<?php echo $email;?>" id="email" name="email" type="text" placeholder="e.g. jon@gmail.com" value="<?php if(isset($_SESSION['email'])){echo $_SESSION['email'];} ?>" class="form-control border-form">
+											<input id="email" name="email" type="text" placeholder="e.g. jon@gmail.com" value="<?php if(isset($_SESSION['email'])){echo $_SESSION['email'];} ?>" class="form-control border-form">
 										</div>
 									</div>
 									<div class="form-group">

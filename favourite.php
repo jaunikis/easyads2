@@ -7,9 +7,9 @@
 				   
                         
 <?php
-if(!isset($_SESSION['email'])){$_SESSION['link']='/my_ads';echo('<script>window.location = "/login";</script>');exit;}
+if(!isset($_SESSION['user_id'])){$_SESSION['link']='/my_ads';echo('<script>window.location = "/login";</script>');exit;}
 
-$email=$_SESSION['email'];
+$user_id=$_SESSION['user_id'];
 require_once ('incl/server.php');
 require_once ('incl/elapsed.php');
 if(isset($_SESSION['saved'])){$saved=$_SESSION['saved'];}else{$saved='';}

@@ -19,7 +19,7 @@
                   <li><a href="/post_ad"><button class="btn btn-success" type="submit"><i class="fa fa-save"></i> Post Free Ad</button></a></li>
                </ul>
 <?php
-if(isset($_SESSION['user'])){
+if(isset($_SESSION['user_id'])){
 	//echo $_SESSION['photo_blob'];
 	
 	echo '<div class="user-dropdown pull-right">
@@ -32,7 +32,7 @@ if(isset($_SESSION['user'])){
 					}
 								
 								
-								echo $_SESSION['user'].'&nbsp<b class="caret"></b></a>
+								echo $_SESSION['user_name'].'&nbsp<b class="caret"></b></a>
 								<ul class="dropdown-menu">
 									<li>
 										<a href="/my_ads"><i class="fa fa-fw fa-pencil"></i> My Ads</a>

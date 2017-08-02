@@ -6,7 +6,8 @@ $date = new DateTime();$timestamp2=$date->getTimestamp();
 $tdate=date("d/m/Y");
 $time=date("H:i:sa");
 $ip=$_SERVER['REMOTE_ADDR'];
-$user='test user';
+$user_id=0;
+if(isset($_SESSION['user_id'])){$user_id=$_SESSION['user_id'];}
 $cat1='cat1';$cat2='cat2';
 $make='';$model='';$year=0;$fuel='';$condition='';
 $price='';$location='All';
@@ -15,7 +16,7 @@ $name='';$email='';$phone='';
 $transmission='';$bodyType='';$color='';
 $description='';
 
-if(isset($_SESSION['user'])){$user=$_SESSION['user'];}
+if(isset($_SESSION['user_id'])){$user_id=$_SESSION['user_id'];}
 
 if(isset($_POST['cover'])){$cover=$_POST['cover'];if($cover==''){$cover=0;}}
 if(isset($_POST['title'])){$title=strip_tags(addslashes($_POST['title']));}
@@ -46,16 +47,16 @@ function generateRandomString($length = 10) {
     return substr(str_shuffle(str_repeat($x='123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNPQRSTUVWXYZ', ceil($length/strlen($x)) )),1,$length);
 }
 $ad_code='';
-if(!isset($_SESSION['user'])){$ad_code=generateRandomString(6);}
+if(!isset($_SESSION['user_id'])){$ad_code=generateRandomString(6);}
 
-$valid_till=intval($timestamp2+(86400*40));
+$valid_till=intval($timestamp2+(86400*60));
 
 //atimame rand idejimo laika
 //$minus=rand(1,43000);$timestamp2=-$minus;
 
-$bump_days=rand(1,5);
+$bump_days=rand(2,10);
 //$sql = "INSERT INTO skelbimai (cover,cover1file,ip,user,title,cat1,cat2,make,model,year,fuel,transmission,bodyType,color,price,location,condition2,description,name,email,phone,active,timestamp2) VALUES ('$images1[$cover]','$images1file[$cover]','$ip','$user','$title','$cat1','$cat2','$make','$model','$year','$fuel','$transmission','$bodyType','$color','$price','$location','$condition','$description','$name','$email','$phone','Active',$timestamp2)";
-$sql = "INSERT INTO skelbimai (ad_code,cover1file,ip,user,title,cat1,cat2,make,model,year,fuel,transmission,bodyType,color,price,currency,location,condition2,description,name,email,phone,active,timestamp2,valid_till,bump_days) VALUES ('$ad_code','$images1file[$cover]','$ip','$user','$title','$cat1','$cat2','$make','$model','$year','$fuel','$transmission','$bodyType','$color','$price','$currency','$location','$condition','$description','$name','$email','$phone','Active','$timestamp2','$valid_till','$bump_days')";
+$sql = "INSERT INTO skelbimai (ad_code,cover1file,ip,user_id,title,cat1,cat2,make,model,year,fuel,transmission,bodyType,color,price,currency,location,condition2,description,name,email,phone,active,timestamp2,valid_till,bump_days) VALUES ('$ad_code','$images1file[$cover]','$ip','$user_id','$title','$cat1','$cat2','$make','$model','$year','$fuel','$transmission','$bodyType','$color','$price','$currency','$location','$condition','$description','$name','$email','$phone','Active','$timestamp2','$valid_till','$bump_days')";
 $ad_id=sqlconnect($sql);
 //if($ad_id){echo '<script>alert("namas");</script>';}
 
@@ -81,7 +82,7 @@ $ad_id=sqlconnect($sql);
 		
 		
 	}
-//echo $price;
+//echo $ad_id;
 	//echo 'id:'.$ad_id.' cover:'.$cover;
 	//echo '<p><a href="/items">easyads/items</a></p>';
 	header("Location: /items");

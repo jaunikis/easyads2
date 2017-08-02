@@ -56,6 +56,7 @@ require_once ('incl/elapsed.php');
 			if(isset($sortBy)){if($sortBy=='priceLow'){$sort='price ASC';$sortTxt='Low Price First';}}
 			if(isset($sortBy)){if($sortBy=='priceHigh'){$sort='price DESC';$sortTxt='High Price First';}}
 			if(isset($sortBy)){if($sortBy=='recently'){$sort='timestamp2 DESC';$sortTxt='Recently Published';}}
+			if(isset($sortBy)){if($sortBy=='mostPopular'){$sort='ad_views DESC';$sortTxt='Most Popular';}}
 			
 			$sql="SELECT id FROM skelbimai WHERE active='Active' AND cat1=$cat1 AND cat2=$cat2 AND make=$make AND model=$model AND fuel=$fuel AND transmission=$transmission AND bodyType=$bodyType AND color=$color AND location=$location AND (price BETWEEN '$pMin' AND '$pMax') AND (year BETWEEN '$yMin' AND '$yMax') AND(description LIKE '$search' OR title LIKE '$search') ORDER BY $sort ";
 			$result=sqlconnect($sql);
@@ -96,6 +97,7 @@ require_once ('incl/elapsed.php');
                               <li><a id="sortPriceL" href="#">Low Price First</a></li>
                               <li><a id="sortPriceH" href="#">High Price First</a></li>
                               <li><a id="sortRecently" href="#">Recently Published</a></li>
+							  <li><a id="sortMostPopular" href="#">Most Popular</a></li>
                            </ul>
                         </li>
                      </ul>
@@ -128,7 +130,8 @@ include('left_search.php');
 				$make=$row['make'];
 				$model=$row['model'];
 				$timestamp2=$row['timestamp2'];
-				$cat1=$row['cat1'];
+				$cat1=$row['cat1'];if($cat1=='Please Choose'){$cat1='';}
+				$cat2=$row['cat2'];if($cat2=='Please Choose'){$cat2='';}
 				$currency=$row['currency'];
 				?>
 					   <div class="item">
@@ -155,8 +158,8 @@ include('left_search.php');
                               <div class="item-meta">
                                  <ul>
                                     <li class="item-date"><i class="fa fa-clock-o"></i><?php echo elapsed($timestamp2); ?>
-									 <a href="categories2.html"><i class="fa fa-map-marker"></i><?php echo $location; ?> </a>
-									 <a href="categories2.html"><i class="fa fa-book"></i><?php echo $cat1; ?></a> , <a href="categories2.html"><?php echo $cat2; ?></a>
+									 <a href="/items?location=<?php echo $location;?>"><i class="fa fa-map-marker"></i><?php echo $location; ?> </a>
+									 <a href="/items/<?php echo str_replace(" ","-",$cat1);?>"><i class="fa fa-book"></i><?php echo $cat1; ?></a> , <a href="/items/<?php echo str_replace(" ","-",$cat1).'/'.str_replace(" ","-",$cat2);?>"><?php echo $cat2; ?></a>
 									 </li>
                                     
                                    
@@ -240,6 +243,13 @@ if($page>=$page_max){$plus=' disabled';$plus_link='';}
 	
 	$("#sortRecently").click(function(){
 		event.preventDefault();
+		$("#sort").html($(this).text()+' <b class="caret"></b>');
+		$("#refine").submit();
+	});
+	
+	$("#sortMostPopular").click(function(){
+		event.preventDefault();
+		$("#sortBy").val('mostPopular');
 		$("#sort").html($(this).text()+' <b class="caret"></b>');
 		$("#refine").submit();
 	});

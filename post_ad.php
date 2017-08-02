@@ -226,7 +226,7 @@ for($i=date("Y")-20;$i<date("Y")+1;$i++){
 									<div class="form-group">
 										<label class="col-sm-3 control-label">Your Name</label>
 										<div class="col-sm-9">
-											<input id="name" name="name" type="text" value="<?php if(isset($_SESSION['user'])){echo $_SESSION['user'];} ?>" class="form-control border-form">
+											<input id="name" name="name" type="text" value="<?php if(isset($_SESSION['user_name'])){echo $_SESSION['user_name'];} ?>" class="form-control border-form">
 										</div>
 									</div>
 									<div class="form-group">
