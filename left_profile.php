@@ -1,5 +1,6 @@
 <?php
-if(!isset($_SESSION['user_id'])){$_SESSION['link']='/my_ads';echo('<script>window.location = "/login";</script>');exit;}
+//if(!isset($_SESSION['user_id'])){$_SESSION['link']='/my_ads';echo('<script>window.location = "/login";</script>');exit;}
+if(isset($_SESSION['user_id'])){
 
 $user_id=$_SESSION['user_id'];
 require_once ('incl/server.php');
@@ -68,3 +69,38 @@ $favourite = $result_favourite->num_rows;
                      </div>
                   </div>
                </div>
+			   <?php
+}else{
+	?>
+	
+	<section class="settings">
+         <div class="container">
+            <div class="row">
+               <div class="col-sm-3">
+                  <div class="widget profile-widget">
+                     <div class="widget-body">
+                        <div class="avatar">
+                           <a onclick="document.getElementById('iFile').click();" class="btn-icon" title="" data-placement="left" data-toggle="tooltip" data-original-title="Edit">
+						   <input id="iFile" type="file" onchange="avatar(this)" class="filestyle55" accept="image/jpeg, image/png" style="display:none;" />
+                           <i class="fa fa-camera"></i>
+                           </a>
+				<img id="avatar_image" class="profile-dp" alt="User Image" src="/images/user3.png">
+						
+                           <div class="profile-info">
+                              
+                           </div>
+                        </div>
+                        <div class="list-group">
+                           
+                           <a class="list-group-item" href="/signup">
+                           <i class="fa fa-fw fa-power-off"></i> Sign Up</a>
+                           </a>
+                        </div>
+                       
+                     </div>
+                  </div>
+               </div>
+	
+<?php
+}
+?>

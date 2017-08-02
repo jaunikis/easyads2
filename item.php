@@ -129,7 +129,7 @@ include('reklama.php');
                                  <div class="item-meta">
                                     <ul>
                                        <li class="item-date"><i class="fa fa-clock-o"></i> <?php echo elapsed($timestamp2);?></li>
-                                       <li class="item-cat"><i class="fa fa-book"></i> <a href="categories2.html"><?php echo $cat1;?></a> , <a href="categories2.html"><?php echo $cat2; ?></a></li>
+                                       <li class="item-cat"><i class="fa fa-book"></i> <a href="/items/<?php echo str_replace(" ","-",$cat1);?>"><?php echo $cat1;?></a> , <a href="/items/<?php echo str_replace(" ","-",$cat1).'/'.str_replace(" ","-",$cat2);?>"><?php echo $cat2; ?></a></li>
                                        <li class="item-location"><a href="#"><i class="fa fa-map-marker"></i> <?php echo $location;?> </a></li>
                                        <li class="item-type"><i class="fa fa-bookmark"></i> <?php echo $condition2;?></li>
                                     </ul>

@@ -42,9 +42,12 @@ $images1file=$_SESSION['images1'];
 $images2file=$_SESSION['images2'];
 
 function generateRandomString($length = 10) {
-    return substr(str_shuffle(str_repeat($x='123456789abcdefghijklmnopqrstuvwxyz+-', ceil($length/strlen($x)) )),1,$length);
+    return substr(str_shuffle(str_repeat($x='123456789abcdefghijklmnopqrstuvwxyz', ceil($length/strlen($x)) )),1,$length);
 }
-$ad_code=generateRandomString(6);
+$ad_code='';
+if(!$_SESSION['user_id']){
+	$ad_code=generateRandomString(6);
+}
 
 $valid_till=intval($timestamp2+(86400*60));
 

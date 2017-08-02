@@ -122,5 +122,7 @@ transmission='$transmission',bodyType='$bodyType',color='$color',price='$price',
 name='$name',email='$email',phone='$phone' WHERE id='$ad_id'";
 $result=sqlconnect($sql);
 
+if(isset($_SESSION['user_id'])){
 header("Location: /my_ads");
+}else{header("Location: /items?item=$ad_id");}
 ?>

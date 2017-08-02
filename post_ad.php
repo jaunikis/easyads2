@@ -277,8 +277,8 @@ for($i=date("Y")-20;$i<date("Y")+1;$i++){
                                     <ul>
                                        <li class="item-date"><i class="fa fa-clock-o"></i> 0 min.</li>
                                        <li class="item-cat"><i class="fa fa-book"></i> <a id="m_cat1" href=""></a> , <a id="m_cat2" href=""></a></li>
-                                       <li class="item-location"><a href="#"><i class="fa fa-map-marker"></i> location </a></li>
-                                       <li class="item-type"><i class="fa fa-bookmark"></i> </li>
+                                       <li class="item-location"><a href=""><i class="fa fa-map-marker"></i><span id="m_location"> location </span></a></li>
+                                       
                                     </ul>
                                  </div>
                               </div>
@@ -386,6 +386,7 @@ $("#preview").click(function(){
 	$("#m_title").text($("#title").val());
 	$("#m_cat1").text($("#cat1").val());
 	$("#m_cat2").text($("#cat2").val());
+	$("#m_location").text($("#location").val());
 	$("#m_description").text($("#description").val());
 	$("#m_img").attr('src',images1[cover]);
 	

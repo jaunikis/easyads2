@@ -9,35 +9,50 @@ if(isset($_SESSION['images1'])){unset($_SESSION['images1']);}
 if(isset($_SESSION['images2'])){unset($_SESSION['images2']);}
 if(isset($_SESSION['images_to_delete'])){unset($_SESSION['images_to_delete']);}
 
+$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+$segments = explode('?', $actual_link);
+if(count($segments)>1){parse_str($segments[1]);}
 
 require_once ('incl/server.php');
-$path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-$segments = explode('/', $path);
-$ad_id=intval($segments[2]);
-//echo $ad_id;
+//$path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+//$segments = explode('/', $path);
+//echo count($segments);
+//if(count($segments)<3){echo('<script>location.href = "/";</script>');}
 
 
-//tikrinam ar user login
-if(!isset($_SESSION['user_id'])){
-	//echo '<h2>nera user</h2>';
-	$_SESSION['link']='/items';
-	//header('Location: /login');
-	echo('<script>location.href = "/login";</script>');
+
+if(isset($id)&&isset($_SESSION['user_id'])){
+	$ad_id=$id;
+	//echo $ad_id;
+
+	//tikrinam ar user login
+	if(isset($_SESSION['user_id'])){
+		//echo '<h2>nera user</h2>';
+		//$_SESSION['link']='/items';
+		//header('Location: /login');
+		//echo('<script>location.href = "/login";</script>');
+		
+		//tikrinam ar useriui priklauso skelbimas
+	$x='';
+	while ($row = $result_my_ads->fetch_assoc()) {
+		$id=$row['id'];
+		if($ad_id==$id){$x='ok';}
+	}
+	if(!$x=='ok'){
+		echo('<script>location.href = "/my_ads";</script>');
+	}
+	}
+	//db skelbimai result
+	$sql="SELECT id,title,cover1file,price,cat1,cat2,make,model,year,fuel,transmission,bodyType,color,location,condition2,ad_views,description,saved,phone,name,user_id,timestamp2 FROM skelbimai WHERE id='$ad_id'";
+	edit_ad($sql);
+}//if isset id
+
+if(isset($ad_code)){
+	$sql="SELECT id,email,title,cover1file,price,cat1,cat2,make,model,year,fuel,transmission,bodyType,color,location,condition2,ad_views,description,saved,phone,name,user_id,timestamp2 FROM skelbimai WHERE ad_code='$ad_code'";
+	edit_ad($sql);
 }
 
-//tikrinam ar useriui priklauso skelbimas
-$x='';
-while ($row = $result_my_ads->fetch_assoc()) {
-	$id=$row['id'];
-	if($ad_id==$id){$x='ok';}
-}
-if(!$x=='ok'){
-	echo('<script>location.href = "/my_ads";</script>');
-}
-
-
-//db skelbimai result
-$sql="SELECT id,title,cover1file,price,cat1,cat2,make,model,year,fuel,transmission,bodyType,color,location,condition2,ad_views,description,saved,phone,name,user_id,timestamp2 FROM skelbimai WHERE id='$ad_id'";
+function edit_ad($sql){
 $result=sqlconnect($sql);
 $row = $result->fetch_assoc();
 $id=$row['id'];
@@ -61,13 +76,14 @@ $description=$row['description'];
 $saved=$row['saved'];
 $phone=$row['phone'];
 $name=$row['name'];
+$email=$row['email'];
 $user_id=$row['user_id'];
 $timestamp2=$row['timestamp2'];
 
 //db images result
 $images1=[];$images2=[];
 $images1id=[];
-$sql="SELECT images1file,images2file,id FROM images WHERE ad_id='$ad_id' ORDER BY cover DESC";
+$sql="SELECT images1file,images2file,id FROM images WHERE ad_id='$id' ORDER BY cover DESC";
 $result2=sqlconnect($sql);
 while ($row2 = $result2->fetch_assoc()) {
 		$images1[]=$row2['images1file'];
@@ -336,13 +352,13 @@ for($i=date("Y")-20;$i<date("Y")+1;$i++){
 									<div class="form-group">
 										<label class="col-sm-3 control-label">Your Name <span class="required">*</span></label>
 										<div class="col-sm-9">
-											<input id="name" name="name" type="text" placeholder="e.g. Jhone Doe" value="<?php if(isset($_SESSION['user_name'])){echo $_SESSION['user_name'];} ?>" class="form-control border-form">
+											<input id="name" name="name" type="text" placeholder="e.g. Jhone Doe" value="<?php echo $name;?>" class="form-control border-form">
 										</div>
 									</div>
 									<div class="form-group">
 										<label class="col-sm-3 control-label">Your email </label>
 										<div class="col-sm-9">
-											<input id="email" name="email" type="text" placeholder="e.g. jon@gmail.com" value="<?php if(isset($_SESSION['email'])){echo $_SESSION['email'];} ?>" class="form-control border-form">
+											<input id="email" name="email" type="text" placeholder="e.g. jon@gmail.com" value="<?php echo $email;?>" class="form-control border-form">
 										</div>
 									</div>
 									<div class="form-group">
@@ -356,7 +372,7 @@ for($i=date("Y")-20;$i<date("Y")+1;$i++){
 									<div class="form-group">
 										<div class="col-sm-offset-3 col-sm-9">
 											<input id="cover" name="cover" style="display:none"></input>
-											<input id="ad_id" name="ad_id" value="<?php echo $ad_id;?>" style="display:none"></input>
+											<input id="ad_id" name="ad_id" value="<?php echo $id;?>" style="display:none"></input>
 											<button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Save</button>
 										</div>
 									</div>
@@ -382,7 +398,7 @@ nr2=nr;
 <script src="/js/js.js"></script>
 <script src="/js/image_resize.js"></script>
 
-
+				<?php } ?>
 
 	</div>
     </div>
