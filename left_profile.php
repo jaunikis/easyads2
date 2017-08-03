@@ -91,9 +91,10 @@ $favourite = $result_favourite->num_rows;
                            </div>
                         </div>
                         <div class="list-group">
-                           
+                           <a class="list-group-item" href="/login">
+                           <i class="fa fa-fw fa-sign-in"></i> Log in</a>
                            <a class="list-group-item" href="/signup">
-                           <i class="fa fa-fw fa-power-off"></i> Sign Up</a>
+                           <i class="fa fa-fw fa-user-plus"></i> Sign Up</a>
                            </a>
                         </div>
                        

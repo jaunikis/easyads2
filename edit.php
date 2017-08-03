@@ -5,6 +5,7 @@
                      </div>
 
 <?php
+echo '<br><br><br>';
 if(isset($_SESSION['images1'])){unset($_SESSION['images1']);}
 if(isset($_SESSION['images2'])){unset($_SESSION['images2']);}
 if(isset($_SESSION['images_to_delete'])){unset($_SESSION['images_to_delete']);}
@@ -20,8 +21,8 @@ require_once ('incl/server.php');
 //if(count($segments)<3){echo('<script>location.href = "/";</script>');}
 
 
-
-if(isset($id)&&isset($_SESSION['user_id'])){
+if(isset($_SESSION['user_id'])){
+if(isset($id)){
 	$ad_id=$id;
 	//echo $ad_id;
 
@@ -45,17 +46,52 @@ if(isset($id)&&isset($_SESSION['user_id'])){
 	//db skelbimai result
 	$sql="SELECT id,title,cover1file,price,cat1,cat2,make,model,year,fuel,transmission,bodyType,color,location,condition2,ad_views,description,saved,phone,name,user_id,timestamp2 FROM skelbimai WHERE id='$ad_id'";
 	edit_ad($sql);
+}else { //if isset id
+echo('<script>location.href = "/my_ads";</script>');
 }//if isset id
+}//if isset session user_id
 
-if(isset($ad_code)){
+if(isset($_SESSION['ad_code_validate'])){
+	$ad_code=$_SESSION['ad_code_validate'];
+	unset($_SESSION['ad_code_validate']);
 	$sql="SELECT id,email,title,cover1file,price,cat1,cat2,make,model,year,fuel,transmission,bodyType,color,location,condition2,ad_views,description,saved,phone,name,user_id,timestamp2 FROM skelbimai WHERE ad_code='$ad_code'";
 	edit_ad($sql);
+}else{
+	?>
+	<section class="create-post">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-8">
+						<div class="login-panel widget top-space">
+							<div class="login-body">
+								<form id="forma" action="/ad_code_validate.php" method="POST" class="row">
+									<div class="form-group">
+										<label class="col-sm-3 control-label">Enter Ad Code <span class="required">*</span></label>
+										<div class="col-sm-9">
+											<input name="ad_code" id="ad_code" type="text" required="required" class="form-control border-form">	
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-sm-offset-3 col-sm-9">
+											<button type="submit" class="btn btn-primary"><i class="fa fa-pencil"></i> Edit</button>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	</section>
+	</div>
+	<?php
 }
 
 function edit_ad($sql){
 $result=sqlconnect($sql);
 $row = $result->fetch_assoc();
 $id=$row['id'];
+if($id==''){echo('<script>location.href = "/edit";</script>');}
 $title=$row['title'];
 $cover=$row['cover1file'];if($cover==''){$cover='no-image.png';}
 $price=$row['price'];
@@ -95,9 +131,9 @@ while ($row2 = $result2->fetch_assoc()) {
 
 $string = file_get_contents("categories-list.txt");
 $json = json_decode($string, true);
-echo '<br><br><br>';
+
 ?>
-<link href="/css/style2.css" rel="stylesheet">
+
 		<!-- Create Post -->
 		<section class="create-post">
 			<div class="container">
