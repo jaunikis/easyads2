@@ -352,7 +352,7 @@ while ($row = $result3->fetch_assoc()) {
 		var sort=$("#sort").text();
 		if(sort==' Low Price First '){vars+='&sortBy=priceLow';}
 		if(sort==' High Price First '){vars+='&sortBy=priceHigh';}
-		if(sort==' Most Popular '){vars+='&sortBy=mostPopular');}
+		if(sort==' Most Popular '){vars+='&sortBy=mostPopular';}
 		if(vars=='?'){vars='';}
 		window.location.href = "/items/"+link+vars;
 	}); // cat1.change
@@ -394,7 +394,7 @@ while ($row = $result3->fetch_assoc()) {
 		var sort=$("#sort").text();
 		if(sort==' Low Price First '){vars+='&sortBy=priceLow';}
 		if(sort==' High Price First '){vars+='&sortBy=priceHigh';}
-		if(sort==' Most Popular '){vars+='&sortBy=mostPopular');}
+		if(sort==' Most Popular '){vars+='&sortBy=mostPopular';}
 		if(vars=='?'){vars='';}
 			window.location.href = "/items/"+link+vars;
 	}); //cat2.change
@@ -431,7 +431,7 @@ while ($row = $result3->fetch_assoc()) {
 		var sort=$("#sort").text();
 		if(sort==' Low Price First '){vars+='&sortBy=priceLow';}
 		if(sort==' High Price First '){vars+='&sortBy=priceHigh';}
-		if(sort==' Most Popular '){vars+='&sortBy=mostPopular');}
+		if(sort==' Most Popular '){vars+='&sortBy=mostPopular';}
 		if(vars=='?'){vars='';}
 			window.location.href = "/items/"+link+vars;
 	}); // cat3.change
@@ -451,7 +451,7 @@ while ($row = $result3->fetch_assoc()) {
 		var sort=$("#sort").text();
 		if(sort==' Low Price First '){vars+='&sortBy=priceLow';}
 		if(sort==' High Price First '){vars+='&sortBy=priceHigh';}
-		if(sort==' Most Popular '){vars+='&sortBy=mostPopular');}
+		if(sort==' Most Popular '){vars+='&sortBy=mostPopular';}
 		if(vars=='?'){vars='';}
 			window.location.href = "/items/"+link+vars;
 	}); // cat4 change
