@@ -34,7 +34,9 @@ if(isset($_POST['name'])){$name=strip_tags(addslashes($_POST['name']));}
 if(isset($_POST['email'])){$email=strip_tags(addslashes($_POST['email']));}
 if(isset($_POST['phone'])){$phone=strip_tags(addslashes($_POST['phone']));}
 if(isset($_POST['currency'])){$currency=strip_tags($_POST['currency']);}
+if(isset($_POST['engine'])){$engine=strip_tags(addslashes($_POST['engine']));}
 if(isset($_POST['mileage'])){$mileage=strip_tags(addslashes($_POST['mileage']));}
+if(isset($_POST['mileage_type'])){$mileage_type=strip_tags(addslashes($_POST['mileage_type']));}
 if(isset($_POST['tax'])){$tax=strip_tags(addslashes($_POST['tax']));}
 
 $cover=intval($cover);
@@ -54,9 +56,9 @@ $valid_till=intval($timestamp2+(86400*60));
 //atimame rand idejimo laika
 //$minus=rand(1,43000);$timestamp2=-$minus;
 
-$bump_days=rand(2,10);
+$bump_days=rand(2,9);
 //$sql = "INSERT INTO skelbimai (cover,cover1file,ip,user,title,cat1,cat2,make,model,year,fuel,transmission,bodyType,color,price,location,condition2,description,name,email,phone,active,timestamp2) VALUES ('$images1[$cover]','$images1file[$cover]','$ip','$user','$title','$cat1','$cat2','$make','$model','$year','$fuel','$transmission','$bodyType','$color','$price','$location','$condition','$description','$name','$email','$phone','Active',$timestamp2)";
-$sql = "INSERT INTO skelbimai (ad_code,cover1file,ip,user_id,title,cat1,cat2,make,model,year,fuel,transmission,bodyType,color,price,currency,location,condition2,description,name,email,phone,active,timestamp2,valid_till,bump_days) VALUES ('$ad_code','$images1file[$cover]','$ip','$user_id','$title','$cat1','$cat2','$make','$model','$year','$fuel','$transmission','$bodyType','$color','$price','$currency','$location','$condition','$description','$name','$email','$phone','Active','$timestamp2','$valid_till','$bump_days')";
+$sql = "INSERT INTO skelbimai (engine,mileage,mileage_type,tax,ad_code,cover1file,ip,user_id,title,cat1,cat2,make,model,year,fuel,transmission,bodyType,color,price,currency,location,condition2,description,name,email,phone,active,timestamp2,valid_till,bump_days) VALUES ('$engine','$mileage','$mileage_type','$tax','$ad_code','$images1file[$cover]','$ip','$user_id','$title','$cat1','$cat2','$make','$model','$year','$fuel','$transmission','$bodyType','$color','$price','$currency','$location','$condition','$description','$name','$email','$phone','Active','$timestamp2','$valid_till','$bump_days')";
 $ad_id=sqlconnect($sql);
 //if($ad_id){echo '<script>alert("namas");</script>';}
 

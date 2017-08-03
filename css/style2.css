@@ -297,7 +297,7 @@
 	border
 }
 
-input[type=text], select {
+input[type=text],input[type=number], select {
     width: 100%;
     padding: 6px 10px;
     margin: 8px 0;
@@ -307,7 +307,7 @@ input[type=text], select {
 }
 
 .form-control1 {
-	height:33px;
+	height:32px;
 }
 
 .form-control1-cur {
@@ -315,7 +315,7 @@ input[type=text], select {
 	color:grey;
 	margin-left:10px;
 	position:absolute;
-	display:inline;
+	display:inline-block;
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */

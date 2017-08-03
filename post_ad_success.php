@@ -14,7 +14,7 @@
 									?>
 									<h3>Ad code:  <span class="label label-default"><?php echo $_SESSION['ad_code'];?></span></h3>
 									<br>
-									<p>Keep code for the future. Code will be needed to relist,<a href=""> edit</a>, delete your advert.</p>
+									<p>Keep code for the future. Code will be needed to relist,<a href="/edit"> edit</a>, delete your advert.</p>
 									<p>For more convenient way to manage your ads please <a href="/signup">sign up</a>.</p>
 								<?php }?>	
 									<hr>

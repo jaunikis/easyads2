@@ -163,11 +163,13 @@ echo '<div class="item"><a onclick="large_photos('.$i.');" style="cursor:zoom-in
                               <div class="single-item-meta">
 			<?php
 				if($cat2=="Cars"||$make!=''){
+					if($tax>0){$tax='Tax:'.$tax;}else{$tax='';}
+					if($mileage>0){$mileage=$mileage.$mileage_type;}else{$mileage='';}
                     echo '<h4><strong>Specification</strong></h4>';
                         echo '<table class="table table-condensed table-hover">';
                             echo '<tbody>';
                             if($year>0){echo '<tr><td>'.$year.' ';}
-							echo $make.' '.$model.' '.$engine.' '.$fuel.' '.$transmission.' '.$color.' '.$bodyType.'</td></tr>';
+							echo $make.' '.$model.' '.$engine.' '.$fuel.' '.$transmission.'<br>'.$mileage.' '.$color.' '.$bodyType.' '.$tax.'</td></tr>';
                             
                             
                                 

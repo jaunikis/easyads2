@@ -47,7 +47,7 @@ $json = json_decode($string, true);
 									<div class="form-group" id="cat22" style="display:none">
 										<label class="col-sm-3 control-label">Sub Category </label>
 										<div class="col-sm-9">
-											<select name="cat2" id="cat2" class="form-control border-form">
+											<select name="cat2" id="cat2" class="form-control1 border-form">
 												<option value="0" disabled selected style="display: none;">Please Choose</option>
 											</select>
 										</div>
@@ -56,7 +56,7 @@ $json = json_decode($string, true);
 									<div class="form-group" id="cat33" style="display:none">
 										<label class="col-sm-3 control-label">Make </label>
 										<div class="col-sm-9">
-											<select name="make" id="cat3" class="form-control border-form">
+											<select name="make" id="cat3" class="form-control1 border-form">
 												<option value="0" disabled selected style="display: none;">Please Choose</option>	
 											</select>
 										</div>
@@ -65,7 +65,7 @@ $json = json_decode($string, true);
 									<div class="form-group" id="cat44" style="display:none">
 										<label class="col-sm-3 control-label">Model </label>
 										<div class="col-sm-9">
-											<select name="model" id="cat4" class="form-control border-form">
+											<select name="model" id="cat4" class="form-control1 border-form">
 												<option value="0" disabled selected style="display: none;">Please Choose</option>	
 											</select>
 										</div>
@@ -74,7 +74,7 @@ $json = json_decode($string, true);
 									<div class="form-group" id="year1">
 										<label class="col-sm-3 control-label">Year of manufacture </label>
 										<div class="col-sm-9">
-											<select name="year" id="year" class="form-control border-form">
+											<select name="year" id="year" class="form-control1 border-form">
 												<option value="0" disabled selected style="display: none;">Please Choose</option>
 												<option>other</option>
 <?php
@@ -87,11 +87,30 @@ for($i=date("Y")-20;$i<date("Y")+1;$i++){
 										</div>
 									</div>
 									
+									<div class="form-group">
+										<label class="col-sm-3 control-label">Mileage</label>
+										<div class="col-sm-9">
+											<div class="input-group">
+												<input id="mileage" name="mileage" type="number" placeholder="e.g. 85000" class="form-control1 border-form">
+												<select id="mileage_type" name="mileage_type"  class="form-control1 form-control1-cur border-form">
+													<option selected>Km</option>
+													<option>Mi</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									
+									<div class="form-group" id="engine1">
+										<label class="col-sm-3 control-label">Engine </label>
+										<div class="col-sm-9">
+											<input name="engine" id="engine" type="text" placeholder="e.g. 1.6" class="form-control1 border-form">
+										</div>
+									</div>
 									
 									<div class="form-group" id="fuel1">
 										<label class="col-sm-3 control-label">Fuel </label>
 										<div class="col-sm-9">
-											<select name="fuel" id="fuel" class="form-control border-form">
+											<select name="fuel" id="fuel" class="form-control1 border-form">
 												<option value="0" disabled selected style="display: none;">Please Choose</option>
 												<option>Diesel</option>
 												<option>Petrol</option>
@@ -104,7 +123,7 @@ for($i=date("Y")-20;$i<date("Y")+1;$i++){
 									<div class="form-group" id="transmission1">
 										<label class="col-sm-3 control-label">Transmission </label>
 										<div class="col-sm-9">
-											<select name="transmission" id="transmission" class="form-control border-form">
+											<select name="transmission" id="transmission" class="form-control1 border-form">
 												<option value="0" disabled selected style="display: none;">Please Choose</option>
 												<option>Manual</option>
 												<option>Automatic</option>
@@ -115,7 +134,7 @@ for($i=date("Y")-20;$i<date("Y")+1;$i++){
 									<div class="form-group" id="bodyType1">
 										<label class="col-sm-3 control-label">Body Type </label>
 										<div class="col-sm-9">
-											<select name="bodyType" id="bodyType" class="form-control border-form">
+											<select name="bodyType" id="bodyType" class="form-control1 border-form">
 												<option value="0" disabled selected style="display: none;">Please Choose</option>
 												<option>Cabriolet</option>
 												<option>Coupe</option>
@@ -131,7 +150,7 @@ for($i=date("Y")-20;$i<date("Y")+1;$i++){
 									<div class="form-group" id="color1">
 										<label class="col-sm-3 control-label">Color </label>
 										<div class="col-sm-9">
-											<select name="color" id="color" class="border-form">
+											<select name="color" id="color" class="form-control1 border-form">
 												<option value="0" disabled selected style="display: none;">Please Choose</option>
 												<option <?php if(isset($color)){if($color=='Black'){echo 'selected';}} ?>>Black</option>
 													<option>White</option>
@@ -150,6 +169,14 @@ for($i=date("Y")-20;$i<date("Y")+1;$i++){
 											</select>
 										</div>
 									</div>
+									
+									<div class="form-group" id="tax1">
+										<label class="col-sm-3 control-label">Tax </label>
+										<div class="col-sm-9">
+											<input name="tax" id="tax" type="number" class="form-control1 border-form">
+										</div>
+									</div>
+									
 								</div>	<!-- cars1 -->
 									<div style="display:none" class="form-group" id="condition">
 										<label class="col-sm-3 control-label">Condition <span class="required">*</span></label>
@@ -168,8 +195,7 @@ for($i=date("Y")-20;$i<date("Y")+1;$i++){
 										<label class="col-sm-3 control-label">Price <span class="required">*</span></label>
 										<div class="col-sm-9">
 											<div class="input-group">
-												
-												<input id="price" name="price" type="text" placeholder="e.g. 999" class="form-control1 border-form">
+												<input id="price" name="price" type="number" placeholder="e.g. 999" class="form-control1 border-form">
 												<select id="currency" name="currency"  class="form-control1 form-control1-cur border-form">
 												<option value="eur" selected="">€</option>
 												<option value="gbp">£</option>
@@ -202,7 +228,7 @@ for($i=date("Y")-20;$i<date("Y")+1;$i++){
 									<div class="form-group">
 										<label class="col-sm-3 control-label">Location</label>
 										<div class="col-sm-9">
-											<select id="location" name="location" class="form-control border-form">
+											<select id="location" name="location" class="form-control1 border-form">
 												<option selected="">All Locations</option>
 			  <?php
 			  
@@ -226,20 +252,20 @@ for($i=date("Y")-20;$i<date("Y")+1;$i++){
 									<div class="form-group">
 										<label class="col-sm-3 control-label">Your Name</label>
 										<div class="col-sm-9">
-											<input id="name" name="name" type="text" value="<?php if(isset($_SESSION['user_name'])){echo $_SESSION['user_name'];} ?>" class="form-control border-form">
+											<input id="name" name="name" type="text" value="<?php if(isset($_SESSION['user_name'])){echo $_SESSION['user_name'];} ?>" class="form-control1 border-form">
 										</div>
 									</div>
 									<div class="form-group">
 										<label class="col-sm-3 control-label">Your email <span class="required">*</span></label>
 										<div class="col-sm-9">
-											<input id="email" name="email" type="text" value="<?php if(isset($_SESSION['email'])){echo $_SESSION['email'];} ?>" class="form-control border-form">
+											<input id="email" name="email" type="text" value="<?php if(isset($_SESSION['email'])){echo $_SESSION['email'];} ?>" class="form-control1 border-form">
 										</div>
 									</div>
 									<div class="form-group">
 										<label class="col-sm-3 control-label">Phone number <span class="required">*</span></label>
 										<div class="col-sm-9">
 											<div class="input-group">
-												<input id="phone" name="phone" type="text" value="<?php if(isset($_SESSION['phone'])){echo $_SESSION['phone'];} ?>" class="form-control border-form">
+												<input id="phone" name="phone" type="text" value="<?php if(isset($_SESSION['phone'])){echo $_SESSION['phone'];} ?>" class="form-control1 border-form">
 											</div>
 										</div>
 									</div>
