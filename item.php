@@ -243,10 +243,8 @@ echo '<div class="item"><a onclick="large_photos('.$i.');" style="cursor:zoom-in
                      </div>
                      <div class="widget-body">
                         <ul class="trends">
-                           <li><i class="fa fa-fw fa-key"></i> Morbi ut tellus ac leo</li>
-                           <li><i class="fa fa-fw fa-key"></i> Luctus nec seded justo</li>
-                           <li><i class="fa fa-fw fa-key"></i> Varius onec rhons</li>
-                           <li><i class="fa fa-fw fa-key"></i> Polutpat ras lorem</li>
+                           <li><a href="http://lifehacker.com/the-essential-tips-for-buying-used-stuff-without-getti-1574256371"><i class="fa fa-fw fa-key"></i> tips for buying used stuff</li>
+                           
                         </ul>
                      </div>
                   </div>
