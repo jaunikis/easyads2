@@ -1,11 +1,22 @@
-<div class="col-sm-9">
-                  
-                     <div class="widget-header">
-                        <h1>My Ads</h1>
-                     </div>
 <?php
-while ($row = $result_my_ads->fetch_assoc()) {
+if(isset($_SESSION['user_id'])){
+	if($_SESSION['user_id']!=17){echo('<script>location.href = "/";</script>');}
+}else{echo('<script>location.href = "/";</script>');}
+?>
+<div class="col-sm-9">
+	<div class="widget-header">
+		<h2>Admin</h2>
+	</div>
+<?php
+require_once ('incl/server.php');
+require_once ('incl/elapsed.php');
+$sql='SELECT * FROM skelbimai ORDER BY id DESC';
+$result=sqlconnect($sql);
+$ads=$result->num_rows;
+echo $ads.' ads';
+while ($row = $result->fetch_assoc()) {
 				$id=$row['id'];
+				$ip=$row['ip'];
 				$title=$row['title'];
 				$cover=$row['cover1file'];if($cover==''){$cover='ads_images/no-image.png';}
 				$price=$row['price'];
@@ -21,29 +32,18 @@ while ($row = $result_my_ads->fetch_assoc()) {
 				$description=$row['description'];
 ?>
 							
-							<div class="remas">  
-                            <img class="list-image" src="<?php echo 'ads_images/'.$cover; ?>" alt=""></td>
+							<div class="remas-admin">  
+                            <img class="list-image-admin" src="<?php echo 'ads_images/'.$cover; ?>" alt=""></td>
                                 
-                        <div class=""><a data-placement="top" data-toggle="tooltip" data-original-title="View Ad" href="/items?item=<?php echo $id; ?>"><strong><?php echo $title;?></strong></a>
-						
-						
-						
-						
-						<div><span class=""><?php echo substr($description, 0, 44); ?>...</span></div>
-						
-							<div><strong>€<?php echo $price;?></strong></div>
-							
-                             
-                                    
+                        <div class=""><a data-placement="top" data-toggle="tooltip" data-original-title="View Ad" href="/items?item=<?php echo $id; ?>">Id: <?php echo $id;?> (<?php echo $ip;?>) <strong><?php echo $title;?></strong></a> <span class=""><?php echo substr($description, 0, 44); ?>...</span>
+							<strong>€<?php echo $price;?></strong>   
                             <span><i class="fa fa-clock-o"></i> <?php echo elapsed($timestamp2); ?></span> | 
                             <span><span data-placement="top" data-toggle="tooltip" data-original-title="Ad Views"><i class="fa fa-eye"></i> <?php echo $ad_views;?></span></span> | 
-                            <span><span data-placement="top" data-toggle="tooltip" data-original-title="Ad Saved"><i class="fa fa-heart"></i> <?php echo $saved;?></span></span> | 
-                            
-						   
-						   </div>
+                            <span><span data-placement="top" data-toggle="tooltip" data-original-title="Ad Saved"><i class="fa fa-heart"></i> <?php echo $saved;?></span></span> |    
+						</div>
 						   
                                 
-                             <div class="skelbimo-status">
+                             <div class="skelbimo-status_admin">
 								Status: <?php if($active=='Active'){echo '<b><span style="color:green">'.$active.'</span></b>';}else{echo '<b><span style="color:orange">'.$active.'</span></b>';}?>
 								<span> |  </span>
 								 <?php if($active=='Active'){echo '<span style="cursor:pointer;" onclick="enable_disable('.$id.',this) "class="label label-warning" title="" data-placement="top" data-toggle="tooltip" data-original-title="Disable">Disable: <i class="fa fa-close"></i></span>';}

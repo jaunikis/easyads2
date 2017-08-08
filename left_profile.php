@@ -61,11 +61,24 @@ $favourite = $result_favourite->num_rows;
                            <a class="list-group-item" href="/my_details">
                            <i class="fa fa-fw fa-gear"></i> My Details
                            </a>
+						<?php
+						if($_SESSION['email']=='admin'){
+						?>
+						<a class="list-group-item" href="/admin">
+                           <i class="fa fa-fw fa-gear"></i> Admin
+                           </a>
+						   
+						   <a class="list-group-item" href="/admin_ips">
+                           <i class="fa fa-fw fa-gear"></i> Admin_ips
+                           </a>
+						<?php
+						}
+						?>
                            <a class="list-group-item" href="/logout.php">
                            <i class="fa fa-fw fa-power-off"></i> Log Out</a>
                            </a>
                         </div>
-                        <a href="close-account.html" class="btn btn-danger btn-block"><i class="fa fa-trash"></i> Delete Account</a>
+                     <!--   <a href="close-account.html" class="btn btn-danger btn-block"><i class="fa fa-trash"></i> Delete Account</a> -->
                      </div>
                   </div>
                </div>

@@ -28,6 +28,7 @@ while ($row = $result->fetch_assoc()) {
 		$_SESSION['user_name']=$row['name'];
 		
 		if($remember=='on'){setcookie('user', $user, time() + (86400 * 90));} // 86400 = 1 day
+		if($user_email=='admin'){$_SESSION['link']='/admin';}
 		if(isset($_SESSION['link'])){ 
 	 header('Location: '.$_SESSION['link']);
 	 }else{

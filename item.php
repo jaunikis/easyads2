@@ -74,6 +74,7 @@ while ($row = $result->fetch_assoc()) {
                         </div>
                         <div class="widget-body">
 <?php
+$cat2=addslashes($cat2);
 			require_once ('incl/server.php');
 			$sql="SELECT id,title,price,currency,cover1file FROM skelbimai WHERE cat2='$cat2' ORDER BY timestamp2 DESC LIMIT 5";
 			$result=sqlconnect($sql);

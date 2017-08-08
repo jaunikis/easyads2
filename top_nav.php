@@ -46,8 +46,15 @@ if(isset($_SESSION['user_id'])){
 									</li>
 									<li>
 										<a href="/my_details"><i class="fa fa-fw fa-gear"></i> My details</a>
-									</li>
-									<li class="divider"></li>
+									</li>';
+									
+									if($_SESSION['email']=='admin'){
+										echo '<li>
+										<a href="/admin"><i class="fa fa-fw fa-gear"></i> Admin</a>
+									</li>';
+									}
+									
+									echo '<li class="divider"></li>
 									<li>
 										<a href="/logout.php"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
 									</li>

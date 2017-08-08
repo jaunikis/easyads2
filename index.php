@@ -208,6 +208,15 @@ case 'blog':
     if(isset($segments[2])){require('blog1.php');}else{require('blog.php');}
     require('footer_short.php');
     break;
+case 'admin':
+	if(isset($_SESSION['user_id'])){
+		if($_SESSION['user_id']!=17){echo('<script>location.href = "/login";</script>');}
+			}else{echo('<script>location.href = "/login";</script>');}
+    require('top_nav.php');
+    require('left_profile.php');
+    require('m_admin.php');
+    require('footer_short.php');
+    break;
 case 'edit':
     require('top_nav.php');
     require('left_profile.php');
