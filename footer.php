@@ -59,11 +59,16 @@
                         <p>All Copyrights Reserved @ 2017 - Made by <a target="_blank" href="http://www.mv-media.com/">mvmedia</a></p>
                      </div>
                      <div class="bottom-social-icons social-icon pull-right" style="margin-right:20px;">  
-                        <a href="#" target="_blank" class="facebook"><i class="fa fa-facebook"></i></a> 
+                         
+						 <div class="fb-share-button" data-source="/images/logo.png" data-href="http://www.easyads.ie" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Share</a></div>
+					<!--	 
+						 <div class="fb-share-button" data-href="http://www.easyads.ie" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Share</a></div>
+						<a href="#" target="_blank" class="facebook"><i class="fa fa-facebook"></i></a> 
                         <a href="#" target="_blank" class="twitter"><i class="fa fa-twitter"></i></a>
                         <a href="#" target="_blank" class="dribble"><i class="fa fa-dribbble"></i></a>
                         <a href="#" target="_blank" class="google-plus"><i class="fa fa-google-plus"></i></a>
                         <a href="#" target="_blank" class="linkedin"><i class="fa fa-linkedin"></i></a>
+						-->
                      </div>
                   </div>
                </div>

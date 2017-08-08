@@ -66,7 +66,7 @@ while ($row = $result->fetch_assoc()) {
                <div class="col-lg-3 col-md-3 col-sm-3">
                   <div class="listing-filters">
 <?php
-include('reklama.php');
+// include('reklama.php');
 ?>
                      <div id="similar" class="widget listing-filter-block">
                         <div class="widget-header">
@@ -75,7 +75,7 @@ include('reklama.php');
                         <div class="widget-body">
 <?php
 			require_once ('incl/server.php');
-			$sql="SELECT id,title,price,currency,cover1file FROM skelbimai ORDER BY id DESC LIMIT 5";
+			$sql="SELECT id,title,price,currency,cover1file FROM skelbimai WHERE cat2='$cat2' ORDER BY timestamp2 DESC LIMIT 5";
 			$result=sqlconnect($sql);
 			while ($row = $result->fetch_assoc()) {
 				$id2=$row['id'];
@@ -192,10 +192,23 @@ echo '<div class="item"><a onclick="large_photos('.$i.');" style="cursor:zoom-in
                                           <span>Share Ad :</span>
                                           <div class="social-links social-bg pull-right">
                                              <ul>
-                                                <li><a class="fa fa-twitter" target="_blank" href="#"></a></li>
-                                                <li><a class="fa fa-facebook" target="_blank" href="#"></a></li>
-                                                <li><a class="fa fa-google-plus" target="_blank" href="#"></a></li>
-                                                <li><a class="fa fa-instagram" target="_blank" href="#"></a></li>
+                                               <!-- <li><a class="fa fa-twitter" target="_blank" href="#"></a></li> -->
+                                                <li>
+												<!-- Load Facebook SDK for JavaScript -->
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+												<div class="fb-share-button" 
+    data-href="http://www.your-domain.com/your-page.html" 
+    data-layout="button_count">
+  </div></li>
+                                             <!--   <li><a class="fa fa-google-plus" target="_blank" href="#"></a></li>
+                                                <li><a class="fa fa-instagram" target="_blank" href="#"></a></li> -->
                                              </ul>
                                           </div>
                                        </div>
@@ -243,8 +256,16 @@ echo '<div class="item"><a onclick="large_photos('.$i.');" style="cursor:zoom-in
                      </div>
                      <div class="widget-body">
                         <ul class="trends">
-                           <li><a href="http://lifehacker.com/the-essential-tips-for-buying-used-stuff-without-getti-1574256371"><i class="fa fa-fw fa-key"></i> tips for buying used stuff</li>
-                           
+							<li><i class="fa fa-check" aria-hidden="true"></i> Don't view a car in the rain, in poor light or at night</li>
+							<li><i class="fa fa-check" aria-hidden="true"></i> Ask about service history</li>
+							<li><i class="fa fa-check" aria-hidden="true"></i> Test drive</li>
+							<li><i class="fa fa-check" aria-hidden="true"></i> Look carefully</li>
+							<li><i class="fa fa-check" aria-hidden="true"></i> Don't be pressured into buying</li>
+							<li><i class="fa fa-check" aria-hidden="true"></i> Have the Car Inspected</li>
+							<hr>
+                           <li><a href="http://www.citizensinformation.ie/en/consumer_affairs/motoring/advice_on_buying_a_used_car_in_ireland.html"><i class="fa fa-fw fa-key"></i> Buying a used car</li>
+							<li><a href="http://www.mywheels.ie/buying-privately-top-5-tips/"><i class="fa fa-fw fa-key"></i> 5 Tips Buying used car</li>
+							<li><a href=""><svg src="http://www.w3.org/2000/svg"></a></li>
                         </ul>
                      </div>
                   </div>

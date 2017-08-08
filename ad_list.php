@@ -133,12 +133,25 @@ include('left_search.php');
 				$cat1=$row['cat1'];if($cat1=='Please Choose'){$cat1='';}
 				$cat2=$row['cat2'];if($cat2=='Please Choose'){$cat2='';}
 				$currency=$row['currency'];
+				
+				$date = new DateTime();
+				$current=$date->getTimestamp();
+				$time=intval(($current-$timestamp2)/60);
+				if($time<60){$badge='HOT';}else{$badge='';}
+				
 				?>
 					   <div class="item">
                            <div class="item-ads-grid icon-blue list-view">
-                              <div class="item-badge-grid featured-ads">
-                                 <a href="#">HOT</a>
+                            <?php
+							if($badge!=''){
+								?>
+							  <div class="item-badge-grid label-danger">
+                                 <a href=""><?php echo $badge;?></a>
                               </div>
+							<?php
+							}
+							?>
+							  
 							  <a href="/items?item=<?php echo $id; ?>">
                               <div class="item-img-grid">
                                  <img alt="" width="220" src="<?php echo '/ads_images/'.$cover; ?>" class="img-responsive img-center">

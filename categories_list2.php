@@ -3,7 +3,7 @@
 require_once ('incl/server.php');
 require_once ('incl/elapsed.php');
 //get all ad count
-$sql="SELECT id FROM skelbimai";
+$sql="SELECT id FROM skelbimai WHERE active='Active'";
 $result2=sqlconnect($sql);
 $ad_count = $result2->num_rows;	
 
@@ -11,7 +11,7 @@ $categ=array();
 $cat_count2=array();
 
 //get car ad count
-$sql="SELECT cat2 FROM skelbimai WHERE cat2='Cars'";
+$sql="SELECT cat2 FROM skelbimai WHERE active='Active' AND cat2='Cars'";
 $result2=sqlconnect($sql);
 $count_cars = $result2->num_rows;
 $categ[]='Cars';
@@ -47,6 +47,7 @@ while ($row = $result->fetch_assoc()) {
 		<?php
 $sql="SELECT COUNT(id), cat1
 FROM skelbimai
+WHERE active='Active'
 GROUP BY cat1
 ORDER BY COUNT(id) DESC";
 $result=sqlconnect($sql);
@@ -74,7 +75,7 @@ $_SESSION['cat_count2']=$cat_count2;
                   </div>
                      <div id="owl-carousel-featured" class="owl-carousel categories-list-page">
     <?php
-	$sql="SELECT id,title,cover1file,price,location,timestamp2,cat1,cat2 FROM skelbimai ORDER BY id DESC LIMIT 4";
+	$sql="SELECT id,title,cover1file,price,location,timestamp2,cat1,cat2 FROM skelbimai WHERE active='Active' ORDER BY timestamp2 DESC LIMIT 4";
 	$result=sqlconnect($sql);
 	while ($row = $result->fetch_assoc()) {
 				$id=$row['id'];

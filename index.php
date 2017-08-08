@@ -1,6 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
    <head>
+   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-4761601799795972",
+    enable_page_level_ads: true
+  });
+</script>
+
+<!-- You can use Open Graph tags to customize link previews.
+    Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
+<meta property="og:url"           content="http://www.easyads.ie" />
+  <meta property="og:type"          content="website" />
+  <meta property="og:title"         content="Free Ireland's Classified Ads" />
+  <meta property="og:description"   content="Buy and sell, post your free ad today." />
+  <meta property="og:image"         content="http://www.easyads.ie/images/fblogo.jpg" />
+  <meta property="og:image:type"    content="image/jpeg" />
+  
+   
     <?php include_once("incl/analytics_tracking.php");?> 
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -155,6 +173,15 @@
    
    
 <body>
+ <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_EN/sdk.js#xfbml=1&version=v2.10";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<img style="display:none;" href="/images/logo2.png">
 <?php
 
 

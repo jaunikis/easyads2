@@ -93,8 +93,8 @@ for($i=date("Y")-20;$i<date("Y")+1;$i++){
 											<div class="input-group">
 												<input id="mileage" name="mileage" type="number" placeholder="e.g. 85000" class="form-control1 border-form">
 												<select id="mileage_type" name="mileage_type"  class="form-control1 form-control1-cur border-form">
-													<option selected>Km</option>
-													<option>Mi</option>
+													<option selected>Mi</option>
+													<option>Km</option>
 												</select>
 											</div>
 										</div>
