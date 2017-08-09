@@ -16,8 +16,8 @@
 						   <div id="email" class="form-group">
                               <input required type="text" name="email" placeholder="Email" class="form-control border-form">
 						   </div>
-						   <div id="message" class="form-group">
-								<textarea required style="line-height: 110%" rows="6" name="message" value="message1" placeholder="Enter your message here." class="form-control border-form"></textarea>
+						   <div id="msg" class="form-group">
+								<textarea required style="line-height: 110%" rows="6" name="msg" placeholder="Enter your message here." class="form-control border-form"></textarea>
 							</div>
                            <div class="form-group">
                               <button class="btn btn-block btn-lg btn-primary">Send</button>
