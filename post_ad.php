@@ -231,13 +231,14 @@ for($i=date("Y")-20;$i<date("Y")+1;$i++){
 											<select id="location" name="location" class="form-control1 border-form">
 												<option selected="">All Locations</option>
 			  <?php
-			  
+				$location='';
+				if(isset($_SESSION['location'])){$location=$_SESSION['location'];}
 			  
 				for($i=0;$i<count($json["locations"]);$i++){
-					//if(isset($_SESSION['location'])){if($json["locations"][$i]==$_SESSION['location']){
-						echo '<option>'.$json["locations"][$i].'</option>';
-					}
-				//}
+					echo '<option ';
+					if($json["locations"][$i]==$location){echo 'selected';}
+					echo'>'.$json["locations"][$i].'</option>';
+				}
 				
             ?>
 											</select>

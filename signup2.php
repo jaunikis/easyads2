@@ -33,12 +33,25 @@ $password=md5($password1);
 $sql="INSERT INTO users (email,password,name,active,ip,browser) VALUES ('$email','$password','$name','yes','$ip','$browser')";
 
 //if (!$result = $conn->query($sql)) {echo "Sorry, the website is experiencing problems.";exit;}
-sqlconnect($sql);
-//echo $name;
+$res=sqlconnect($sql);
+//echo $res;
 session_start();
 $_SESSION['user']=$name;
 $_SESSION['email']=$email;
 $_SESSION['location']='All Locations';
+
+$_SESSION['user_id']=$res;
+		//$_SESSION['password']=$password;
+		//$_SESSION['phone']=$row['phone'];
+		//$_SESSION['registered']=$row['registered'];
+		$_SESSION['email']=$email;
+		//$_SESSION['photo']=$row['photo'];
+		//$_SESSION['active']=$row['active'];
+		//$_SESSION['location']=$row['location'];
+		//$_SESSION['saved']=$row['saved'];
+		$_SESSION['photo_blob']='';
+		$_SESSION['user_name']=$name;
+
 header('Location: /');
 
 ?>

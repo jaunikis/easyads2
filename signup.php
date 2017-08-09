@@ -5,6 +5,9 @@
                <div class="col-sm-4 col-sm-offset-4">
                   <div class="login-panel widget">
                      <div class="login-body">
+								<div>
+								<center><img src="/images/logo.png"></center>
+								</div>
                         <form action="/signup2.php" method="post" onsubmit="return validateForm()">
                            <div id="email" class="form-group">
                               <input type="text" name="email" onkeyup="check_email(this.value)" placeholder="Email Address" class="form-control">
