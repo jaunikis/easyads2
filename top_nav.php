@@ -17,6 +17,7 @@
 				  <li><a href="/edit">Edit Ad</a></li>
                   <li><a href="/blog">Blog</a></li>
                   <li><a href="/faq">FAQ</a></li>
+				  <li><a href="/contact">Contact</a></li>
                   <li><a href="/post_ad"><button class="btn btn-success" type="submit"><i class="fa fa-save"></i> Post Free Ad</button></a></li>
                </ul>
 <?php

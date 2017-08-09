@@ -245,7 +245,7 @@ for($i=date("Y")-20;$i<date("Y")+1;$i++){
 										</div>
 									</div>
 									<div class="form-group">
-										<label class="col-sm-3 control-label">Ad Description</label>
+										<label class="col-sm-3 control-label">Ad Description <span class="required">*</span></label>
 										<div class="col-sm-9">
 											<textarea style="line-height: 110%" rows="8" id="description" name="description" value="description1" placeholder="Include the brand, model, age and any included accessories." class="form-control border-form"></textarea>
 										</div>
@@ -257,7 +257,7 @@ for($i=date("Y")-20;$i<date("Y")+1;$i++){
 										</div>
 									</div>
 									<div class="form-group">
-										<label class="col-sm-3 control-label">Your email <span class="required">*</span></label>
+										<label class="col-sm-3 control-label">Your email</label>
 										<div class="col-sm-9">
 											<input id="email" name="email" type="text" value="<?php if(isset($_SESSION['email'])){echo $_SESSION['email'];} ?>" class="form-control1 border-form">
 										</div>

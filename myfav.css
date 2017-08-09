@@ -1,0 +1,47 @@
+.remas {
+	width: 100%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	margin-bottom:10px;
+	display:inline-block;
+	padding:10px;
+	position:relative;
+	background:white;
+}
+.remas-admin {
+	width: 100%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	margin-bottom:1px;
+	display:inline-block;
+	padding:5px;
+	position:relative;
+	background:beige;
+}
+
+.list-image {
+	float: left;
+	display:block;
+    margin: 0 10px 0 0;
+	border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 4px;
+    width: 150px;
+}
+.list-image-admin {
+	float: left;
+	display:block;
+    margin: 0 0px 0 0;
+	border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 4px;
+    width: 75px;
+}
+
+.skelbimo-status {
+	clear: both; float: left; display: block; position: relative;
+}
+
+.istrinti-ad {
+	position:absolute;
+	top:0;
+	right:0;
+}
