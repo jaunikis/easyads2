@@ -4,7 +4,7 @@ session_start();
 
 $date = new DateTime();$timestamp2=$date->getTimestamp();
 $tdate=date("d/m/Y");
-$time=date("H:i:sa");
+$time=date("H:i:s");
 $ip=$_SERVER['REMOTE_ADDR'];
 $user_id=0;
 if(isset($_SESSION['user_id'])){$user_id=$_SESSION['user_id'];}

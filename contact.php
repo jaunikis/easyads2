@@ -1,4 +1,7 @@
 <!-- Login -->
+<?php
+$_SESSION['slt']=1;
+?>
       <section class="login">
          <div class="container">
             <div class="row">
@@ -19,6 +22,7 @@
 						   <div id="msg" class="form-group">
 								<textarea required style="line-height: 110%" rows="6" name="msg" placeholder="Enter your message here." class="form-control border-form"></textarea>
 							</div>
+							
                            <div class="form-group">
                               <button class="btn btn-block btn-lg btn-primary">Send</button>
                            </div>
