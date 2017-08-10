@@ -231,20 +231,21 @@ for($i=date("Y")-20;$i<date("Y")+1;$i++){
 											<select id="location" name="location" class="form-control1 border-form">
 												<option selected="">All Locations</option>
 			  <?php
-			  
+				$location='';
+				if(isset($_SESSION['location'])){$location=$_SESSION['location'];}
 			  
 				for($i=0;$i<count($json["locations"]);$i++){
-					//if(isset($_SESSION['location'])){if($json["locations"][$i]==$_SESSION['location']){
-						echo '<option>'.$json["locations"][$i].'</option>';
-					}
-				//}
+					echo '<option ';
+					if($json["locations"][$i]==$location){echo 'selected';}
+					echo'>'.$json["locations"][$i].'</option>';
+				}
 				
             ?>
 											</select>
 										</div>
 									</div>
 									<div class="form-group">
-										<label class="col-sm-3 control-label">Ad Description</label>
+										<label class="col-sm-3 control-label">Ad Description <span class="required">*</span></label>
 										<div class="col-sm-9">
 											<textarea style="line-height: 110%" rows="8" id="description" name="description" value="description1" placeholder="Include the brand, model, age and any included accessories." class="form-control border-form"></textarea>
 										</div>
@@ -256,7 +257,7 @@ for($i=date("Y")-20;$i<date("Y")+1;$i++){
 										</div>
 									</div>
 									<div class="form-group">
-										<label class="col-sm-3 control-label">Your email <span class="required">*</span></label>
+										<label class="col-sm-3 control-label">Your email</label>
 										<div class="col-sm-9">
 											<input id="email" name="email" type="text" value="<?php if(isset($_SESSION['email'])){echo $_SESSION['email'];} ?>" class="form-control1 border-form">
 										</div>

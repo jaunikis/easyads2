@@ -6,6 +6,8 @@ require_once ('incl/elapsed.php');
 $sql="SELECT id FROM skelbimai WHERE active='Active'";
 $result2=sqlconnect($sql);
 $ad_count = $result2->num_rows;	
+//$ad_count=($ad_count*10)+rand(1,9);
+
 
 $categ=array();
 $cat_count2=array();

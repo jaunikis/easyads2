@@ -14,7 +14,7 @@
                            <div class="form-group">
                               <label class="col-sm-3 control-label">First Name <span class="required">*</span></label>
                               <div class="col-sm-9">
-                                 <input name="name" class="form-control border-form" type="text" value="<?php if(isset($_SESSION['user'])){echo $_SESSION['user'];}?>" placeholder="Enter First Name">
+                                 <input name="name" class="form-control border-form" type="text" value="<?php if(isset($_SESSION['user_name'])){echo $_SESSION['user_name'];}?>" placeholder="Enter First Name">
                               </div>
                            </div>
                            <div class="form-group">
@@ -33,13 +33,14 @@
                            
 						   <option>All Locations</option>'
             <?php
-				for($i=0;$i<count($locations);$i++){
-					if(isset($_SESSION['location'])){if($locations[$i]==$_SESSION['location']){
-						echo '<option selected="">'.$locations[$i].'</option>';
-					}else{
-						echo '<option>'.$locations[$i].'</option>';
-					}
-				}
+			$string = file_get_contents("categories-list.txt");
+			$json = 	json_decode($string, true);
+			$location='';
+			if(isset($_SESSION['location'])){$location=$_SESSION['location'];}
+				for($i=0;$i<count($json["locations"]);$i++){
+					echo '<option ';
+					if($json["locations"][$i]==$location){echo 'selected';}
+					echo'>'.$json["locations"][$i].'</option>';
 				}
             ?>
                         </select>
@@ -76,7 +77,7 @@
                            </div>
                            <div class="form-group">
                               <div class="col-sm-offset-3 col-sm-9">
-                                 <button class="btn btn-success" type="submit"><i class="fa fa-save"></i> Save Update</button>
+                                 <button class="btn btn-success" type="submit"><i class="fa fa-save"></i> Save</button>
                                  <a href="/my_details"><button class="btn btn-danger" type="button"><i class="fa fa-close"></i> Cancel</button></a>
                               </div>
                            </div>

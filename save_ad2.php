@@ -40,8 +40,8 @@ if(isset($_POST['mileage_type'])){$mileage_type=strip_tags(addslashes($_POST['mi
 if(isset($_POST['tax'])){$tax=strip_tags(addslashes($_POST['tax']));}
 
 $cover=intval($cover);
-$images1file=$_SESSION['images1'];
-$images2file=$_SESSION['images2'];
+if(isset($_SESSION['images1'])){$images1file=$_SESSION['images1'];}
+if(isset($_SESSION['images2'])){$images2file=$_SESSION['images2'];}
 
 function generateRandomString($length = 10) {
     return substr(str_shuffle(str_repeat($x='123456789abcdefghijklmnopqrstuvwxyz', ceil($length/strlen($x)) )),1,$length);
@@ -89,7 +89,21 @@ $ad_id=sqlconnect($sql);
 //echo $ad_id;
 	//echo 'id:'.$ad_id.' cover:'.$cover;
 	//echo '<p><a href="/items">easyads/items</a></p>';
-	header("Location: /post_ad/success");
+	
+	//echo $_SESSION['user_id'];
+	
+// save user's location, name, phone
+if(isset($_SESSION['user_id'])){
+	$sql="UPDATE users SET name='$name', phone='$phone', location='$location' WHERE id='$user_id'";
+	//echo $sql;
+	$res=sqlconnect($sql);
+	//echo '<hr>'.$res;
+	$_SESSION['user_name']=$name;
+	$_SESSION['phone']=$phone;
+	$_SESSION['location']=$location;
+}
+
+header("Location: /post_ad/success");
 	
 	
 ?>

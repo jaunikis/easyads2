@@ -218,6 +218,13 @@ case 'admin':
     require('m_admin.php');
     require('footer_short.php');
     break;
+case 'contact':
+    require('top_nav.php');
+	$_SESSION['heading']='Contact';
+    require('breadcumb.php');
+    require('contact.php');
+    require('footer_short.php');
+    break;
 case 'edit':
     require('top_nav.php');
     require('left_profile.php');

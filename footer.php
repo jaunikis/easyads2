@@ -56,7 +56,7 @@
                <div class="row">
                   <div class="col-md-12">
                      <div class="site-info pull-left">
-                        <p>All Copyrights Reserved @ 2017 - Made by <a target="_blank" href="http://www.mv-media.com/">mvmedia</a></p>
+                        <p>All Copyrights Reserved @ 2017 - Made by <a href="#">mvmedia</a></p>
                      </div>
                      <div class="bottom-social-icons social-icon pull-right" style="margin-right:20px;">  
                          

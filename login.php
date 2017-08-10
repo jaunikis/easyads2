@@ -5,16 +5,19 @@
 					<div class="col-sm-4 col-sm-offset-4">
 						<div class="login-panel widget">
 							<div class="login-body">
+								<div>
+								<center><img src="/images/logo.png"></center>
+								</div>
 								<div class="login-with-sites">
-									<button class="btn-facebook login-icons btn-lg btn-block"> <i class="fa fa-facebook"></i> Login With Facebook</button>
-									<button class="btn-google login-icons btn-lg btn-block"> <i class="fa fa-google"></i> Login With Google</button>
+								<!--	<button class="btn-facebook login-icons btn-lg btn-block"> <i class="fa fa-facebook"></i> Login With Facebook</button>
+										<button class="btn-google login-icons btn-lg btn-block"> <i class="fa fa-google"></i> Login With Google</button>  -->
 								</div>
 								<form action="/login2.php" method="post">
 									<div class="form-group">
-										<input name="email" type="text" placeholder="Email or Username" class="form-control">
+										<input name="email" type="text" placeholder="Email or Username" class="form-control border-form">
 									</div>
 									<div class="form-group">
-										<input name="password" type="password" placeholder="Password" class="form-control">
+										<input name="password" type="password" placeholder="Password" class="form-control border-form">
 									</div>
 									<div class="form-group">
 										<button class="btn btn-block btn-lg btn-primary">Sign In</button>
