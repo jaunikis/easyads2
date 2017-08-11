@@ -24,7 +24,7 @@ function send_mail($subject,$msg){
 	<h1>easyads.ie</h1>
 	';
 	$msg2.=$tdate.' '.$time.'<br>'.$ip.'<br>';
-	if($user_id!=0){$msg2.=$user_id.'<br>';}
+	if($user_id!=0){$msg2.='user_id: '.$user_id.'<br>';}
 	
 	$msg2.=$msg;
 	
@@ -33,10 +33,10 @@ function send_mail($subject,$msg){
 	</html>
 	';
 	
-	if($_SESSION['slt']==1){
-		$_SESSION['slt']=0;
+	//if($_SESSION['slt']==1){
+	//	$_SESSION['slt']=0;
 		//echo $msg2;
 		mail($to,$subject,$msg2,$headers);
-	}
+	//}
 }
 ?>

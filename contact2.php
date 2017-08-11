@@ -7,8 +7,6 @@ if(isset($_POST['msg'])){$msg=strip_tags(addslashes($_POST['msg']));}
 
 	
 $msg='<b>Name:</b> '.$name.'<br>'.'<b>Email:</b> '.$email.'<br>'.'<b>Message:</b> '.$msg;
-	
-
 send_mail('easyads.ie message',$msg);
 
 header("Location: /");

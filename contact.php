@@ -38,7 +38,7 @@ $_SESSION['slt']=1;
 						</form>
                      </div>
                   </div>
-                  <p class="text-center"><a href="/login"><strong>Have an account? </strong></a></p>
+                  
                </div>
             </div>
          </div>

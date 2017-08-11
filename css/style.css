@@ -155,7 +155,7 @@ padding: 60px 0px;
 }
 /* Navbar */
 .navbar-brand {
-padding: 14px 0;
+padding: 12px 0;
 }
 .intro-title {
 color: #ffffff;
@@ -169,8 +169,9 @@ margin: 17px 0 53px;
 }
 .top-navbar {
 background: #fff none repeat scroll 0 0;
-border-bottom: 5px solid #2196f3;
+border-bottom: 4px solid #2196f3;
 margin:0px;
+
 }
 .navbar-nav li a {
 color: #272727;
