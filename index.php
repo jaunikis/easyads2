@@ -165,7 +165,7 @@
     border-top: 1px solid rgba(160, 160, 160, 0.2);
 }
 @media only screen and (max-width: 786px) { 
-  #categories_left,#filter,#c_list,#c_grid,#b_search,#similar { 
+  #filter,#c_list,#c_grid,#b_search,#similar { 
     display: none; 
   } 
 }

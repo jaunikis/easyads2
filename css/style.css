@@ -171,8 +171,18 @@ margin: 17px 0 53px;
 background: #fff none repeat scroll 0 0;
 border-bottom: 4px solid #2196f3;
 margin:0px;
-
 }
+@media screen and (max-width: 768px) {
+	.top-navbar {
+		position:fixed;
+		top:0;
+		left:0;
+		z-index: 15;
+		width:100%;
+		
+	}
+}
+
 .navbar-nav li a {
 color: #272727;
 font-weight: 500;
@@ -621,6 +631,11 @@ position: absolute;
 top: 0;
 width: 100%;
 z-index: -1;
+}
+@media screen and (max-width: 768px) {
+	.categories-page-search {
+		margin-top:50px;
+	}
 }
 /* Categories Page Nav */
 .all-categories-nav {

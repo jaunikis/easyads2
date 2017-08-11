@@ -25,7 +25,7 @@ while ($row = $result3->fetch_assoc()) {
 
 				
 				  
-                    <div id="categories_left" class="widget listing-filter-block filter-categories">
+                    <div id="categories_left" class="collapse widget listing-filter-block filter-categories">
                         <div class="widget-header">
                            <h2>Refine search:</h>
                         </div>

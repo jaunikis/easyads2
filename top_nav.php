@@ -2,7 +2,8 @@
       <nav class="navbar top-navbar" role="navigation">
          <div class="container">
             <div class="navbar-header col-sm-2">
-               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#categories_left">tst</button>
+			   <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                <span class="sr-only">Toggle navigation</span>
                <span class="icon-bar"></span>
                <span class="icon-bar"></span>
