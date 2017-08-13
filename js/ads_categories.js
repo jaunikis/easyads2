@@ -40,7 +40,6 @@ $.ajax({url: "/categories-list.txt", success: function(result){
 					if(str.search(/hdi/i)>=0){$("#fuel").val('Diesel');}
 					if(str.search(/116d/i)>=0){$("#fuel").val('Diesel');}
 					if(str.search(/320d/i)>=0){$("#fuel").val('Diesel');}
-					if(str.search(/2.0d/i)>=0){$("#fuel").val('Diesel');$("#engine").val('2.0');}
 					if(str.search(/cdti/i)>=0){$("#fuel").val('Diesel');}
 					
 					if(str.search(/1\.0d/i)>=0){$("#engine").val('1.0');$("#fuel").val('Diesel');}

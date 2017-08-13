@@ -12,7 +12,10 @@ require_once ('incl/server.php');
 require_once ('incl/elapsed.php');
 $sql="SELECT * FROM skelbimai WHERE id='$item'";
 $result=sqlconnect($sql);
+$ad_count=$result->num_rows;
+if($ad_count<1){exit('Ad not exist');}
 while ($row = $result->fetch_assoc()) {
+	$active=$row['active'];
 	$id=$row['id'];
     $title=$row['title'];
 	$cover=$row['cover1file'];if($cover==''){$cover='no-image.png';}
@@ -44,7 +47,8 @@ while ($row = $result->fetch_assoc()) {
 	$mileage_type=$row['mileage_type'];
 	$tax=$row['tax'];
 }
-
+if($active!='Active'){exit('<p><center><h3>This advert is not active at the moment.</h3><center></p>');}
+	
 	$images1=[];
 	$images2=[];
 	//$images[]=$cover;

@@ -1,5 +1,6 @@
 <?php
 require_once ('incl/server.php');
+require_once ('incl/mail.php');
 session_start();
 
 $date = new DateTime();$timestamp2=$date->getTimestamp();
@@ -15,6 +16,7 @@ $images=[''];$cover=0;
 $name='';$email='';$phone='';
 $transmission='';$bodyType='';$color='';
 $description='';
+$images1file=[];$images2file=[];
 
 if(isset($_POST['cover'])){$cover=$_POST['cover'];if($cover==''){$cover=0;}}
 if(isset($_POST['title'])){$title=strip_tags(addslashes($_POST['title']));}
@@ -40,28 +42,56 @@ if(isset($_POST['mileage_type'])){$mileage_type=strip_tags(addslashes($_POST['mi
 if(isset($_POST['tax'])){$tax=strip_tags(addslashes($_POST['tax']));}
 
 $cover=intval($cover);
-if(isset($_SESSION['images1'])){$images1file=$_SESSION['images1'];}
-if(isset($_SESSION['images2'])){$images2file=$_SESSION['images2'];}
+if(isset($_SESSION['images1'])){$images1file=$_SESSION['images1'];}else{array_push($images1file,'');}
+if(isset($_SESSION['images2'])){$images2file=$_SESSION['images2'];}else{array_push($images2file,'');}
 
 function generateRandomString($length = 10) {
     return substr(str_shuffle(str_repeat($x='123456789abcdefghijklmnopqrstuvwxyz', ceil($length/strlen($x)) )),1,$length);
 }
-$ad_code='';
-if(!$_SESSION['user_id']){
-	$ad_code=generateRandomString(6);
-}
 
-$valid_till=intval($timestamp2+(86400*60));
+$ad_code=generateRandomString(6);
+
+$valid_till=intval($timestamp2+(86400*90));
+
+//echo 'timestamp2: '.$timestamp2.'<br>';
+//echo 'ip: '.$ip.'<br>';
+
+
+$active='Active';
+//tikriname keiksmazodzius
+require_once ('incl/swear.php');
+
 
 //atimame rand idejimo laika
 //$minus=rand(1,43000);$timestamp2=-$minus;
 
-$bump_days=rand(3,15);
-//$sql = "INSERT INTO skelbimai (cover,cover1file,ip,user,title,cat1,cat2,make,model,year,fuel,transmission,bodyType,color,price,location,condition2,description,name,email,phone,active,timestamp2) VALUES ('$images1[$cover]','$images1file[$cover]','$ip','$user','$title','$cat1','$cat2','$make','$model','$year','$fuel','$transmission','$bodyType','$color','$price','$location','$condition','$description','$name','$email','$phone','Active',$timestamp2)";
-$sql = "INSERT INTO skelbimai (engine,mileage,mileage_type,tax,ad_code,cover1file,ip,user_id,title,cat1,cat2,make,model,year,fuel,transmission,bodyType,color,price,currency,location,condition2,description,name,email,phone,active,timestamp2,valid_till,bump_days) VALUES ('$engine','$mileage','$mileage_type','$tax','$ad_code','$images1file[$cover]','$ip','$user_id','$title','$cat1','$cat2','$make','$model','$year','$fuel','$transmission','$bodyType','$color','$price','$currency','$location','$condition','$description','$name','$email','$phone','Active','$timestamp2','$valid_till','$bump_days')";
+$bump_days=rand(3,16);
+//$sql = "INSERT INTO skelbimai (cover,cover1file,ip,user,title,cat1,cat2,make,model,year,fuel,transmission,bodyType,color,price,location,condition2,description,name,email,phone,active,timestamp2) VALUES ('$images1[$cover]','$images1file[$cover]','$ip','$user','$title','$cat1','$cat2','$make','$model','$year','$fuel','$transmission','$bodyType','$color','$price','$location','$condition','$description','$name','$email','$phone','$active',$timestamp2)";
+$sql = "INSERT INTO skelbimai (engine,mileage,mileage_type,tax,ad_code,cover1file,ip,user_id,title,cat1,cat2,make,model,year,fuel,transmission,bodyType,color,price,currency,location,condition2,description,name,email,phone,active,timestamp2,valid_till,bump_days) VALUES ('$engine','$mileage','$mileage_type','$tax','$ad_code','$images1file[$cover]','$ip','$user_id','$title','$cat1','$cat2','$make','$model','$year','$fuel','$transmission','$bodyType','$color','$price','$currency','$location','$condition','$description','$name','$email','$phone','$active','$timestamp2','$valid_till','$bump_days')";
 $ad_id=sqlconnect($sql);
 //if($ad_id){echo '<script>alert("namas");</script>';}
 
+//tikriname kada idetas paskutinis skelbimas is to pacio ip
+$timestamp3=$timestamp2-120;
+$sql="SELECT timestamp2,ip FROM skelbimai WHERE timestamp2>'$timestamp3' AND ip='$ip'";
+$result=sqlconnect($sql);
+$ad_count = $result->num_rows;
+if($ad_count>1){if($active=='Active'){$active='';}$active.='to_many';}
+	
+if($active!='Active'){
+	$sql="UPDATE skelbimai SET active='$active' WHERE id='$ad_id'";
+	sqlconnect($sql);
+	$mail_timestamp=0;
+	if(isset($_SESSION['mail_timestamp'])){$mail_timestamp=$_SESSION['mail_timestamp'];}
+	if($mail_timestamp<$timestamp2-360){
+		$msg='<b>Ad Id:</b> '.$ad_id.'<br>'.'<b>ip:</b> '.$ip.'<br>';
+		send_mail('easyads.ie '.$active,$msg);
+		$_SESSION['mail_timestamp']=$timestamp2;
+	}
+}
+
+//echo 'active: '.$active.'<br>';
+//echo 'cover: '.$cover;
 //echo '<h3>'.$ad_id.'</h3>';
 
 	//save image to db
@@ -73,8 +103,8 @@ $ad_id=sqlconnect($sql);
 		//$img2=$images2[$i];
 		$file1=$images1file[$i];
 		$file2=$images2file[$i];
-		rename('ads_temp_images/'.$file1,'ads_images/'.$file1);
-		rename('ads_temp_images/'.$file2,'ads_images/'.$file2);
+		if($file1!=''){rename('ads_temp_images/'.$file1,'ads_images/'.$file1);}
+		if($file2!=''){rename('ads_temp_images/'.$file2,'ads_images/'.$file2);}
 		//$sql = "INSERT INTO images (images1,images2,ad_id,cover,images1file,images2file) VALUES ('$img1','$img2','$ad_id','$x','$file1','$file2')";
 		$sql = "INSERT INTO images (ad_id,cover,images1file,images2file) VALUES ('$ad_id','$x','$file1','$file2')";
 		$result=sqlconnect($sql);
@@ -101,8 +131,11 @@ if(isset($_SESSION['user_id'])){
 	$_SESSION['user_name']=$name;
 	$_SESSION['phone']=$phone;
 	$_SESSION['location']=$location;
+	
 }
-
+$_SESSION['active']=$active;
+$_SESSION['email']=$email;
+//echo $active;
 header("Location: /post_ad/success");
 	
 	

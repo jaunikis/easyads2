@@ -116,17 +116,30 @@ $res=sqlconnect($sql);
 $sql="UPDATE images SET cover='cover' WHERE images1file='$coveris'";
 $res=sqlconnect($sql);
 
-	
-$sql="UPDATE skelbimai SET cover1file='$coveris',title='$title',cat1='$cat1',cat2='$cat2',make='$make',model='$model',year='$year',fuel='$fuel',
+//tikriname keiksmazodzius
+$active='Active';
+require_once ('incl/swear.php');
+if($active!='Active'){	
+	$mail_timestamp=0;
+	if(isset($_SESSION['mail_timestamp'])){$mail_timestamp=$_SESSION['mail_timestamp'];}
+	if($mail_timestamp<$timestamp2-360){
+		$msg='<b>Ad Id:</b> '.$ad_id.'<br>'.'<b>ip:</b> '.$ip.'<br>';
+		send_mail('easyads.ie '.$active,$msg);
+		$_SESSION['mail_timestamp']=$timestamp2;
+	}
+}
+
+$sql="UPDATE skelbimai SET active='$active',cover1file='$coveris',title='$title',cat1='$cat1',cat2='$cat2',make='$make',model='$model',year='$year',fuel='$fuel',
 transmission='$transmission',bodyType='$bodyType',color='$color',price='$price',location='$location',description='$description',
 name='$name',email='$email',phone='$phone' WHERE id='$ad_id'";
 $result=sqlconnect($sql);
 //echo $sql;
 //echo 'res:'.$result;
-
+$_SESSION['active']=$active;
 if(isset($_SESSION['user_id'])){
 header("Location: /my_ads");
 }else{
-	header("Location: /items?item=$ad_id");
+	//header("Location: /items?item=$ad_id");
+	header("Location: /post_ad/success");
 	}
 ?>
