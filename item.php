@@ -76,7 +76,7 @@ while ($row = $result->fetch_assoc()) {
 <?php
 $cat2=addslashes($cat2);
 			require_once ('incl/server.php');
-			$sql="SELECT id,title,price,currency,cover1file FROM skelbimai WHERE cat2='$cat2' ORDER BY timestamp2 DESC LIMIT 5";
+			$sql="SELECT id,title,price,currency,cover1file FROM skelbimai WHERE active='Active' AND cat2='$cat2' ORDER BY timestamp2 DESC LIMIT 5";
 			$result=sqlconnect($sql);
 			while ($row = $result->fetch_assoc()) {
 				$id2=$row['id'];

@@ -16,7 +16,7 @@ $transmission='';$bodyType='';$color='';
 $description='';
 
 if(isset($_POST['cover'])){$cover=$_POST['cover'];if($cover==''){$cover=0;}}
-if(isset($_POST['title'])){$title=$_POST['title'];}
+if(isset($_POST['title'])){$title=strip_tags(addslashes($_POST['title']));}
 if(isset($_POST['cat1'])){$cat1=$_POST['cat1'];}
 if(isset($_POST['cat2'])){$cat2=$_POST['cat2'];}
 if(isset($_POST['make'])){$make=$_POST['make'];}
@@ -28,10 +28,10 @@ if(isset($_POST['bodyType'])){$bodyType=$_POST['bodyType'];}
 if(isset($_POST['color'])){$color=$_POST['color'];}
 if(isset($_POST['price'])){$price=$_POST['price'];}
 if(isset($_POST['location'])){$location=$_POST['location'];}
-if(isset($_POST['description'])){$description=$_POST['description'];}
-if(isset($_POST['name'])){$name=$_POST['name'];}
-if(isset($_POST['email'])){$email=$_POST['email'];}
-if(isset($_POST['phone'])){$phone=$_POST['phone'];}
+if(isset($_POST['description'])){$description=strip_tags(addslashes($_POST['description']));}
+if(isset($_POST['name'])){$name=strip_tags(addslashes($_POST['name']));}
+if(isset($_POST['email'])){$email=strip_tags(addslashes($_POST['email']));}
+if(isset($_POST['phone'])){$phone=strip_tags(addslashes($_POST['phone']));}
 if(isset($_POST['ad_id'])){$ad_id=$_POST['ad_id'];}
 
 if(isset($_SESSION['user'])){$user=$_SESSION['user'];}
@@ -121,8 +121,12 @@ $sql="UPDATE skelbimai SET cover1file='$coveris',title='$title',cat1='$cat1',cat
 transmission='$transmission',bodyType='$bodyType',color='$color',price='$price',location='$location',description='$description',
 name='$name',email='$email',phone='$phone' WHERE id='$ad_id'";
 $result=sqlconnect($sql);
+//echo $sql;
+//echo 'res:'.$result;
 
 if(isset($_SESSION['user_id'])){
 header("Location: /my_ads");
-}else{header("Location: /items?item=$ad_id");}
+}else{
+	header("Location: /items?item=$ad_id");
+	}
 ?>

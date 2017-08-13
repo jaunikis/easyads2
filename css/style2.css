@@ -195,6 +195,7 @@
     float: right;
     font-size: 38px;
     font-weight: bold;
+	z-index:50;
 }
 
 .close2 {

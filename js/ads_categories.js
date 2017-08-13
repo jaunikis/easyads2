@@ -23,11 +23,96 @@ $.ajax({url: "/categories-list.txt", success: function(result){
 					if (typeof array[3] !== 'undefined') {
 						$("#cat4").val(array[3]);
 					}
+					
+					$("#fuel").val('Please Choose');
+					$("#engine").val('');
+					$("#year").val('Please Choose');
+					$("#bodyType").val('Please Choose');
+					
+					for(i=1994;i<2018;i++){
+						if(str.search(i)>=0){$("#year").val(i);}
+					}
+					
+					if(str.search(/td/i)>=0){$("#fuel").val('Diesel');}
+					if(str.search(/diesel/i)>=0){$("#fuel").val('Diesel');}
+					if(str.search(/crdi/i)>=0){$("#fuel").val('Diesel');}
+					if(str.search(/d4d/i)>=0){$("#fuel").val('Diesel');}
+					if(str.search(/hdi/i)>=0){$("#fuel").val('Diesel');}
+					if(str.search(/116d/i)>=0){$("#fuel").val('Diesel');}
+					if(str.search(/320d/i)>=0){$("#fuel").val('Diesel');}
+					if(str.search(/2.0d/i)>=0){$("#fuel").val('Diesel');$("#engine").val('2.0');}
+					if(str.search(/cdti/i)>=0){$("#fuel").val('Diesel');}
+					
+					if(str.search(/1\.0d/i)>=0){$("#engine").val('1.0');$("#fuel").val('Diesel');}
+					if(str.search(/1\.1d/i)>=0){$("#engine").val('1.1');$("#fuel").val('Diesel');}
+					if(str.search(/1\.2d/i)>=0){$("#engine").val('1.2');$("#fuel").val('Diesel');}
+					if(str.search(/1\.3d/i)>=0){$("#engine").val('1.3');$("#fuel").val('Diesel');}
+					if(str.search(/1\.4d/i)>=0){$("#engine").val('1.4');$("#fuel").val('Diesel');}
+					if(str.search(/1\.5d/i)>=0){$("#engine").val('1.5');$("#fuel").val('Diesel');}
+					if(str.search(/1\.6d/i)>=0){$("#engine").val('1.6');$("#fuel").val('Diesel');}
+					if(str.search(/1\.7d/i)>=0){$("#engine").val('1.7');$("#fuel").val('Diesel');}
+					if(str.search(/1\.8d/i)>=0){$("#engine").val('1.8');$("#fuel").val('Diesel');}
+					if(str.search(/1\.9d/i)>=0){$("#engine").val('1.9');$("#fuel").val('Diesel');}
+					if(str.search(/2\.0d/i)>=0){$("#engine").val('2.0');$("#fuel").val('Diesel');}
+					if(str.search(/2\.1d/i)>=0){$("#engine").val('2.1');$("#fuel").val('Diesel');}
+					if(str.search(/2\.2d/i)>=0){$("#engine").val('2.2');$("#fuel").val('Diesel');}
+					if(str.search(/2\.3d/i)>=0){$("#engine").val('2.3');$("#fuel").val('Diesel');}
+					if(str.search(/2\.4d/i)>=0){$("#engine").val('2.4');$("#fuel").val('Diesel');}
+					if(str.search(/2\.5d/i)>=0){$("#engine").val('2.5');$("#fuel").val('Diesel');}
+					if(str.search(/2\.8d/i)>=0){$("#engine").val('2.8');$("#fuel").val('Diesel');}
+					if(str.search(/3\.0d/i)>=0){$("#engine").val('3.0');$("#fuel").val('Diesel');}
+					
+					if(str.match('1\\.0')){$("#engine").val('1.0');}
+					if(str.match('1\\.1')){$("#engine").val('1.1');}
+					if(str.match('1\\.2')){$("#engine").val('1.2');}
+					if(str.match('1\\.3')){$("#engine").val('1.3');}
+					if(str.match('1\\.4')){$("#engine").val('1.4');}
+					if(str.match('1\\.5')){$("#engine").val('1.5');}
+					if(str.match('1\\.6')){$("#engine").val('1.6');}
+					if(str.match('1\\.7')){$("#engine").val('1.7');}
+					if(str.match('1\\.8')){$("#engine").val('1.8');}
+					if(str.match('1\\.9')){$("#engine").val('1.9');}
+					if(str.match('2\\.0')){$("#engine").val('2.0');}
+					if(str.match('2\\.1')){$("#engine").val('2.1');}
+					if(str.match('2\\.2')){$("#engine").val('2.2');}
+					if(str.match('2\\.3')){$("#engine").val('2.3');}
+					if(str.match('2\\.4')){$("#engine").val('2.4');}
+					if(str.match('2\\.5')){$("#engine").val('2.5');}
+					if(str.match('2\\.8')){$("#engine").val('2.8');}
+					if(str.match('3\\.0')){$("#engine").val('3.0');}
+					
+					if(str.search(/petrol/i)>=0){$("#fuel").val('Petrol');}
+					if(str.search(/electric/i)>=0){$("#fuel").val('Electric');}
+					if(str.search(/hybrid/i)>=0){$("#fuel").val('Hybrid');}
+					
+					if(str.search(/a3/i)>=0){$("#bodyType").val('Hatchback');}
+					if(str.search(/a4/i)>=0){$("#bodyType").val('Saloon');}
+					if(str.search(/a5/i)>=0){$("#bodyType").val('Hatchback');}
+					if(str.search(/a6/i)>=0){$("#bodyType").val('Saloon');}
+					if(str.search(/a7/i)>=0){$("#bodyType").val('Hatchback');}
+					if(str.search(/a8/i)>=0){$("#bodyType").val('Saloon');}
+					if(str.search(/passat/i)>=0){$("#bodyType").val('Saloon');}
+					if(str.search(/astra/i)>=0){$("#bodyType").val('Hatchback');}
+					if(str.search(/leon/i)>=0){$("#bodyType").val('Hatchback');}
+					if(str.search(/fiesta/i)>=0){$("#bodyType").val('Hatchback');}
+					if(str.search(/auris/i)>=0){$("#bodyType").val('Hatchback');}
+					if(str.search(/focus/i)>=0){$("#bodyType").val('Hatchback');}
+					if(str.search(/corsa/i)>=0){$("#bodyType").val('Hatchback');}
+					if(str.search(/civic/i)>=0){$("#bodyType").val('Hatchback');}
+					if(str.search(/3008/i)>=0){$("#bodyType").val('Hatchback');}
+					if(str.search(/insignia/i)>=0){$("#bodyType").val('Hatchback');}
+					if(str.search(/mondeo/i)>=0){$("#bodyType").val('Hatchback');}
+					if(str.search(/polo/i)>=0){$("#bodyType").val('Hatchback');}
+					if(str.search(/207/i)>=0){$("#bodyType").val('Hatchback');}
+					if(str.search(/307/i)>=0){$("#bodyType").val('Hatchback');}
+					
+					
 				}else{
 					$("#cat1").val('Please Choose');
 					$("#cat44").hide();
 					$("#cat33").hide();
 					$("#cat22").hide();
+					$("#cars1").hide();
 				}
 				
 			}});
@@ -56,8 +141,8 @@ $.ajax({url: "/categories-list.txt", success: function(result){
 				var item=$("<option></option>").text(myObj[parinktas][x]);
 				$("#cat2").append(item);
 			}
-			var item=$("<option></option>").text('Other '+parinktas);
-			$("#cat2").append(item);
+			//var item=$("<option></option>").text('Other '+parinktas);
+			//$("#cat2").append(item);
 		}else{$("#cat22").hide();}
 	} // change_cat1()
 	
