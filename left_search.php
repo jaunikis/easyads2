@@ -437,9 +437,9 @@ while ($row = $result3->fetch_assoc()) {
 	}); // cat3.change
 	
 	$("#cat4").change(function(){
-			var link=$("#cat1").val();
-			link+='/'+$("#cat2").val();
-			link+='/'+$("#cat3").val();
+			var li=$("#cat1").val();
+			li+='/'+$("#cat2").val();
+			li+='/'+$("#cat3").val();link=li.replace(/ /g, "-");
 			if($(this).val().substring(0,3)!=='All'){link+='/'+$("#cat4").val();}
 			var vars='?';
 		if($("#location").val().substring(0,3)!=='All'){vars+='&location='+$("#location").val();}
