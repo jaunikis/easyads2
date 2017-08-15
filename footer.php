@@ -51,12 +51,37 @@
                </div>
             </div>
          </section>
+		 
          <div class="copyright">
             <div class="container">
                <div class="row">
+			   
+			<?php
+	$sql="SELECT id FROM stats WHERE path='/'";
+	$result=sqlconnect($sql);
+	$tootal = $result->num_rows;
+	
+	$date = new DateTime();$timestamp=$date->getTimestamp();
+	$x=$timestamp/86400;
+	$x1=(floor($x))*86400;
+	
+	$sql="SELECT id FROM stats WHERE path='/' AND timestamp>'$x1'";
+	$result=sqlconnect($sql);
+	$today = $result->num_rows;
+	
+	
+	?>
+			   <center>
+			   <div class="badge">Visits today: <?php echo $today;?></div>
+			   <div class="badge">Visits total: <?php echo $tootal+4653;?></div>
+			   </center>   
+			   
                   <div class="col-md-12">
                      <div class="site-info pull-left">
-                        <p>All Copyrights Reserved @ 2017 - Made by <a href="#">mvmedia</a></p>
+                        
+						<span class=>All Copyrights Reserved @ 2017 - Made by <a href="#">mvmedia</a></span>
+						
+						
                      </div>
                      <div class="bottom-social-icons social-icon pull-right" style="margin-right:20px;">  
                          
@@ -72,7 +97,9 @@
                      </div>
                   </div>
                </div>
+	
             </div>
+			
          </div>
       </footer>
       <!-- End Footer -->

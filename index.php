@@ -212,6 +212,23 @@ $segments = explode('/', $path);
 //echo($path);
 //echo $segments[3];
 //for($a=1;$a<count($segments);$a++){echo $a.'  -  '.$segments[$a].'<br>';}
+
+//skaiciuojam userius
+$ip=$_SERVER['REMOTE_ADDR'];
+$date = new DateTime();$timestamp=$date->getTimestamp();
+//tikriname kada paskutinis
+$timestamp3=$timestamp-50;
+$sql="SELECT timestamp,ip,path FROM stats WHERE timestamp>'$timestamp3' AND ip='$ip' AND path='$path'";
+$result=sqlconnect($sql);
+$ad_count = $result->num_rows;
+//echo $ad_count;
+if($ad_count==0){
+	$user_id='';
+	if(isset($_SESSION['user_id'])){$user_id=$_SESSION['user_id'];}
+	$sql="INSERT INTO stats (ip,timestamp,path,user_id) VALUES ('$ip','$timestamp','$path','$user_id')";
+	$res=sqlconnect($sql);
+}
+
 $segm='';
 if(isset($segments[1])){$segm=$segments[1];}
 switch($segm){
