@@ -164,13 +164,26 @@
     padding: 20px;
     border-top: 1px solid rgba(160, 160, 160, 0.2);
 }
+.mobile_refine{
+	display:none;
+}
 @media only screen and (max-width: 786px) { 
-  #categories_left,#filter,#c_list,#c_grid,#b_search,#similar { 
+	.mobile_refine{
+		display:inline;
+	}
+  #filter,#c_list,#c_grid,#b_search,#similar { 
     display: none; 
   } 
+  #categories_left{
+	  display:none;
+  }
+  #categories_left2{
+	  display:none;
+  }
 }
    </style>
    
+  
    
 <body>
 <img style="display:none" src="/images/fblogo.jpg">

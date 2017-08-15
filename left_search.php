@@ -22,12 +22,10 @@ while ($row = $result3->fetch_assoc()) {
 	
 	//echo '<h1>'.$cat3.'</h1>';
 	?>
-
-				
-				  
+		 
                     <div id="categories_left" class="widget listing-filter-block filter-categories">
                         <div class="widget-header">
-                           <h2>Refine search:</h>
+                           <h2>Refine search:</h2>
                         </div>
                         <div class="widget-body">
 						

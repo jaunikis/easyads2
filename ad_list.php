@@ -84,8 +84,8 @@ require_once ('incl/elapsed.php');
           
                   <div class="listing-actions clearfix row">
                      <div class="tags col-xs-6 text-left">
-                        <span><?php echo $ad_count; ?> Adverts</span>
-                        
+                        <span><?php echo $ad_count; ?> Ads</span>
+                        <span onclick="toggle_show()" class="mobile_refine"><i class="fa fa-search" aria-hidden="true"></i></span>
                         
                      </div>
                      <ul class="listing-actions-nav col-xs-6 text-right">
@@ -240,6 +240,10 @@ if($page>=$page_max){$plus=' disabled';$plus_link='';}
       <!-- End Category List -->
 	  
 <script>
+function toggle_show(){
+	$("#categories_left").toggle();
+}
+
 	$("#sortPriceL").click(function(){
 		event.preventDefault();
 		$("#sort").html($(this).text()+' <b class="caret"></b>');
