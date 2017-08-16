@@ -167,6 +167,9 @@
 .mobile_refine{
 	display:none;
 }
+.ad_image{
+	width:250px;
+}
 @media only screen and (max-width: 786px) { 
 	.mobile_refine{
 		display:inline;
@@ -180,7 +183,13 @@
   #categories_left2{
 	  display:none;
   }
+  .ad_image{
+	width:100%;
+	margin:0;
 }
+}
+
+
    </style>
    
   

@@ -115,7 +115,7 @@ include('left_search.php');
 			   </div>
                <div class="col-lg-9 col-md-9 col-sm-9">
                   <div class="row">
-                     <div class="col-lg-12">
+                     <div class="col-lg-12a">
                        
 			<?php
 			
@@ -154,11 +154,11 @@ include('left_search.php');
 							  
 							  <a href="/items?item=<?php echo $id; ?>">
                               <div class="item-img-grid">
-                                 <img alt="" width="220" src="<?php echo '/ads_images/'.$cover; ?>" class="img-responsive img-center">
+                                 <img alt="" src="<?php echo '/ads_images/'.$cover; ?>" class="ad_image img-responsive img-center">
                               </div>
                               <div class="item-title">
                                  
-                                    <h4><?php echo strip_tags($title); ?></h4>
+                                    <h2><?php echo strip_tags($title); ?></h2>
                             <?php
 								$curr='';
 								if($price!='No Price'){

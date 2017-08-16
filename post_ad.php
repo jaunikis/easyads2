@@ -1,4 +1,8 @@
 <?php
+$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+$segments = explode('?', $actual_link);
+if(count($segments)>1){parse_str($segments[1]);}
+
 if(isset($_SESSION['images1'])){unset($_SESSION['images1']);}
 if(isset($_SESSION['images2'])){unset($_SESSION['images2']);}
 
@@ -22,7 +26,7 @@ $json = json_decode($string, true);
 									<div class="form-group">
 										<label class="col-sm-3 control-label">Ad Title <span class="required">*</span></label>
 										<div class="col-sm-9">
-											<input name="title" id="title" type="text" placeholder="What are you selling e.g. Apple iPhone SE 2017" required="required" class="form-control1 border-form">
+											<input name="title" value= "<?php if(isset($title)){echo $title;}?>" id="title" type="text" placeholder="What are you selling e.g. Apple iPhone SE 2017" required="required" class="form-control1 border-form">
 											<p style="Display:none;">Suggestions: <span id="txtHint"></span></p>	
 										</div>
 									</div>
@@ -253,7 +257,7 @@ for($i=date("Y")-20;$i<date("Y")+1;$i++){
 									<div class="form-group">
 										<label class="col-sm-3 control-label">Your Name</label>
 										<div class="col-sm-9">
-											<input id="name" name="name" type="text" value="<?php if(isset($_SESSION['user_name'])){echo $_SESSION['user_name'];} ?>" class="form-control1 border-form">
+											<input value="<?php if(isset($name)){echo $name;}?>" id="name" name="name" type="text" value="<?php if(isset($_SESSION['user_name'])){echo $_SESSION['user_name'];} ?>" class="form-control1 border-form">
 										</div>
 									</div>
 									<div class="form-group">

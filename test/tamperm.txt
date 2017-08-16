@@ -1,0 +1,40 @@
+// ==UserScript==
+// @name         New Userscript
+// @namespace    http://tampermonkey.net/
+// @version      0.1
+// @description  try to take over the world!
+// @author       You
+// @match        https://www.donedeal.ie/*
+// @grant        GM_setClipboard
+// ==/UserScript==
+
+(function() {
+    'use strict';
+    var x=document.getElementsByClassName('card__header-title ng-binding');
+    var name=x[0].innerHTML;
+   
+    var x=document.getElementsByTagName('h1');
+    var title=x[0].innerHTML;
+    //sukuriam mygtuka
+    var myg=document.createElement('button');
+    myg.innerHTML=' copy ';
+    x[0].appendChild(myg);
+    
+    
+    GM_setClipboard (name);
+   // var el=document.getElementsByTagName('p');
+    
+    var url='http://localhost/post_ad?title='+title+'&name='+name;
+    var win = window.open(url, '_blank');
+if (win) {
+    //Browser has allowed it to be opened
+    win.focus();
+} else {
+    //Browser has blocked it
+    alert('Please allow popups for this website');
+}
+    //win.focus();
+    //window.location.assign(url);
+   // alert(title);
+    // Your code here...
+})();

@@ -77,7 +77,7 @@ $_SESSION['cat_count2']=$cat_count2;
                   </div>
                      <div id="owl-carousel-featured" class="owl-carousel categories-list-page">
     <?php
-	$sql="SELECT id,title,cover1file,price,location,timestamp2,cat1,cat2 FROM skelbimai WHERE active='Active' ORDER BY timestamp2 DESC LIMIT 4";
+	$sql="SELECT id,title,cover1file,price,location,timestamp2,cat1,cat2 FROM skelbimai WHERE active='Active' ORDER BY timestamp2 DESC LIMIT 6";
 	$result=sqlconnect($sql);
 	while ($row = $result->fetch_assoc()) {
 				$id=$row['id'];

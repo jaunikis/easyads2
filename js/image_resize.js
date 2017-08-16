@@ -200,9 +200,14 @@ function resize(th){
       })(img);
       reader.readAsDataURL(file);
 		 })(i);
+		 //sleep(500);
 	}//for
 }
 
+function sleep(delay) {
+        var start = new Date().getTime();
+        while (new Date().getTime() < start + delay);
+}
 
 function blobToDataURL(blob, callback) {
     var a = new FileReader();
