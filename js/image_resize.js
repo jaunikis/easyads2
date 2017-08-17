@@ -12,7 +12,11 @@ function resize(th){
 	//alert(th);
 	var files=th.files;
 	//alert(files.length);
-	for (var i = 0; i < files.length; i++) {
+	var i=0;
+	all_files(i);
+	
+	//for (var i = 0; i < files.length; i++) {
+	function all_files(i){
 		(function(i) {
 		getOrientation(files[i], function(orientation) {
 			ori=orientation;
@@ -34,7 +38,7 @@ function resize(th){
       var reader = new FileReader();
       reader.onload = (function(imga) {
         return function(e) {
-          imga.onload = function() { 
+          imga.onload = function() {
 			width = imga.width;if(width<200){ alert('Image too small!');return;}
 			height = imga.height;
             
@@ -151,6 +155,7 @@ function resize(th){
 			
 			document.getElementById(nr2).style.opacity="1";
 			nr2++;
+			if(i+1<files.length){i++;all_files(i)}
 			}
 			});
 		
@@ -192,7 +197,7 @@ function resize(th){
 			
 			
 			
-            }
+            }// imga onload
             // e.target.result is a dataURL for the image
           imga.src = e.target.result;
 		  //window.location.href=aImg.src;
@@ -200,7 +205,8 @@ function resize(th){
       })(img);
       reader.readAsDataURL(file);
 		 })(i);
-		 //sleep(500);
+		
+		
 	}//for
 }
 

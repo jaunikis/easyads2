@@ -14,7 +14,10 @@ $json = json_decode($string, true);
                <div class="main-search-box text-center">
                   <h1 class="intro-title" >Sell or Advertise everything online with Easyads.ie classified</h1>
                   <p class="sub-title">Buy and sell everything from used cars to mobile phones and computers, or search for property, jobs and more</p>
-                  <form action="/items">
+                  
+					<h2 class="sub-title">No Need To Register or Sign Up<h2>
+				
+				  <form action="/items">
                      <div class="col-md-4 col-sm-4 search-input">
                         <input name="search" type="text" placeholder="What are you looking for...?" class="form-control input-lg search-form">
                      </div>
