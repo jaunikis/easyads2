@@ -226,7 +226,7 @@ $segments = explode('/', $path);
 $ip=$_SERVER['REMOTE_ADDR'];
 $date = new DateTime();$timestamp=$date->getTimestamp();
 //tikriname kada paskutinis
-$timestamp3=$timestamp-50;
+$timestamp3=$timestamp-60;
 $sql="SELECT timestamp,ip,path FROM stats WHERE timestamp>'$timestamp3' AND ip='$ip' AND path='$path'";
 $result=sqlconnect($sql);
 $ad_count = $result->num_rows;

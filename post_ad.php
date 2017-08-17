@@ -95,7 +95,7 @@ for($i=date("Y")-20;$i<date("Y")+1;$i++){
 										<label class="col-sm-3 control-label">Mileage</label>
 										<div class="col-sm-9">
 											<div class="input-group">
-												<input id="mileage" name="mileage" type="number" placeholder="e.g. 85000" class="form-control1 border-form">
+												<input value="<?php if(isset($mileage)){echo $mileage;}?>" id="mileage" name="mileage" type="number" placeholder="e.g. 85000" class="form-control1 border-form">
 												<select id="mileage_type" name="mileage_type"  class="form-control1 form-control1-cur border-form">
 													<option selected>Mi</option>
 													<option>Km</option>
@@ -199,7 +199,7 @@ for($i=date("Y")-20;$i<date("Y")+1;$i++){
 										<label class="col-sm-3 control-label">Price <span class="required">*</span></label>
 										<div class="col-sm-9">
 											<div class="input-group">
-												<input id="price" name="price" type="number" placeholder="e.g. 999" class="form-control1 border-form">
+												<input value="<?php if(isset($price)){echo $price;}?>" id="price" name="price" type="number" placeholder="e.g. 999" class="form-control1 border-form">
 												<select id="currency" name="currency"  class="form-control1 form-control1-cur border-form">
 												<option value="eur" selected="">€</option>
 												<option value="gbp">£</option>
@@ -210,7 +210,7 @@ for($i=date("Y")-20;$i<date("Y")+1;$i++){
 									<div class="form-group">
 										<label  class="col-sm-3 control-label">Add Photos</label>
 										<div class="col-sm-9">
-											<input id="inputFile" type="file" onchange="resize(this)" class="filestyle55" accept="image/jpeg, image/png" multiple style="display:none" />
+											<input id="inputFile" type="file" onchange="resize(this)" class="filestyle" accept="image/jpeg, image/png" multiple />
 											<span class="help-block"></span>
 											
 										</div>
@@ -251,17 +251,17 @@ for($i=date("Y")-20;$i<date("Y")+1;$i++){
 									<div class="form-group">
 										<label class="col-sm-3 control-label">Ad Description <span class="required">*</span></label>
 										<div class="col-sm-9">
-											<textarea style="line-height: 110%" rows="8" id="description" name="description" value="description1" placeholder="Include the brand, model, age and any included accessories." class="form-control border-form"></textarea>
+											<textarea value="<?php if(isset($description)){echo $description;}?>" style="line-height: 110%" rows="8" id="description" name="description" value="description1" placeholder="Include the brand, model, age and any included accessories." class="form-control border-form"></textarea>
 										</div>
 									</div>
 									<div class="form-group">
-										<label class="col-sm-3 control-label">Your Name</label>
+										<label class="col-sm-3 control-label">Name</label>
 										<div class="col-sm-9">
 											<input value="<?php if(isset($name)){echo $name;}?>" id="name" name="name" type="text" value="<?php if(isset($_SESSION['user_name'])){echo $_SESSION['user_name'];} ?>" class="form-control1 border-form">
 										</div>
 									</div>
 									<div class="form-group">
-										<label class="col-sm-3 control-label">Your email</label>
+										<label class="col-sm-3 control-label">Email (optional)</label>
 										<div class="col-sm-9">
 											<input id="email" name="email" type="text" value="<?php if(isset($_SESSION['email'])){echo $_SESSION['email'];} ?>" class="form-control1 border-form">
 										</div>

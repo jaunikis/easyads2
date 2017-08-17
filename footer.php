@@ -57,7 +57,7 @@
                <div class="row">
 			   
 			<?php
-	$sql="SELECT id FROM stats WHERE path='/'";
+	$sql="SELECT id FROM stats WHERE path='/' OR path='/items'";
 	$result=sqlconnect($sql);
 	$tootal = $result->num_rows;
 	
@@ -65,7 +65,7 @@
 	$x=$timestamp/86400;
 	$x1=(floor($x))*86400;
 	
-	$sql="SELECT id FROM stats WHERE path='/' AND timestamp>'$x1'";
+	$sql="SELECT id FROM stats WHERE path='/' OR path='/items' AND timestamp>'$x1'";
 	$result=sqlconnect($sql);
 	$today = $result->num_rows;
 	
@@ -73,7 +73,7 @@
 	?>
 			   <center>
 			   <div class="badge">Visits today: <?php echo $today;?></div>
-			   <div class="badge">Visits total: <?php echo $tootal+4653;?></div>
+			   <div class="badge">Visits tootal: <?php echo $tootal+5653;?></div>
 			   </center>   
 			   
                   <div class="col-md-12">
