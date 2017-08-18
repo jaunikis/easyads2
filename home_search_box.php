@@ -15,7 +15,10 @@ $json = json_decode($string, true);
                   <h1 class="intro-title" >Sell or Advertise everything online with Easyads.ie classified</h1>
                   <p class="sub-title">Buy and sell everything from used cars to mobile phones and computers, or search for property, jobs and more</p>
                   
-					<h2 class="sub-title">No Need To Register or Sign Up<h2>
+					<div class="home_banner">
+						<h3>No Need To Log in or Sign Up!</h3>
+						<p>Takes 1 min to <a id="post_ad" href="/post_ad">post your ad</a>.</p>
+					</div>
 				
 				  <form action="/items">
                      <div class="col-md-4 col-sm-4 search-input">

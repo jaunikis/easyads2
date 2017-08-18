@@ -66,7 +66,7 @@ if(isset($_SESSION['user_id'])){
 					</div>';
 	}else{
 		echo '<div class="user-login pull-right">
-                  <a href="/signup">REGISTER</a>
+                  <a href="/signup">SIGN UP</a>
                   <span>or</span>  
                   <a class="btn btn-md btn-primary" href="/login/">Log In</a>
                </div>';
