@@ -18,8 +18,14 @@ $links=explode('/',$segments2[0]);
 								<ul>
 									<li><a href="/">Home</a></li>
 									<li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
-									<li><?php echo $_SESSION['heading'];?></li>
+									<li>
+								<?php
+								if(isset($links[4])){echo '<a href="/'.strtolower($_SESSION['heading']).'">'.$_SESSION['heading'].'</a>';}
+								else{echo $_SESSION['heading'];}
+								?>	
+									</li>
 							<?php
+							
 								if(isset($links[4])&&$_SESSION['heading']!='Post your ad'){
 									echo '<li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
 									<li>'.str_replace("-"," ",$links[4]).'</li>';
@@ -32,3 +38,4 @@ $links=explode('/',$segments2[0]);
 				</div>
 			</div>
 		</section>
+		

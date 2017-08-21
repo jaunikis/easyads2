@@ -11,12 +11,12 @@
 							<div class="panel-heading">
 								<div class="media clearfix">
 									<a class="pull-left">
-									<img src="/images/blog/blog-01.jpg"
+									<img src="/images/blog/blog-01.jpg">
 									</a>
 									<div class="media-body">
 										<small>Created by: <span class="font-bold">Mark Word</span> </small>
 										<br>
-										<small class="text-muted">22.04.2015, 10:15 pm</small>
+										<small class="text-muted">22.04.2016, 10:15 pm</small>
 									</div>
 								</div>
 							</div>

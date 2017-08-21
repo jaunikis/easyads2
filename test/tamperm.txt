@@ -24,7 +24,7 @@
     GM_setClipboard (name);
    // var el=document.getElementsByTagName('p');
     
-    var url='http://localhost/post_ad?title='+title+'&name='+name;
+    var url='http://www.easyads.ie/post_ad?title='+title+'&name='+name;
     var win = window.open(url, '_blank');
 if (win) {
     //Browser has allowed it to be opened

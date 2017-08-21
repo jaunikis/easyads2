@@ -62,10 +62,10 @@
 	$tootal = $result->num_rows;
 	
 	$date = new DateTime();$timestamp=$date->getTimestamp();
-	$x=$timestamp/86400;
-	$x1=(floor($x))*86400;
-	
-	$sql="SELECT id FROM stats WHERE path='/' OR path='/items' AND timestamp>'$x1'";
+	$x=floor($timestamp/86400);
+	$x1=$x*86400;
+		
+	$sql="SELECT id FROM stats WHERE timestamp>'$x1' AND path='/' OR timestamp>'$x1' AND path='/items'";
 	$result=sqlconnect($sql);
 	$today = $result->num_rows;
 	
