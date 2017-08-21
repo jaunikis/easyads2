@@ -1,3 +1,7 @@
+<?php 
+session_start();
+include_once("incl/analytics_tracking.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -17,15 +21,30 @@
   <meta property="og:description"   content="Buy and sell, post your free ad today." />
   <meta property="og:image"         content="http://www.easyads.ie/images/fblogo.jpg" />
   <meta property="og:image:type"    content="image/jpeg" />
-  
-   
-    <?php include_once("incl/analytics_tracking.php");?> 
+
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="description" content="Ireland's Free and easy classified adverts, free car ads, sell and buy adverts">
+      <meta name="description" content="Ireland's Free Classified Ads, Sell and Buy adverts">
       <meta name="author" content="Marius Vorosilovas">
-      <title>Free and easy classified adverts online</title>
+	  
+	  <meta name="keywords" content="free ads, free ads Ireland, used cars, buy and sell, buy or sell, sell second hand, sell, buy, adverts, place ad, sell online, online shopping, free ads, jewellery, antiques, arts and crafts, baby and
+	nursery, books, cars, motorbikes, boats, clothes, shoes, bags, computers, tablets, iPads, consoles, games, photography, appliances, DVD, Electronics, Home and Garden, Furniture, DIY, marketplace,
+	watches, jobs, phones, instruments, musical equipment, bikes, cameras, toys, property, sports and fitness, tickets, wedding, tools">
+	
+	<meta name="keyphrases" content="free ads, free ads Ireland, used cars, buy and sell, buy or sell, sell second hand, sell, buy, adverts, place ad, sell online, online shopping, free ads, jewellery, antiques, arts and crafts, baby and
+	nursery, books, cars, motorbikes, boats, clothes, shoes, bags, computers, tablets, iPads, consoles, games, photography, appliances, DVD, Electronics, Home and Garden, Furniture, DIY, marketplace,
+	watches, jobs, phones, instruments, musical equipment, bikes, cameras, toys, property, sports and fitness, tickets, wedding, tools">
+	<meta name="geo.country" content="IE">
+	
+	<meta name="rating" content="general">
+	<meta http-equiv="content-language" content="en">
+	<meta name="robots" content="index,follow">
+	<meta name="distribution" content="global">
+	
+	
+	
+      <title>Ireland's Free Classified Ads, Sell and Buy adverts</title>
       
 	 <script src="/js/jquery-3.2.1.js"></script>
 	  
@@ -46,7 +65,7 @@
       <link rel="stylesheet" href="/plugins/owl-carousel/owl.theme.css">
       <!-- Font Awesome   -->
       <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-	  <?php session_start();?>
+	  
 	 
    </head>
    

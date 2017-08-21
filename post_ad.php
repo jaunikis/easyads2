@@ -1,3 +1,5 @@
+<title>Post Free Ad</title>
+
 <?php
 $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 $segments = explode('?', $actual_link);
