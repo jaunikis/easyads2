@@ -316,6 +316,13 @@ case 'my_details':
     //require('app_store.php');
     require('footer.php');
     break;
+case 'forgot':
+    require('top_nav.php');
+	$_SESSION['heading']='Forgot Password';
+    require('breadcumb.php');
+    require('forgot.php');
+    require('footer_short.php');
+    break;
   case 'login':
     require('top_nav.php');
 	$_SESSION['heading']='Log in';

@@ -12,28 +12,39 @@
 								<!--	<button class="btn-facebook login-icons btn-lg btn-block"> <i class="fa fa-facebook"></i> Login With Facebook</button>
 										<button class="btn-google login-icons btn-lg btn-block"> <i class="fa fa-google"></i> Login With Google</button>  -->
 								</div>
-								<form action="/login2.php" method="post">
+								<script>
+function validateForm() {
+    $("#wrong").hide();
+	var x = document.forms["e_recovery"]["email"].value;
+    var atpos = x.indexOf("@");
+    var dotpos = x.lastIndexOf(".");
+    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+        //alert("Not a valid e-mail address");
+		$("#wrong").show();
+        return false;
+    }
+}
+</script>
+								<form name="e_recovery" onsubmit="return validateForm()" action="/forgot2.php" method="post">
 									<div class="form-group">
-										<input name="email" type="text" placeholder="Email or Username" class="form-control border-form">
+										<input onkeyup="$('#wrong').hide();" name="email" type="email" placeholder="Email" class="form-control border-form">
 									</div>
+									
 									<div class="form-group">
-										<input name="password" type="password" placeholder="Password" class="form-control border-form">
+										<button class="btn btn-block btn-lg btn-primary">Recover Password</button>
 									</div>
-									<div class="form-group">
-										<button class="btn btn-block btn-lg btn-primary">Sign In</button>
-									</div>
+							
+								<div id="wrong" style="display:none" class="alert alert-danger">Wrong email address.</div>
+								
+							
 								
 							</div>
 							<div class="login-footer">
-								<div class="checkbox checkbox-primary pull-left">
-									<input name="remember" value="on" id="checkbox2" type="checkbox" >
-									<label for="checkbox2">
-									Remember me
-									</label>
-									</div>
+								
+									
 									</form>
+								
 								</div>
-								<p class="text-center pull-right"> <a href="/forgot"> Forgot password? </a> </p>
 								<div class="clearfix"></div>
 								
 								

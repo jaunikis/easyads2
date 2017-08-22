@@ -10,20 +10,20 @@
 								</div>
                         <form action="/signup2.php" method="post" onsubmit="return validateForm()">
                            <div id="email" class="form-group">
-                              <input type="text" name="email" onkeyup="check_email(this.value)" placeholder="Email Address" class="form-control">
+                              <input type="text" name="email" onkeyup="check_email(this.value)" placeholder="Email Address" class="form-control  border-form">
 							<span id="email2" class=""></span>
 						   </div>
 						   <div id="email33" onclick="test(this.value)"></div>
                            <div id="p1" class="form-group">
-                              <input pattern=".{3,}" onkeyup="check_password1()" id="password1" type="password" name="password1" placeholder="Password" class="form-control" required>
+                              <input pattern=".{3,}" onkeyup="check_password1()" id="password1" type="password" name="password1" placeholder="Password" class="form-control border-form" required>
 							  <span id="p11" class=""></span>
                            </div>
                            <div id="p2" class="form-group">
-                              <input pattern=".{3,}" onkeyup="check_password2()" id="password2"type="password" name="password2" placeholder="Confirm Password" class="form-control" required>
+                              <input pattern=".{3,}" onkeyup="check_password2()" id="password2"type="password" name="password2" placeholder="Confirm Password" class="form-control border-form" required>
 							  <span id="p22" class=""></span>
                            </div>
 						   <div id="name" class="form-group">
-                              <input type="text" name="name" onkeyup="check_name(this.value)" placeholder="Name" class="form-control">
+                              <input type="text" name="name" onkeyup="check_name(this.value)" placeholder="Name" class="form-control border-form">
 							<span id="name2" class=""></span>
 						   </div>
                            <div class="form-group">
