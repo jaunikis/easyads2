@@ -1,8 +1,8 @@
 <?php
 $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $segments = explode('/', $path);
-$email=$segments[2];
-$code=$segments[3];
+$email=strip_tags($segments[2]);
+$code=strip_tags($segments[3]);
 ?>
 
 <!-- Login -->
@@ -49,6 +49,7 @@ function validateForm() {
 									  <span id="p22" class=""></span>
 								   </div>
 								<input style="display:none;" name="code" type="text" value="<?php echo $code;?>">
+								<input style="display:none;" name="email" type="text" value="<?php echo $email;?>">
 									<div class="form-group">
 										<button class="btn btn-block btn-lg btn-primary">Save New Password</button>
 									</div>

@@ -20,7 +20,7 @@
 										<input name="password" type="password" placeholder="Password" class="form-control border-form">
 									</div>
 									<div class="form-group">
-										<button class="btn btn-block btn-lg btn-primary">Sign In</button>
+										<button class="btn btn-block btn-lg btn-primary">Log In</button>
 									</div>
 								
 							</div>

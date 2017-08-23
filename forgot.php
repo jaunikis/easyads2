@@ -29,14 +29,22 @@ function validateForm() {
 			type: "POST",
 			data: {email:x},
 			success: function(result){
-				alert(result);
-				if(result=='too many'){
-					$("#wrong").text('Only one request in 5 mins. is allowed');
-					$("#wrong").show();
-				}else{
-					$("#success").text('Email with password changing link is sent.');
-					$("#success").show();
+				//alert(result);
+				switch(result){
+					case 'too many':
+						$("#wrong").text('Only one request in 5 mins. is allowed');
+						$("#wrong").show();
+						break;
+					case 'nera user':
+						$("#wrong").text('Email not registered.');
+						$("#wrong").show();
+						break;
+					case '1':
+						$("#success").text('Email with password changing link is sent.');
+						$("#success").show();
+						break;
 				}
+				
 			
 		}});
 		return false;
@@ -46,7 +54,7 @@ function validateForm() {
 </script>
 								<form name="e_recovery" onsubmit="return validateForm()" action="/forgot2.php" method="post">
 									<div class="form-group">
-										<input onkeyup="$('#wrong').hide();" name="email" type="email" placeholder="Email" class="form-control border-form">
+										<input onkeyup="$('#wrong').hide();$("#success").hide();" name="email" type="email" placeholder="Email" class="form-control border-form">
 									</div>
 									
 									<div class="form-group">
