@@ -15,6 +15,7 @@
 								<script>
 function validateForm() {
     $("#wrong").hide();
+	$("#success").hide();
 	var x = document.forms["e_recovery"]["email"].value;
     var atpos = x.indexOf("@");
     var dotpos = x.lastIndexOf(".");
@@ -22,7 +23,25 @@ function validateForm() {
         //alert("Not a valid e-mail address");
 		$("#wrong").show();
         return false;
-    }
+    }else{
+		$.ajax({
+			url: "forgot2.php",
+			type: "POST",
+			data: {email:x},
+			success: function(result){
+				alert(result);
+				if(result=='too many'){
+					$("#wrong").text('Only one request in 5 mins. is allowed');
+					$("#wrong").show();
+				}else{
+					$("#success").text('Email with password changing link is sent.');
+					$("#success").show();
+				}
+			
+		}});
+		return false;
+	}
+	
 }
 </script>
 								<form name="e_recovery" onsubmit="return validateForm()" action="/forgot2.php" method="post">
@@ -31,11 +50,11 @@ function validateForm() {
 									</div>
 									
 									<div class="form-group">
-										<button class="btn btn-block btn-lg btn-primary">Recover Password</button>
+										<button type="button" onclick="validateForm();" class="btn btn-block btn-lg btn-primary">Recover Password</button>
 									</div>
 							
 								<div id="wrong" style="display:none" class="alert alert-danger">Wrong email address.</div>
-								
+								<div id="success" style="display:none" class="alert alert-success"></div>
 							
 								
 							</div>

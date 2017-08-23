@@ -16,6 +16,8 @@ function send_mail($to,$subject,$msg){
 	</body>
 	</html>
 	';
-	mail($to,$subject,$msg2,$headers);
+	$send=mail($to,$subject,$msg2,$headers);
+	
+	return $send;
 }
 ?>

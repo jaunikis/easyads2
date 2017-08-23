@@ -18,16 +18,16 @@ $date = new DateTime();$timestamp=$date->getTimestamp();
 //get email
 $email='';
 if(isset($_POST['email'])){$email=$_POST['email'];}
-if($email==''){header('Location: /forgot');}
+if($email==''){echo 'email empty';}
 $pieces=explode('@',$email);
-if(count($pieces)!==2){$_SESSION['msg']='Wrong email';header('Location: /forgot');}
+if(count($pieces)!==2){echo 'false';}
 $pieces2=explode('.',$pieces[1]);
-if(count($pieces2)!==2){$_SESSION['msg']='Wrong email';header('Location: /forgot');}
-if(strlen($pieces2[1])<2){$_SESSION['msg']='Wrong email';header('Location: /forgot');}
+if(count($pieces2)!==2){echo 'false';}
+if(strlen($pieces2[1])<2){echo 'false';}
 
 //get random code
 $x=md5(uniqid(rand(), true));
-echo 'pieces count: '.count($pieces).'<br>'.$timestamp.'<br>'.$ip.'<br>'.$email.'<br>'.$x;
+//echo 'pieces count: '.count($pieces).'<br>'.$timestamp.'<br>'.$ip.'<br>'.$email.'<br>'.$x;
 
 //deleting old entries
 $sql="DELETE FROM forgot WHERE timestamp<$timestamp-86400";
@@ -37,17 +37,16 @@ sqlconnect($sql);
 $sql="SELECT * FROM forgot WHERE timestamp>$timestamp-60";
 $result=sqlconnect($sql);
 $count = $result->num_rows;
-echo '<h2>'.$count.'</h2>';
+//echo '<h2>'.$count.'</h2>';
 if($count==0){
 	$sql="INSERT INTO forgot (code,ip,timestamp,email) VALUES ('$x','$ip','$timestamp','$email')";
 	sqlconnect($sql);
 	$subject='Password change request';
-	$msg='<a href="www.easyads.ie/password_change/'.$email.'/'.$x.'">Change your password</a>';
-	echo '<hr>'.$msg;
-	send_mail($email,$subject,$msg);
-}
-
-
+	$msg='<a href="/password_change/'.$email.'/'.$x.'">Change your password</a>';
+	echo $msg;
+	$send=send_mail($email,$subject,$msg);
+	echo $send;
+}else{echo 'too many';}
 
 
 // header('Location: /login');
