@@ -154,7 +154,7 @@ include('left_search.php');
 							  
 							  <a href="/items?item=<?php echo $id; ?>">
                               <div class="item-img-grid">
-                                 <img alt="" src="<?php echo '/ads_images/'.$cover; ?>" class="ad_image img-responsive img-center">
+                                 <img alt="" src="<?php echo '/ads_images/'.$cover; ?>" class="img-responsive img-center ad_image">
                               </div>
                               <div class="item-title">
                                  

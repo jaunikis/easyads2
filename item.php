@@ -1,3 +1,5 @@
+
+
 <?php
 //$path=$_SERVER["QUERY_STRING"];
 $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
@@ -8,45 +10,7 @@ parse_str($segments[1]);
 //$item=$_GET['item'];echo $item;
 //session_start();
 //$item=$_SESSION['last_id'];
-require_once ('incl/server.php');
-require_once ('incl/elapsed.php');
-$sql="SELECT * FROM skelbimai WHERE id='$item'";
-$result=sqlconnect($sql);
-$ad_count=$result->num_rows;
-if($ad_count<1){exit('Ad not exist');}
-while ($row = $result->fetch_assoc()) {
-	$active=$row['active'];
-	$id=$row['id'];
-    $title=$row['title'];
-	$cover=$row['cover1file'];if($cover==''){$cover='no-image.png';}
-	$price=$row['price'];
-	//$timestamp=$row['timestamp'];
-	$cat1=$row['cat1'];
-	$cat2=$row['cat2'];
-	$make=$row['make'];
-	$model=$row['model'];
-	$fuel=$row['fuel'];
-	$year=$row['year'];
-	$engine=$row['engine'];
-	$transmission=$row['transmission'];
-	$bodyType=$row['bodyType'];
-	$color=$row['color'];
-	$location=$row['location'];
-	$condition2=$row['condition2'];
-	$ad_views=$row['ad_views']; $ad_views++;
-		$sql="UPDATE skelbimai SET ad_views='$ad_views' WHERE id='$item'";
-		$result2=sqlconnect($sql);
-	$description=$row['description'];$description = nl2br(htmlentities($description, ENT_QUOTES, 'UTF-8'));
-	$saved=$row['saved'];
-	$phone=$row['phone'];
-	$name=$row['name'];
-	$user_id=$row['user_id'];
-	$timestamp2=$row['timestamp2'];
-	$currency=$row['currency'];
-	$mileage=$row['mileage'];
-	$mileage_type=$row['mileage_type'];
-	$tax=$row['tax'];
-}
+
 if($active!='Active'){exit('<p><center><h3>This advert is not active at the moment.</h3><center></p>');}
 	
 	$images1=[];
@@ -198,28 +162,18 @@ echo '<div class="item"><a onclick="large_photos('.$i.');" style="cursor:zoom-in
                                           <div class="social-links social-bg pull-right">
                                              <ul>
                                                <!-- <li><a class="fa fa-twitter" target="_blank" href="#"></a></li> -->
-                                                <li>
-												<!-- Load Facebook SDK for JavaScript -->
-  <div id="fb-root"></div>
-  <script>(function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));</script>
-												<div class="fb-share-button" 
-    data-href="http://www.your-domain.com/your-page.html" 
-    data-layout="button_count">
-  </div></li>
-                                             <!--   <li><a class="fa fa-google-plus" target="_blank" href="#"></a></li>
+                                            
+												<li><a class="fa fa-facebook" target="_blank" onclick="share_fb(<?php echo $id;?>)" href="#"></a></li>
+                                             <li><a class="fa fa-twitter" target="_blank" href="#"></a></li>
+											 <!--   <li><a class="fa fa-google-plus" target="_blank" href="#"></a></li>
                                                 <li><a class="fa fa-instagram" target="_blank" href="#"></a></li> -->
                                              </ul>
                                           </div>
                                        </div>
                                     </div>
-									<div class="bottom-id">Classified ID: <?php echo $id;?></div>
+									
                                  </div>
+								 <div class="bottom-id">Classified ID: <?php echo $id;?></div>
                               </div>
                            </div>
                         </div>
@@ -316,7 +270,58 @@ echo '<div class="item"><a onclick="large_photos('.$i.');" style="cursor:zoom-in
 	</div>
 	 
 	  <img id="wait" style="display:none;" class="waitas" src='/images/loading3.gif'/>
-<script>
+
+ <script>
+function share_fb(ad_id){
+	event.preventDefault();
+	//alert(ad_id);
+
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId            : '113602379360573',
+      autoLogAppEvents : true,
+      xfbml            : true,
+      version          : 'v2.10'
+    });
+   
+   
+ var title=document.title;
+
+	
+document.location.href = 'https://www.facebook.com/dialog/share?app_id=113602379360573&display=popup&&href=http%3A%2F%2Feasyads.ie%2Fitems?item='+ad_id+'&redirect_uri=http%3A%2F%2Feasyads.ie%2Fitems?item='+ad_id;	
+//	FB.ui({
+//	  method: 'share',
+//	  display: 'popup',
+//	  mobile_iframe: true,
+//	  href: 'http://easyads.ie/items?item='+ad_id,
+//	}, function(response){});
+
+
+//FB.ui({
+//  method: 'share',
+//  mobile_iframe: true,
+//  quote: 'quote namas..',
+//  href: 'http://easyads.ie/share.php?page=facebook&title=2008%20Audi%20a4%202.0TDi&location=Cavan&id=597',
+//}, function(response){});
+
+
+   FB.AppEvents.logPageView();
+  };
+
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+   
+} //function share_fb
+
+  
+  
+  
 var report_ad_modal=document.getElementById('report_ad_modal');
 
 $("#close_report").click(function(){
