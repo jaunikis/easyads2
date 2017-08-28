@@ -1,233 +1,6 @@
 <?php 
 session_start();
 include_once("incl/analytics_tracking.php");
-?>
-<!DOCTYPE html>
-<html lang="en">
-   <head>
-   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-4761601799795972",
-    enable_page_level_ads: true
-  });
-</script>
-
-<!-- You can use Open Graph tags to customize link previews.
-    Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
-<meta property="og:url"           content="http://www.easyads.ie" />
-  <meta property="og:type"          content="website" />
-  <meta property="og:title"         content="Free Ireland's Classified Ads" />
-  <meta property="og:description"   content="Buy and sell, post your free ad today." />
-  <meta property="og:image"         content="http://www.easyads.ie/images/fblogo.jpg" />
-  <meta property="og:image:type"    content="image/jpeg" />
-
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="description" content="Ireland's Free Classified Ads, Sell and Buy adverts">
-      <meta name="author" content="Marius Vorosilovas">
-	  
-	  <meta name="keywords" content="free ads, free ads Ireland, used cars, buy and sell, buy or sell, sell second hand, sell, buy, adverts, place ad, sell online, online shopping, free ads, jewellery, antiques, arts and crafts, baby and
-	nursery, books, cars, motorbikes, boats, clothes, shoes, bags, computers, tablets, iPads, consoles, games, photography, appliances, DVD, Electronics, Home and Garden, Furniture, DIY, marketplace,
-	watches, jobs, phones, instruments, musical equipment, bikes, cameras, toys, property, sports and fitness, tickets, wedding, tools">
-	
-	<meta name="keyphrases" content="free ads, free ads Ireland, used cars, buy and sell, buy or sell, sell second hand, sell, buy, adverts, place ad, sell online, online shopping, free ads, jewellery, antiques, arts and crafts, baby and
-	nursery, books, cars, motorbikes, boats, clothes, shoes, bags, computers, tablets, iPads, consoles, games, photography, appliances, DVD, Electronics, Home and Garden, Furniture, DIY, marketplace,
-	watches, jobs, phones, instruments, musical equipment, bikes, cameras, toys, property, sports and fitness, tickets, wedding, tools">
-	<meta name="geo.country" content="IE">
-	
-	<meta name="rating" content="general">
-	<meta http-equiv="content-language" content="en">
-	<meta name="robots" content="index,follow">
-	<meta name="distribution" content="global">
-	
-	
-	
-      <title>Ireland's Free Classified Ads, Sell and Buy adverts</title>
-      
-	 <script src="/js/jquery-3.2.1.js"></script>
-	  
-	  <!-- Favicon Icon -->
-      <link rel="apple-touch-icon" sizes="76x76" href="/images/apple-icon.png">
-      <link rel="icon" type="image/png" href="/images/favicon.png">
-      <!-- Bootstrap CSS -->    
-	  <link href="/css/bootstrap.min.css" rel="stylesheet">
-	  <!-- Google Font -->
-      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:regular,700,600&amp;latin" type="text/css" />
-      <!-- Custom CSS -->
-      <link href="/css/style.css" rel="stylesheet">
-	  <link href="/css/style2.css" rel="stylesheet">
-	  <!-- favourites, myads CSS -->
-      <link href="/css/myfav.css" rel="stylesheet">
-      <!-- Owl Carousel -->
-      <link rel="stylesheet" href="/plugins/owl-carousel/owl.carousel.css">
-      <link rel="stylesheet" href="/plugins/owl-carousel/owl.theme.css">
-      <!-- Font Awesome   -->
-      <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-	  
-	 
-   </head>
-   
-   <style>
-.overlay {
-    height: 0%;
-    width: 100%;
-    position: fixed;
-    z-index: 5;
-    top: 0;
-    left: 0;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0, 0.9);
-    overflow-y: hidden;
-    transition: 0.5s;
-}
-
-.overlay-content {
-    position: relative;
-	top: 50%;
-	transform: translateY(-50%);
-    text-align: center;
-    margin: 30px;
-}
-
-.overlay a {
-    padding: 8px;
-    text-decoration: none;
-    font-size: 36px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-}
-
-.overlay a:hover, .overlay a:focus {
-    color: #f1f1f1;
-}
-
-.overlay .closebtn {
-    position: absolute;
-    top: 20px;
-    right: 45px;
-    font-size: 60px;
-	z-index: 10;
-}
-
-@media screen and (max-height: 450px) {
-  .overlay {overflow-y: auto;}
-  .overlay a {font-size: 20px}
-  .overlay .closebtn {
-    font-size: 40px;
-    top: 15px;
-    right: 35px;
-  }
-}
-   
-.img_divas {
-	height:235px;
-	width:235px;
-	margin-bottom:15px;
-	margin-right:10px;
-	display:inline-block;
-	border-radius: 5px;
-	border-style:solid;
-	border-width:1px;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}   
-   
-.thumbnail2 {
-	margin: 15px;
-	border-radius: 5px;
-	
-}
-  
-   .card .card-image{
-	  
-    overflow: hidden;
-   
-}
-
-.card .card-image img{
-	 opacity: 0.8;
-	-webkit-transition: opacity 1s; /* For Safari 3.1 to 6.0 */
-    transition: opacity 0.5s;
-	filter: alpha(opacity=80); /* For IE8 and earlier */
-   
-}
-
-.card .card-image:hover img{
-	opacity: 1.0;
-	filter: alpha(opacity=100); /* For IE8 and earlier */
-   
-}
-
-.card{
-    font-family: 'Roboto', sans-serif; 
-    margin-top: 0px;
-	margin-bottom: 18px;
-    position: relative;
-    -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  box-shadow: 4 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-}
-
-.card .card-content {
-    padding: 10px;    
-}
-
-.card .card-content .card-title, .card-reveal .card-title{
-    font-size: 12px;
-    font-weight: 200;    
-}
-
-.card .card-action{
-    padding: 20px;
-    border-top: 1px solid rgba(160, 160, 160, 0.2);
-}
-.mobile_refine{
-	display:none;
-}
-.ad_image{
-	width:250px;
-}
-@media only screen and (max-width: 786px) { 
-	.mobile_refine{
-		display:inline;
-	}
-  #filter,#c_list,#c_grid,#b_search,#similar { 
-    display: none; 
-  } 
-  #categories_left{
-	  display:none;
-  }
-  #categories_left2{
-	  display:none;
-  }
-  .ad_image{
-	width:100%;
-	margin:0;
-}
-}
-
-
-   </style>
-   
-  
-   
-<body>
-<img style="display:none" src="/images/fblogo.jpg">
- <div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_EN/sdk.js#xfbml=1&version=v2.10";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-<img style="display:none;" href="/images/logo2.png">
-<?php
-
-
-
 
 require_once ('incl/server.php');
 require('incl/pataisom_timestamp.php');
@@ -260,7 +33,20 @@ if($ad_count==0){
 $segm='';
 if(isset($segments[1])){$segm=$segments[1];}
 switch($segm){
+case 'share':
+	$page='';
+    if(isset($segments[2])){$page=$segments[2];}
+	$title='';
+    if(isset($segments[3])){$title=$segments[3];}
+	$location='';
+    if(isset($segments[4])){$location=$segments[4];}
+	$id='';
+    if(isset($segments[5])){$id=$segments[5];}
+    //header('Location: /share.php?page='.$page.'&id='.$id);
+	echo '<script> window.location.href=("/share.php?page='.$page.'&title='.$title.'&location='.$location.'&id='.$id.'");</script>';
+    break;
 case 'blog':
+	require('head_home.php');
     require('top_nav.php');
 	$_SESSION['heading']='Blog';
     require('breadcumb.php');
@@ -268,6 +54,7 @@ case 'blog':
     require('footer_short.php');
     break;
 case 'admin':
+	require('head_home.php');
 	if(isset($_SESSION['user_id'])){
 		if($_SESSION['user_id']!=17){echo('<script>location.href = "/login";</script>');}
 			}else{echo('<script>location.href = "/login";</script>');}
@@ -277,6 +64,7 @@ case 'admin':
     require('footer_short.php');
     break;
 case 'contact':
+	require('head_home.php');
     require('top_nav.php');
 	$_SESSION['heading']='Contact';
     require('breadcumb.php');
@@ -284,24 +72,28 @@ case 'contact':
     require('footer_short.php');
     break;
 case 'edit':
+	require('head_home.php');
     require('top_nav.php');
     require('left_profile.php');
     require('edit.php');
     require('footer_short.php');
     break;
 case 'favourite':
+	require('head_home.php');
     require('top_nav.php');
     require('left_profile.php');
     require('favourite.php');
     require('footer_short.php');
     break;
 case 'my_ads':
+	require('head_home.php');
     require('top_nav.php');
     require('left_profile.php');
     require('my_ads.php');
     require('footer_short.php');
     break;
 case 'my_details':
+	require('head_home.php');
     require('top_nav.php');
     require('left_profile.php');
     require('my_details.php');
@@ -309,6 +101,7 @@ case 'my_details':
     break;
   case '':
   case 'home':
+	require('head_home.php');
     require('top_nav.php');
     require('home_search_box.php');
     require('categories_list2.php');
@@ -317,6 +110,7 @@ case 'my_details':
     require('footer.php');
     break;
 case 'password_change':
+	require('head_home.php');
     require('top_nav.php');
 	$_SESSION['heading']='Change Password';
     require('breadcumb.php');
@@ -324,6 +118,7 @@ case 'password_change':
     require('footer_short.php');
     break;
 case 'forgot':
+	require('head_home.php');
     require('top_nav.php');
 	$_SESSION['heading']='Forgot Password';
     require('breadcumb.php');
@@ -331,6 +126,7 @@ case 'forgot':
     require('footer_short.php');
     break;
   case 'login':
+	require('head_home.php');
     require('top_nav.php');
 	$_SESSION['heading']='Log in';
     require('breadcumb.php');
@@ -338,6 +134,7 @@ case 'forgot':
     require('footer_short.php');
     break;
 case 'signup':
+	require('head_home.php');
     require('top_nav.php');
 	$_SESSION['heading']='Sign up';
     require('breadcumb.php');
@@ -347,6 +144,7 @@ case 'signup':
   case 'post_ad':
   case 'post':
 	if(isset($segments[2])){if($segments[2]=='success'){
+		require('head_home.php');
 		require('top_nav.php');
 		$_SESSION['heading']='Post your ad';
 		require('breadcumb.php');
@@ -354,6 +152,7 @@ case 'signup':
 		require('footer_short.php');
 		break;
 	}}
+	require('head_home.php');
     require('top_nav.php');
 	$_SESSION['heading']='Post your ad';
     require('breadcumb.php');
@@ -375,11 +174,13 @@ case 'items':
 		if(isset($search)){$_SESSION['search']=$search;}
 	}
 	if(isset($item)){
+		require('head_item.php');
 		require('top_nav.php');
 		require('breadcumb_search.php');
 		require('item.php');
 		require('footer.php');
 	}else{
+		require('head_home.php');
 		require('top_nav.php');
 		require('breadcumb_search.php');
 		require('ad_list.php');
@@ -387,6 +188,7 @@ case 'items':
 	}
     break;
   default:
+	require('head_home.php');
     require('top_nav.php');
 	$_SESSION['heading']='Page not found!';
     require('breadcumb.php');
@@ -395,9 +197,6 @@ case 'items':
     break;
 }
 ?>
-
-
-	  
 	  <!-- Post Ad -->	
       <a href="/post_ad/" data-toggle="tooltip" data-placement="left" title="Post Your Ad" class="btn btn-primary btn-lg post-free-add-btn" style="z-index: 2;"><i class="fa fa-pencil"></i></a>
       <!-- jQuery -->

@@ -33,21 +33,28 @@ $x=md5(uniqid(rand(), true));
 $sql="DELETE FROM forgot WHERE timestamp<$timestamp-86400";
 sqlconnect($sql);
 
-//checking in DB for recent insert
-$sql="SELECT * FROM forgot WHERE timestamp>$timestamp-60";
+//checking is email in users db
+$sql="SELECT email FROM users WHERE email='$email'";
 $result=sqlconnect($sql);
 $count = $result->num_rows;
-//echo '<h2>'.$count.'</h2>';
-if($count==0){
-	$sql="INSERT INTO forgot (code,ip,timestamp,email) VALUES ('$x','$ip','$timestamp','$email')";
-	sqlconnect($sql);
-	$subject='Password change request';
-	$msg='<a href="/password_change/'.$email.'/'.$x.'">Change your password</a>';
-	echo $msg;
-	$send=send_mail($email,$subject,$msg);
-	echo $send;
-}else{echo 'too many';}
-
+$useris=0;
+if($count!==0){
+	//checking in DB for recent insert
+	$sql="SELECT * FROM forgot WHERE timestamp>$timestamp-20";
+	$result=sqlconnect($sql);
+	$count = $result->num_rows;
+	//echo '<h2>'.$count.'</h2>';
+	if($count==0){
+		$sql="INSERT INTO forgot (code,ip,timestamp,email) VALUES ('$x','$ip','$timestamp','$email')";
+		sqlconnect($sql);
+		$subject='Password change request';
+		$msg='to change your password, please follow this link: 
+		<a href="http://www.easyads.ie/password_change/'.$email.'/'.$x.'">Change your password</a>';
+		//echo $msg;
+		$send=send_mail($email,$subject,$msg);
+		echo $send;
+	}else{echo 'too many';}
+}else{echo 'nera user';}
 
 // header('Location: /login');
 ?>

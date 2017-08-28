@@ -85,6 +85,13 @@
                      </div>
                      <div class="bottom-social-icons social-icon pull-right" style="margin-right:20px;">  
                          
+						 <div
+  class="fb-like"
+  data-share="true"
+  data-width="450"
+  data-show-faces="true">
+</div>
+						 
 						 <div class="fb-share-button" data-source="/images/logo.png" data-href="http://www.easyads.ie" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Share</a></div>
 					<!--	 
 						 <div class="fb-share-button" data-href="http://www.easyads.ie" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Share</a></div>

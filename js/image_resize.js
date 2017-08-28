@@ -17,6 +17,7 @@ function resize(th){
 	
 	//for (var i = 0; i < files.length; i++) {
 	function all_files(i){
+		if(images1.length>15){alert('Only 16 images allowed!');return;}
 		(function(i) {
 		getOrientation(files[i], function(orientation) {
 			ori=orientation;

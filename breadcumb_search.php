@@ -52,25 +52,6 @@ $json = json_decode($string, true);
 					echo '<li><i class="fa fa-angle-right" aria-hidden="true"></i></li>';
 					echo '<li><a href="/items">All items</a></li>';
 					if(isset($item)){
-						require_once ('incl/server.php');
-						$sql="SELECT * FROM skelbimai WHERE id='$item'";
-						$result=sqlconnect($sql);
-						$ad_count=$result->num_rows;
-						if($ad_count>0){
-							while ($row = $result->fetch_assoc()) {
-								$cat1=$row['cat1'];
-								$cat2=$row['cat2'];
-								$make=$row['make'];
-								$model=$row['model'];
-								
-							}
-						}else{
-								$cat1='';
-								$cat2='';
-								$make='';
-								$model='';
-						}
-						
 						$link='items/'.str_replace(' ','-',$cat1);
 						echo '<li><i class="fa fa-angle-right" aria-hidden="true"></i></li>';
 						echo '<li><a href="/'.$link.'">'.str_replace("-"," ",$cat1).'</a></li>';
