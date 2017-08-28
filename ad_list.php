@@ -195,7 +195,7 @@ $minus='';
 $minus_link=' href="?page='.($page-1).'"';
 $minus_click=' onclick="page_change('.($page-1).');"';
 if($page<=1){$minus=' disabled';$minus_link='';$minus_click='';}
-echo $minus_click;
+
 $plus='';
 $plus_link=' href="?page='.($page+1).'"';
 $plus_click=' onclick="page_change('.($page+1).');" ';
