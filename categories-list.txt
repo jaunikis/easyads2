@@ -21,7 +21,7 @@
 "Free Stuff":[],
 "Other":[],
 
-"Furniture":["Living Room","Bedroom","Kitchen","Garden"],
+"Furniture":["Living Room","Bedroom","Kitchen","Garden","Office"],
 
 "Mobile phones":["Apple","Samsung","LG","HTC","Huawei","ZTE","Sony","TCL","Lenovo","Yulong"],
 
@@ -92,6 +92,7 @@
 "Triumph":["2000","Dolomite","Spitfire"],
 "Vauxhall":["Adam","Agila","Antara","Astra","Calibra","Cavalier","Corsa","Frontera","Insignia","Meriva","Monaro","Monterey","Omega","Senator","Signum","Tigra","Vectra","Vivaro","Zafira"],
 "Volkswagen":["411","Amarok","Beetle","Bora","Caddy","California","Caravelle","CC","Corrado","EOS","FOX","Golf","Jetta","Lupo","Passat","Passat CC","Phaeton","Polo","Scirocco","Sharan","Shuttle","Tiguan","Touareg","Touran","Transporter","Up!","Vento"],
+"Vw":["411","Amarok","Beetle","Bora","Caddy","California","Caravelle","CC","Corrado","EOS","FOX","Golf","Jetta","Lupo","Passat","Passat CC","Phaeton","Polo","Scirocco","Sharan","Shuttle","Tiguan","Touareg","Touran","Transporter","Up!","Vento"],
 "Volvo":["200 Series","300 Series","400 Series","900 Series","C30","C70","S40","S60","S70","S80","S90","V40","V50","V60","V70","V90","Xc60","Xc70","Xc90"]
 
 }

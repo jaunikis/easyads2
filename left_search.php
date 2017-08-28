@@ -233,6 +233,7 @@ while ($row = $result3->fetch_assoc()) {
 		
 					<br>
 				<input id="sortBy" name="sortBy" style="display:none;"></input>	
+				<input id="page" name="page" style="display:none;"></input>
 				</form>
 				</div> <!-- form group -->	
 						   

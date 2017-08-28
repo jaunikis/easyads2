@@ -92,7 +92,7 @@ require_once ('incl/elapsed.php');
                         
 						
                         <li class="dropdown">
-                           <a id="sort" aria-expanded="false" href="www.google.ie" class="dropdown-toggle" data-toggle="dropdown"> <?php echo $sortTxt; ?> <b class="caret"></b></a>
+                           <a style="cursor:pointer;" id="sort" aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown"> <?php echo $sortTxt; ?> <b class="caret"></b></a>
                            <ul class="dropdown-menu">
                               <li><a id="sortPriceL" href="#">Low Price First</a></li>
                               <li><a id="sortPriceH" href="#">High Price First</a></li>
@@ -204,7 +204,7 @@ if($page>=$page_max){$plus=' disabled';$plus_link='';}
 <nav aria-label="Page navigation example">
   <ul class="pagination justify-content-center">
 	<li class="page-item<?php echo $minus;?>">
-      <a class="page-link"<?php echo $minus_link ?> aria-label="Previous">
+      <a onclick="page_change(<?php echo $page-1;?>);" class="page-link"<?php echo $minus_link ?> aria-label="Previous">
         <span aria-hidden="true">&laquo;</span>
         <span class="sr-only">Previous</span>
       </a>
@@ -222,7 +222,7 @@ if($page>=$page_max){$plus=' disabled';$plus_link='';}
 	}
 	?>
     <li class="page-item<?php echo $plus;?>">
-      <a class="page-link"<?php echo $plus_link;?> aria-label="Next">
+      <a onclick="page_change(<?php echo $page+1;?>);" class="page-link"<?php echo $plus_link;?> aria-label="Next">
         <span aria-hidden="true">&raquo;</span>
         <span class="sr-only">Next</span>
       </a>
@@ -270,6 +270,13 @@ function toggle_show(){
 		$("#sort").html($(this).text()+' <b class="caret"></b>');
 		$("#refine").submit();
 	});
+	
+	function page_change(page){
+		event.preventDefault();
+		//alert(page);
+		$("#page").val(page);
+		$("#refine").submit();
+	}
 	
 	//$("#clear_all").click(function(){
 	//	this.parentNode.remove();
