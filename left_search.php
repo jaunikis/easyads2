@@ -232,7 +232,7 @@ while ($row = $result3->fetch_assoc()) {
 			</div> <!-- cars -->
 		
 					<br>
-				<input id="sortBy" name="sortBy" style="display:none;"></input>	
+				<input id="sortBy" name="sortBy" value="<?php echo $sortBy;?>" style="display:none;"></input>	
 				<input id="page" name="page" style="display:none;"></input>
 				</form>
 				</div> <!-- form group -->	

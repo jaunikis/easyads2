@@ -64,7 +64,7 @@ require_once ('incl/elapsed.php');
 			
 			//pagination
 			$ads_per_page=15;
-			if(!isset($page)){$page=1;}
+			if(!isset($page)){$page=1;}else{if($page==''){$page=1;}}
 			$page_max=intval($ad_count/$ads_per_page);
 			if($ad_count/$ads_per_page>intval($ad_count/$ads_per_page)){$page_max+=1;}
 			if($page_max<1){$page_max=1;}
@@ -193,18 +193,20 @@ include('left_search.php');
 <?php
 $minus='';
 $minus_link=' href="?page='.($page-1).'"';
-if($page<=1){$minus=' disabled';$minus_link='';}
-
+$minus_click=' onclick="page_change('.($page-1).');"';
+if($page<=1){$minus=' disabled';$minus_link='';$minus_click='';}
+echo $minus_click;
 $plus='';
 $plus_link=' href="?page='.($page+1).'"';
-if($page>=$page_max){$plus=' disabled';$plus_link='';}
+$plus_click=' onclick="page_change('.($page+1).');" ';
+if($page>=$page_max){$plus=' disabled';$plus_link='';$plus_click='';}
 
 ?>
 		
 <nav aria-label="Page navigation example">
   <ul class="pagination justify-content-center">
 	<li class="page-item<?php echo $minus;?>">
-      <a onclick="page_change(<?php echo $page-1;?>);" class="page-link"<?php echo $minus_link ?> aria-label="Previous">
+      <a class="page-link"<?php echo $minus_link.$minus_click;?> aria-label="Previous">
         <span aria-hidden="true">&laquo;</span>
         <span class="sr-only">Previous</span>
       </a>
@@ -218,11 +220,11 @@ if($page>=$page_max){$plus=' disabled';$plus_link='';}
 		$x='';$link=' href="?page='.$i.'"';
 		if($i==$page){$x=' active';$link='';}
 		if($i>$page_max){$x=' disabled';$link='';}
-		echo '<li class="page-item'.$x.'"><a class="page-link" '.$link.'">'.$i.'</a></li>';
+		echo '<li onclick="page_change('.$i.')" class="page-item'.$x.'"><a class="page-link" '.$link.'">'.$i.'</a></li>';
 	}
 	?>
     <li class="page-item<?php echo $plus;?>">
-      <a onclick="page_change(<?php echo $page+1;?>);" class="page-link"<?php echo $plus_link;?> aria-label="Next">
+      <a class="page-link"<?php echo $plus_link.$plus_click;?> aria-label="Next">
         <span aria-hidden="true">&raquo;</span>
         <span class="sr-only">Next</span>
       </a>
@@ -273,9 +275,9 @@ function toggle_show(){
 	
 	function page_change(page){
 		event.preventDefault();
-		//alert(page);
-		$("#page").val(page);
-		$("#refine").submit();
+			//alert(plus);
+			$("#page").val(page);
+			$("#refine").submit();
 	}
 	
 	//$("#clear_all").click(function(){
