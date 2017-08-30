@@ -96,6 +96,9 @@
 		}
 	}
 	function check_email(email){
+		document.getElementById("email").className = "form-group";
+		document.getElementById("email2").className = "";
+		document.getElementById("email33").innerHTML = '';
 		//alert('ok');
 		// Create our XMLHttpRequest object
 		var hr = new XMLHttpRequest();
@@ -112,8 +115,12 @@
 				var return_data = hr.responseText;
 				
 				if(return_data=="ok" && email.indexOf("@")>1){
+					document.getElementById("email").className = "form-group";
+					document.getElementById("email2").className = "";
+					document.getElementById("email33").innerHTML = '';
 					document.getElementById("email").className = "form-group has-success has-feedback";
 					document.getElementById("email2").className = "glyphicon glyphicon-ok form-control-feedback";
+					
 					}else{
 						if(return_data=="uzimtas"){
 							document.getElementById("email").className = "form-group has-error has-feedback";

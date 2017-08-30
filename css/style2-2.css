@@ -484,14 +484,21 @@ input[type=text],input[type=number], select {
 	border: 1px solid rgba(255, 255, 255, 0.3);
 	width:80%;
 	background-color:rgba(255, 255, 255, 0.2);
+	text-shadow: 2px 2px 8px #FF0000;
+}
+.home_banner h2{
+	color:white;
+	font-size:24px;
+	font-weight:bold;
+	margin-bottom:5px;
 }
 .home_banner h3{
-	color:white;
+	color:lightGrey;
 	font-size:22px;
 	margin-bottom:5px;
 }
 .home_banner p{
-	color:white;
+	color:lightGrey;
 	font-size:18px;
 	margin-bottom:5px;
 }
@@ -499,8 +506,8 @@ input[type=text],input[type=number], select {
 	color:rgba(220,220,255,1);
 }
 #post_ad:hover{
-	color:rgba(220,220,220,1);
-	text-weight:900;
+	color:silver;
+	
 }
 
 

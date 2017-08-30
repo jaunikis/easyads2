@@ -1,5 +1,8 @@
 <?php
 require_once ('incl/server.php');
+require_once ('incl/mail.php');
+$date = new DateTime();$timestamp=$date->getTimestamp();
+
 if(isset($_POST['email'])){$email=$_POST['email'];}
 if(isset($_POST['password1'])){$password1=$_POST['password1'];}
 if(isset($_POST['password2'])){$password2=$_POST['password2'];}
@@ -23,35 +26,43 @@ echo 'terms: '.$terms.'<br>';
 echo 'ip: '.$ip.'<br>';
 echo $browser.'<br>';
 */
-
 $password=md5($password1);
 
-
-//$email=mysql_real_escape_string($email);
-//$name=mysql_real_escape_string($name);
-
-$sql="INSERT INTO users (email,password,name,active,ip,browser) VALUES ('$email','$password','$name','yes','$ip','$browser')";
-
-//if (!$result = $conn->query($sql)) {echo "Sorry, the website is experiencing problems.";exit;}
-$res=sqlconnect($sql);
-//echo $res;
-session_start();
-$_SESSION['user']=$name;
-$_SESSION['email']=$email;
-$_SESSION['location']='All Locations';
-
-$_SESSION['user_id']=$res;
-		//$_SESSION['password']=$password;
-		//$_SESSION['phone']=$row['phone'];
-		//$_SESSION['registered']=$row['registered'];
-		$_SESSION['email']=$email;
-		//$_SESSION['photo']=$row['photo'];
-		//$_SESSION['active']=$row['active'];
-		//$_SESSION['location']=$row['location'];
-		//$_SESSION['saved']=$row['saved'];
-		$_SESSION['photo_blob']='';
-		$_SESSION['user_name']=$name;
-
+//checking if same ip registered in more than 3 times in 1 hour
+$timestamp3=$timestamp-3600;
+$sql="SELECT timestamp,ip FROM users WHERE timestamp>'$timestamp3' AND ip='$ip'";
+$result=sqlconnect($sql);
+$ad_count = $result->num_rows;
+//echo 'ip: '.$ip.'<br>';
+//echo 'timestamp: '.$timestamp.'<br>';
+//echo 'ad_count: '.$ad_count.'<br>';
+if($ad_count<3){
+	$sql="INSERT INTO users (email,password,name,active,ip,browser,timestamp) VALUES ('$email','$password','$name','yes','$ip','$browser','$timestamp')";
+	$res=sqlconnect($sql);
+	if($res==0){
+		echo "<script>alert('user not created! try again later, can be email already exist, if the problem persist please contact us.');</script>";
+		send_mail('easyads.ie signup problem',$ip);
+		return;
+	}
+	session_start();
+	$_SESSION['user']=$name;
+	$_SESSION['email']=$email;
+	$_SESSION['location']='All Locations';
+	$_SESSION['user_id']=$res;
+			//$_SESSION['phone']=$row['phone'];
+			//$_SESSION['registered']=$row['registered'];
+			$_SESSION['email']=$email;
+			//$_SESSION['photo']=$row['photo'];
+			//$_SESSION['active']=$row['active'];
+			//$_SESSION['location']=$row['location'];
+			//$_SESSION['saved']=$row['saved'];
+			$_SESSION['photo_blob']='';
+			$_SESSION['user_name']=$name;
+}else{
+	echo "<script>alert('user not created! try again later, if the problem persist please contact us.');</script>";
+	send_mail('easyads.ie signup problem',$ip);
+}
+	
 header('Location: /');
 
 ?>

@@ -12,12 +12,13 @@ $json = json_decode($string, true);
          <div class="container">
             <div class="row">
                <div class="main-search-box text-center">
-                  <h1 class="intro-title" >Sell or Advertise everything online with Easyads.ie classified</h1>
+                  <h1 class="intro-title">Ireland's number one fast growing classifieds website</h1>
                   <p class="sub-title">Buy and sell everything from used cars to mobile phones and computers, or search for property, jobs and more</p>
                   
 					<div class="home_banner">
+						<h2>Fast And Easy to <a style="" id="post_ad" href="/post_ad">Post New Ad</a></h2>
 						<h3>No Need To Log in or Sign Up!</h3>
-						<p>Takes 1 min to <a id="post_ad" href="/post_ad">post your ad</a>.</p>
+						
 					</div>
 				
 				  <form action="/items">
