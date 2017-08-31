@@ -203,9 +203,10 @@ echo '<div class="item"><a onclick="large_photos('.$i.');" style="cursor:zoom-in
                      <div class="widget-footer">
                         <div class="row">
                            <div class="col-sm-12">    
-                              <button class="btn btn-info btn-block"><i class="fa fa-whatsapp"></i> <?php echo $phone;?></button>
-                            <?php  //<button class="btn btn-warning btn-block"><i class="fa fa-envelope"></i> Send Message</button> ?>
-                           </div>
+                              <p><a href="tel:<?php echo $phone;?>"><button class="btn btn-info btn-block"><i class="fa fa-whatsapp"></i> <?php echo $phone;?></button></a></p>
+							<button onclick="send_msg('<?php echo $email;?>');" class="btn btn-warning btn-block"><i class="fa fa-envelope"></i> Send Message</button>
+             
+						   </div>
                         </div>
                      </div>
                   </div>
@@ -250,9 +251,21 @@ echo '<div class="item"><a onclick="large_photos('.$i.');" style="cursor:zoom-in
 		</div>
 	  </div>
 	  
+	<div id="send_msg_modal" class="modal">
+		<div id="send_msg_content" class="report_ad_content">
+			<span onclick="uzdaryti();" class="close_report">&times;</span>
+			<p>send message</p>
+			<form>
+				<p><input></p>
+				<p><button type="button" id="send_msg2" class="btn btn-warning">Send</button></p>
+			</form>
+		</div>
+	</div>
+	
+	
 	<div id="report_ad_modal" class="modal">
 		<div id="report_ad_content" class="report_ad_content">
-			<span id="close_report" class="close_report">&times;</span>
+			<span onclick="uzdaryti();" class="close_report">&times;</span>
 			<p>Please select report reason.</p>
 			<form>
 				<input id="report_id" name="report_id" style="display:none"></input>
@@ -271,8 +284,15 @@ echo '<div class="item"><a onclick="large_photos('.$i.');" style="cursor:zoom-in
 	 
 	  <img id="wait" style="display:none;" class="waitas" src='/images/loading3.gif'/>
 
- <script>
-function share_fb(ad_id){
+ <script> 
+ //$("#send_msg_modal").click(function(){send_msg_modal.style.display="none";});
+ function send_msg(email){
+	//alert(email);
+	send_msg_modal.style.display = "block";
+}
+ 
+ 
+ function share_fb(ad_id){
 	event.preventDefault();
 	//alert(ad_id);
 
@@ -322,11 +342,14 @@ document.location.href = 'https://www.facebook.com/dialog/share?app_id=113602379
   
   
   
-var report_ad_modal=document.getElementById('report_ad_modal');
+//var report_ad_modal=document.getElementById('report_ad_modal');
 
-$("#close_report").click(function(){
-	report_ad_modal.style.display="none";
-});
+function uzdaryti(){
+	$("#report_ad_modal").hide();
+	$("#send_msg_modal").hide();
+	//report_ad_modal.style.display="none";
+	//send_msg_modal.style.display="none";
+}
 $('#reason').change(function(){
         if(this.value=='Other'){
 			$("#reason2").show();
@@ -360,13 +383,9 @@ $("#report_ad_button2").click(function(){
 function report_ad(id){
 	//alert(id);
 	$("#report_id").val(id);
-	var report_ad_button=document.getElementById('report_ad_button');
-	var report_ad_success=document.getElementById('report_ad_success');
+	//var report_ad_button=document.getElementById('report_ad_button');
+	//var report_ad_success=document.getElementById('report_ad_success');
 	report_ad_modal.style.display = "block";
-	
-	
-	
-	
 }
 
 var modal = document.getElementById('myModal');
@@ -386,6 +405,9 @@ while($("#a"+x).length>0){
 	m_images.push(ttt);
 	x++;
 }
+
+
+
 
 function large_photos(th){
 	//alert(th);
@@ -483,7 +505,9 @@ window.onclick = function(event) {
     }
 	if (event.target == report_ad_modal) {
         report_ad_modal.style.display = "none";
-		
+    }
+	if (event.target == send_msg_modal) {
+        send_msg_modal.style.display = "none";
     }
 }
 
