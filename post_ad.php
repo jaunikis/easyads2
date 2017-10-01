@@ -234,8 +234,13 @@ for($i=date("Y")-20;$i<date("Y")+1;$i++){
 									<div class="form-group">
 										<label class="col-sm-3 control-label">Location</label>
 										<div class="col-sm-9">
+										
 											<select id="location" name="location" class="form-control1 border-form">
-												<option selected="">All Locations</option>
+			<?php
+			$loc='All locations';
+			if(isset($location)){$loc=$location;}
+			?>
+												<option selected=""><?php echo $loc;?></option>
 			  <?php
 				$location='';
 				if(isset($_SESSION['location'])){$location=$_SESSION['location'];}
@@ -272,7 +277,7 @@ for($i=date("Y")-20;$i<date("Y")+1;$i++){
 										<label class="col-sm-3 control-label">Phone number <span class="required">*</span></label>
 										<div class="col-sm-9">
 											<div class="input-group">
-												<input id="phone" name="phone" type="text" value="<?php if(isset($_SESSION['phone'])){echo $_SESSION['phone'];} ?>" class="form-control1 border-form">
+												<input onkeyup="phone_change(this.value);" id="phone" name="phone" type="text" value="<?php if(isset($_SESSION['phone'])){echo $_SESSION['phone'];} ?>" class="form-control1 border-form">
 											</div>
 										</div>
 									</div>
@@ -388,6 +393,13 @@ for($i=date("Y")-20;$i<date("Y")+1;$i++){
 <script src="/js/js.js"></script>
 
 <script>
+function phone_change(value){
+	//alert(value);
+	var n=value.search('tel:');
+	//alert(n);
+	if(n==0){value2=value.slice(4);$("#phone").val(value2);}
+}
+
 cover=0;
 nr=0;
 nr2=0;
@@ -490,7 +502,9 @@ function save(){
 }
 
 
+
 function showHint(str) {
+	alert(str);
     if (str.length == 0) { 
         document.getElementById("txtHint").innerHTML = "";
 		document.getElementById('cat22').style.display = "none";

@@ -3,6 +3,13 @@ $.ajax({url: "/categories-list.txt", success: function(result){
 	myObj = JSON.parse(result);
 	
 	$("#title").keyup(function(){
+		ieskom();
+	});
+	
+	ieskom();
+	
+	function ieskom(){
+		//alert('df');
 		var str=$("#title").val();
 		//alert(str);
 		if(str==''){$("#txtHint").text('nera');}
@@ -116,7 +123,7 @@ $.ajax({url: "/categories-list.txt", success: function(result){
 				
 			}});
 		}
-	}); // title.keyup
+	} // title.keyup
 	
 	
 	$("#cat1").change(function(){
