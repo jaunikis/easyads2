@@ -51,7 +51,7 @@ function generateRandomString($length = 10) {
 
 $ad_code=generateRandomString(6);
 
-$valid_till=intval($timestamp2+(86400*90));
+$valid_till=intval($timestamp2+(86400*180));
 
 //echo 'timestamp2: '.$timestamp2.'<br>';
 //echo 'ip: '.$ip.'<br>';
@@ -65,7 +65,7 @@ require_once ('incl/swear.php');
 //atimame rand idejimo laika
 //$minus=rand(1,43000);$timestamp2=-$minus;
 
-$bump_days=rand(5,20);
+$bump_days=rand(6,30);
 //$sql = "INSERT INTO skelbimai (cover,cover1file,ip,user,title,cat1,cat2,make,model,year,fuel,transmission,bodyType,color,price,location,condition2,description,name,email,phone,active,timestamp2) VALUES ('$images1[$cover]','$images1file[$cover]','$ip','$user','$title','$cat1','$cat2','$make','$model','$year','$fuel','$transmission','$bodyType','$color','$price','$location','$condition','$description','$name','$email','$phone','$active',$timestamp2)";
 $sql = "INSERT INTO skelbimai (engine,mileage,mileage_type,tax,ad_code,cover1file,ip,user_id,title,cat1,cat2,make,model,year,fuel,transmission,bodyType,color,price,currency,location,condition2,description,name,email,phone,active,timestamp2,valid_till,bump_days) VALUES ('$engine','$mileage','$mileage_type','$tax','$ad_code','$images1file[$cover]','$ip','$user_id','$title','$cat1','$cat2','$make','$model','$year','$fuel','$transmission','$bodyType','$color','$price','$currency','$location','$condition','$description','$name','$email','$phone','$active','$timestamp2','$valid_till','$bump_days')";
 $ad_id=sqlconnect($sql);
@@ -76,7 +76,7 @@ $timestamp3=$timestamp2-120;
 $sql="SELECT timestamp2,ip FROM skelbimai WHERE timestamp2>'$timestamp3' AND ip='$ip'";
 $result=sqlconnect($sql);
 $ad_count = $result->num_rows;
-if($ad_count>1){if($active=='Active'){$active='';}$active.='to_many';}
+if($ad_count>2){if($active=='Active'){$active='';}$active.='to_many';}
 	
 if($active!='Active'){
 	$sql="UPDATE skelbimai SET active='$active' WHERE id='$ad_id'";

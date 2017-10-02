@@ -31,9 +31,9 @@ $.ajax({url: "/categories-list.txt", success: function(result){
 						$("#cat4").val(array[3]);
 					}
 					
-					$("#fuel").val('Please Choose');
+					//$("#fuel").val('Please Choose');
 					$("#engine").val('');
-					$("#year").val('Please Choose');
+					//$("#year").val('Please Choose');
 					$("#bodyType").val('Please Choose');
 					
 					for(i=1994;i<2018;i++){

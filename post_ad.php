@@ -82,11 +82,14 @@ $json = json_decode($string, true);
 										<div class="col-sm-9">
 											<select name="year" id="year" class="form-control1 border-form">
 												<option value="0" disabled selected style="display: none;">Please Choose</option>
-												<option>other</option>
+												
 <?php
+echo '<option>other</option>';
 //$ynow=date("Y");
 for($i=date("Y")-20;$i<date("Y")+1;$i++){
-	echo '<option>'.$i.'</option>';
+	echo '<option ';
+	if(isset($year)){if($i==$year){echo 'selected';}}
+	echo '>'.$i.'</option>';
 }
 ?>
 											</select>
@@ -118,10 +121,10 @@ for($i=date("Y")-20;$i<date("Y")+1;$i++){
 										<div class="col-sm-9">
 											<select name="fuel" id="fuel" class="form-control1 border-form">
 												<option value="0" disabled selected style="display: none;">Please Choose</option>
-												<option>Diesel</option>
-												<option>Petrol</option>
-												<option>Electric</option>
-												<option>Hybrid</option>
+												<option <?php if(isset($fuel)){if($fuel=='Diesel'){echo 'selected';}}?>>Diesel</option>
+												<option <?php if(isset($fuel)){if($fuel=='Petrol'){echo 'selected';}}?>>Petrol</option>
+												<option <?php if(isset($fuel)){if($fuel=='Electric'){echo 'selected';}}?>>Electric</option>
+												<option <?php if(isset($fuel)){if($fuel=='Hybrid'){echo 'selected';}}?>>Hybrid</option>
 											</select>
 										</div>
 									</div>
@@ -131,8 +134,8 @@ for($i=date("Y")-20;$i<date("Y")+1;$i++){
 										<div class="col-sm-9">
 											<select name="transmission" id="transmission" class="form-control1 border-form">
 												<option value="0" disabled selected style="display: none;">Please Choose</option>
-												<option>Manual</option>
-												<option>Automatic</option>
+												<option <?php if(isset($trans)){if($trans=='Manual'){echo 'selected';}}?>>Manual</option>
+												<option <?php if(isset($trans)){if($trans=='Automatic'){echo 'selected';}}?>>Automatic</option>
 											</select>
 										</div>
 									</div>
@@ -179,7 +182,7 @@ for($i=date("Y")-20;$i<date("Y")+1;$i++){
 									<div class="form-group" id="tax1">
 										<label class="col-sm-3 control-label">Tax </label>
 										<div class="col-sm-9">
-											<input name="tax" id="tax" type="number" class="form-control1 border-form">
+											<input value="<?php if(isset($tax)){echo $tax;}?>" name="tax" id="tax" type="number" class="form-control1 border-form">
 										</div>
 									</div>
 									
@@ -258,7 +261,7 @@ for($i=date("Y")-20;$i<date("Y")+1;$i++){
 									<div class="form-group">
 										<label class="col-sm-3 control-label">Ad Description <span class="required">*</span></label>
 										<div class="col-sm-9">
-											<textarea value="<?php if(isset($description)){echo $description;}?>" style="line-height: 110%" rows="8" id="description" name="description" value="description1" placeholder="Include the brand, model, age and any included accessories." class="form-control border-form"></textarea>
+											<textarea style="line-height: 110%" rows="8" id="description" name="description" value="description1" placeholder="Include the brand, model, age and any included accessories." class="form-control border-form"><?php if(isset($description)){echo $description;}?></textarea>
 										</div>
 									</div>
 									<div class="form-group">
@@ -277,7 +280,7 @@ for($i=date("Y")-20;$i<date("Y")+1;$i++){
 										<label class="col-sm-3 control-label">Phone number <span class="required">*</span></label>
 										<div class="col-sm-9">
 											<div class="input-group">
-												<input onkeyup="phone_change(this.value);" id="phone" name="phone" type="text" value="<?php if(isset($_SESSION['phone'])){echo $_SESSION['phone'];} ?>" class="form-control1 border-form">
+												<input onkeyup="phone_change(this.value);" id="phone" name="phone" type="text" value="<?php if(isset($_SESSION['phone'])){echo $_SESSION['phone'];}elseif(isset($phone)){echo $phone;} ?>" class="form-control1 border-form">
 											</div>
 										</div>
 									</div>

@@ -28,7 +28,7 @@
 "Laptops":["Apple","Asus","Dell","HP","Lenovo","Acer","Microsoft","Toshiba","Samsung"],
 "Laptop Parts":["Apple","Assus","Dell","HP","Lenovo","Acer","Microsoft","Samsung"],
 
-"Cars":["Aixam","Acura","Alfa Romeo","Aston Martin","Audi","Austin","Bentley","Bmw","Bugatti","Cadillac","Chevrolet","Chrysler","Citroen","Dacia","Daewoo","Daihatsu","Dodge","Ferrari","Fiat","Ford","GMC","Holden","Honda","Hyundai","Isuzu","Jaguar","Jeep","Kia","Lamborghini","Lancia","Land Rover","Lexus","Lincoln","Lotus","Maserati","Maybach","Mazda","Mc Laren","Mercedes Benz","MG","Mini","Mitsubichi","Nissan","Opel","Peugeot","Porsche","Proton","Renault","Rover","Saab","Seat","Skoda","Smart","Ssang Yong","Subaru","Suzuki","Tesla","Toyota","Triumph","Vauxhall","Volkswagen","Volvo"],
+"Cars":["Aixam","Acura","Alfa Romeo","Aston Martin","Audi","Austin","Bentley","Bmw","Bugatti","Cadillac","Chevrolet","Chrysler","Citroen","Dacia","Daewoo","Daihatsu","Dodge","Ferrari","Fiat","Ford","GMC","Holden","Honda","Hyundai","Isuzu","Jaguar","Jeep","Kia","Lamborghini","Lancia","Land Rover","Lexus","Lincoln","Lotus","Maserati","Maybach","Mazda","Mc Laren","Mercedes Benz","MG","Mini","Mitsubishi","Nissan","Opel","Peugeot","Porsche","Proton","Renault","Rover","Saab","Seat","Skoda","Smart","Ssang Yong","Subaru","Suzuki","Tesla","Toyota","Triumph","Vauxhall","Volkswagen","Volvo"],
 
 "Breaking & Repairables":["Aixam","Acura","Alfa Romeo","Aston Martin","Audi","Austin","Bentley","Bmw","Cadillac","Chevrolet","Chrysler","Citroen","Dacia","Daewoo","Daihatsu","Dodge","Ferrari","Fiat","Ford","GMC","Holden","Honda","Hyundai","Isuzu","Jaguar","Jeep","Kia","Lamborghini","Lancia","Land Rover","Lexus","Lincoln","Lotus","Maserati","Maybach","Mazda","Mc Laren","Mercedes Benz","MG","Mini","Mitsubichi","Nissan","Opel","Peugeot","Porsche","Proton","Renault","Rover","Saab","Seat","Skoda","Smart","Ssang Yong","Subaru","Suzuki","Tesla","Toyota","Triumph","Vauxhall","Volkswagen","Volvo"],
 
@@ -72,7 +72,7 @@
 "Mercedes Benz":["190","200","220","230","250","260","280","300","307","307","320","500","600","A-Class","B-Class","C-Class","CE-Class","CLA-Class","CL-Class","CLK-Class","CLS-Class","E-Class","G-Class","GLA","GLC-Class","GL-Class","GLE","ML-Class","R-Class","S-Class","SLC-Class","SL-Class","SLK-Class","Vario","V-Class","Viano","Vito"],
 "MG":["1800","MGB","MGF","ZR","ZS","ZT"],
 "Mini":["Clubman","Cooper","Cooper S","Countryman","First","Mini","One"],
-"Mitsubichi":["3000 GTO","ASX","Canter","Carisma","Challenger","Colt","Delica","FTO","Galant","Grandis","I","L200","Lancer","Mirage","Outlander","Pajero","Ralliart","Shogun","Spacestar","Spacewagon"],
+"Mitsubishi":["3000 GTO","ASX","Canter","Carisma","Challenger","Colt","Delica","FTO","Galant","Grandis","I","L200","Lancer","Mirage","Outlander","Pajero","Ralliart","Shogun","Spacestar","Spacewagon"],
 "Nissan":["100NX","103NX","Almera","Almera Tino","Cube","D22","Fairlady","Figaro","GT-R","Juke","Laurel","Leaf","March","Maxima","Micra","Murano","Navara","Note","Pathfinder","Patrol","Pixo","Primastar","Primera","Pulsar","Qashqai","Qashqai+2","Serena","Silvia","Skyline","Sunny","Terrano","Tiida","Vanette","X-Trail","Z-Car","ZX"],
 "Opel":["Adam","Agila","Antara","Astra","Combo","Corsa","Frontera","Insignia","Meriva","Mokka","Movano","Omega","Signum","Speedster","Tigra","Vectra","Vivaro","Zafira"],
 "Peugeot":["1007","106","107","2008","205","206","207","208","3008","306","307","308","4007","405","406","407","5008","504","508","607","807","Bipper","Expert","None","RCZ"],
