@@ -17,6 +17,8 @@ node_modules/
 /tempimages/*
 /ads_temp_images/*
 /old/*
+/api/*
+/wordpress/*
 analytics_tracking.php
 server.php
 .DS_Store
