@@ -3,6 +3,13 @@ $.ajax({url: "/categories-list.txt", success: function(result){
 	myObj = JSON.parse(result);
 	
 	$("#title").keyup(function(){
+		ieskom();
+	});
+	
+	ieskom();
+	
+	function ieskom(){
+		//alert('df');
 		var str=$("#title").val();
 		//alert(str);
 		if(str==''){$("#txtHint").text('nera');}
@@ -24,9 +31,9 @@ $.ajax({url: "/categories-list.txt", success: function(result){
 						$("#cat4").val(array[3]);
 					}
 					
-					$("#fuel").val('Please Choose');
+					//$("#fuel").val('Please Choose');
 					$("#engine").val('');
-					$("#year").val('Please Choose');
+					//$("#year").val('Please Choose');
 					$("#bodyType").val('Please Choose');
 					
 					for(i=1994;i<2018;i++){
@@ -116,7 +123,7 @@ $.ajax({url: "/categories-list.txt", success: function(result){
 				
 			}});
 		}
-	}); // title.keyup
+	} // title.keyup
 	
 	
 	$("#cat1").change(function(){

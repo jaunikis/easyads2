@@ -26,7 +26,7 @@ while ($row = $result->fetch_assoc()) {
 	$transmission=$row['transmission'];
 	$bodyType=$row['bodyType'];
 	$color=$row['color'];
-	$location=$row['location'];
+	$location3=$row['location'];
 	$condition2=$row['condition2'];
 	$ad_views=$row['ad_views']; $ad_views++;
 		$sql="UPDATE skelbimai SET ad_views='$ad_views' WHERE id='$item'";
