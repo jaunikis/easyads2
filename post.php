@@ -21,26 +21,15 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Login | easyads.ie">
+    <meta name="description" content="Post ad | easyads.ie">
     <meta name="author" content="Marius Vorosilovas">
 	  
-	<meta name="keywords" content="free ads, free ads Ireland, used cars, buy and sell, buy or sell, sell second hand, sell, buy, adverts, place ad, sell online, online shopping, free ads, jewellery, antiques, arts and crafts, baby and
-	nursery, books, cars, motorbikes, boats, clothes, shoes, bags, computers, tablets, iPads, consoles, games, photography, appliances, DVD, Electronics, Home and Garden, Furniture, DIY, marketplace,
-	watches, jobs, phones, instruments, musical equipment, bikes, cameras, toys, property, sports and fitness, tickets, wedding, tools">
+	<meta name="keywords" content="freeads, post ad, post new ad, post advert, post free ad, post classified,free ads, post free ad, post new free ad, post free advert, post free classified, place ad, place new ad, place advert, place free ad, place classified">
 	
-	<meta name="keyphrases" content="free ads, free ads Ireland, used cars, buy and sell, buy or sell, sell second hand, sell, buy, adverts, place ad, sell online, online shopping, free ads, jewellery, antiques, arts and crafts, baby and
-	nursery, books, cars, motorbikes, boats, clothes, shoes, bags, computers, tablets, iPads, consoles, games, photography, appliances, DVD, Electronics, Home and Garden, Furniture, DIY, marketplace,
-	watches, jobs, phones, instruments, musical equipment, bikes, cameras, toys, property, sports and fitness, tickets, wedding, tools">
+	<meta name="keyphrases" content="freeads, post ad, post new ad, post advert, post free ad, post classified,free ads, post free ad, post new free ad, post free advert, post free classified, place ad, place new ad, place advert, place free ad, place classified">
 	<meta name="geo.country" content="IE">
 	
-	<meta name="rating" content="general">
-	<meta http-equiv="content-language" content="en">
-	<meta name="robots" content="index,follow">
-	<meta name="distribution" content="global">
-	
-	
-	
-    <title>Login | easyads.ie</title>
+    <title>Post ad | easyads.ie</title>
       
 	<script src="/js/jquery-3.2.1.js"></script>
 	  
@@ -88,9 +77,17 @@
 
 
 <?php
-require('top_nav.php');
-$_SESSION['heading']='Log in';
-require('breadcumb.php');
-require('login1.php');
-require('footer_short.php');
+if(isset($segments[2])){if($segments[2]=='success'){
+		require('top_nav.php');
+		$_SESSION['heading']='Post your ad';
+		require('breadcumb.php');
+		require('post_ad_success.php');
+		require('footer_short.php');
+		break;
+	}}
+    require('top_nav.php');
+	$_SESSION['heading']='Post your ad';
+    require('breadcumb.php');
+    require('post_ad.php');
+    require('footer_short.php');
 ?>

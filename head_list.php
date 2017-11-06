@@ -1,3 +1,25 @@
+<?php
+if(!isset($location)){$location='Ireland';}
+if($location=='All Locations'){$location='Ireland';}
+$path=ltrim($path,'/');
+$seg = explode('/', $path);
+$des='';
+if(isset($seg[3])&&(substr($seg[3],0,3)!='All')){$des.=str_replace('-',' ',$seg[3]).' ';}
+if(isset($seg[4])){$des.=str_replace('-',' ',$seg[4]).' ';}
+if(isset($seg[2])){$des.=str_replace('-',' ',$seg[2]).' ';}
+if(isset($seg[1])&&(!isset($seg[3]))&&(!isset($seg[2]))){$des.=str_replace('-',' ',$seg[1]);}
+if($des==''){$des='All items';}
+if($des=='For Sale '){$des=str_replace('-',' ',$seg[1]);}
+if($des=='For Rent '){$des=str_replace('-',' ',$seg[1]);$des.='For rent in '.$location;}
+elseif($des=='Services '){$des.='in '.$location;}
+elseif($des=='Business'){$des.=' in '.$location;}else{
+$des.=' for sale in '.$location;}
+
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -21,7 +43,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Login | easyads.ie">
+    <meta name="description" content="<?php echo $des;?>">
     <meta name="author" content="Marius Vorosilovas">
 	  
 	<meta name="keywords" content="free ads, free ads Ireland, used cars, buy and sell, buy or sell, sell second hand, sell, buy, adverts, place ad, sell online, online shopping, free ads, jewellery, antiques, arts and crafts, baby and
@@ -40,7 +62,7 @@
 	
 	
 	
-    <title>Login | easyads.ie</title>
+    <title><?php echo $des;?></title>
       
 	<script src="/js/jquery-3.2.1.js"></script>
 	  
@@ -85,12 +107,3 @@
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
 </script>
-
-
-<?php
-require('top_nav.php');
-$_SESSION['heading']='Log in';
-require('breadcumb.php');
-require('login1.php');
-require('footer_short.php');
-?>

@@ -8,7 +8,6 @@
 		enable_page_level_ads: true
 	  });
 	</script>
-
 	<!-- You can use Open Graph tags to customize link previews.
 		Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
 	<meta property="og:url"           content="http://www.easyads.ie" />
@@ -21,7 +20,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Login | easyads.ie">
+    <meta name="description" content="Ireland's Free Classified Ads, Sell and Buy adverts">
     <meta name="author" content="Marius Vorosilovas">
 	  
 	<meta name="keywords" content="free ads, free ads Ireland, used cars, buy and sell, buy or sell, sell second hand, sell, buy, adverts, place ad, sell online, online shopping, free ads, jewellery, antiques, arts and crafts, baby and
@@ -40,7 +39,7 @@
 	
 	
 	
-    <title>Login | easyads.ie</title>
+    <title>Ireland's Free Classified Ads, Sell and Buy adverts</title>
       
 	<script src="/js/jquery-3.2.1.js"></script>
 	  
@@ -87,10 +86,13 @@
 </script>
 
 
+<img style="display:none" src="/images/fblogo.jpg">
+ <div id="fb-root"></div>
 <?php
 require('top_nav.php');
-$_SESSION['heading']='Log in';
-require('breadcumb.php');
-require('login1.php');
-require('footer_short.php');
+require('home_search_box.php');
+require('categories_list2.php');
+//require('featured.php');
+//require('app_store.php');
+require('footer.php');
 ?>

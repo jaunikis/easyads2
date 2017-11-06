@@ -46,37 +46,16 @@ case 'share':
 	echo '<script> window.location.href=("/share.php?page='.$page.'&title='.$title.'&location='.$location.'&id='.$id.'");</script>';
     break;
 case 'blog':
-	require('head_home.php');
-    require('top_nav.php');
-	$_SESSION['heading']='Blog';
-    require('breadcumb.php');
-    if(isset($segments[2])){require('blog1.php');}else{require('blog.php');}
-    require('footer_short.php');
+	require('blog.php');
     break;
 case 'admin':
-	require('head_home.php');
-	if(isset($_SESSION['user_id'])){
-		if($_SESSION['user_id']!=17){echo('<script>location.href = "/login";</script>');}
-			}else{echo('<script>location.href = "/login";</script>');}
-    require('top_nav.php');
-    require('left_profile.php');
-    require('m_admin.php');
-    require('footer_short.php');
+	require('admin.php');
     break;
 case 'contact':
-	require('head_home.php');
-    require('top_nav.php');
-	$_SESSION['heading']='Contact';
-    require('breadcumb.php');
     require('contact.php');
-    require('footer_short.php');
     break;
 case 'edit':
-	require('head_home.php');
-    require('top_nav.php');
-    require('left_profile.php');
     require('edit.php');
-    require('footer_short.php');
     break;
 case 'favourite':
 	require('head_home.php');
@@ -101,13 +80,7 @@ case 'my_details':
     break;
   case '':
   case 'home':
-	require('head_home.php');
-    require('top_nav.php');
-    require('home_search_box.php');
-    require('categories_list2.php');
-    //require('featured.php');
-    //require('app_store.php');
-    require('footer.php');
+	require('home.php');
     break;
 case 'password_change':
 	require('head_home.php');
@@ -126,38 +99,14 @@ case 'forgot':
     require('footer_short.php');
     break;
   case 'login':
-	require('head_home.php');
-    require('top_nav.php');
-	$_SESSION['heading']='Log in';
-    require('breadcumb.php');
-    require('login.php');
-    require('footer_short.php');
+	require('login.php');
     break;
 case 'signup':
-	require('head_home.php');
-    require('top_nav.php');
-	$_SESSION['heading']='Sign up';
-    require('breadcumb.php');
-    require('signup.php');
-    require('footer_short.php');
+	require('signup.php');
     break;
   case 'post_ad':
   case 'post':
-	if(isset($segments[2])){if($segments[2]=='success'){
-		require('head_home.php');
-		require('top_nav.php');
-		$_SESSION['heading']='Post your ad';
-		require('breadcumb.php');
-		require('post_ad_success.php');
-		require('footer_short.php');
-		break;
-	}}
-	require('head_home.php');
-    require('top_nav.php');
-	$_SESSION['heading']='Post your ad';
-    require('breadcumb.php');
-    require('post_ad.php');
-    require('footer_short.php');
+	require('post.php');
     break;
 case 'items':
 	unset($_SESSION['s_location']);
@@ -180,7 +129,7 @@ case 'items':
 		require('item.php');
 		require('footer.php');
 	}else{
-		require('head_home.php');
+		require('head_list.php');
 		require('top_nav.php');
 		require('breadcumb_search.php');
 		require('ad_list.php');
@@ -188,12 +137,7 @@ case 'items':
 	}
     break;
   default:
-	require('head_home.php');
-    require('top_nav.php');
-	$_SESSION['heading']='Page not found!';
-    require('breadcumb.php');
-    require('not_found.php');
-    require('footer_short.php');
+	require('404.php');
     break;
 }
 ?>

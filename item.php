@@ -20,7 +20,7 @@ if($active!='Active'){exit('<p><center><h3>This advert is not active at the mome
 		$images1[]=$row2['images1file'];
 		$images2[]=$row2['images2file'];
 	}
-	//if(count($images)==0){$images[]='ads_images/no-image.png';}
+	//if(count($images)==0){$images[]='/ads_images/no-image.png';}
 	//echo count($images);
 ?>
 
@@ -54,7 +54,7 @@ $cat2=addslashes($cat2);
 						   <div class="similar-ads">
                               <a href="/items?item=<?php echo $id2;?>">
                                  <div class="similar-ad-left">
-                                    <img class="img-responsive img-center" src="<?php echo 'ads_images/'.$cover2;?>" alt="">
+                                    <img class="img-responsive img-center" src="<?php echo '/ads_images/'.$cover2;?>" alt="">
                                  </div>
                                  <div class="similar-ad-right">
                                     <h4><?php echo strip_tags($title2);?></h4>
@@ -113,7 +113,7 @@ $cat2=addslashes($cat2);
 <?php
 $images_length=count($images1);
 for($i=0;$i<$images_length;$i++){
-echo '<div class="item"><a onclick="large_photos('.$i.');" style="cursor:zoom-in;"><img id="a'.$i.'" alt="" src="ads_images/'.$images1[$i].'" class="img-responsive img-center"></a></div>';
+echo '<div class="item"><a onclick="large_photos('.$i.');" style="cursor:zoom-in;"><img id="a'.$i.'" alt="" src="/ads_images/'.$images1[$i].'" class="img-responsive img-center"></a></div>';
 }
 ?>
                                  </div>
@@ -121,7 +121,7 @@ echo '<div class="item"><a onclick="large_photos('.$i.');" style="cursor:zoom-in
 <?php           
 								$images_length=count($images1);
 								for($i=0;$i<$images_length;$i++){
-								echo '<div class="item"><img alt="" src="ads_images/'.$images1[$i].'" class="img-responsive img-center"></div>';
+								echo '<div class="item"><img alt="" src="/ads_images/'.$images1[$i].'" class="img-responsive img-center"></div>';
                                 }
 ?>
                                  </div>

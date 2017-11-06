@@ -21,7 +21,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Login | easyads.ie">
+    <meta name="description" content="Blog | easyads.ie">
     <meta name="author" content="Marius Vorosilovas">
 	  
 	<meta name="keywords" content="free ads, free ads Ireland, used cars, buy and sell, buy or sell, sell second hand, sell, buy, adverts, place ad, sell online, online shopping, free ads, jewellery, antiques, arts and crafts, baby and
@@ -40,7 +40,7 @@
 	
 	
 	
-    <title>Login | easyads.ie</title>
+    <title><?php echo str_replace('-',' ',$segments[2]);?> | easyads.ie</title>
       
 	<script src="/js/jquery-3.2.1.js"></script>
 	  
@@ -87,10 +87,13 @@
 </script>
 
 
+<img style="display:none" src="/images/fblogo.jpg">
+ <div id="fb-root"></div>
 <?php
+require('head_home.php');
 require('top_nav.php');
-$_SESSION['heading']='Log in';
+$_SESSION['heading']='Blog';
 require('breadcumb.php');
-require('login1.php');
+require('blog1.php');
 require('footer_short.php');
 ?>

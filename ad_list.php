@@ -150,9 +150,17 @@ include('left_search.php');
                               </div>
 							<?php
 							}
+							$title2=str_replace(str_split(' /?&'),'-',$title);
+							$title2=preg_replace('/(.)\\1+/', '$1', $title2);
+							$title2=rtrim($title2,'-');
+							$title2=str_replace(',-','-',$title2);
+							$cat22=$cat2;
+							if($cat2=='cat2'){$cat22='';}
+							if($cat2=='Cat2'){$cat22='';}
+							if(substr($cat2,0,3)=='All'){$cat22='';}
 							?>
 							  
-							  <a href="/items?item=<?php echo $id; ?>">
+							  <a href="/items<?php if($cat1!=''){echo '/'.str_replace(' ','-',$cat1);} if($cat22!=''){echo '/'.str_replace(' ','-',$cat2);}?>/<?php echo $title2;?>?item=<?php echo $id; ?>">
                               <div class="item-img-grid">
                                  <img alt="" src="<?php echo '/ads_images/'.$cover; ?>" class="img-responsive img-center ad_image">
                               </div>
