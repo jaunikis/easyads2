@@ -83,11 +83,12 @@ if(isset($segments[2])){if($segments[2]=='success'){
 		require('breadcumb.php');
 		require('post_ad_success.php');
 		require('footer_short.php');
-		break;
-	}}
+		
+	}}else{
     require('top_nav.php');
 	$_SESSION['heading']='Post your ad';
     require('breadcumb.php');
     require('post_ad.php');
     require('footer_short.php');
+	}
 ?>
