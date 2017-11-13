@@ -52,7 +52,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="index.html"><span>JANUX</span></a>
+				<a class="brand" href="index.html"><span>easyads.ie Admin Panel</span></a>
 								
 				<!-- start: Header Menu -->
 				<div class="nav-no-collapse header-nav">
@@ -61,7 +61,7 @@
 							<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
 								<i class="icon-bell"></i>
 								<span class="badge red">
-								7 </span>
+								0 </span>
 							</a>
 							<ul class="dropdown-menu notifications">
 								<li class="dropdown-menu-title">
