@@ -50,7 +50,7 @@ if(!isset($_SESSION['email'])){
 	header("Location: login.php"); /* Redirect browser */
 	//require('login.php');
 	exit();
-}else{$username=$_SESSION['user_name'];}
+}else{$username=$_SESSION['email'];}
 require('navbar_top.php');
 ?>
 	

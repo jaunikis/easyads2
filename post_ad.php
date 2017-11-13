@@ -152,6 +152,7 @@ for($i=date("Y")-20;$i<date("Y")+1;$i++){
 												<option>Estate</option>
 												<option>MPV</option>
 												<option>SUV</option>
+												<option>Van</option>
 											</select>
 										</div>
 									</div>

@@ -44,6 +44,8 @@ if(isset($_POST['tax'])){$tax=strip_tags(addslashes($_POST['tax']));}
 $cover=intval($cover);
 if(isset($_SESSION['images1'])){$images1file=$_SESSION['images1'];}else{array_push($images1file,'');}
 if(isset($_SESSION['images2'])){$images2file=$_SESSION['images2'];}else{array_push($images2file,'');}
+unset($_SESSION['images1']);
+unset($_SESSION['images2']);
 
 function generateRandomString($length = 10) {
     return substr(str_shuffle(str_repeat($x='123456789abcdefghijklmnopqrstuvwxyz', ceil($length/strlen($x)) )),1,$length);
