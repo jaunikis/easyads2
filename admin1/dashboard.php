@@ -1,3 +1,21 @@
+<?php
+require_once ('../incl/server.php');
+$sql="SELECT id FROM stats WHERE path='/' OR path='/items'";
+	$result=sqlconnect($sql);
+	$visits_total = $result->num_rows;
+	
+	$date = new DateTime();$timestamp=$date->getTimestamp();
+	$x=floor($timestamp/86400);
+	$x1=$x*86400;
+		
+	$sql="SELECT id FROM stats WHERE timestamp>'$x1' AND path='/' OR timestamp>'$x1' AND path='/items'";
+	$result=sqlconnect($sql);
+	$visits_today = $result->num_rows;
+	
+	$orders_today=4;
+	$orders_total=74;
+?>
+
 <div id="content" class="span10">
 			
 			
@@ -14,32 +32,32 @@
 				
 				<div class="span3 statbox purple" onTablet="span6" onDesktop="span3">
 					<div class="boxchart">5,6,7,2,0,4,2,4,8,2,3,3,2</div>
-					<div class="number">854<i class="icon-arrow-up"></i></div>
-					<div class="title">visits</div>
+					<div class="number"><?php echo $visits_today;?><i class="icon-arrow-up"></i></div>
+					<div class="title">visits today</div>
 					<div class="footer">
 						<a href="#"> read full report</a>
 					</div>	
 				</div>
 				<div class="span3 statbox green" onTablet="span6" onDesktop="span3">
 					<div class="boxchart">1,2,6,4,0,8,2,4,5,3,1,7,5</div>
-					<div class="number">123<i class="icon-arrow-up"></i></div>
-					<div class="title">sales</div>
+					<div class="number"><?php echo $orders_today;?><i class="icon-arrow-up"></i></div>
+					<div class="title">orders today</div>
 					<div class="footer">
 						<a href="#"> read full report</a>
 					</div>
 				</div>
 				<div class="span3 statbox blue noMargin" onTablet="span6" onDesktop="span3">
 					<div class="boxchart">5,6,7,2,0,-4,-2,4,8,2,3,3,2</div>
-					<div class="number">982<i class="icon-arrow-up"></i></div>
-					<div class="title">orders</div>
+					<div class="number"><?php echo $visits_total;?><i class="icon-arrow-up"></i></div>
+					<div class="title">visits total</div>
 					<div class="footer">
 						<a href="#"> read full report</a>
 					</div>
 				</div>
 				<div class="span3 statbox yellow" onTablet="span6" onDesktop="span3">
 					<div class="boxchart">7,2,2,2,1,-4,-2,4,8,,0,3,3,5</div>
-					<div class="number">678<i class="icon-arrow-down"></i></div>
-					<div class="title">visits</div>
+					<div class="number"><?php echo $orders_total;?><i class="icon-arrow-down"></i></div>
+					<div class="title">orders total</div>
 					<div class="footer">
 						<a href="#"> read full report</a>
 					</div>

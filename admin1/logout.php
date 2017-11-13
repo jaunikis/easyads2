@@ -8,5 +8,5 @@ if(isset($_SESSION['email'])){unset($_SESSION['email']);}
 //if(isset($_SESSION['user_name'])){unset($_SESSION['user_name']);}
 //if(isset($_SESSION['location'])){unset($_SESSION['location']);}
 //echo $_COOKIE['user'];
-header('Location: /admin1/login.php');
+header('Location: /admin1');
 ?>
