@@ -127,12 +127,9 @@ while ($row2 = $result2->fetch_assoc()) {
 		$images2[]=$row2['images2file'];
 		$images1id[]=$row2['id'];
 	}
-//echo count($images1);
-
 
 $string = file_get_contents("categories-list.txt");
 $json = json_decode($string, true);
-
 ?>
 
 		<!-- Create Post -->
@@ -156,7 +153,7 @@ $json = json_decode($string, true);
 										<label class="col-sm-3 control-label">Category <span class="required">*</span></label>
 										<div class="col-sm-9">
 											<select name="cat1" id="cat1" class="form-control border-form">
-												<option selected >Please Choose</option>
+												<option disabled hidden>Please Choose</option>
 			<?php
 				for($i=0;$i<count($json['cat1']);$i++){
 					echo '<option ';
@@ -431,7 +428,7 @@ nr2=nr;
 	//alert(nr);
 </script>
 		
-<script src="/js/ads_categories.js"></script>
+<!--<script src="/js/ads_categories.js"></script>-->
 <script src="/js/js.js"></script>
 <script src="/js/image_resize.js"></script>
 
