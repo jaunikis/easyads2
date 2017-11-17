@@ -1,14 +1,16 @@
 <?php
+if(!isset($_SESSION['email'])){
+	header("Location: login.php"); /* Redirect browser */
+	exit();
+}else{$username=$_SESSION['email'];}
+
 require_once ('../incl/server.php');
-$sql="SELECT id FROM stats WHERE path='/' OR path='/items'";
+$sql="SELECT id FROM stats";
 	$result=sqlconnect($sql);
 	$visits_total = $result->num_rows;
 	
-	$date = new DateTime();$timestamp=$date->getTimestamp();
-	$x=floor($timestamp/86400);
-	$x1=$x*86400;
-		
-	$sql="SELECT id FROM stats WHERE timestamp>'$x1' AND path='/' OR timestamp>'$x1' AND path='/items'";
+	$today=date("Y-m-d");
+	$sql="SELECT * FROM stats WHERE time LIKE '$today%' ORDER BY id DESC";
 	$result=sqlconnect($sql);
 	$visits_today = $result->num_rows;
 	
@@ -35,7 +37,7 @@ $sql="SELECT id FROM stats WHERE path='/' OR path='/items'";
 					<div class="number"><?php echo $visits_today;?><i class="icon-arrow-up"></i></div>
 					<div class="title">visits today</div>
 					<div class="footer">
-						<a href="#"> read full report</a>
+						<a href="?page=visits_today"> read full report</a>
 					</div>	
 				</div>
 				<div class="span3 statbox green" onTablet="span6" onDesktop="span3">

@@ -1,11 +1,13 @@
+
 <footer>
 
 		<p>
-			<span style="text-align:left;float:left">&copy; 2017 <a href="http://www.easyads.ie" alt="Bootstrap_Metro_Dashboard">easyads responsive dashboard</a></span>
+			<span style="text-align:right;float:right">       &copy; 2018 <a href="http://www.easyads.ie" alt="Bootstrap_Metro_Dashboard">easyads responsive dashboard</a></span>
 			
 		</p>
 
 	</footer>
+	
 	
 	<!-- start: JavaScript-->
 
