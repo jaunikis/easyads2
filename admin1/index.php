@@ -48,7 +48,6 @@
 session_start();
 if(!isset($_SESSION['email'])){
 	header("Location: login.php"); /* Redirect browser */
-	//require('login.php');
 	exit();
 }else{$username=$_SESSION['email'];}
 require('navbar_top.php');
@@ -70,7 +69,8 @@ require('navbar_left.php');
 			
 <!-- start: Content -->
 <?php 
-require('dashboard.php');
+if(isset($_GET['page'])){$page=$_GET['page'];}else{$page='dashboard';}
+require($page.'.php');
 ?>
 <!-- end: Content -->
 

@@ -56,7 +56,7 @@
             <div class="container">
                <div class="row">
 			   
-			<?php
+			<?php 
 	$sql="SELECT id FROM stats WHERE path='/' OR path='/items'";
 	$result=sqlconnect($sql);
 	$tootal = $result->num_rows;
@@ -72,7 +72,7 @@
 	
 	?>
 			   <center>
-			   <div class="badge">Visits today: <?php echo $today;?></div>
+			   <<div class="badge">Visits today: <?php echo $today;?></div>
 			   <div class="badge">Visits tootal: <?php echo $tootal+5653;?></div>
 			   </center>   
 			   

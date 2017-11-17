@@ -19,14 +19,18 @@ $ip=$_SERVER['REMOTE_ADDR'];
 $date = new DateTime();$timestamp=$date->getTimestamp();
 //tikriname kada paskutinis
 $timestamp3=$timestamp-60;
-$sql="SELECT timestamp,ip,path FROM stats WHERE timestamp>'$timestamp3' AND ip='$ip' AND path='$path'";
+//$sql="SELECT timestamp,ip,path FROM stats WHERE timestamp>'$timestamp3' AND ip='$ip' AND path='$path'";
+$sql="SELECT timestamp,ip,path FROM stats WHERE timestamp>'$timestamp3' AND ip='$ip'";
 $result=sqlconnect($sql);
 $ad_count = $result->num_rows;
 //echo $ad_count;
 if($ad_count==0){
 	$user_id='';
 	if(isset($_SESSION['user_id'])){$user_id=$_SESSION['user_id'];}
-	$sql="INSERT INTO stats (ip,timestamp,path,user_id) VALUES ('$ip','$timestamp','$path','$user_id')";
+	$referer='';
+	if(isset($_SERVER['HTTP_REFERER'])){$referer=$_SERVER['HTTP_REFERER'];}
+	
+	$sql="INSERT INTO stats (ip,timestamp,path,user_id,referer) VALUES ('$ip','$timestamp','$path','$user_id','$referer')";
 	$res=sqlconnect($sql);
 }
 
