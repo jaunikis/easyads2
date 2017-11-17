@@ -76,7 +76,7 @@ $result=sqlconnect($sql);
 								<td><?php echo $id;?></td>
 								<td class="center" style="line-height:1.1"><?php echo $ip;?><br>Refferer<br>IRL</td>
 								<td class="center" style="line-height:1.1"><?php echo $timestamp.'<br>'.elapsed($timestamp2);?><br>user name</td>
-								<td class="center" style="line-height:1.1" data-toggle="tooltip" title="<?php echo $desc;?>"><?php echo $title;?></td>
+								<td class="center" style="line-height:1.1" data-toggle="tooltip" title="<?php echo $desc;?>"><a href="../items?item=<?php echo $id;?>"><?php echo $title;?></a></td>
 								<td class="center" style="line-height:1.1"><?php echo $cat1;?><br><?php echo $cat2;?><br><?php echo $make;?> <?php echo $model;?></td>
 								<td class="center">
 									<span class="label label-<?php echo $status;?>"><?php echo $active;?></span>
