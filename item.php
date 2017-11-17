@@ -112,6 +112,7 @@ $cat2=addslashes($cat2);
                                  <div id="sync1" class="carousel">
 <?php
 $images_length=count($images1);
+if($images1[0]==''){$images1[0]='no-image.png';}
 for($i=0;$i<$images_length;$i++){
 echo '<div class="item"><a onclick="large_photos('.$i.');" style="cursor:zoom-in;"><img id="a'.$i.'" alt="" src="/ads_images/'.$images1[$i].'" class="img-responsive img-center"></a></div>';
 }
