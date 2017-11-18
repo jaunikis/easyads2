@@ -27,12 +27,13 @@ $result=sqlconnect($sql);
 		<table class="table table-striped table-bordered bootstrap-datatable datatable" style="font-size:11px;">
 			<thead>
 				<tr>
-					<th width="1px">Id</th>
-					<th width="1px">Date</th>
-					<th width="1px">Ip</th>
-					<th width="1px">User Id</th>
-					<th width="1px">Path</th>
-					<th width="1px">Referer ip</th>
+					<th>Id</th>
+					<th>Date</th>
+					<th>Ip</th>
+					<th>Country</th>
+					<th>User Id</th>
+					<th>Path</th>
+					<th>Referer ip</th>
 				</tr>
 			</thead>   
 			<tbody>
@@ -40,6 +41,7 @@ $result=sqlconnect($sql);
 			while ($row = $result->fetch_assoc()) {
 				$id=$row['id'];
 				$ip=$row['ip'];
+				$country=$row['country'];
 				$time=$row['time'];
 				$user_id=$row['user_id'];
 				$path=$row['path'];
@@ -49,6 +51,7 @@ $result=sqlconnect($sql);
 					<td><?php echo $id;?></td>
 					<td><?php echo $time;?></td>
 					<td><?php echo $ip;?></td>
+					<td><?php echo $country;?></td>
 					<td><?php echo $user_id;?></td>
 					<td><?php echo $path;?></td>
 					<td><?php echo $referer;?></td>
@@ -58,6 +61,7 @@ $result=sqlconnect($sql);
 			?>
 			</tbody>
 		</table>
+		OK!
 
 </div>
 <!-- end: Content -->

@@ -7,6 +7,14 @@ $date = new DateTime();$timestamp2=$date->getTimestamp();
 $tdate=date("d/m/Y");
 $time=date("H:i:s");
 $ip=$_SERVER['REMOTE_ADDR'];
+//getting country, city
+	$country='';//$city='';$countryCode='';
+	$query = @unserialize(file_get_contents('http://ip-api.com/php/'.$ip));
+	if($query && $query['status'] == 'success') {
+	$country=$query['country'];
+	//$city=$query['city'];
+	//$countryCode=$query['countryCode'];
+	}
 $user_id=0;
 if(isset($_SESSION['user_id'])){$user_id=$_SESSION['user_id'];}
 $cat1='cat1';$cat2='cat2';
@@ -69,7 +77,7 @@ require_once ('incl/swear.php');
 
 $bump_days=rand(6,30);
 //$sql = "INSERT INTO skelbimai (cover,cover1file,ip,user,title,cat1,cat2,make,model,year,fuel,transmission,bodyType,color,price,location,condition2,description,name,email,phone,active,timestamp2) VALUES ('$images1[$cover]','$images1file[$cover]','$ip','$user','$title','$cat1','$cat2','$make','$model','$year','$fuel','$transmission','$bodyType','$color','$price','$location','$condition','$description','$name','$email','$phone','$active',$timestamp2)";
-$sql = "INSERT INTO skelbimai (engine,mileage,mileage_type,tax,ad_code,cover1file,ip,user_id,title,cat1,cat2,make,model,year,fuel,transmission,bodyType,color,price,currency,location,condition2,description,name,email,phone,active,timestamp2,valid_till,bump_days) VALUES ('$engine','$mileage','$mileage_type','$tax','$ad_code','$images1file[$cover]','$ip','$user_id','$title','$cat1','$cat2','$make','$model','$year','$fuel','$transmission','$bodyType','$color','$price','$currency','$location','$condition','$description','$name','$email','$phone','$active','$timestamp2','$valid_till','$bump_days')";
+$sql = "INSERT INTO skelbimai (country,engine,mileage,mileage_type,tax,ad_code,cover1file,ip,user_id,title,cat1,cat2,make,model,year,fuel,transmission,bodyType,color,price,currency,location,condition2,description,name,email,phone,active,timestamp2,valid_till,bump_days) VALUES ('$country','$engine','$mileage','$mileage_type','$tax','$ad_code','$images1file[$cover]','$ip','$user_id','$title','$cat1','$cat2','$make','$model','$year','$fuel','$transmission','$bodyType','$color','$price','$currency','$location','$condition','$description','$name','$email','$phone','$active','$timestamp2','$valid_till','$bump_days')";
 $ad_id=sqlconnect($sql);
 //if($ad_id){echo '<script>alert("namas");</script>';}
 

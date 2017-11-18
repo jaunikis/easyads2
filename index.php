@@ -29,8 +29,15 @@ if($ad_count==0){
 	if(isset($_SESSION['user_id'])){$user_id=$_SESSION['user_id'];}
 	$referer='';
 	if(isset($_SERVER['HTTP_REFERER'])){$referer=$_SERVER['HTTP_REFERER'];}
-	
-	$sql="INSERT INTO stats (ip,timestamp,path,user_id,referer) VALUES ('$ip','$timestamp','$path','$user_id','$referer')";
+	//getting country, city
+	$country='';$city='';$countryCode='';
+	$query = @unserialize(file_get_contents('http://ip-api.com/php/'.$ip));
+	if($query && $query['status'] == 'success') {
+	$country=$query['country'];
+	$city=$query['city'];
+	$countryCode=$query['countryCode'];
+}
+	$sql="INSERT INTO stats (ip,timestamp,path,user_id,referer,country,city,countryCode) VALUES ('$ip','$timestamp','$path','$user_id','$referer','$country','$city','$countryCode')";
 	$res=sqlconnect($sql);
 }
 

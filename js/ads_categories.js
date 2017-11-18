@@ -32,9 +32,9 @@ $.ajax({url: "/categories-list.txt", success: function(result){
 					}
 					
 					//$("#fuel").val('Please Choose');
-					$("#engine").val('');
+					//$("#engine").val('');
 					//$("#year").val('Please Choose');
-					$("#bodyType").val('Please Choose');
+					//$("#bodyType").val('Please Choose');
 					
 					for(i=1994;i<2018;i++){
 						if(str.search(i)>=0){$("#year").val(i);}

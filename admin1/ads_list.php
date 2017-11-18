@@ -37,7 +37,8 @@ $result=sqlconnect($sql);
 								  <!--<th>Img</th>-->
 								  <th width="50px">*</th>
 								  <th width="1px">Id</th>
-								  <th width="1px">ip</th>
+								  <th width="1px">Ip</th>
+								  <th width="1px">Country</th>
 								  <th width="70px">Date</th>
 								  <th>Title</th>
 								  <th width="70px">category</th>
@@ -65,6 +66,7 @@ $result=sqlconnect($sql);
 				$ip=$row['ip'];
 				$desc=$row['description'];
 				$active=$row['active'];
+				$country=$row['country'];
 				
 				$status='';
 				if($active=='Active'){$status='success';}
@@ -79,9 +81,10 @@ $result=sqlconnect($sql);
 						    <tr>
 								<td><img data-toggle="tooltip" title="<?php echo $price.' '.$currency;?>" src="../ads_images/<?php echo $cover;?>"></td>
 								<td><?php echo $id;?></td>
-								<td class="center" style="line-height:1.1"><?php echo $ip;?><br>Refferer<br>IRL</td>
+								<td class="center" style="line-height:1.1"><?php echo $ip;?></td>
+								<td class="center" style="line-height:1.1"><?php echo $country;?></td>
 								<td class="center" style="line-height:1.1"><?php echo $timestamp.'<br>'.elapsed($timestamp2);?><br>user name</td>
-								<td class="center" style="line-height:1.1" data-toggle="tooltip" title="<?php echo $desc;?>"><?php echo $title;?></td>
+								<td class="center" style="line-height:1.1" data-toggle="tooltip" title="<?php echo $desc;?>"><a href="/items?item=<?php echo $id;?>"><?php echo $title;?></a></td>
 								<td class="center" style="line-height:1.1"><?php echo $cat1;?><br><?php echo $cat2;?><br><?php echo $make;?> <?php echo $model;?></td>
 								<td class="center">
 									<span class="label label-<?php echo $status;?>"><?php echo $active;?></span>
@@ -90,9 +93,9 @@ $result=sqlconnect($sql);
 									<a class="btn btn-info" href="/edit?id=<?php echo $id;?>" data-toggle="tooltip" title="Edit Ad">
 										<i class="halflings-icon white edit"></i>  
 									</a>
-									<a class="btn btn-danger" href="#" onclick="ban_ad(<?php echo $id;?>,this)" data-toggle="tooltip" title="Ban Ad and Ip">
+									<!--<a class="btn btn-danger" href="#" onclick="ban_ad(<?php echo $id;?>,this)" data-toggle="tooltip" title="Ban Ad and Ip">
 										<i class="halflings-icon white ban-circle"></i>  
-									</a>
+									</a>-->
 									<a class="btn btn-danger" href="" onclick="delete_ad(<?php echo $id;?>,this)" data-toggle="tooltip" title="Delete Ad">
 										<i class="halflings-icon white trash"></i> 
 									</a>

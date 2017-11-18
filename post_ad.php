@@ -112,7 +112,7 @@ for($i=date("Y")-20;$i<date("Y")+1;$i++){
 									<div class="form-group" id="engine1">
 										<label class="col-sm-3 control-label">Engine </label>
 										<div class="col-sm-9">
-											<input name="engine" id="engine" type="text" placeholder="e.g. 1.6" class="form-control1 border-form">
+											<input value="<?php if(isset($engine)){echo $engine;}?>" name="engine" id="engine" type="text" placeholder="e.g. 1.6" class="form-control1 border-form">
 										</div>
 									</div>
 									
@@ -145,14 +145,14 @@ for($i=date("Y")-20;$i<date("Y")+1;$i++){
 										<div class="col-sm-9">
 											<select name="bodyType" id="bodyType" class="form-control1 border-form">
 												<option value="0" disabled selected style="display: none;">Please Choose</option>
-												<option>Cabriolet</option>
-												<option>Coupe</option>
-												<option>Saloon</option>
-												<option>Hatchback</option>
-												<option>Estate</option>
-												<option>MPV</option>
-												<option>SUV</option>
-												<option>Van</option>
+												<option <?php if(isset($body)){if($body=='Cabriolet'){echo 'selected';}}?>>Cabriolet</option>
+												<option <?php if(isset($body)){if($body=='Coupe'){echo 'selected';}}?>>Coupe</option>
+												<option <?php if(isset($body)){if($body=='Saloon'){echo 'selected';}}?>>Saloon</option>
+												<option <?php if(isset($body)){if($body=='Hatchback'){echo 'selected';}}?>>Hatchback</option>
+												<option <?php if(isset($body)){if($body=='Estate'){echo 'selected';}}?>>Estate</option>
+												<option <?php if(isset($body)){if($body=='MPV'){echo 'selected';}}?>>MPV</option>
+												<option <?php if(isset($body)){if($body=='SUV'){echo 'selected';}}?>>SUV</option>
+												<option <?php if(isset($body)){if($body=='Van'){echo 'selected';}}?>>Van</option>
 											</select>
 										</div>
 									</div>
