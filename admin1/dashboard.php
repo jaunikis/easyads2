@@ -10,7 +10,7 @@ $sql="SELECT id FROM stats";
 	$visits_total = $result->num_rows;
 	
 	$today=date("Y-m-d");
-	$sql="SELECT * FROM stats WHERE time LIKE '$today%' ORDER BY id DESC";
+	$sql="SELECT DISTINCT ip FROM stats WHERE time LIKE '$today%' ORDER BY id DESC";
 	$result=sqlconnect($sql);
 	$visits_today = $result->num_rows;
 	
@@ -19,7 +19,6 @@ $sql="SELECT id FROM stats";
 ?>
 
 <div id="content" class="span10">
-			
 			
 			<ul class="breadcrumb">
 				<li>

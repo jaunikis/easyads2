@@ -201,10 +201,33 @@ echo '<div class="item"><a onclick="large_photos('.$i.');" style="cursor:zoom-in
                      </div>
                      <div class="widget-footer">
                         <div class="row">
-                           <div class="col-sm-12">    
+                           <div class="col-sm-12">  
+					<?php
+					$phone=preg_replace('~[\\\\/:*?"<>| -]~','',$phone);
+					$phone=str_replace('+','00',$phone);
+					if($phone!=''){
+					?>
                               <p><a href="tel:<?php echo $phone;?>"><button class="btn btn-info btn-block"><i class="fa fa-whatsapp"></i> <?php echo $phone;?></button></a></p>
-							<button onclick="send_msg('<?php echo $email;?>');" class="btn btn-warning btn-block"><i class="fa fa-envelope"></i> Send Message</button>
-             
+					<?php
+					}
+					require_once 'Mobile_Detect.php';
+					$detect = new Mobile_Detect;
+					// Any mobile device (phones or tablets).
+					if ( $detect->isMobile() ) {
+					?>
+					<p><a href="sms://<?php echo $phone;?>"><button class="btn btn-success btn-block"><i class="fa fa-commenting-o"></i> Send SMS</button></a></p>
+					<?php
+					}
+					?>
+						
+					<?php
+					if($email!=''){
+					?>
+							<button class="btn btn-warning btn-block"><a style="color:white" href="mailto:<?php echo $email;?>"><i class="fa fa-envelope"></i> Send Email</a></button>
+					<?php
+					}
+					?>
+							<!--<button onclick="send_msg('<?php echo $email;?>');" class="btn btn-warning btn-block"><i class="fa fa-envelope"></i> Send Message</button>-->
 						   </div>
                         </div>
                      </div>

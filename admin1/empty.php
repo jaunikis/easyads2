@@ -15,5 +15,6 @@ if(!isset($_SESSION['email'])){
 		</li>
 		<li><a href="#"><?php echo $page;?></a></li>
 	</ul>
+	<a href="sms://0862221538">Send an SMS</a>
 	namas
 </div>

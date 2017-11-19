@@ -87,7 +87,7 @@ $result=sqlconnect($sql);
 								<td class="center" style="line-height:1.1" data-toggle="tooltip" title="<?php echo $desc;?>"><a href="/items?item=<?php echo $id;?>"><?php echo $title;?></a></td>
 								<td class="center" style="line-height:1.1"><?php echo $cat1;?><br><?php echo $cat2;?><br><?php echo $make;?> <?php echo $model;?></td>
 								<td class="center">
-									<span class="label label-<?php echo $status;?>"><?php echo $active;?></span>
+									<span style="cursor:pointer;" onclick="myFunction()" class="label label-<?php echo $status;?>"><?php echo $active;?></span>
 								</td>
 								<td class="center">
 									<a class="btn btn-info" href="/edit?id=<?php echo $id;?>" data-toggle="tooltip" title="Edit Ad">
@@ -151,15 +151,48 @@ function delete_ad(id,th){
 	}
 }
 </script>
+<br><hr>
+
+<h2>Aligned Dropdown Content</h2>
+<p>Use <strong>float: right</strong> on the dropdown class to float the dropdown menu to the right, and <strong>right:0</strong> on the dropdown-content if you want the dropdown content to go from right to left.</p>
 
 <div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Dropdown button
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">Action</a>
-    <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
+<button onclick="myFunction()" class="dropbtn"><?php echo $active;?></button>
+<span onclick="myFunction()" class="label label-<?php echo $status;?>"><?php echo $active;?></span>
+  <div onmouseout="mouse_out(this);" id="myDropdown" class="dropdown-content">
+    <?php
+	$list=['Active','Not Active','Banned','Pending'];
+	foreach ($list as $value){
+		if($value==$active){continue;}
+	?>
+	<a href="#home"><?php echo $value;?></a>
+	<?php
+	}
+	?>
   </div>
 </div>
+
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction(e) {
+	var tempX=event.clientX;
+	var tempY=event.clientY;
+	//alert (event.clientX);
+	$("#myDropdown").css({ 'top': tempY+10, 'left': tempX-12 });
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+function mouse_out(th){
+	//alert(th.innerHTML);
+	//th.style.display='none';
+	//var x = event.clientX, y = event.clientY,
+    //ele = document.elementFromPoint(x, y);
+	//alert(ele);
+	th.classList.toggle("show");
+}
+
+
+</script>
+
 <br><hr><br>

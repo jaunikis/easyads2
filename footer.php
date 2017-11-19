@@ -72,18 +72,21 @@
 	
 	?>
 			   <center>
-			   <<div class="badge">Visits today: <?php echo $today;?></div>
+			   <p>
+			   <div class="badge">Visits today: <?php echo $today;?></div>
 			   <div class="badge">Visits tootal: <?php echo $tootal+5653;?></div>
-			   </center>   
-			   
+			   </p>
+			   <br>
                   <div class="col-md-12">
-                     <div class="site-info pull-left">
-                        
-						<span class=>All Copyrights Reserved @ 2017 - Made by <a href="#">mvmedia</a></span>
+                     <div class="site-info text-center">
+                        <div class="fb-share-button" data-source="/images/logo.png" data-href="http://www.easyads.ie" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Share</a></div>
+						<br><br>
+						<span style="font-size:10px;">All Copyrights Reserved @ 2017 - Made by <a href="#">mvmedia</a></span>
+						<br>
 						
 						
                      </div>
-                     <div class="bottom-social-icons social-icon pull-right" style="margin-right:20px;">  
+                     
                          
 						 
 						 <!--	 
@@ -94,18 +97,17 @@
                         <a href="#" target="_blank" class="google-plus"><i class="fa fa-google-plus"></i></a>
                         <a href="#" target="_blank" class="linkedin"><i class="fa fa-linkedin"></i></a>
 						-->
-                     </div>
+                     
                   </div>
                </div>
 	
             </div>
-			
+			 
+		</center>
          </div>
 		 
-		 <div class="fb-like" data-share="true" data-width="450" data-show-faces="true"></div>
-		<div class="fb-share-button" data-source="/images/logo.png" data-href="http://www.easyads.ie" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Share</a></div>
-					
-		 
+		 <div class="fb-like" style="position:absolute;padding:16px;" data-share="true" data-width="60" data-show-faces="true"></div>
+				
       </footer>
       <!-- End Footer -->
     
