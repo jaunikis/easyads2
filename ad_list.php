@@ -158,9 +158,10 @@ include('left_search.php');
 							if($cat2=='cat2'){$cat22='';}
 							if($cat2=='Cat2'){$cat22='';}
 							if(substr($cat2,0,3)=='All'){$cat22='';}
+							//echo preg_replace('~[#/?"<>&]~','','namas # ksjk/slsjd?iwwo9998');
 							?>
 							  
-							  <a href="/items<?php if($cat1!=''){echo '/'.str_replace(' ','-',$cat1);} if($cat22!=''){echo '/'.str_replace(' ','-',$cat2);}?>/<?php echo $title2;?>?item=<?php echo $id; ?>">
+							  <a href="/items<?php if($cat1!=''){echo '/'.str_replace(' ','-',$cat1);} if($cat22!=''){echo '/'.str_replace(' ','-',$cat2);}?>/<?php echo preg_replace('~[#/?"<>&]~','',$title2);?>?item=<?php echo $id; ?>">
                               <div class="item-img-grid">
                                  <img alt="" src="<?php echo '/ads_images/'.$cover; ?>" class="img-responsive img-center ad_image">
                               </div>

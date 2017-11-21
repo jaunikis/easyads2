@@ -56,6 +56,9 @@ case 'share':
     //header('Location: /share.php?page='.$page.'&id='.$id);
 	echo '<script> window.location.href=("/share.php?page='.$page.'&title='.$title.'&location='.$location.'&id='.$id.'");</script>';
     break;
+case 'faq':
+	require('faq.php');
+	break;
 case 'blog':
 	require('blog.php');
     break;

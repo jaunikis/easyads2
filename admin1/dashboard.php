@@ -14,8 +14,16 @@ $sql="SELECT id FROM stats";
 	$result=sqlconnect($sql);
 	$visits_today = $result->num_rows;
 	
-	$orders_today=4;
-	$orders_total=74;
+	$sql="SELECT ip FROM stats WHERE path='/post_ad/success' AND time LIKE '$today%' ORDER BY id DESC";
+	$result=sqlconnect($sql);
+	$orders_today = $result->num_rows;
+	
+	$sql="SELECT ip FROM stats WHERE path='/post_ad/success' ORDER BY id DESC";
+	$result=sqlconnect($sql);
+	$orders_total = $result->num_rows;
+	
+	//$orders_today=4;
+	//$orders_total=74;
 ?>
 
 <div id="content" class="span10">

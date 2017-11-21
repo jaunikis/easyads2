@@ -422,7 +422,7 @@ m_images=[];
 while($("#a"+x).length>0){
 	//alert(x);
 	var tt=$("#a"+x).attr('src');
-	var ttt=tt.substring(0,36)+'large.jpg';
+	var ttt=tt.substring(0,36)+'-large.jpg';
 	//alert(ttt);
 	m_images.push(ttt);
 	x++;
