@@ -259,7 +259,7 @@ echo '<div class="item"><a onclick="large_photos('.$i.');" style="cursor:zoom-in
 	  
 	  <div id="myModal" class="modal">
 		<div id="m_content" class="modal-content">
-			<span class="close2">&times;</span>
+			<span class="close2" style="z-index:101">&times;</span>
 			<h1 id="m_title" class="m_title"><?php echo $title;?></h1>
 			<h2 id="m_number" class="m_number">1/6</h2>
 			<a style="z-index: 14;" id="left" class="left carousel-control">
