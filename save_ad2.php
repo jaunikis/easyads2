@@ -9,12 +9,13 @@ $time=date("H:i:s");
 $ip=$_SERVER['REMOTE_ADDR'];
 //getting country, city
 	$country='';//$city='';$countryCode='';
-	$query = @unserialize(file_get_contents('http://ip-api.com/php/'.$ip));
-	if($query && $query['status'] == 'success') {
-	$country=$query['country'];
-	//$city=$query['city'];
-	//$countryCode=$query['countryCode'];
-	}
+	if($ip!='127.0.0.1'){
+		$query = @unserialize(file_get_contents('http://ip-api.com/php/'.$ip));
+		if($query && $query['status'] == 'success') {
+			$country=$query['country'];
+		}
+	}else{$country='Ireland';}
+	
 $user_id=0;
 if(isset($_SESSION['user_id'])){$user_id=$_SESSION['user_id'];}
 $cat1='cat1';$cat2='cat2';
@@ -87,6 +88,10 @@ $sql="SELECT timestamp2,ip FROM skelbimai WHERE timestamp2>'$timestamp3' AND ip=
 $result=sqlconnect($sql);
 $ad_count = $result->num_rows;
 if($ad_count>2){if($active=='Active'){$active='';}$active.='to_many';}
+
+//if country !=Ireland {not active}
+if($country!='Ireland'){if($active=='Active'){$active='';}$active.='country';}
+
 	
 if($active!='Active'){
 	$sql="UPDATE skelbimai SET active='$active' WHERE id='$ad_id'";
@@ -94,7 +99,7 @@ if($active!='Active'){
 	$mail_timestamp=0;
 	if(isset($_SESSION['mail_timestamp'])){$mail_timestamp=$_SESSION['mail_timestamp'];}
 	if($mail_timestamp<$timestamp2-360){
-		$msg='<b>Ad Id:</b> '.$ad_id.'<br>'.'<b>ip:</b> '.$ip.'<br>';
+		$msg='<b>Ad Id:</b> '.$ad_id.'<br>'.'<b>ip:</b> '.$ip.'<br>'.'<b>Country: </b>'.$country.'<br>';
 		send_mail('easyads.ie '.$active,$msg);
 		$_SESSION['mail_timestamp']=$timestamp2;
 	}
