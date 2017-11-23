@@ -281,7 +281,7 @@ for($i=date("Y")-20;$i<date("Y")+1;$i++){
 										<label class="col-sm-3 control-label">Phone number <span class="required">*</span></label>
 										<div class="col-sm-9">
 											<div class="input-group">
-												<input onkeyup="phone_change(this.value);" id="phone" name="phone" type="text" value="<?php if(isset($_SESSION['phone'])){echo $_SESSION['phone'];}elseif(isset($phone)){echo $phone;} ?>" class="form-control1 border-form">
+												<input onkeyup="phone_change(this.value);" id="phone" name="phone" type="text" value="<?php if(isset($_SESSION['phone'])){echo $_SESSION['phone'];}elseif(isset($phone)){echo $phone;} ?>" class="form-control1 border-form numbers-only">
 											</div>
 										</div>
 									</div>
@@ -397,6 +397,30 @@ for($i=date("Y")-20;$i<date("Y")+1;$i++){
 <script src="/js/js.js"></script>
 
 <script>
+$("input.numbers-only9999").bind({
+    keydown: function(e) {
+        if (e.shiftKey === true ) {
+            if (e.which == 9) {
+                return true;
+            }
+			if (e.which == 107) {
+                return true;
+            }
+            return false;
+        }
+		if (e.which == 107) {
+                return true;
+            }
+        if (e.which > 57) {
+            return false;
+        }
+        if (e.which==32) {
+            return false;
+        }
+        return true;
+    }
+});
+
 function phone_change(value){
 	//alert(value);
 	var n=value.search('tel:');

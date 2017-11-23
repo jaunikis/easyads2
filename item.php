@@ -194,7 +194,14 @@ echo '<div class="item"><a onclick="large_photos('.$i.');" style="cursor:zoom-in
                   <div class="widget user-widget">
                      <div class="widget-body text-center">
                         <img class="user-dp" alt="User Image" src="/images/user3.png">
-                        <h2 class="seller-name"><?php echo strip_tags($name);?></h2>
+                        <h2 class="seller-name">
+						<?php
+						$name=strip_tags($name);
+						$len=strlen($name);
+						echo $name;
+						//echo substr($name,0,12);
+						?>
+						</h2>
                         <p class="seller-detail">Location: <strong><?php echo $location;?></strong><br>
                           
                         </p>
