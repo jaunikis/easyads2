@@ -2,16 +2,17 @@
 //pataisome timestamp2 bump skelbimuose
 $date = new DateTime();
 $current=$date->getTimestamp();
-$sql="SELECT id, timestamp, timestamp2, valid_till, bump_days FROM skelbimai WHERE ($current-timestamp2)>(bump_days*86400) ORDER BY id DESC";
+$sql="SELECT id, timestamp, timestamp2, cat1, valid_till, bump_days FROM skelbimai WHERE ($current-timestamp2)>(bump_days*86400) ORDER BY id DESC";
 $result=sqlconnect($sql);
 $ad_count = $result->num_rows;
 //echo 'total: '.$ad_count.'<hr>';
 while ($row = $result->fetch_assoc()) {
 	$id=$row['id'];
+	$cat1=$row['cat1'];
 	$timestamp=$row['timestamp'];//echo $timestamp.' tikras<br>';
 	$ad_timestamp=strtotime($timestamp);
 	$days=floor(($current-$ad_timestamp)/86400);
-	if($days<40){
+	if($days<30 || $cat1=='Business'){
 		$timestamp2=$row['timestamp2'];
 		$valid_till=$row['valid_till'];
 		$bump_days=$row['bump_days'];if($bump_days==0){$bump_days=3;}
