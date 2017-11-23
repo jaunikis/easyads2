@@ -77,7 +77,20 @@ while ($row = $result3->fetch_assoc()) {
 				echo '<option>Other '.$cat2.'</option>';
             ?>		
 					</select>
-					
+	<?php
+	//echo $cat4.'<br>';
+	If($cat3=='Bmw'){$cat4=str_replace(' ','-',$cat4);}
+	If($cat3=='Ford'){$cat4=str_replace(' ','-',$cat4);}
+	If($cat3=='Honda'){$cat4=str_replace(' ','-',$cat4);}
+	If($cat3=='Jaguar'){$cat4=str_replace(' ','-',$cat4);}
+	If($cat3=='Mazda'){$cat4=str_replace(' ','-',$cat4);}
+	If($cat3=='Mercedes Benz'){$cat4=str_replace(' ','-',$cat4);}
+	If($cat3=='Nissan'){$cat4=str_replace(' ','-',$cat4);}
+	If($cat3=='Proton'){$cat4=str_replace(' ','-',$cat4);}
+	If($cat3=='Saab'){$cat4=str_replace(' ','-',$cat4);}
+	If($cat3=='Suzuki'){$cat4=str_replace(' ','-',$cat4);}
+	If($cat3=='Toyota'){$cat4=str_replace(' ','-',$cat4);}
+	?>
 					<select id="cat4" style="margin-bottom:6px;<?php if($cat2=='Cars' && $cat3!=='make'){echo 'display:block;';}else{echo 'display:none;';}?>"  class="form-control border-form">
 			<?php
 				echo '<option>All '.$cat3.'</option>';

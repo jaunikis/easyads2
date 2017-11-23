@@ -49,8 +49,25 @@ require_once ('incl/elapsed.php');
 			if($cat1=='"Cars"'){$cat1='"Cars & Motor"';$cat2='"Cars"';}
 			if(isset($segments[3])){if($segments[3]!==''){$cat2='"'.str_replace("-"," ",$segments[3]).'"';}}
 			if(isset($segments[4])){if($segments[4]!==''){$make='"'.str_replace("-"," ",$segments[4]).'"';}}
-			if(isset($segments[5])){if($segments[5]!==''){$model='"'.str_replace("-"," ",$segments[5]).'"';}}
-			//echo '<h1>'.$search.'</h1>';
+			if(isset($segments[5])){
+				if($segments[5]!==''){
+					$model='"'.str_replace("-"," ",$segments[5]).'"';
+					//echo $make;
+					if($make=='"Bmw"'){$model=str_replace(' ','-',$model);}
+					if($make=='"Ford"'){$model=str_replace(' ','-',$model);}
+					if($make=='"Honda"'){$model=str_replace(' ','-',$model);}
+					if($make=='"Jaguar"'){$model=str_replace(' ','-',$model);}
+					if($make=='"Mazda"'){$model=str_replace(' ','-',$model);}
+					if($make=='"Mercedes Benz"'){$model=str_replace(' ','-',$model);}
+					if($make=='"Nisssan"'){$model=str_replace(' ','-',$model);}
+					if($make=='"Proton"'){$model=str_replace(' ','-',$model);}
+					if($make=='"Saab"'){$model=str_replace(' ','-',$model);}
+					if($make=='"Suzuki"'){$model=str_replace(' ','-',$model);}
+					if($make=='"Toyota"'){$model=str_replace(' ','-',$model);}
+				}
+			}
+			//echo '<h1>'.$make.'</h1>';
+			//echo '<h1>'.$model.'</h1>';
 			
 			$sort='timestamp2 DESC';$sortTxt='Recently Published';
 			if(isset($sortBy)){if($sortBy=='priceLow'){$sort='price ASC';$sortTxt='Low Price First';}}

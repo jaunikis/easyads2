@@ -56,16 +56,16 @@ $json = json_decode($string, true);
 						echo '<li><i class="fa fa-angle-right" aria-hidden="true"></i></li>';
 						echo '<li><a href="/'.$link.'">'.str_replace("-"," ",$cat1).'</a></li>';
 						
-						if($cat2!==''){$link.='/'.str_replace(' ','-',$cat2);
+						if($cat2!=='' && substr($cat2,0,3)!='All'){$link.='/'.str_replace(' ','-',$cat2);
 							echo '<li><i class="fa fa-angle-right" aria-hidden="true"></i></li>';
 							echo '<li><a href="/'.$link.'">'.str_replace("-"," ",$cat2).'</a></li>';
 						}
 						
-						if($make!==''){$link.='/'.str_replace(' ','-',$make);
+						if($make!=='' && substr($make,0,3)!='All'){$link.='/'.str_replace(' ','-',$make);
 							echo '<li><i class="fa fa-angle-right" aria-hidden="true"></i></li>';
 							echo '<li><a href="/'.$link.'">'.str_replace("-"," ",$make).'</a></li>';
 							}
-						if($model!==''){$link.='/'.str_replace(' ','-',$model);
+						if($model!=='' && substr($model,0,3)!='All'){$link.='/'.str_replace(' ','-',$model);
 							echo '<li><i class="fa fa-angle-right" aria-hidden="true"></i></li>';
 							echo '<li><a href="/'.$link.'">'.str_replace("-"," ",$model).'</a></li>';
 							}

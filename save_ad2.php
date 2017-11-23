@@ -32,7 +32,7 @@ if(isset($_POST['title'])){$title=strip_tags(addslashes($_POST['title']));}
 if(isset($_POST['cat1'])){$cat1=addslashes($_POST['cat1']);}
 if(isset($_POST['cat2'])){$cat2=addslashes($_POST['cat2']);}
 if(isset($_POST['make'])){$make=$_POST['make'];}
-if(isset($_POST['model'])){$model=$_POST['model'];}
+if(isset($_POST['model'])){$model=$_POST['model'];}//$model=str_replace("-"," ",$model);}
 if(isset($_POST['year'])){$year=$_POST['year'];if($year==''){$year=0;}}
 if(isset($_POST['fuel'])){$fuel=$_POST['fuel'];}
 if(isset($_POST['transmission'])){$transmission=$_POST['transmission'];}
