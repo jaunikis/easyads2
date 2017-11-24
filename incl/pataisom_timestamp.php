@@ -12,12 +12,14 @@ while ($row = $result->fetch_assoc()) {
 	$timestamp=$row['timestamp'];//echo $timestamp.' tikras<br>';
 	$ad_timestamp=strtotime($timestamp);
 	$days=floor(($current-$ad_timestamp)/86400);
+	$timestamp2=$row['timestamp2'];
+	$valid_till=$row['valid_till'];
+	$bump_days=$row['bump_days'];if($bump_days==0){$bump_days=1;}
+	$new_timestamp=$current-(($current-$timestamp2)%($bump_days*86400));
 	if($days<30 || $cat1=='Business'){
-		$timestamp2=$row['timestamp2'];
-		$valid_till=$row['valid_till'];
-		$bump_days=$row['bump_days'];if($bump_days==0){$bump_days=3;}
 		$new_timestamp=$current-(($current-$timestamp2)%($bump_days*86400));
-		$sql="UPDATE skelbimai SET timestamp2='$new_timestamp' WHERE id='$id'";
+		$bump_days=rand(1,$days);
+		$sql="UPDATE skelbimai SET timestamp2='$new_timestamp', bump_days=$bump_days WHERE id='$id'";
 		sqlconnect($sql);
 	}else{
 		$sql="UPDATE skelbimai SET bump_days='99999' WHERE id='$id'";

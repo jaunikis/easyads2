@@ -78,7 +78,7 @@ require_once ('incl/swear.php');
 //atimame rand idejimo laika
 //$minus=rand(1,43000);$timestamp2=-$minus;
 
-$bump_days=rand(1,7);
+$bump_days=rand(1,4);
 //$sql = "INSERT INTO skelbimai (cover,cover1file,ip,user,title,cat1,cat2,make,model,year,fuel,transmission,bodyType,color,price,location,condition2,description,name,email,phone,active,timestamp2) VALUES ('$images1[$cover]','$images1file[$cover]','$ip','$user','$title','$cat1','$cat2','$make','$model','$year','$fuel','$transmission','$bodyType','$color','$price','$location','$condition','$description','$name','$email','$phone','$active',$timestamp2)";
 $sql = "INSERT INTO skelbimai (country,engine,mileage,mileage_type,tax,ad_code,cover1file,ip,user_id,title,cat1,cat2,make,model,year,fuel,transmission,bodyType,color,price,currency,location,condition2,description,name,email,phone,active,timestamp2,valid_till,bump_days) VALUES ('$country','$engine','$mileage','$mileage_type','$tax','$ad_code','$images1file[$cover]','$ip','$user_id','$title','$cat1','$cat2','$make','$model','$year','$fuel','$transmission','$bodyType','$color','$price','$currency','$location','$condition','$description','$name','$email','$phone','$active','$timestamp2','$valid_till','$bump_days')";
 $ad_id=sqlconnect($sql);
@@ -100,7 +100,7 @@ if($active!='Active'){
 	sqlconnect($sql);
 	$mail_timestamp=0;
 	if(isset($_SESSION['mail_timestamp'])){$mail_timestamp=$_SESSION['mail_timestamp'];}
-	if($mail_timestamp<$timestamp2-360){
+	if($mail_timestamp<$timestamp2-300){
 		$msg='<b>Ad Id:</b> '.$ad_id.'<br>'.'<b>ip:</b> '.$ip.'<br>'.'<b>Country: </b>'.$country.'<br>';
 		send_mail('easyads.ie '.$active,$msg);
 		$_SESSION['mail_timestamp']=$timestamp2;
@@ -109,11 +109,14 @@ if($active!='Active'){
 
 //siunciam email kiekvienam skelbimui
 $mail_timestamp=0;
+
 if(isset($_SESSION['mail_timestamp'])){$mail_timestamp=$_SESSION['mail_timestamp'];}
-if($mail_timestamp<$timestamp2-60){
+if($mail_timestamp<$timestamp2-60 && $ip!='127.0.0.111'){
 	$msg='<b>Ad Id:</b> '.$ad_id.'<br>'.'<b>ip:</b> '.$ip.'<br>'.'<b>Country: </b>'.$country.'<br>';
+	$msg.='<img width="200px" src="http://www.easyads.ie/ads_images/'.$images1file[$cover].'"></img><br>';
 	$msg.='<hr>'.$title.'<br>'.$description.'<br><br>'.$currency.$price.'<br><br>'.$name.'<br>'.$phone;
 	send_mail('easyads.ie '.$active.' ad.',$msg);
+	//echo $msg;
 	$_SESSION['mail_timestamp']=$timestamp2;
 }
 
