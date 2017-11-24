@@ -1,0 +1,9 @@
+excel vba:
+
+Private Sub CommandButton2_Click()
+	Dim xmlhttp As New MSXML2.XMLHTTP60, myurl As String
+	myurl = "http://localhost/api/?key=admin"
+	xmlhttp.Open "GET", myurl, False
+	xmlhttp.send
+	MsgBox (xmlhttp.responseText)
+End Sub
