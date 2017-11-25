@@ -8,8 +8,11 @@ parse_str($segments[1]);
 //$item=$_GET['item'];echo $item;
 //session_start();
 //$item=$_SESSION['last_id'];
+$user_email='';
+if(isset($_SESSION['email'])){$user_email=$_SESSION['email'];}
+//echo 'user: '.$user_email.'<br>';
 
-if($active!='Active'){exit('<p><center><h3>This advert is not active at the moment.</h3><center></p>');}
+if($active!='Active' && $user_email!='admin'){exit('<p><center><h3>This advert is not active at the moment.</h3><center></p>');}
 	
 	$images1=[];
 	$images2=[];
@@ -84,6 +87,17 @@ $cat2=addslashes($cat2);
                      <div class="col-lg-12">
                         <div class="item single-ads top-space">
                            <div class="item-ads-grid icon-blue">
+				<?php
+				if($user_email=='admin'){
+					$btn='info';
+					if($active=='Active'){$btn='success';}
+					if($active=='Not Active' || $active=='Not active'){$btn='warning';}
+				?>
+						   <button id="admin_button" onclick="admin_ad(<?php echo $id;?>,this);" class="admin_button btn btn-<?php echo $btn;?> btn-xs"><?php echo $active;?></button>
+				
+				<?php
+				}
+				?>
 						   <button id="report_ad_button" onclick="report_ad(<?php echo $id;?>);" class="report_ad_button btn btn-warning btn-xs">Report Ad</button>
 						   <div id="report_success" style="display:none;" class="report_ad_button alert alert-success alert-dismissable fade in">
 							<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
@@ -313,8 +327,9 @@ echo '<div class="item"><a onclick="large_photos('.$i.');" style="cursor:zoom-in
 	 
 	  <img id="wait" style="display:none;" class="waitas" src='/images/loading3.gif'/>
 
+<script src="/js/admin_ad.js"></script>
  <script> 
- //$("#send_msg_modal").click(function(){send_msg_modal.style.display="none";});
+//$("#send_msg_modal").click(function(){send_msg_modal.style.display="none";});
  function send_msg(email){
 	//alert(email);
 	send_msg_modal.style.display = "block";

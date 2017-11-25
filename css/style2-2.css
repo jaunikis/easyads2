@@ -398,6 +398,11 @@
 	margin-right:20px;
 }
 
+.admin_button{
+	position:Absolute;
+	left:0;
+}
+
 .report_ad_button{
 	position:Absolute;
 	right:0;

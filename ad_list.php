@@ -90,7 +90,11 @@ require_once ('incl/elapsed.php');
 			$db_limit=$ads_per_page;
 			$db_start=$page*$ads_per_page-$db_limit;
 			
-			$sql="SELECT * FROM skelbimai WHERE active='Active' AND cat1=$cat1 AND cat2=$cat2 AND make=$make AND model=$model AND fuel=$fuel AND transmission=$transmission AND bodyType=$bodyType AND color=$color AND location=$location AND (price BETWEEN '$pMin' AND '$pMax') AND (year BETWEEN '$yMin' AND '$yMax') AND(description LIKE '$search' OR title LIKE '$search') ORDER BY $sort LIMIT $db_start,$db_limit";
+			$user_email='';
+			if(isset($_SESSION['email'])){$user_email=$_SESSION['email'];}
+	
+			if($user_email=='admin'){$sqq='';}else{$sqq="active='Active' AND ";}			
+			$sql="SELECT * FROM skelbimai WHERE ".$sqq."cat1=$cat1 AND cat2=$cat2 AND make=$make AND model=$model AND fuel=$fuel AND transmission=$transmission AND bodyType=$bodyType AND color=$color AND location=$location AND (price BETWEEN '$pMin' AND '$pMax') AND (year BETWEEN '$yMin' AND '$yMax') AND(description LIKE '$search' OR title LIKE '$search') ORDER BY $sort LIMIT $db_start,$db_limit";
 			$result=sqlconnect($sql);
 			
 			
@@ -150,6 +154,7 @@ include('left_search.php');
 				$cat1=$row['cat1'];if($cat1=='Please Choose'){$cat1='';}
 				$cat2=$row['cat2'];if($cat2=='Please Choose'){$cat2='';}
 				$currency=$row['currency'];
+				$active=$row['active'];
 				
 				$date = new DateTime();
 				$current=$date->getTimestamp();
@@ -159,6 +164,21 @@ include('left_search.php');
 				?>
 					   <div class="item">
                            <div class="item-ads-grid icon-blue list-view">
+						   
+				<?php
+				
+				//if($active!='Active'){continue;}
+				if($user_email=='admin'){
+					$btn='info';
+					if($active=='Active'){$btn='success';}
+					if($active=='Not Active' || $active=='Not active'){$btn='warning';}
+				?>
+						   <button id="admin_button" onclick="admin_ad(<?php echo $id;?>,this);" class="admin_button btn btn-<?php echo $btn;?> btn-xs"><?php echo $active;?></button>
+				
+				<?php
+				}
+				?>
+						   
                             <?php
 							if($badge!=''){
 								?>
@@ -266,7 +286,8 @@ if($page>=$page_max){$plus=' disabled';$plus_link='';$plus_click='';}
          </div>
       </section>
       <!-- End Category List -->
-	  
+
+<script src="/js/admin_ad.js"></script>
 <script>
 function toggle_show(){
 	$("#categories_left").toggle();
