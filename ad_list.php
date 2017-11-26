@@ -11,7 +11,6 @@ require_once ('incl/elapsed.php');
 			//parse vars from address bar
 			$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 			$segments2 = explode('?', $actual_link);
-			//echo $segments[1];
 			if(isset($segments2[1])){parse_str($segments2[1]);}
 			
 			//echo  (str_replace("%20"," ",$segments[3]));
@@ -155,6 +154,7 @@ include('left_search.php');
 				$cat2=$row['cat2'];if($cat2=='Please Choose'){$cat2='';}
 				$currency=$row['currency'];
 				$active=$row['active'];
+				$country=$row['country'];
 				
 				$date = new DateTime();
 				$current=$date->getTimestamp();
@@ -174,7 +174,7 @@ include('left_search.php');
 					if($active=='Not Active' || $active=='Not active'){$btn='warning';}
 				?>
 						   <button id="admin_button" onclick="admin_ad(<?php echo $id;?>,this);" class="admin_button btn btn-<?php echo $btn;?> btn-xs"><?php echo $active;?></button>
-				
+						<div style="position:Absolute;left:0;bottom:0;background: rgba(255, 255, 255, 0.6);padding:4px;"><?php echo $country;?></div>
 				<?php
 				}
 				?>

@@ -15,7 +15,7 @@
 "Pets":["Dogs","Cats","Birds","Horses"],
 "Baby & Kids":["Toys","Clothing","Buggies","Nursing"],
 "House & DIY":["Furniture","Home Improvement","Garden","Antiques"],
-"Sports":["Sports Clothing","Sports Equipment","Cycling"],
+"Sports":["Sports Clothing","Sports Equipment","Cycling","Health & Beauty"],
 "Clothes":["Men's","Women's","Children's","Shoes"],
 "Music & Education":["Music","Instruments","Education"],
 "Free Stuff":[],

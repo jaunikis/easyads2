@@ -42,6 +42,7 @@ while ($row = $result->fetch_assoc()) {
 	$mileage_type=$row['mileage_type'];
 	$tax=$row['tax'];
 	$email=$row['email'];
+	$www=$row['www'];
 }
 ?>
 

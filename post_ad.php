@@ -274,7 +274,13 @@ for($i=date("Y")-20;$i<date("Y")+1;$i++){
 									<div class="form-group">
 										<label class="col-sm-3 control-label">Email (optional)</label>
 										<div class="col-sm-9">
-											<input id="email" name="email" type="text" value="<?php if(isset($_SESSION['email'])){echo $_SESSION['email'];} ?>" class="form-control1 border-form">
+											<input id="email" name="email" type="text" placeholder="yourEmail@email.com" value="<?php if(isset($_SESSION['email'])){echo $_SESSION['email'];} ?>" class="form-control1 border-form">
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label">Web site (optional)</label>
+										<div class="col-sm-9">
+											<input id="www" name="www" type="text" placeholder="www.yourWebsite.com" value="<?php if(isset($_SESSION['www'])){echo $_SESSION['www'];}elseif(isset($www)){echo $www;} ?>" class="form-control1 border-form">
 										</div>
 									</div>
 									<div class="form-group">

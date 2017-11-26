@@ -28,6 +28,7 @@ $name='';$email='';$phone='';
 $transmission='';$bodyType='';$color='';
 $description='';
 $images1file=[];$images2file=[];
+$www='';
 
 if(isset($_POST['cover'])){$cover=$_POST['cover'];if($cover==''){$cover=0;}}
 if(isset($_POST['title'])){$title=strip_tags(addslashes($_POST['title']));}
@@ -51,6 +52,7 @@ if(isset($_POST['engine'])){$engine=strip_tags(addslashes($_POST['engine']));}
 if(isset($_POST['mileage'])){$mileage=strip_tags(addslashes($_POST['mileage']));}
 if(isset($_POST['mileage_type'])){$mileage_type=strip_tags(addslashes($_POST['mileage_type']));}
 if(isset($_POST['tax'])){$tax=strip_tags(addslashes($_POST['tax']));}
+if(isset($_POST['www'])){$www=strip_tags(addslashes($_POST['www']));}
 
 $cover=intval($cover);
 if(isset($_SESSION['images1'])){$images1file=$_SESSION['images1'];}else{array_push($images1file,'');}
@@ -80,7 +82,7 @@ require_once ('incl/swear.php');
 
 $bump_days=rand(1,4);
 //$sql = "INSERT INTO skelbimai (cover,cover1file,ip,user,title,cat1,cat2,make,model,year,fuel,transmission,bodyType,color,price,location,condition2,description,name,email,phone,active,timestamp2) VALUES ('$images1[$cover]','$images1file[$cover]','$ip','$user','$title','$cat1','$cat2','$make','$model','$year','$fuel','$transmission','$bodyType','$color','$price','$location','$condition','$description','$name','$email','$phone','$active',$timestamp2)";
-$sql = "INSERT INTO skelbimai (country,engine,mileage,mileage_type,tax,ad_code,cover1file,ip,user_id,title,cat1,cat2,make,model,year,fuel,transmission,bodyType,color,price,currency,location,condition2,description,name,email,phone,active,timestamp2,valid_till,bump_days) VALUES ('$country','$engine','$mileage','$mileage_type','$tax','$ad_code','$images1file[$cover]','$ip','$user_id','$title','$cat1','$cat2','$make','$model','$year','$fuel','$transmission','$bodyType','$color','$price','$currency','$location','$condition','$description','$name','$email','$phone','$active','$timestamp2','$valid_till','$bump_days')";
+$sql = "INSERT INTO skelbimai (www,country,engine,mileage,mileage_type,tax,ad_code,cover1file,ip,user_id,title,cat1,cat2,make,model,year,fuel,transmission,bodyType,color,price,currency,location,condition2,description,name,email,phone,active,timestamp2,valid_till,bump_days) VALUES ('$www','$country','$engine','$mileage','$mileage_type','$tax','$ad_code','$images1file[$cover]','$ip','$user_id','$title','$cat1','$cat2','$make','$model','$year','$fuel','$transmission','$bodyType','$color','$price','$currency','$location','$condition','$description','$name','$email','$phone','$active','$timestamp2','$valid_till','$bump_days')";
 $ad_id=sqlconnect($sql);
 //if($ad_id){echo '<script>alert("namas");</script>';}
 
@@ -111,7 +113,7 @@ if($active!='Active'){
 $mail_timestamp=0;
 
 if(isset($_SESSION['mail_timestamp'])){$mail_timestamp=$_SESSION['mail_timestamp'];}
-if($mail_timestamp<$timestamp2-60 && $ip!='127.0.0.111'){
+if($mail_timestamp<$timestamp2-60 && $ip!='127.0.0.1'){
 	$msg='<b>Ad Id:</b> '.$ad_id.'<br>'.'<b>ip:</b> '.$ip.'<br>'.'<b>Country: </b>'.$country.'<br>';
 	$msg.='<img width="200px" src="http://www.easyads.ie/ads_images/'.$images1file[$cover].'"></img><br>';
 	$msg.='<hr>'.$title.'<br>'.$description.'<br><br>'.$currency.$price.'<br><br>'.$name.'<br>'.$phone;
@@ -164,7 +166,7 @@ if(isset($_SESSION['user_id'])){
 	
 }
 $_SESSION['active']=$active;
-$_SESSION['email']=$email;
+//$_SESSION['email']=$email;
 //echo $active;
 header("Location: /post_ad/success");
 	

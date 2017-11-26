@@ -228,7 +228,7 @@ echo '<div class="item"><a onclick="large_photos('.$i.');" style="cursor:zoom-in
 					$phone=str_replace('+','00',$phone);
 					if($phone!=''){
 					?>
-                              <p><a href="tel:<?php echo $phone;?>"><button class="btn btn-info btn-block"><i class="fa fa-whatsapp"></i> <?php echo $phone;?></button></a></p>
+                              <p><button class="btn btn-primary btn-block"><a style="color:white" href="tel:<?php echo $phone;?>"><i class="fa fa-whatsapp"></i> <?php echo $phone;?></button></a></p>
 					<?php
 					}
 					require_once 'Mobile_Detect.php';
@@ -236,7 +236,7 @@ echo '<div class="item"><a onclick="large_photos('.$i.');" style="cursor:zoom-in
 					// Any mobile device (phones or tablets).
 					if ( $detect->isMobile() ) {
 					?>
-					<p><a href="sms://<?php echo $phone;?>"><button class="btn btn-success btn-block"><i class="fa fa-commenting-o"></i> Send SMS</button></a></p>
+					<p><button class="btn btn-primary btn-block"><a style="color:white" href="sms://<?php echo $phone;?>"><i class="fa fa-commenting-o"></i> Send SMS</button></a></p>
 					<?php
 					}
 					?>
@@ -244,7 +244,17 @@ echo '<div class="item"><a onclick="large_photos('.$i.');" style="cursor:zoom-in
 					<?php
 					if($email!=''){
 					?>
-							<button class="btn btn-warning btn-block"><a style="color:white" href="mailto:<?php echo $email;?>"><i class="fa fa-envelope"></i> Send Email</a></button>
+						<p><button class="btn btn-primary btn-block"><a style="color:white" href="mailto:<?php echo $email;?>"><i class="fa fa-envelope"></i> Send Email</a></button></p>
+					<?php
+					}
+					?>
+					
+					<?php
+					if($www!=''){
+						//if(substr($www,0,3)=='www'){$www='http://'.$www;}
+						if(substr($www,0,4)!='http'){$www='http://'.$www;}
+					?>
+						<p><button class="btn btn-primary btn-block"><a style="color:white" href="<?php echo $www;?>"><i class="fa fa-globe"></i> Web Page</a></button></p>
 					<?php
 					}
 					?>

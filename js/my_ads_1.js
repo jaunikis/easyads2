@@ -50,7 +50,7 @@ function delete_ad(id,th){
 	var hr = new XMLHttpRequest();
 		// Create some variables we need to send to our PHP file
 		var url = "/incl/delete_ad.php";
-		var vars = "ad_id="+id;
+		var vars = "ad_id="+id+"&key=4461";
 		hr.open("POST", url, true);
 		hr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 		// Access the onreadystatechange event for the XMLHttpRequest object
@@ -59,6 +59,7 @@ function delete_ad(id,th){
 
 			if(hr.readyState == 4 && hr.status == 200) {
 				var return_data = hr.responseText;
+				//alert (return_data);
 				var p=th.parentNode.parentNode;
 				p.parentNode.removeChild(p);
 				//window.location = "/my_ads";
