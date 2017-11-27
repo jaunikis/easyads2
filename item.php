@@ -208,7 +208,7 @@ echo '<div class="item"><a onclick="large_photos('.$i.');" style="cursor:zoom-in
                   <div class="widget user-widget">
                      <div class="widget-body text-center">
                         <img class="user-dp" alt="User Image" src="/images/user3.png">
-                        <h2 class="seller-name">
+                        <h2 class="seller-name" style="font-size:14px;">
 						<?php
 						$name=strip_tags($name);
 						$len=strlen($name);
@@ -234,7 +234,7 @@ echo '<div class="item"><a onclick="large_photos('.$i.');" style="cursor:zoom-in
 					require_once 'Mobile_Detect.php';
 					$detect = new Mobile_Detect;
 					// Any mobile device (phones or tablets).
-					if ( $detect->isMobile() ) {
+					if ( $detect->isMobile() && $phone!='' && substr($phone,0,2)=='08') {
 					?>
 					<p><button class="btn btn-primary btn-block"><a style="color:white" href="sms://<?php echo $phone;?>"><i class="fa fa-commenting-o"></i> Send SMS</button></a></p>
 					<?php

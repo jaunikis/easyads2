@@ -59,32 +59,34 @@ var google_remarketing_only = false;
 							}
 							echo $msg;
 							//tikriname emaila ir siunciam emaila
-							$email=$_SESSION['email'];
-							$arr=explode('@',$email);
-							if(count($arr)==2){
-								$arr2=explode('.',$arr[1]);
-								if(count($arr2)==2){
-									if(strlen($arr2[1])>1 || strlen($arr2[1])<6){
-										//echo $email;
-										$to = $email;
-										$subject='easyads.ie your ad details';
-										$headers = "MIME-Version: 1.0" . "\r\n";
-										$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-										$headers .= 'From: <webmaster@easyads.ie>' . "\r\n";
-										$msg2='
-										<html>
-										<head>
-										<title>easyads.ie</title>
-										</head>
-										<body>
-										<h1>easyads.ie</h1>
-										';
-										$msg2.=$msg;
-										$msg2.='
-										</body>
-										</html>
-										';
-										mail($to,$subject,$msg2,$headers);
+							if(isset($_SESSION['email'])){
+								$email=$_SESSION['email'];
+								$arr=explode('@',$email);
+								if(count($arr)==2){
+									$arr2=explode('.',$arr[1]);
+									if(count($arr2)==2){
+										if(strlen($arr2[1])>1 || strlen($arr2[1])<6){
+											//echo $email;
+											$to = $email;
+											$subject='easyads.ie your ad details';
+											$headers = "MIME-Version: 1.0" . "\r\n";
+											$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+											$headers .= 'From: <webmaster@easyads.ie>' . "\r\n";
+											$msg2='
+											<html>
+											<head>
+											<title>easyads.ie</title>
+											</head>
+											<body>
+											<h1>easyads.ie</h1>
+											';
+											$msg2.=$msg;
+											$msg2.='
+											</body>
+											</html>
+											';
+											mail($to,$subject,$msg2,$headers);
+										}
 									}
 								}
 							}
