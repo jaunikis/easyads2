@@ -1,0 +1,35 @@
+.modal{
+		background-color:rgba(255, 255, 255, 0.99);
+        width:96%;
+		height:96%;
+		margin:auto;
+		text-align: center;
+		padding: 5px;
+		padding-top:60px;
+    }
+@media screen and (min-width: 480px) {
+	.modal{
+	width:80%;
+	height:80%;
+	border-radius: 25px;
+	border: 2px solid orangered;
+    padding: 20px; 
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+	}
+}
+
+
+.close-button{
+	position:absolute;
+	right:15px;
+	top:5px;
+	color:orangered;
+	font-size:30px;
+	font-family: "Times New Roman", Times, serif;
+	z-index:20;
+}
+.close-button:hover{
+	font-size:31px;
+	color:tomato;
+}
