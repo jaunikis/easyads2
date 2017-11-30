@@ -30,7 +30,7 @@
   <body id="page-top">
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+	    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
         <a class="navbar-brand js-scroll-trigger" href="#page-top">MK Transport</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -45,10 +45,13 @@
               <a class="nav-link js-scroll-trigger" href="#services">Paslaugos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#portfolio">Grafikas</a>
+              <a class="nav-link js-scroll-trigger" href="#portfolio">Informacija</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#contact">Kontaktai</a>
+            </li>
+			<li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="uzsakyti.php">Užsakyti</a>
             </li>
           </ul>
         </div>
@@ -79,8 +82,17 @@
           <div class="col-lg-8 mx-auto text-center">
             <h2 class="section-heading text-white">Važiuojame kiekvieną savaitę!</h2>
             <hr class="light my-4">
-            <p class="text-faded mb-4">Iš Airijos išvykstame kiekvieną pirmadienį, iš Lietuvos - kiekvieną trečiadienį.</p>
-            <a class="btn btn-light btn-xl js-scroll-trigger" onclick="modal();">Užsakyti internetu</a>
+            <p class="text-faded mb-4">Iš Airijos išvykstame kiekvieną <b>pirmadienį</b>,<br>iš Lietuvos - kiekvieną <b>trečiadienį</b>.</p>
+            <p class="text-faded mb-4">
+				<div class="row">
+					<div class="text-faded col-sm-4" style="padding:0;">Užsakyti galima telefonu: </div>
+					<div class="text-faded col-sm-4" style="padding:0;">+353 858 322266 (Airija), </div>
+					<div class="text-faded col-sm-4" style="padding:0;">+370 677 76325 (Lietuva).</div>
+				</div>
+			</p>
+			<p class="text-faded mb-4">Elektroniniu paštu: info@mk-transport.lt</p>
+			<p class="text-faded mb-4">Arba užpildę užsakymo formą. Ir mes paimsime Jūsų siuntą. Papildomai skambinti nereikia. Prieš atvažiuojant, kurjeris susisieks su Jumis.</p>
+			<a class="btn btn-light btn-xl js-scroll-trigger" href="uzsakyti.php">Užsakyti internetu</a>
           </div>
         </div>
       </div>
@@ -121,8 +133,8 @@
           <div class="col-lg-3 col-md-6 text-center">
             <div class="service-box mt-5 mx-auto">
               <i class="fa fa-4x fa-heart text-primary mb-3 sr-icons"></i>
-              <h3 class="mb-3">Made with Love</h3>
-              <p class="text-muted mb-0">You have to make your websites with love these days!</p>
+              <h3 class="mb-3">Dėl jūsų</h3>
+              <p class="text-muted mb-0">Stengiamės patenkinti visus kliento poreikius.</p>
             </div>
           </div>
         </div>
@@ -228,8 +240,16 @@
 
     <section class="bg-dark text-white">
       <div class="container text-center">
-        <h2 class="mb-4">Free Download at Start Bootstrap!</h2>
-        <a class="btn btn-light btn-xl sr-button" href="http://www.easyads.ie">Download Now!</a>
+        <h2 class="mb-4">Apie mus</h2>
+		<p>MK-TRANSPORT – tai Airijoje registruota įmonė (reg. Nr. 1380436V ). Savo veiklą įmonė pradėjo 2008 m. kovo mėn. Pagrindinė veikla – siuntų gabenimas maršrutais Airija – Lietuva ir Lietuva  – Airija.
+ 
+Mes gabename įvairius krovinius: baldus, buitinę techniką, motociklus, statybines medžiagas, reisu: Airija - Anglija - Lietuva.</p>
+        <a class="btn btn-light btn-xl sr-button" href="apie.php">Daugiau apie mus..</a>
+		<p style="padding-top:40px;">
+    <a class="btn btn-lg btn-social-icon btn-twitter">
+    <span class="fa fa-facebook"></span>
+  </a>
+  </p>
       </div>
     </section>
 
@@ -257,6 +277,10 @@
         </div>
       </div>
     </section>
+	
+	<?php
+	include "footer.php";
+	?>
 
 <div id="modal" class="modal">
 	<div class="close-button"><a onclick="close_modal();"><span class="fa fa-times"></span></a></div>
