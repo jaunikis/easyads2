@@ -280,6 +280,51 @@ Mes gabename įvairius krovinius: baldus, buitinę techniką, motociklus, statyb
 	
 	<?php
 	include "footer.php";
+//get ip
+function getRealUserIp(){
+    switch(true){
+      case (!empty($_SERVER['HTTP_X_REAL_IP'])) : return $_SERVER['HTTP_X_REAL_IP'];
+      case (!empty($_SERVER['HTTP_CLIENT_IP'])) : return $_SERVER['HTTP_CLIENT_IP'];
+      case (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) : return $_SERVER['HTTP_X_FORWARDED_FOR'];
+      default : return $_SERVER['REMOTE_ADDR'];
+    }
+ }
+ $ip = getRealUserIp();
+	
+//getting country, city
+$country='';$city='';
+if($ip!='127.0.0.1'){
+	$query = @unserialize(file_get_contents('http://ip-api.com/php/'.$ip));
+	if($query && $query['status'] == 'success') {
+		$country=$query['country'];
+		$city=$query['city'];
+	}
+}else{$country='Ireland';$city='Cavan';}
+
+//get device
+$device='desktop';
+require_once 'incl/Mobile_Detect.php';
+$detect = new Mobile_Detect;
+if ($detect->isMobile()) {$device='mobile';}
+if ($detect->isTablet()) {$device='tablet';}
+if ($detect->version('iPhone')) {$device='iPhone';}
+
+
+require('incl/server.php');
+//tikriname ar naujas
+$sql="SELECT ip FROM mktransport_visitors WHERE ip='$ip' AND date >= NOW() - INTERVAL 20 MINUTE";
+$result=sqlconnect($sql);
+$count = $result->num_rows;
+//echo $count;
+
+//irasome i visitors
+if($count==0){
+	$sql="INSERT INTO mktransport_visitors (ip,country,city,device) VALUES ('$ip','$country','$city','$device')";
+	$result=sqlconnect($sql);
+	//echo '<h2>'.$result.'</h2>';
+}
+	
+	
 	?>
 
 <div id="modal" class="modal">
