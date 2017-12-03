@@ -87,7 +87,7 @@ function send_mail($salis,$miestas,$from,$subject,$msg){
 	</html>
 	';
 	
-		//mail($to,$subject,$msg2,$headers);
+		mail($to,$subject,$msg2,$headers);
 		echo 'from: '.$from.'<br>';echo $msg2;
 	}
 	

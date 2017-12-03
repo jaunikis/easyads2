@@ -7,9 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+	
+<meta property="og:url"                content="http://www.mk-transport.lt" />
+<meta property="og:type"               content="Home" />
+<meta property="og:title"              content="MK Transport - Kroviniu pervezimai Lietuva - Airija" />
+<meta property="og:description"        content="Smulkių siuntų, bei gyvūnų gabenimas" />
+<meta property="og:image"              content="http://www.mk-transport.lt/img/header.jpg" />
 
     <title>MK Transport - Kroviniu pervezimai Lietuva - Airija</title>
-
+	<link rel="icon" type="image/png" href="/img/favicon.png">
+	
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -28,6 +35,17 @@
   </head>
 
   <body id="page-top">
+  
+  <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/lt_LT/sdk.js#xfbml=1&version=v2.11&appId=501513060220599';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<img style="display:none;" src="img/fblogo.jpg"></img>
 
     <!-- Navigation -->
 	    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
@@ -63,7 +81,7 @@
         <div class="row">
           <div class="col-lg-10 mx-auto">
             <h1 class="text-uppercase">
-              <strong>Krovinių Pervežimai</strong>
+              <strong style="">Krovinių Pervežimai</strong>
             </h1>
             <hr>
           </div>
@@ -84,7 +102,7 @@
             <hr class="light my-4">
             <p class="text-faded mb-4">Iš Airijos išvykstame kiekvieną <b>pirmadienį</b>,<br>iš Lietuvos - kiekvieną <b>trečiadienį</b>.</p>
             <p class="text-faded mb-4">
-				<div class="row">
+				<div class="row telnr">
 					<div class="text-faded col-sm-4" style="padding:0;">Užsakyti galima telefonu: </div>
 					<div class="text-faded col-sm-4" style="padding:0;">+353 858 322266 (Airija), </div>
 					<div class="text-faded col-sm-4" style="padding:0;">+370 677 76325 (Lietuva).</div>
@@ -246,7 +264,7 @@
 Mes gabename įvairius krovinius: baldus, buitinę techniką, motociklus, statybines medžiagas, reisu: Airija - Anglija - Lietuva.</p>
         <a class="btn btn-light btn-xl sr-button" href="apie.php">Daugiau apie mus..</a>
 		<p style="padding-top:40px;">
-    <a class="btn btn-lg btn-social-icon btn-twitter">
+    <a style="color:#3b5998" class="btn btn-lg btn-social-icon btn-twitter" href="https://www.facebook.com/mktransportpervezimai">
     <span class="fa fa-facebook"></span>
   </a>
   </p>
