@@ -63,7 +63,7 @@
               <a class="nav-link js-scroll-trigger" href="#services">Paslaugos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#portfolio">Informacija</a>
+              <a class="nav-link js-scroll-trigger" href="#apiemus">Apie mus</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#contact">Kontaktai</a>
@@ -163,109 +163,57 @@
       <div class="container-fluid p-0">
         <div class="row no-gutters popup-gallery">
           <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/portfolio/fullsize/1.jpg">
-              <img class="img-fluid" src="img/portfolio/thumbnails/1.jpg" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Category
-                  </div>
-                  <div class="project-name">
-                    Project Name
-                  </div>
-                </div>
-              </div>
-            </a>
+            
+              <img class="img-fluid" src="img/portfolio/thumbnails/a1.jpg" alt="">
+              
           </div>
           <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/portfolio/fullsize/2.jpg">
-              <img class="img-fluid" src="img/portfolio/thumbnails/2.jpg" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Category
-                  </div>
-                  <div class="project-name">
-                    Project Name
-                  </div>
-                </div>
-              </div>
-            </a>
+            
+              <img class="img-fluid" src="img/portfolio/thumbnails/a2.jpg" alt="">
+              
           </div>
           <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/portfolio/fullsize/3.jpg">
-              <img class="img-fluid" src="img/portfolio/thumbnails/3.jpg" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Category
-                  </div>
-                  <div class="project-name">
-                    Project Name
-                  </div>
-                </div>
-              </div>
-            </a>
+            
+              <img class="img-fluid" src="img/portfolio/thumbnails/a3.jpg" alt="">
+              
           </div>
-          <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/portfolio/fullsize/4.jpg">
-              <img class="img-fluid" src="img/portfolio/thumbnails/4.jpg" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Category
-                  </div>
-                  <div class="project-name">
-                    Project Name
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/portfolio/fullsize/5.jpg">
-              <img class="img-fluid" src="img/portfolio/thumbnails/5.jpg" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Category
-                  </div>
-                  <div class="project-name">
-                    Project Name
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/portfolio/fullsize/6.jpg">
-              <img class="img-fluid" src="img/portfolio/thumbnails/6.jpg" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Category
-                  </div>
-                  <div class="project-name">
-                    Project Name
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
+         
+          
+          
         </div>
       </div>
     </section>
-
-    <section class="bg-dark text-white">
+	
+	<div class="col-lg-4 col-sm-6" style="padding:20px;margin:auto;">
+		<iframe src="https://www.youtube.com/embed/WPyx8YDGSL8" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+    </div>
+	
+	<section id="apiemus" class="bg-dark text-white">
+	
+	
+	
       <div class="container text-center">
         <h2 class="mb-4">Apie mus</h2>
-		<p>MK-TRANSPORT – tai Airijoje registruota įmonė (reg. Nr. 1380436V ). Savo veiklą įmonė pradėjo 2008 m. kovo mėn. Pagrindinė veikla – siuntų gabenimas maršrutais Airija – Lietuva ir Lietuva  – Airija.
- 
-Mes gabename įvairius krovinius: baldus, buitinę techniką, motociklus, statybines medžiagas, reisu: Airija - Anglija - Lietuva.</p>
-        <a class="btn btn-light btn-xl sr-button" href="apie.php">Daugiau apie mus..</a>
+		<p>Pagrindinė veikla – siuntų gabenimas maršrutais Airija–Anglija-Lietuva ir Lietuva–Anglija-Airija.</p>
+		<p><img src="img/irl_lt.png" width="200px" style="border-radius: 5px;"></p>
+		
+        
+		<div id="daugiau" class="collapse" style="padding-top:30px;">
+		<p>MK-TRANSPORT – tai Airijoje registruota įmonė (reg. Nr. 1380436V ). Savo veiklą įmonė pradėjo 2008 m. kovo mėn.
+Mes gabename įvairius krovinius: baldus, buitinę techniką, motociklus, statybines medžiagas, reisu: Airija-Anglija-Lietuva.</p>
+		<p><img src="img/apie1.jpg" width="200px" style="border-radius: 5px;"></p>
+		<p>Patyrusių vairuotojų komanda yra pasiruošusi greitai įvykdyti jiems pavestas užduotis.</p>
+		<p>Stabilūs darbo rezultatai, augantys krovinių ir siuntų kiekiai verčia įmonę planuoti apie transporto parko plėtrą. Darbuotojų komandą sudaro patyrę savo srities specialistai, todėl nauji iššūkiai nebaugina, o verčia susitelkti naujoms užduotims.</p>
+		<p>Visi mūsų autotransporto priemonėmis gabenami kroviniai yra apdrausti vežėjų automobiliais atsakomybės draudimu pagal CMR konvencijų reikalavimus.</p>
+		<p><img src="img/apie3.jpg" width="200px" style="border-radius: 5px;"></p>
+		<p>Pagrindinis mūsų įmonės tikslas – laiku ir saugiai pristatyti krovinius bei siuntas į paskirties vietą , profesonaliai spręsti mūsų versle atsiradusias problemas ir būti patikimu partneriu teikiant aukšto lygio transporto ir logistikos paslaugas.</p>
+		<p>Siuntiniai ir kroviniai paimami tiesiai iš namų ir pristatomi pagal nurodytą adresą.</p>
+		<p>Iš Airijos važiuojame kiekvieną savaitę, taip pat ir iš Lietuvos.</p>
+		</div>
+		<button class="btn btn-light btn-xl sr-button" data-toggle="collapse" data-target="#daugiau">Daugiau apie mus..</button>
 		<p style="padding-top:40px;">
     <a style="color:#3b5998" class="btn btn-lg btn-social-icon btn-twitter" href="https://www.facebook.com/mktransportpervezimai">
-    <span class="fa fa-facebook"></span>
+	<p><img src="img/fb.svg" width="50px"></p>
   </a>
   </p>
       </div>
@@ -277,7 +225,7 @@ Mes gabename įvairius krovinius: baldus, buitinę techniką, motociklus, statyb
           <div class="col-lg-8 mx-auto text-center">
             <h2 class="section-heading">Kontaktai</h2>
             <hr class="my-4">
-            <p class="mb-5">Ready to start your next project with us? That's great! Give us a call or send us an email and we will get back to you as soon as possible!</p>
+            <p class="mb-5">Mes pasiruošę - greitai ir saugiai pristatyti jūsų siuntinį!</p>
           </div>
         </div>
         <div class="row">

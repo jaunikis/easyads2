@@ -45,7 +45,7 @@
               <a class="nav-link" href="index.php#services" style="color:black;">Paslaugos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="index.php#portfolio" style="color:black;">Grafikas</a>
+              <a class="nav-link" href="index.php#apiemus" style="color:black;">Apie Mus</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="index.php#contact" style="color:black;">Kontaktai</a>
