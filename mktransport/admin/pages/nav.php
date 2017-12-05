@@ -11,7 +11,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="www.mk-transport.lt">mk-transport.lt</a>
+                <a class="navbar-brand" href="https://www.mk-transport.lt">mk-transport.lt</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -51,10 +51,10 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Pradzia</a>
+                            <a href="index.php"><i class="fa fa-dashboard fa-fw"></i> Pradzia</a>
                         </li>
                         <li>
-                            <a href="tables.html"><i class="fa fa-table fa-fw"></i> Uzsakymai</a>
+                            <a href="uzsakymai.php"><i class="fa fa-table fa-fw"></i> Uzsakymai</a>
                         </li>
                         <li>
                             <a href="forms.html"><i class="fa fa-bar-chart fa-fw"></i> Lankytojai</a>
