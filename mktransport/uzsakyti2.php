@@ -1,5 +1,5 @@
 <?php
-echo 'data:<br>';
+//echo 'data:<br>';
 $vardas=$_POST['vardas'];
 $tel=$_POST['tel'];
 $adresas=$_POST['adresas'];
@@ -38,24 +38,24 @@ if ($detect->isTablet()) {$device='tablet';}
 if ($detect->version('iPhone')) {$device='iPhone';}
 
 	
-echo $device.'<br>';
-echo $vardas.'<br>';
-echo $tel.'<br>';
-echo $adresas.'<br>';
-echo $emailas.'<br>';
-echo $svoris.'<br>';
-echo $papildoma.'<br>';
-echo $salis.'<br>';
-echo $miestas.'<br>';
-echo $device.'<br>';
+//echo $device.'<br>';
+//echo $vardas.'<br>';
+//echo $tel.'<br>';
+//echo $adresas.'<br>';
+//echo $emailas.'<br>';
+//echo $svoris.'<br>';
+//echo $papildoma.'<br>';
+//echo $salis.'<br>';
+//echo $miestas.'<br>';
+//echo $device.'<br>';
 
 require('incl/server.php');
 $sql="INSERT INTO mktransport_uzsakymai (ip,device,vardas,tel,adresas,emailas,svoris,papildoma,salis,miestas,busena) VALUES ('$ip','$device','$vardas','$tel','$adresas','$emailas','$svoris','$papildoma','$salis','$miestas','pending')";
 //$sql="SELECT * FROM mktransport_uzsakymai";
 $result=sqlconnect($sql);
 //$count = $result->num_rows;
-echo '<h2>'.$result.'</h2>';
-
+//echo '<h2>'.$result.'</h2>';
+if($result>0){
 //siunciam maila
 function send_mail($salis,$miestas,$from,$subject,$msg){
 	if($from==''){$from='info@mk-transport.lt';}
@@ -77,9 +77,8 @@ function send_mail($salis,$miestas,$from,$subject,$msg){
 	<title>HTML email</title>
 	</head>
 	<body>
-	<h1 style="color:tomato;">mk-transport.lt</h1><h5>Uzsakymas:</h5>
-	';
-	$msg2.='<h4>'.$miestas.' '.$salis.'</h4>'.
+	<h1 style="color:tomato;">mk-transport.lt</h1><h5>Uzsakymas:<br>';
+	$msg2.=$miestas.' '.$salis.'</h5>'.
 	$tdate.' '.$time.'<hr>';
 	$msg2.=$msg;
 	$msg2.='
@@ -88,7 +87,7 @@ function send_mail($salis,$miestas,$from,$subject,$msg){
 	';
 	
 		mail($to,$subject,$msg2,$headers);
-		echo 'from: '.$from.'<br>';echo $msg2;
+		//echo 'from: '.$from.'<br>';echo $msg2;
 	}
 	
 $msg='Vardas: '.$vardas.'<br>'.
@@ -98,4 +97,105 @@ $msg='Vardas: '.$vardas.'<br>'.
 'Papildoma inf: '.$papildoma;
 
 send_mail($salis,$miestas,$emailas,'subjektas',$msg);
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>MK Transport - Užsakymo forma</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <!-- Plugin CSS -->
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/creative.min.css" rel="stylesheet">
+	<link href="css/mano.css" rel="stylesheet">
+
+  </head>
+
+	<body id="page-top">
+
+    <!-- Navigation -->
+	<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav" style="background-color:white;">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="index.php#page-top" style="color:tomato;">MK Transport</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.php#about"  style="color:black;">Pradžia</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.php#services" style="color:black;">Paslaugos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.php#apiemus" style="color:black;">Apie Mus</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="index.php#contact" style="color:black;">Kontaktai</a>
+            </li>
+			<li class="nav-item">
+              <a class="nav-link js-scroll-trigger" style="color:tomato;">Užsakyti</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+	
+	<section class="bg-primary" id="uzsakyti">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <h3 class="section-heading text-white">Siuntos užsakymas sėkmingai išsiųstas!</h3>
+			<div class="text-faded" style="padding:10px; border: 1px solid lightGrey;">
+			<p>Vardas: <?php echo $vardas;?></p>
+			<p>Telefonas: <?php echo $tel;?></p>
+			<p>Adresas: <?php echo $adresas;?></p>
+			</div>
+            <p class="text-faded" style="padding-top:15px;">Papildomai skambinti nereikia. Prieš atvažiuojant, mes susisieksime su Jumis.</p>
+			<hr class="light my-4">
+			<a class="btn btn-light btn-xl js-scroll-trigger" href="index.php#page-top">Gryžti</a>
+		  </div>
+        </div>
+      </div>
+    </section>
+	
+	<?php
+	include "footer.php";
+	?>
+	
+	<!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/creative.min.js"></script>
+	
+	</body>
+
+<?php
+}else{header("Location: index.php");}
+
 ?>
