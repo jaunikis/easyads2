@@ -30,6 +30,7 @@ if(isset($_GET['uzsakymai'])){$uzsakymai=$_GET['uzsakymai'];}
                                 <thead>
                                     <tr>
                                         <th>Id</th>
+										<th>Data</th>
                                         <th>Kontaktai</th>
                                         <th>Svoris</th>
                                         <th>Papildoma inf.</th>
@@ -40,7 +41,7 @@ if(isset($_GET['uzsakymai'])){$uzsakymai=$_GET['uzsakymai'];}
                                 <tbody>
 					<?php
 					while ($row = $result->fetch_assoc()) {
-						$id=$row['id'];
+						$id=$row['id'];$data=$row['data'];
 						$vardas=$row['vardas'];
 						$tel=$row['tel'];
 						$adresas=$row['adresas'];
@@ -57,6 +58,7 @@ if(isset($_GET['uzsakymai'])){$uzsakymai=$_GET['uzsakymai'];}
 					?>
                                     <tr>
                                         <td data-toggle="tooltip" data-placement="top" title="<?php echo $salis;?>"><?php echo $id;?></td>
+										<td><?php echo $data;?></br><?php echo $salis;?></td>
                                         <td><?php echo $vardas.'<br>'.$tel.'<br>'.$adresas;?></td>
                                         <td><?php echo $svoris;?> Kg.</td>
                                         <td class="center"><?php echo $papildoma;?></td>
@@ -71,7 +73,9 @@ if(isset($_GET['uzsakymai'])){$uzsakymai=$_GET['uzsakymai'];}
     </ul>
   </div>
 										</td>
-										<td class="center"><?php echo $komentarai;?></td>
+										<td class="center" style="position:relative;"><?php echo $komentarai;?>
+										<button onclick="komentarai(<?php echo $id;?>,this);" class="btn btn-xs"style="position:absolute;bottom:0;right:0;font-size:8px;">Edit..</button>
+										</td>
                                     </tr>
 					<?php
 					}
@@ -92,3 +96,22 @@ if(isset($_GET['uzsakymai'])){$uzsakymai=$_GET['uzsakymai'];}
            
         </div>
         <!-- /#page-wrapper -->
+		
+	<div id="modal" class="modal">
+	<div class="close-button"><a onclick="close_modal();"><span class="fa fa-times"></span></a></div>
+		<h5>Įrašyti komentarus:</h5>
+		<p>Komentarai:<br><textarea name="coment" rows="5"></textarea></p>
+		<button class="btn btn-primary">Išsaugoti</button>
+</div>
+		
+<script>
+function komentarai(id,th){
+	//alert(id);
+	$("#modal").toggle(500);
+}
+
+function close_modal(){
+		$("#modal").toggle(500);
+	}
+
+</script>
