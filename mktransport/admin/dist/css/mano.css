@@ -1,0 +1,44 @@
+.telnr a:link, .navigation-div a:visited {
+    color: rgba(255, 255, 255, 0.7);
+	text-decoration: underline;
+}
+}
+
+.modal{
+		background-color:white;
+        width:350px;
+		height:300px;
+		margin:auto;
+		text-align: center;
+		padding: 5px;
+		padding-top:60px;
+    }
+@media screen and (min-width: 480px) {
+	.modal{
+	margin:auto;
+	text-align: center;
+	background-color:white;
+	width:300px;
+	height:300px;
+	border-radius: 6px;
+	border: 1px solid grey;
+    padding: 20px; 
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+	}
+}
+
+
+.close-button{
+	position:absolute;
+	right:15px;
+	top:5px;
+	color:orangered;
+	font-size:30px;
+	font-family: "Times New Roman", Times, serif;
+	z-index:20;
+}
+.close-button:hover{
+	font-size:31px;
+	color:tomato;
+}
