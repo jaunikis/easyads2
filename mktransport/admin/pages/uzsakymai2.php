@@ -67,14 +67,16 @@ if(isset($_GET['uzsakymai'])){$uzsakymai=$_GET['uzsakymai'];}
     <button class="btn btn-<?php echo $btn;?> dropdown-toggle btn-xs" type="button" data-toggle="dropdown"><?php echo $busena;?>
     <span class="caret"></span></button>
     <ul class="dropdown-menu">
-      <li><a href="#">HTML</a></li>
-      <li><a href="#">CSS</a></li>
-      <li><a href="#">JavaScript</a></li>
+      <li><a onclick="set_busena(<?php echo $id;?>,this)">Patvirtinti</a></li>
+      <li><a onclick="set_busena(<?php echo $id;?>,this)">Atsaukti</a></li>
+      <li><a onclick="set_busena(<?php echo $id;?>,this)">Laukiama</a></li>
+	  <li><a onclick="set_busena(<?php echo $id;?>,this)">Istrinti</a></li>
     </ul>
   </div>
 										</td>
-										<td class="center" style="position:relative;"><?php echo $komentarai;?>
-										<button onclick="komentarai(<?php echo $id;?>,this);" class="btn btn-xs"style="position:absolute;bottom:0;right:0;font-size:8px;">Edit..</button>
+										<td class="center" style="position:relative;">
+										<?php echo $komentarai;?>
+										<button onclick="komentarai(<?php echo $id;?>,this,'<?php echo $komentarai;?>');" class="btn btn-xs"style="position:absolute;bottom:0;right:0;font-size:8px;">Edit..</button>
 										</td>
                                     </tr>
 					<?php
@@ -100,16 +102,52 @@ if(isset($_GET['uzsakymai'])){$uzsakymai=$_GET['uzsakymai'];}
 	<div id="modal" class="modal">
 	<div class="close-button"><a onclick="close_modal();"><span class="fa fa-times"></span></a></div>
 		<h5>Įrašyti komentarus:</h5>
-		<p>Komentarai:<br><textarea name="coment" rows="5"></textarea></p>
-		<button class="btn btn-primary">Išsaugoti</button>
+		<input id="koment_id" style="display:none" type="number"></input>
+		<p>Komentarai:<br><textarea id="komentarai" name="coment" rows="5" autofocus></textarea></p>
+		<button onclick="issaugoti_komentarus($('#komentarai').val())" class="btn btn-primary">Išsaugoti</button>
 </div>
 		
 <script>
-function komentarai(id,th){
-	//alert(id);
-	$("#modal").toggle(500);
+function set_busena(id,th){
+	var txt=th.textContent;
+	//alert(txt);
+	if(txt=='Patvirtinti'){txt='Patvirtinta';}
+	if(txt=='Laukiama'){txt='Laukiama';}
+	if(txt=='Atsaukti'){txt='Atsaukta';}
+	if(txt=='Istrinti'){txt='Istrinta';}
+	
+	var x=th.parentNode.parentNode.parentNode;
+	var cla=x.className;
+	cla=x.innerHTML;
+	x.textContent="tekstas";
+	alert(cla);
 }
 
+function komentarai(id,th,txt){
+	kom_th=th;
+	//alert(txt);
+	
+	$("#koment_id").val(id);
+	$("#modal").toggle(500);
+	$("#komentarai").val(txt);
+	$("#komentarai").focus();
+}
+
+function issaugoti_komentarus(komentarai){
+	var id=$("#koment_id").val();
+	$.ajax({
+      type: "POST",
+      url: "issaugoti_komentarus.php",
+      data: { komentarai: komentarai, 
+			id:id},
+      success: function(result) {
+        //alert(result);
+		kom_th.parentNode.firstChild.textContent=result;
+      }
+    });
+	$("#modal").toggle(500);
+}
+	
 function close_modal(){
 		$("#modal").toggle(500);
 	}
