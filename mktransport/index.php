@@ -10,11 +10,11 @@
 	
 <meta property="og:url"                content="http://www.mk-transport.lt" />
 <meta property="og:type"               content="Home" />
-<meta property="og:title"              content="MK Transport - Siuntu, kroviniu pervezimai Lietuva - Airija" />
+<meta property="og:title"              content="MK Transport - Siuntų, krovinių pervežimai Lietuva - Airija" />
 <meta property="og:description"        content="Siuntu, kroviniu pervezimai Lietuva - Airija" />
 <meta property="og:image"              content="http://www.mk-transport.lt/img/header.jpg" />
 
-    <title>MK Transport - Siuntu, kroviniu pervezimai Lietuva - Airija</title>
+    <title>MK Transport - Siuntų, krovinių pervežimai Lietuva - Airija</title>
 	<link rel="icon" type="image/png" href="/img/favicon.png">
 	
     <!-- Bootstrap core CSS -->
