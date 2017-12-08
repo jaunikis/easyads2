@@ -10,11 +10,11 @@
 	
 <meta property="og:url"                content="http://www.mk-transport.lt" />
 <meta property="og:type"               content="Home" />
-<meta property="og:title"              content="MK Transport - Kroviniu pervezimai Lietuva - Airija" />
-<meta property="og:description"        content="Smulkių siuntų, bei gyvūnų gabenimas" />
+<meta property="og:title"              content="MK Transport - Siuntu, kroviniu pervezimai Lietuva - Airija" />
+<meta property="og:description"        content="Siuntu, kroviniu pervezimai Lietuva - Airija" />
 <meta property="og:image"              content="http://www.mk-transport.lt/img/header.jpg" />
 
-    <title>MK Transport - Kroviniu pervezimai Lietuva - Airija</title>
+    <title>MK Transport - Siuntu, kroviniu pervezimai Lietuva - Airija</title>
 	<link rel="icon" type="image/png" href="/img/favicon.png">
 	
     <!-- Bootstrap core CSS -->
@@ -86,7 +86,7 @@
             <hr>
           </div>
           <div class="col-lg-8 mx-auto">
-            <p class="text-faded mb-3">Smulkių siuntų, bei gyvūnų gabenimas.</p>
+            <p class="text-faded mb-3">Siuntų, krovinių, bei gyvūnų gabenimas.</p>
 			<h3 class="mb-5">Lietuva - Anglija - Airija</h3>
             <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Pradžia</a>
           </div>

@@ -5,7 +5,7 @@ require('../../incl/server.php');
 //$result=sqlconnect($sql);
 //$orders_today = $result->num_rows;
 
-$sql="SELECT * FROM mktransport_uzsakymai";
+$sql="SELECT * FROM mktransport_uzsakymai WHERE busena NOT LIKE 'Istrinta'";
 $result=sqlconnect($sql);
 $orders_total = $result->num_rows;
 
@@ -35,7 +35,7 @@ if(isset($_GET['uzsakymai'])){$uzsakymai=$_GET['uzsakymai'];}
                                         <th>Svoris</th>
                                         <th>Papildoma inf.</th>
                                         <th>Busena</th>
-										<th>Komentarai</th>
+										<th>Mano Komentarai</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -51,8 +51,9 @@ if(isset($_GET['uzsakymai'])){$uzsakymai=$_GET['uzsakymai'];}
 						$busena=$row['busena'];
 							$btn='default';
 							if($busena=='Patvirtinta'){$btn='success';}
-							if($busena=='Atsaukta'){$btn='danger';}
+							if($busena=='Atsaukta'){$btn='warning';}
 							if($busena=='Laukiama'){$btn='primary';}
+							if($busena=='Istrinta'){$btn='danger';}
 						$salis=$row['salis'];
 						$miestas=$row['miestas'];
 					?>
@@ -64,7 +65,7 @@ if(isset($_GET['uzsakymai'])){$uzsakymai=$_GET['uzsakymai'];}
                                         <td class="center"><?php echo $papildoma;?></td>
                                         <td class="center">
 										<div class="dropdown">
-    <button class="btn btn-<?php echo $btn;?> dropdown-toggle btn-xs" type="button" data-toggle="dropdown"><?php echo $busena;?>
+    <button class="btn btn-<?php echo $btn;?> dropdown-toggle btn-xs" type="button" data-toggle="dropdown"><span><?php echo $busena;?></span>
     <span class="caret"></span></button>
     <ul class="dropdown-menu">
       <li><a onclick="set_busena(<?php echo $id;?>,this)">Patvirtinti</a></li>
@@ -110,17 +111,26 @@ if(isset($_GET['uzsakymai'])){$uzsakymai=$_GET['uzsakymai'];}
 <script>
 function set_busena(id,th){
 	var txt=th.textContent;
+	var claName='';
 	//alert(txt);
-	if(txt=='Patvirtinti'){txt='Patvirtinta';}
-	if(txt=='Laukiama'){txt='Laukiama';}
-	if(txt=='Atsaukti'){txt='Atsaukta';}
-	if(txt=='Istrinti'){txt='Istrinta';}
+	if(txt=='Patvirtinti'){txt='Patvirtinta';claName='success';}
+	if(txt=='Laukiama'){txt='Laukiama';claName='primary';}
+	if(txt=='Atsaukti'){txt='Atsaukta';claName='warning';}
+	if(txt=='Istrinti'){txt='Istrinta';claName='danger';}
+	var x=th.parentNode.parentNode.parentNode.children;
 	
-	var x=th.parentNode.parentNode.parentNode;
-	var cla=x.className;
-	cla=x.innerHTML;
-	x.textContent="tekstas";
-	alert(cla);
+	$.ajax({
+      type: "POST",
+      url: "set_busena.php",
+      data: { txt: txt, 
+			id:id},
+      success: function(result) {
+        //alert(result);
+		x[0].firstChild.textContent=txt;
+		x[0].className='dropdown-toggle btn-xs btn btn-'+claName;
+      }
+    });
+	
 }
 
 function komentarai(id,th,txt){

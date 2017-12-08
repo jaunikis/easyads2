@@ -50,7 +50,7 @@ if ($detect->version('iPhone')) {$device='iPhone';}
 //echo $device.'<br>';
 
 require('incl/server.php');
-$sql="INSERT INTO mktransport_uzsakymai (ip,device,vardas,tel,adresas,emailas,svoris,papildoma,salis,miestas,busena) VALUES ('$ip','$device','$vardas','$tel','$adresas','$emailas','$svoris','$papildoma','$salis','$miestas','pending')";
+$sql="INSERT INTO mktransport_uzsakymai (ip,device,vardas,tel,adresas,emailas,svoris,papildoma,salis,miestas,busena) VALUES ('$ip','$device','$vardas','$tel','$adresas','$emailas','$svoris','$papildoma','$salis','$miestas','Laukiama')";
 //$sql="SELECT * FROM mktransport_uzsakymai";
 $result=sqlconnect($sql);
 //$count = $result->num_rows;
