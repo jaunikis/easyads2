@@ -1,18 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="lt-LT">
 
   <head>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="MK Transport|Skubus siuntų, krovinių pervėžimas, gabenimas maršrutais Lietuva - Airija, Airija - Lietuva.|Perkraustymas, gyvūnų gabenimas.| Važiuojame kiekvieną savaitę.">
+	<meta name="keywords" content="Siuntinių pervežimai Airija-Lietuva, Smulkios siuntos i Airija, siuntos i lietuva, Smulkių, krovinių, siuntinių, gabenimas, Lietuva Airija, Motociklų, keturračių motociklų,baldų,transportavimas,perkraustymo paslaugos,door-to-door,pavojingų,vertingų krovinių gabenimo organizavimas,Lenkija, Latvija, Vokietija, Belgija, Prancūzija, Anglija, gabenimas,iš Airijos, Anglijos, Vokietijos, Lietuvos, transportuoti, pervezti, krovinius, siuntu gabenimas is airijos, siuntiniu gabenimas is airijos, gabename siuntas, siuntu pervezimas, pervezimai is airijos, pervezimai airija - Lietuva - Airija, vezti siuntiniu krovinius, motociklus, baldus, siuntiniai is airijos i lietuva, is lietuvos i airija, Pervezimai, kroviniai, siuntos, siuntiniai, siuntas, mvtransport, mktransport, perkraustymai, perksaurtome,
+airija, airijos, airijoje, lietuva, lietuvos, lietuvoje, is airijos i lietuva, siuntiniai, pigus siuntiniai airija, greiti siuntiniai airija, siuntiniai i lt.">
+	<meta name="geo.country" content="IE, LT">
+	<link rel="canonical" href="https://www.mk-transport.lt" />
 	
-<meta property="og:url"                content="http://www.mk-transport.lt" />
+<meta property="og:url"                content="https://www.mk-transport.lt" />
 <meta property="og:type"               content="Home" />
 <meta property="og:title"              content="MK Transport - Siuntų, krovinių pervežimai Lietuva - Airija" />
 <meta property="og:description"        content="Siuntu, kroviniu pervezimai Lietuva - Airija" />
-<meta property="og:image"              content="http://www.mk-transport.lt/img/header.jpg" />
+<meta property="og:image"              content="https://www.mk-transport.lt/img/header.jpg" />
 
     <title>MK Transport - Siuntų, krovinių pervežimai Lietuva - Airija</title>
 	<link rel="icon" type="image/png" href="/img/favicon.png">

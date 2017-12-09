@@ -171,7 +171,7 @@ send_mail($salis,$miestas,$emailas,'subjektas',$msg);
 			</div>
             <p class="text-faded" style="padding-top:15px;">Papildomai skambinti nereikia. Prieš atvažiuojant, mes susisieksime su Jumis.</p>
 			<hr class="light my-4">
-			<a class="btn btn-light btn-xl js-scroll-trigger" href="index.php#page-top">Gryžti</a>
+			<a class="btn btn-light btn-xl js-scroll-trigger" href="index.php#page-top">Grįžti</a>
 		  </div>
         </div>
       </div>
