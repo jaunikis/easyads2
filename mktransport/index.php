@@ -5,8 +5,11 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Krovinių gabenimas, smulkios siuntos, perkraustymas maršrutais Lietuva - Airija - Lietuva.">
+    <meta name="keywords" content="Smulkios siuntos i Airija, siuntos i lietuva, Smulkių,krovinių,siuntinių,gabenimas,Lietuva,Airija,Motociklų,keturračių motociklų,baldų,transportavimas,perkraustymo paslaugos,door-to-door,pavojingų,vertingų krovinių gabenimo organizavimas,Lenkija, Latvija, Vokietija, Belgija, Prancūzija, Anglija, gabenimas,iš Airijos, Anglijos, Vokietijos, Lietuvos, transportuoti, pervezti, krovinius, siuntu gabenimas is airijos, siuntiniu gabenimas is airijos, gabename siuntas, siuntu pervezimas, pervezimai is airijos, pervezimai airija - Lietuva - Airija, vezti siuntiniu krovinius, motociklus, baldus, siuntiniai is airijos i lietuva, is lietuvos i airija, Pervezimai, kroviniai, siuntos, siuntiniai, siuntas, mvtransport, mktransport, perkraustymai, perksaurtome,
+airija, airijos, airijoje, lietuva, lietuvos, lietuvoje, is airijos i lietuva, siuntiniai, pigus siuntiniai airija, greiti siuntiniai airija, siuntiniai i lt.">
+	<meta name="author" content="Marius V.">
+	<meta name="google-site-verification" content="9qWY4PwjTKY-6bsnyTrEGaAe5MuG6plafZMGm-QFtoQ" />
 	
 <meta property="og:url"                content="http://www.mk-transport.lt" />
 <meta property="og:type"               content="Home" />
@@ -35,6 +38,17 @@
   </head>
 
   <body id="page-top">
+  
+  <!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+
+  gtag('config', 'GA_TRACKING_ID');
+</script>
+  
   
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
@@ -199,7 +213,7 @@
 		
         
 		<div id="daugiau" class="collapse" style="padding-top:30px;">
-		<p>MK-TRANSPORT – tai Airijoje registruota įmonė (reg. Nr. 1380436V ). Savo veiklą įmonė pradėjo 2008 m. kovo mėn.
+		<p>MK-TRANSPORT – tai Airijoje registruota įmonė (reg. Nr. 1291261V ). Savo veiklą įmonė pradėjo 2009 metais.
 Mes gabename įvairius krovinius: baldus, buitinę techniką, motociklus, statybines medžiagas, reisu: Airija-Anglija-Lietuva.</p>
 		<p><img src="img/apie1.jpg" width="200px" style="border-radius: 5px;"></p>
 		<p>Patyrusių vairuotojų komanda yra pasiruošusi greitai įvykdyti jiems pavestas užduotis.</p>
@@ -237,7 +251,7 @@ Mes gabename įvairius krovinius: baldus, buitinę techniką, motociklus, statyb
           <div class="col-lg-4 mr-auto text-center">
             <i class="fa fa-envelope-o fa-3x mb-3 sr-contact"></i>
             <p>
-              <a href="mailto:your-email@your-domain.com">info@mktransport.lt</a>
+              <a href="mailto:mktransport1313@gmail.com">mktransport1313@gmail.com</a>
             </p>
           </div>
         </div>
