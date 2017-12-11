@@ -50,7 +50,7 @@ if ($detect->version('iPhone')) {$device='iPhone';}
 //echo $device.'<br>';
 
 require('incl/server.php');
-$sql="INSERT INTO mktransport_uzsakymai (ip,device,vardas,tel,adresas,emailas,svoris,papildoma,salis,miestas,busena) VALUES ('$ip','$device','$vardas','$tel','$adresas','$emailas','$svoris','$papildoma','$salis','$miestas','pending')";
+$sql="INSERT INTO mktransport_uzsakymai (ip,device,vardas,tel,adresas,emailas,svoris,papildoma,salis,miestas,busena) VALUES ('$ip','$device','$vardas','$tel','$adresas','$emailas','$svoris','$papildoma','$salis','$miestas','Laukiama')";
 //$sql="SELECT * FROM mktransport_uzsakymai";
 $result=sqlconnect($sql);
 //$count = $result->num_rows;
@@ -171,7 +171,7 @@ send_mail($salis,$miestas,$emailas,'subjektas',$msg);
 			</div>
             <p class="text-faded" style="padding-top:15px;">Papildomai skambinti nereikia. Prieš atvažiuojant, mes susisieksime su Jumis.</p>
 			<hr class="light my-4">
-			<a class="btn btn-light btn-xl js-scroll-trigger" href="index.php#page-top">Gryžti</a>
+			<a class="btn btn-light btn-xl js-scroll-trigger" href="index.php#page-top">Grįžti</a>
 		  </div>
         </div>
       </div>

@@ -5,7 +5,7 @@ require('../../incl/server.php');
 //$result=sqlconnect($sql);
 //$orders_today = $result->num_rows;
 
-$sql="SELECT * FROM mktransport_uzsakymai";
+$sql="SELECT * FROM mktransport_uzsakymai WHERE busena NOT LIKE 'Istrinta'";
 $result=sqlconnect($sql);
 $orders_total = $result->num_rows;
 
@@ -35,7 +35,7 @@ if(isset($_GET['uzsakymai'])){$uzsakymai=$_GET['uzsakymai'];}
                                         <th>Svoris</th>
                                         <th>Papildoma inf.</th>
                                         <th>Busena</th>
-										<th>Komentarai</th>
+										<th>Mano Komentarai</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -51,8 +51,9 @@ if(isset($_GET['uzsakymai'])){$uzsakymai=$_GET['uzsakymai'];}
 						$busena=$row['busena'];
 							$btn='default';
 							if($busena=='Patvirtinta'){$btn='success';}
-							if($busena=='Atsaukta'){$btn='danger';}
+							if($busena=='Atsaukta'){$btn='warning';}
 							if($busena=='Laukiama'){$btn='primary';}
+							if($busena=='Istrinta'){$btn='danger';}
 						$salis=$row['salis'];
 						$miestas=$row['miestas'];
 					?>
@@ -64,17 +65,19 @@ if(isset($_GET['uzsakymai'])){$uzsakymai=$_GET['uzsakymai'];}
                                         <td class="center"><?php echo $papildoma;?></td>
                                         <td class="center">
 										<div class="dropdown">
-    <button class="btn btn-<?php echo $btn;?> dropdown-toggle btn-xs" type="button" data-toggle="dropdown"><?php echo $busena;?>
+    <button class="btn btn-<?php echo $btn;?> dropdown-toggle btn-xs" type="button" data-toggle="dropdown"><span><?php echo $busena;?></span>
     <span class="caret"></span></button>
     <ul class="dropdown-menu">
-      <li><a href="#">HTML</a></li>
-      <li><a href="#">CSS</a></li>
-      <li><a href="#">JavaScript</a></li>
+      <li><a onclick="set_busena(<?php echo $id;?>,this)">Patvirtinti</a></li>
+      <li><a onclick="set_busena(<?php echo $id;?>,this)">Atsaukti</a></li>
+      <li><a onclick="set_busena(<?php echo $id;?>,this)">Laukiama</a></li>
+	  <li><a onclick="set_busena(<?php echo $id;?>,this)">Istrinti</a></li>
     </ul>
   </div>
 										</td>
-										<td class="center" style="position:relative;"><?php echo $komentarai;?>
-										<button onclick="komentarai(<?php echo $id;?>,this);" class="btn btn-xs"style="position:absolute;bottom:0;right:0;font-size:8px;">Edit..</button>
+										<td class="center" style="position:relative;">
+										<?php echo $komentarai;?>
+										<button onclick="komentarai(<?php echo $id;?>,this,'<?php echo $komentarai;?>');" class="btn btn-xs"style="position:absolute;bottom:0;right:0;font-size:8px;">Edit..</button>
 										</td>
                                     </tr>
 					<?php
@@ -100,16 +103,61 @@ if(isset($_GET['uzsakymai'])){$uzsakymai=$_GET['uzsakymai'];}
 	<div id="modal" class="modal">
 	<div class="close-button"><a onclick="close_modal();"><span class="fa fa-times"></span></a></div>
 		<h5>Įrašyti komentarus:</h5>
-		<p>Komentarai:<br><textarea name="coment" rows="5"></textarea></p>
-		<button class="btn btn-primary">Išsaugoti</button>
+		<input id="koment_id" style="display:none" type="number"></input>
+		<p>Komentarai:<br><textarea id="komentarai" name="coment" rows="5" autofocus></textarea></p>
+		<button onclick="issaugoti_komentarus($('#komentarai').val())" class="btn btn-primary">Išsaugoti</button>
 </div>
 		
 <script>
-function komentarai(id,th){
-	//alert(id);
-	$("#modal").toggle(500);
+function set_busena(id,th){
+	var txt=th.textContent;
+	var claName='';
+	//alert(txt);
+	if(txt=='Patvirtinti'){txt='Patvirtinta';claName='success';}
+	if(txt=='Laukiama'){txt='Laukiama';claName='primary';}
+	if(txt=='Atsaukti'){txt='Atsaukta';claName='warning';}
+	if(txt=='Istrinti'){txt='Istrinta';claName='danger';}
+	var x=th.parentNode.parentNode.parentNode.children;
+	
+	$.ajax({
+      type: "POST",
+      url: "set_busena.php",
+      data: { txt: txt, 
+			id:id},
+      success: function(result) {
+        //alert(result);
+		x[0].firstChild.textContent=txt;
+		x[0].className='dropdown-toggle btn-xs btn btn-'+claName;
+      }
+    });
+	
 }
 
+function komentarai(id,th,txt){
+	kom_th=th;
+	//alert(txt);
+	
+	$("#koment_id").val(id);
+	$("#modal").toggle(500);
+	$("#komentarai").val(txt);
+	$("#komentarai").focus();
+}
+
+function issaugoti_komentarus(komentarai){
+	var id=$("#koment_id").val();
+	$.ajax({
+      type: "POST",
+      url: "issaugoti_komentarus.php",
+      data: { komentarai: komentarai, 
+			id:id},
+      success: function(result) {
+        //alert(result);
+		kom_th.parentNode.firstChild.textContent=result;
+      }
+    });
+	$("#modal").toggle(500);
+}
+	
 function close_modal(){
 		$("#modal").toggle(500);
 	}

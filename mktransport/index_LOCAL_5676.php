@@ -1,31 +1,23 @@
 <!DOCTYPE html>
-<html lang="lt-LT">
+<html lang="en">
 
   <head>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<<<<<<< HEAD
     <meta name="description" content="Krovinių gabenimas, smulkios siuntos, perkraustymas maršrutais Lietuva - Airija - Lietuva.">
     <meta name="keywords" content="Smulkios siuntos i Airija, siuntos i lietuva, Smulkių,krovinių,siuntinių,gabenimas,Lietuva,Airija,Motociklų,keturračių motociklų,baldų,transportavimas,perkraustymo paslaugos,door-to-door,pavojingų,vertingų krovinių gabenimo organizavimas,Lenkija, Latvija, Vokietija, Belgija, Prancūzija, Anglija, gabenimas,iš Airijos, Anglijos, Vokietijos, Lietuvos, transportuoti, pervezti, krovinius, siuntu gabenimas is airijos, siuntiniu gabenimas is airijos, gabename siuntas, siuntu pervezimas, pervezimai is airijos, pervezimai airija - Lietuva - Airija, vezti siuntiniu krovinius, motociklus, baldus, siuntiniai is airijos i lietuva, is lietuvos i airija, Pervezimai, kroviniai, siuntos, siuntiniai, siuntas, mvtransport, mktransport, perkraustymai, perksaurtome,
 airija, airijos, airijoje, lietuva, lietuvos, lietuvoje, is airijos i lietuva, siuntiniai, pigus siuntiniai airija, greiti siuntiniai airija, siuntiniai i lt.">
 	<meta name="author" content="Marius V.">
 	<meta name="google-site-verification" content="9qWY4PwjTKY-6bsnyTrEGaAe5MuG6plafZMGm-QFtoQ" />
-=======
-    <meta name="description" content="MK Transport|Skubus siuntų, krovinių pervėžimas, gabenimas maršrutais Lietuva - Airija, Airija - Lietuva.|Perkraustymas, gyvūnų gabenimas.| Važiuojame kiekvieną savaitę.">
-	<meta name="keywords" content="Siuntinių pervežimai Airija-Lietuva, Smulkios siuntos i Airija, siuntos i lietuva, Smulkių, krovinių, siuntinių, gabenimas, Lietuva Airija, Motociklų, keturračių motociklų,baldų,transportavimas,perkraustymo paslaugos,door-to-door,pavojingų,vertingų krovinių gabenimo organizavimas,Lenkija, Latvija, Vokietija, Belgija, Prancūzija, Anglija, gabenimas,iš Airijos, Anglijos, Vokietijos, Lietuvos, transportuoti, pervezti, krovinius, siuntu gabenimas is airijos, siuntiniu gabenimas is airijos, gabename siuntas, siuntu pervezimas, pervezimai is airijos, pervezimai airija - Lietuva - Airija, vezti siuntiniu krovinius, motociklus, baldus, siuntiniai is airijos i lietuva, is lietuvos i airija, Pervezimai, kroviniai, siuntos, siuntiniai, siuntas, mvtransport, mktransport, perkraustymai, perksaurtome,
-airija, airijos, airijoje, lietuva, lietuvos, lietuvoje, is airijos i lietuva, siuntiniai, pigus siuntiniai airija, greiti siuntiniai airija, siuntiniai i lt.">
-	<meta name="geo.country" content="IE, LT">
-	<link rel="canonical" href="https://www.mk-transport.lt" />
->>>>>>> c80bcd25d13d5402b857b681a01cc887ea5639f3
 	
-<meta property="og:url"                content="https://www.mk-transport.lt" />
+<meta property="og:url"                content="http://www.mk-transport.lt" />
 <meta property="og:type"               content="Home" />
-<meta property="og:title"              content="MK Transport - Siuntų, krovinių pervežimai Lietuva - Airija" />
-<meta property="og:description"        content="Siuntu, kroviniu pervezimai Lietuva - Airija" />
-<meta property="og:image"              content="https://www.mk-transport.lt/img/header.jpg" />
+<meta property="og:title"              content="MK Transport - Kroviniu pervezimai Lietuva - Airija" />
+<meta property="og:description"        content="Smulkių siuntų, bei gyvūnų gabenimas" />
+<meta property="og:image"              content="http://www.mk-transport.lt/img/header.jpg" />
 
-    <title>MK Transport - Siuntų, krovinių pervežimai Lietuva - Airija</title>
+    <title>MK Transport - Kroviniu pervezimai Lietuva - Airija</title>
 	<link rel="icon" type="image/png" href="/img/favicon.png">
 	
     <!-- Bootstrap core CSS -->
@@ -108,7 +100,7 @@ airija, airijos, airijoje, lietuva, lietuvos, lietuvoje, is airijos i lietuva, s
             <hr>
           </div>
           <div class="col-lg-8 mx-auto">
-            <p class="text-faded mb-3">Siuntų, krovinių, bei gyvūnų gabenimas.</p>
+            <p class="text-faded mb-3">Smulkių siuntų, bei gyvūnų gabenimas.</p>
 			<h3 class="mb-5">Lietuva - Anglija - Airija</h3>
             <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Pradžia</a>
           </div>

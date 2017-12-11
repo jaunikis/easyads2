@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>MK Transport - Užsakymo forma</title>
+    <title>MK Transport - Taisyklės</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -52,7 +52,7 @@
               <a class="nav-link js-scroll-trigger" href="index.php#contact" style="color:black;">Kontaktai</a>
             </li>
 			<li class="nav-item">
-              <a class="nav-link js-scroll-trigger" style="color:tomato;">Užsakyti</a>
+              <a class="nav-link js-scroll-trigger" href="uzsakyti.php" style="color:black;">Užsakyti</a>
             </li>
           </ul>
         </div>
@@ -63,44 +63,15 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto text-center">
-            <h3 class="section-heading text-white">Siuntos užsakymas:</h3>
+            <h3 class="section-heading text-white">Taisyklės:</h3>
             <hr class="light my-4">
-			<form method="POST" action="uzsakyti2.php">
-			<div class="row">
-				<div class="text-faded mb-1 col-sm-6">Siuntėjo vardas, pavardė:</div>
-				<div class="col-sm-6 mb-3"><input name="vardas" class="form-control" type="text" placeholder="Vardas Pavardė"></div>
-			</div>
-			<div class="row">
-				<div class="text-faded mb-1 col-sm-6">Siuntėjo tel. numeris (būtina):</div>
-				<div class="col-sm-6 mb-3"><input name="tel" class="form-control" type="text" placeholder="pvz. 086 1234567"></div>
-			</div>
-			<div class="row">
-				<div class="text-faded mb-1 col-sm-6">Siuntėjo adresas:</div>
-				<div class="col-sm-6 mb-3"><textarea name="adresas" class="form-control" rows="4" placeholder="pvz. 1 street, Dublin 1.."></textarea></div>
-			</div>
-			<div class="row">
-				<div class="text-faded mb-1 col-sm-6">Siuntėjo elektroninis paštas:</div>
-				<div class="col-sm-6 mb-3"><input name="emailas" type="email" class="form-control" type="text" placeholder="pvz. email@email.lt"></div>
-			</div>
-			<div class="row">
-				<div class="text-faded mb-1 col-sm-6">Siuntinio svoris kg.(apytiksliai):</div>
-				<div class="col-sm-6 mb-3"><input name="svoris" type="number" class="form-control" type="text" placeholder="pvz. 15"></div>
-			</div>
-			<div class="row">
-				<p class="text-faded mb-1 col-sm-6">Papildoma informacija:<br>
-				<div class="col-sm-6 mb-5"><textarea name="papildoma" class="form-control" rows="5" placeholder="pvz. Matmenys, jei didelis. Dviratis. Padangos.. Pageidaujamas paėmimo laikas.. Papildomas tel. numeris.."></textarea></div>
-            </div>
-			<div class="row">
-				<div style="margin:auto;padding-bottom:20px;" class="g-recaptcha" data-sitekey="6LeSAzwUAAAAAFSUPyemoXVpxJuJe9wLELaO7yOZ"></div>
-				<div class="col-sm-12 mb-3"><button class="btn btn-light btn-xl js-scroll-trigger">Užsakyti</button>
-			</div>
-			<div class="checkbox checkbox-primary" style="margin:auto; font-size:12px;">
-                           <input id="checkbox2" name="terms" type="checkbox" required>
-                           <label for="checkbox2">
-                           Aš sutinku su <a onClick="window.open('taisykles.php', '_blank')" style="text-decoration:underline;color:#641E16;" href="taisykles.php" target="_blank">taisyklėmis</a>
-                           </label>
-            </div>
-          </form>
+			<ul class="text-faded pull-left">
+				<li>Siuntos turi būti tinkamai supakuotos ir nurodytas tiek siuntėjo, tiek gavėjo pilnas adresas bei kontaktiniai telefono numeriai.</li>
+				<li>Užsakovas atsako už tai, kad krovinys būtų tinkamai paruoštas, įpakuotas ir paženklintas taip, kad jį vežant nekiltų pavojaus vairuotojui, tretiesiems asmenims, aplinkai, vežamiems kroviniams ir transporto priemonei. Nesupakuotos arba blogai supakuotos siuntos gali būti priimtos gabenimui, tačiau už jų saugumą įmonė neatsako.</li>
+				<li>Lagaminai su spynelėmis arba kitokiu užraktu gabenimui nepriimami. Įmonė neatsako už per klaidą priimtą tokio tipo siuntą, nes užrakinimo mechanizmas gali būti sulaužytas per muitinės procedūras.</li>
+				<li>Draudziama vežti: pavojingus krovinius, degius daigtus, šaunamuosius ginklus, Tabako gaminius, alkoholi, greitai gendančius maisto produktus, sprogstamasias medžiagas, fejerverkus, psichotropinius vaistus, narkotikus.</li>
+				<li>Kompanija neprisiima atsakomybes už siunčiamus draudžiamus daigtus, visa atsakomybe tenka siuntėjui.</li>
+			</ul>
 		  </div>
         </div>
       </div>
