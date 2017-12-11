@@ -1,3 +1,7 @@
+<?php
+$ip=$_SERVER['REMOTE_ADDR'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,7 +29,7 @@
     <link href="css/creative.min.css" rel="stylesheet">
 	<link href="css/mano.css" rel="stylesheet">
 
-	<script src='https://www.google.com/recaptcha/api.js'></script>
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
   </head>
 
 	<body id="page-top">
@@ -66,6 +70,7 @@
             <h3 class="section-heading text-white">Siuntos užsakymas:</h3>
             <hr class="light my-4">
 			<form method="POST" action="uzsakyti2.php">
+			
 			<div class="row">
 				<div class="text-faded mb-1 col-sm-6">Siuntėjo vardas, pavardė:</div>
 				<div class="col-sm-6 mb-3"><input name="vardas" class="form-control" type="text" placeholder="Vardas Pavardė"></div>
@@ -83,7 +88,7 @@
 				<div class="col-sm-6 mb-3"><input name="emailas" type="email" class="form-control" type="text" placeholder="pvz. email@email.lt"></div>
 			</div>
 			<div class="row">
-				<div class="text-faded mb-1 col-sm-6">Siuntinio svoris kg.(apytiksliai):</div>
+				<div class="text-faded mb-1 col-sm-6">Siuntinio svoris kg. apytiksliai (1Kg = €1. min €20):</div>
 				<div class="col-sm-6 mb-3"><input name="svoris" type="number" class="form-control" type="text" placeholder="pvz. 15"></div>
 			</div>
 			<div class="row">
@@ -92,15 +97,21 @@
             </div>
 			<div class="row">
 				<div style="margin:auto;padding-bottom:20px;" class="g-recaptcha" data-sitekey="6LeSAzwUAAAAAFSUPyemoXVpxJuJe9wLELaO7yOZ"></div>
-				<div class="col-sm-12 mb-3"><button class="btn btn-light btn-xl js-scroll-trigger">Užsakyti</button>
+				<div class="col-sm-12 mb-3"><button onclick="tikrinimas();" class="btn btn-light btn-xl js-scroll-trigger">Užsakyti</button>
 			</div>
 			<div class="checkbox checkbox-primary" style="margin:auto; font-size:12px;">
                            <input id="checkbox2" name="terms" type="checkbox" required>
                            <label for="checkbox2">
-                           Aš sutinku su <a onClick="window.open('taisykles.php', '_blank')" style="text-decoration:underline;color:#641E16;" href="taisykles.php" target="_blank">taisyklėmis</a>
-                           </label>
+                           Aš sutinku su 
+						   <!--<a onClick="window.open('taisykles.php')" style="text-decoration:underline;color:#641E16;" href="taisykles.php" target="_blank">taisyklėmis</a>-->
+                           <a style="text-decoration:underline;color:#641E16;" href="taisykles.php">taisyklėmis</a>
+                           
+						   </label>
             </div>
           </form>
+		  <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+        async defer>
+    </script>
 		  </div>
         </div>
       </div>
@@ -121,5 +132,20 @@
 
     <!-- Custom scripts for this template -->
     <script src="js/creative.min.js"></script>
+	
+	<script>
+	function tikrinimas(ip){
+	var vardas=$("input[name=vardas]").val();
+	var tel=$("input[name=tel]").val();
+	var adresas=$("textarea[name=adresas]").val();
+	var txt='';
+	if(vardas==''){txt=' vardą';}
+	if(tel==''){if(txt!=''){txt+=', ';} txt+='telefono numerį';}
+	if(adresas==''){if(txt!=''){txt+=', ';} txt+='adresą';}
+	
+	if(txt!=''){txt='Įrašykite '+txt+'.';alert(txt);$("html, body").animate({ scrollTop: 0 }, "slow");return false;}
+	}
+	</script>
+	
 	
 	</body>

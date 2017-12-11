@@ -84,7 +84,7 @@ $visitors_total = $result->num_rows;
                                 </div>
                             </div>
                         </div>
-                        <a href="#">
+                        <a href="lankytojai.php?q=today">
                             <div class="panel-footer">
                                 <span class="pull-left">Daugiau...</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -106,7 +106,7 @@ $visitors_total = $result->num_rows;
                                 </div>
                             </div>
                         </div>
-                        <a href="#">
+                        <a href="lankytojai.php">
                             <div class="panel-footer">
                                 <span class="pull-left">Daugiau...</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -116,6 +116,40 @@ $visitors_total = $result->num_rows;
                     </div>
                 </div>
             </div>
+			<div class="row">
+			<div id="wpac-comment"></div>
+<script type="text/javascript">
+wpac_init = window.wpac_init || [];
+wpac_init.push({widget: 'Comment', id: 8510});
+(function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = 'https://embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+})();
+</script>
+<a href="https://widgetpack.com" class="wpac-cr">Comments System WIDGET PACK</a>
+			</div>
+			<hr>
+			<div class="row">
+			<div id="wpac-google-review"></div>
+<script type="text/javascript">
+wpac_init = window.wpac_init || [];
+wpac_init.push({widget: 'GoogleReview', id: 8510, place_id: 'ChIJN1luUg4i50YR8QlDpDmqwbs', view_mode: 'list'});
+(function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = 'https://embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+})();
+</script>
+			</div>
             
             
         </div>

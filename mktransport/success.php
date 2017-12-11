@@ -68,7 +68,7 @@
 			</div>
             <p class="text-faded">Papildomai skambinti nereikia. Prieš atvažiuojant, mes susisieksime su Jumis.</p>
 			<hr class="light my-4">
-			bbb<a class="btn btn-light btn-xl js-scroll-trigger" href="uzsakyti.php">Užsakyti internetu</a>
+			<a class="btn btn-light btn-xl js-scroll-trigger" href="uzsakyti.php">Gryžti</a>
 		  </div>
         </div>
       </div>

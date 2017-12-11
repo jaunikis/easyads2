@@ -57,7 +57,7 @@
                             <a href="uzsakymai.php"><i class="fa fa-table fa-fw"></i> Visi Uzsakymai</a>
                         </li>
                         <li>
-                            <a href=""><i class="fa fa-bar-chart fa-fw"></i> Lankytojai</a>
+                            <a href="lankytojai.php"><i class="fa fa-bar-chart fa-fw"></i> Visi Lankytojai</a>
                         </li>
                         
 						

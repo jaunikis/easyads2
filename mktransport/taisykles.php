@@ -59,7 +59,7 @@
       </div>
     </nav>
 	
-	<section class="bg-primary" id="uzsakyti">
+	<section class="bg-dark" id="uzsakyti">
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto text-center">
@@ -69,9 +69,10 @@
 				<li>Siuntos turi būti tinkamai supakuotos ir nurodytas tiek siuntėjo, tiek gavėjo pilnas adresas bei kontaktiniai telefono numeriai.</li>
 				<li>Užsakovas atsako už tai, kad krovinys būtų tinkamai paruoštas, įpakuotas ir paženklintas taip, kad jį vežant nekiltų pavojaus vairuotojui, tretiesiems asmenims, aplinkai, vežamiems kroviniams ir transporto priemonei. Nesupakuotos arba blogai supakuotos siuntos gali būti priimtos gabenimui, tačiau už jų saugumą įmonė neatsako.</li>
 				<li>Lagaminai su spynelėmis arba kitokiu užraktu gabenimui nepriimami. Įmonė neatsako už per klaidą priimtą tokio tipo siuntą, nes užrakinimo mechanizmas gali būti sulaužytas per muitinės procedūras.</li>
-				<li>Draudziama vežti: pavojingus krovinius, degius daigtus, šaunamuosius ginklus, Tabako gaminius, alkoholi, greitai gendančius maisto produktus, sprogstamasias medžiagas, fejerverkus, psichotropinius vaistus, narkotikus.</li>
+				<li>Draudziama vežti: pavojingus krovinius, degius daigtus, šaunamuosius ginklus, tabako gaminius, alkoholi, pinigus, greitai gendančius maisto produktus, sprogstamasias medžiagas, fejerverkus, psichotropinius vaistus, narkotikus.</li>
 				<li>Kompanija neprisiima atsakomybes už siunčiamus draudžiamus daigtus, visa atsakomybe tenka siuntėjui.</li>
 			</ul>
+			<a onclick="window.history.go(-1);return false;" class="btn btn-primary btn-xl js-scroll-trigger" href="">Sugryžti</a>
 		  </div>
         </div>
       </div>
