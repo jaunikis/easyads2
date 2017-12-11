@@ -54,10 +54,10 @@
                             <a href="index.php"><i class="fa fa-dashboard fa-fw"></i> Pradzia</a>
                         </li>
                         <li>
-                            <a href="uzsakymai.php"><i class="fa fa-table fa-fw"></i> Uzsakymai</a>
+                            <a href="uzsakymai.php"><i class="fa fa-table fa-fw"></i> Visi Uzsakymai</a>
                         </li>
                         <li>
-                            <a href="forms.html"><i class="fa fa-bar-chart fa-fw"></i> Lankytojai</a>
+                            <a href=""><i class="fa fa-bar-chart fa-fw"></i> Lankytojai</a>
                         </li>
                         
 						

@@ -5,7 +5,10 @@ require('../../incl/server.php');
 //$result=sqlconnect($sql);
 //$orders_today = $result->num_rows;
 
-$sql="SELECT * FROM mktransport_uzsakymai WHERE busena NOT LIKE 'Istrinta'";
+$status="busena NOT LIKE 'Istrinta'";
+if(isset($_GET['status'])){$status="busena='".$_GET['status']."'";}
+
+$sql="SELECT * FROM mktransport_uzsakymai WHERE ".$status." ORDER BY id DESC";
 $result=sqlconnect($sql);
 $orders_total = $result->num_rows;
 
@@ -44,6 +47,7 @@ if(isset($_GET['uzsakymai'])){$uzsakymai=$_GET['uzsakymai'];}
 						$id=$row['id'];$data=$row['data'];
 						$vardas=$row['vardas'];
 						$tel=$row['tel'];
+						$emailas=$row['emailas'];
 						$adresas=$row['adresas'];
 						$svoris=$row['svoris'];
 						$papildoma=$row['papildoma'];
@@ -60,7 +64,7 @@ if(isset($_GET['uzsakymai'])){$uzsakymai=$_GET['uzsakymai'];}
                                     <tr>
                                         <td data-toggle="tooltip" data-placement="top" title="<?php echo $salis;?>"><?php echo $id;?></td>
 										<td><?php echo $data;?></br><?php echo $salis;?></td>
-                                        <td><?php echo $vardas.'<br>'.$tel.'<br>'.$adresas;?></td>
+                                        <td>Vardas: <?php echo $vardas.'<br>Tel: '.$tel.'<br>Email: '.$emailas.'<br>Adresas: '.$adresas;?></td>
                                         <td><?php echo $svoris;?> Kg.</td>
                                         <td class="center"><?php echo $papildoma;?></td>
                                         <td class="center">
