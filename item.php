@@ -128,7 +128,7 @@ $cat2=addslashes($cat2);
 $images_length=count($images1);
 if($images1[0]==''){$images1[0]='no-image.png';}
 for($i=0;$i<$images_length;$i++){
-echo '<div class="item"><a onclick="large_photos('.$i.');" style="cursor:zoom-in;"><img id="a'.$i.'" alt="" src="/ads_images/'.$images1[$i].'" class="img-responsive img-center"></a></div>';
+echo '<div class="item"><a onclick="large_photos('.$i.');" style="cursor:zoom-in;"><img itemprop="image" id="a'.$i.'" alt="'.$title.'" src="/ads_images/'.$images1[$i].'" class="img-responsive img-center"></a></div>';
 }
 ?>
                                  </div>
@@ -136,7 +136,7 @@ echo '<div class="item"><a onclick="large_photos('.$i.');" style="cursor:zoom-in
 <?php           
 								$images_length=count($images1);
 								for($i=0;$i<$images_length;$i++){
-								echo '<div class="item"><img alt="" src="/ads_images/'.$images1[$i].'" class="img-responsive img-center"></div>';
+								echo '<div class="item"><img itemprop="image" alt="'.$title.'" src="/ads_images/'.$images1[$i].'" class="img-responsive img-center"></div>';
                                 }
 ?>
                                  </div>

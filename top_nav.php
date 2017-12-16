@@ -9,7 +9,7 @@
                <span class="icon-bar"></span>
                <span class="icon-bar"></span>
                </button>
-               <a class="navbar-brand" href="/"><img alt="logo" src="/images/logo2.png" ></a>
+               <a class="navbar-brand" href="/"><img itemprop="image" alt="easyads.ie logo" src="/images/logo2.png" ></a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                <ul class="nav navbar-nav">

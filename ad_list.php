@@ -200,7 +200,7 @@ include('left_search.php');
 							  
 							  <a href="/items<?php if($cat1!=''){echo '/'.str_replace(' ','-',$cat1);} if($cat22!=''){echo '/'.str_replace(' ','-',$cat2);}?>/<?php echo preg_replace('~[#/?"<>&]~','',$title2);?>?item=<?php echo $id; ?>">
                               <div class="item-img-grid">
-                                 <img alt="" src="<?php echo '/ads_images/'.$cover; ?>" class="img-responsive img-center ad_image">
+                                 <img itemprop="image" alt="<?php echo $title;?>" src="<?php echo '/ads_images/'.$cover; ?>" class="img-responsive img-center ad_image">
                               </div>
                               <div class="item-title">
                                  
