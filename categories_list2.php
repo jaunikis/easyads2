@@ -95,7 +95,7 @@ $_SESSION['cat_count2']=$cat_count2;
 				$color=$col[$x];
 	?>
 						<div class="item">
-						<a href="/items?item=<?php echo $id;?>">
+						<a href="/items.php?item=<?php echo $id;?>">
                            <div class="item-ads-grid icon-<?php echo $color;?>">
                               <div class="item-img-grid">
                                  <img itemprop="image" alt="<?php echo $title;?>" src="<?php echo 'ads_images/'.$cover;?>" class="img-responsive img-center">

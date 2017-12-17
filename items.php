@@ -28,3 +28,18 @@
 		require('footer.php');
 	}
 ?>
+<!-- Post Ad -->	
+      <a href="/post_ad/" data-toggle="tooltip" data-placement="left" title="Post Your Ad" class="btn btn-primary btn-lg post-free-add-btn" style="z-index: 2;"><i class="fa fa-pencil"></i></a>
+      <!-- jQuery -->
+      
+      <!-- Custom js--> 
+      <script src="/js/custom.js"></script>
+      <!-- Bootstrap JavaScript <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>  -->
+	  <script src="/js/bootstrap.min.js"></script>
+      
+      <!-- Owl Carousel -->
+      <script src="/plugins/owl-carousel/owl.carousel2.js"></script>
+
+	
+   </body>
+</html>
