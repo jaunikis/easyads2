@@ -1,6 +1,6 @@
 <?php
 //$path=$_SERVER["QUERY_STRING"];
-$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+$actual_link = "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 $segments = explode('?', $actual_link);
 //echo $segments[1];
 parse_str($segments[1]);
