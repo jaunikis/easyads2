@@ -82,7 +82,7 @@ $_SESSION['cat_count2']=$cat_count2;
 	while ($row = $result->fetch_assoc()) {
 				$id=$row['id'];
 				$title=$row['title'];
-				$cover=$row['cover1file'];if($cover==''){$cover='ads_images/no-image.png';}
+				$cover=$row['cover1file'];if($cover==''){$cover='no-image.png';}
 				$price=$row['price'];
 				$location=$row['location'];
 				$timestamp2=$row['timestamp2'];
@@ -98,7 +98,7 @@ $_SESSION['cat_count2']=$cat_count2;
 						<a href="/items?item=<?php echo $id;?>">
                            <div class="item-ads-grid icon-<?php echo $color;?>">
                               <div class="item-img-grid">
-                                 <img alt="" src="<?php echo 'ads_images/'.$cover;?>" class="img-responsive img-center">
+                                 <img itemprop="image" alt="<?php echo $title;?>" src="<?php echo 'ads_images/'.$cover;?>" class="img-responsive img-center">
                               </div>
                               <div class="item-title">
                                     <h4><?php echo $title;?></h4>

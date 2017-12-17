@@ -46,13 +46,11 @@ $des.=' for sale in '.$location;}
     <meta name="description" content="<?php echo $des;?>">
     <meta name="author" content="Marius Vorosilovas">
 	  
-	<meta name="keywords" content="free ads, free ads Ireland, used cars, buy and sell, buy or sell, sell second hand, sell, buy, adverts, place ad, sell online, online shopping, free ads, jewellery, antiques, arts and crafts, baby and
-	nursery, books, cars, motorbikes, boats, clothes, shoes, bags, computers, tablets, iPads, consoles, games, photography, appliances, DVD, Electronics, Home and Garden, Furniture, DIY, marketplace,
+	<meta name="keywords" content="<?php echo $des;?>, buy, adverts, free ads, antiques, arts and crafts, baby and
+	nursery, cars, clothes, shoes, computers, tablets, iPads, consoles, games, appliances, DVD, Electronics, Home and Garden, Furniture, DIY, marketplace,
 	watches, jobs, phones, instruments, musical equipment, bikes, cameras, toys, property, sports and fitness, tickets, wedding, tools">
 	
-	<meta name="keyphrases" content="free ads, free ads Ireland, used cars, buy and sell, buy or sell, sell second hand, sell, buy, adverts, place ad, sell online, online shopping, free ads, jewellery, antiques, arts and crafts, baby and
-	nursery, books, cars, motorbikes, boats, clothes, shoes, bags, computers, tablets, iPads, consoles, games, photography, appliances, DVD, Electronics, Home and Garden, Furniture, DIY, marketplace,
-	watches, jobs, phones, instruments, musical equipment, bikes, cameras, toys, property, sports and fitness, tickets, wedding, tools">
+	
 	<meta name="geo.country" content="IE">
 	
 	<meta name="rating" content="general">

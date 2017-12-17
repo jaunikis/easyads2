@@ -57,7 +57,7 @@ $cat2=addslashes($cat2);
 						   <div class="similar-ads">
                               <a href="/items?item=<?php echo $id2;?>">
                                  <div class="similar-ad-left">
-                                    <img class="img-responsive img-center" src="<?php echo '/ads_images/'.$cover2;?>" alt="">
+                                    <img class="img-responsive img-center" src="<?php echo '/ads_images/'.$cover2;?>" alt="<?php echo strip_tags($title2);?>">
                                  </div>
                                  <div class="similar-ad-right">
                                     <h4><?php echo strip_tags($title2);?></h4>

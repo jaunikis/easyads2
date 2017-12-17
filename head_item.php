@@ -72,13 +72,8 @@ while ($row = $result->fetch_assoc()) {
     <meta name="description" content="Ireland's Free Classified Ads, Sell and Buy adverts">
     <meta name="author" content="Marius Vorosilovas">
 	  
-	<meta name="keywords" content="free ads, free ads Ireland, used cars, buy and sell, buy or sell, sell second hand, sell, buy, adverts, place ad, sell online, online shopping, free ads, jewellery, antiques, arts and crafts, baby and
-	nursery, books, cars, motorbikes, boats, clothes, shoes, bags, computers, tablets, iPads, consoles, games, photography, appliances, DVD, Electronics, Home and Garden, Furniture, DIY, marketplace,
-	watches, jobs, phones, instruments, musical equipment, bikes, cameras, toys, property, sports and fitness, tickets, wedding, tools">
+	<meta name="keywords" content="<?php echo $cat1;?> for sale in Ireland, <?php echo $cat2;?> for sale in Ireland, <?php echo $cat1.' '.$cat2;?> for sale in Ireland, <?php echo $cat1;?>, <?php echo $cat2;?>, <?php echo $title;?>">
 	
-	<meta name="keyphrases" content="free ads, free ads Ireland, used cars, buy and sell, buy or sell, sell second hand, sell, buy, adverts, place ad, sell online, online shopping, free ads, jewellery, antiques, arts and crafts, baby and
-	nursery, books, cars, motorbikes, boats, clothes, shoes, bags, computers, tablets, iPads, consoles, games, photography, appliances, DVD, Electronics, Home and Garden, Furniture, DIY, marketplace,
-	watches, jobs, phones, instruments, musical equipment, bikes, cameras, toys, property, sports and fitness, tickets, wedding, tools">
 	<meta name="geo.country" content="IE">
 	
 	<meta name="rating" content="general">

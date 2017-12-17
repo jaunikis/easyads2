@@ -21,15 +21,14 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Post ad | easyads.ie">
+    <meta name="description" content="Post ad | Ireland's Free Classified Ads, Sell and Buy adverts">
     <meta name="author" content="Marius Vorosilovas">
 	  
-	<meta name="keywords" content="freeads, post ad, post new ad, post advert, post free ad, post classified,free ads, post free ad, post new free ad, post free advert, post free classified, place ad, place new ad, place advert, place free ad, place classified">
+	<meta name="keywords" content="free car ads, free ads, post ad, post new ad, post advert, post free ad, post classified,free ads, post free ad, post new free ad, post free advert, post free classified, place ad, place new ad, place advert, place free ad, place classified">
 	
-	<meta name="keyphrases" content="freeads, post ad, post new ad, post advert, post free ad, post classified,free ads, post free ad, post new free ad, post free advert, post free classified, place ad, place new ad, place advert, place free ad, place classified">
 	<meta name="geo.country" content="IE">
 	
-    <title>Post ad | easyads.ie</title>
+    <title>Post ad | Ireland's Free Classified Ads, Sell and Buy adverts</title>
       
 	<script src="/js/jquery-3.2.1.js"></script>
 	  

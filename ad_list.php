@@ -79,7 +79,7 @@ require_once ('incl/elapsed.php');
 			$ad_count = $result->num_rows;
 			
 			//pagination
-			$ads_per_page=15;
+			$ads_per_page=20;
 			if(!isset($page)){$page=1;}else{if($page==''){$page=1;}}
 			$page_max=intval($ad_count/$ads_per_page);
 			if($ad_count/$ads_per_page>intval($ad_count/$ads_per_page)){$page_max+=1;}
@@ -231,6 +231,9 @@ include('left_search.php');
 			<?php
 			}
 			?>
+				<div class="text-center">
+					<a href="http://www.blackwatervolkswagen.ie/?utm_source=easyads" target="_blank"><img src="/images/blackwatervolkswagen.gif" alt="Blackwatervolkswagen"></img></a>
+				</div>
 					 </div>
                   </div>
 		<center>		  

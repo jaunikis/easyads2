@@ -1,0 +1,17 @@
+I'd suggest the following structure instead:
+
+http://www.site.net/project/2
+http://www.site.net/project/2/issuelist
+http://www.site.net/project/2/issuelist/bug
+This way you can make the /project/ path a reserved term (so long as you don't currently have and never plan to have
+an actual top-level directory named "project" on your site). This avoids having to use multiple RewriteCond directives 
+to check that the request is not for a valid file or directory every time.
+
+If this pattern suits you, then the following rules ought to do the trick in your .htaccess file:
+
+RewriteRule ^project/([0-9]+)$ /project.php?projectid=$1
+RewriteRule ^project/([0-9]+)/([a-zA-Z0-9_-]+)$ /project.php?projectid=$1&do=$2
+RewriteRule ^project/([0-9]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)$ /project.php?projectid=$1&do=$2&issuetypeid=$3
+
+The above RewriteRule patterns allow for the do and issuetypeid values to contain lowercase, uppercase, digits,
+underscores and hyphens, but you should modify the patterns to suit the actual constraints your site allows for these variables.

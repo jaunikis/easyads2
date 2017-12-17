@@ -9,12 +9,14 @@
 					
 <button class="accordion">How to place an new Ad</button>
 <div class="panel">
+<br>
 	<img src="images/how_to_post_ad.png" alt="How to post Ad"></img>
   <p>Click the green "<a href="post">POST FREE AD</a>" button on top of the page. Fill up the form and press "CREATE AD".</p>
 </div>
 
 <button class="accordion">How to Register or Login</button>
 <div class="panel">
+<br>
   <p>To register as a new user, click on "SIGN UP" which is placed at the top of page on the website and fill in the details in the New User box. You will need to enter a Email and create a password.</p>
   <p>To log in to your account, click "LOG IN" which is placed at the top of page on the website and enter your Email address you used to sign up with and your password. If you have forgotten your password please click "<a href="forgot">Forgot password</a>" and follow the instructions.</p>
 </div>
