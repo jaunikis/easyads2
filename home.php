@@ -20,7 +20,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Ireland's Free Classified Ads, Sell and Buy adverts">
+    <meta name="description" content="Free Quick and Easy Classified Ads in Ireland, Buy and Sell Cars, House & DIY, Mobile Phones, Laptops, Pets">
     <meta name="author" content="Marius Vorosilovas">
 	  
 	<meta name="keywords" content="free ads, free ads Ireland, used cars, buy and sell, buy or sell, sell second hand, sell, buy, adverts, place ad, sell online, online shopping, free ads, jewellery, antiques, arts and crafts, baby and
@@ -39,7 +39,7 @@
 	
 	
 	
-    <title>Ireland's Free Classified Ads, Sell and Buy adverts</title>
+    <title>Free Quick and Easy Classified Ads in Ireland, Buy and Sell Cars, House & DIY, Mobile Phones, Laptops, Pets..</title>
       
 	<script src="/js/jquery-3.2.1.js"></script>
 	  
