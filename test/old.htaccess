@@ -1,0 +1,7 @@
+RewriteEngine ON
+
+RewriteRule ^project/([0-9]+)$ /project.php?id=$1
+RewriteRule ^project/([0-9]+)/([a-zA-Z0-9_-]+)$ /project.php?id=$1&do=$2
+RewriteRule ^project/([0-9]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)$ /project.php?id=$1&do=$2&issuetypeid=$3
+
+ErrorDocument 404 2/index.php

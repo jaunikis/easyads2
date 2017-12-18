@@ -9,7 +9,7 @@ require_once ('incl/elapsed.php');
 			$segments = explode('/', $path);
 			
 			//parse vars from address bar
-			$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+			$actual_link = "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 			$segments2 = explode('?', $actual_link);
 			if(isset($segments2[1])){parse_str($segments2[1]);}
 			
@@ -44,9 +44,9 @@ require_once ('incl/elapsed.php');
 					$cat1='"'.$_SESSION['cat1'].'"';
 				}
 			}
-			if(isset($segments[2])){if($segments[2]!==''){$cat1='"'.str_replace("-"," ",$segments[2]).'"';}}
+			if(isset($segments[2])){if($segments[2]!==''){$cat1='"'.str_replace("-"," ",str_replace("and","&",$segments[2])).'"';}}
 			if($cat1=='"Cars"'){$cat1='"Cars & Motor"';$cat2='"Cars"';}
-			if(isset($segments[3])){if($segments[3]!==''){$cat2='"'.str_replace("-"," ",$segments[3]).'"';}}
+			if(isset($segments[3])){if($segments[3]!==''){$cat2='"'.str_replace("-"," ",str_replace("and","&",$segments[3])).'"';}}
 			if(isset($segments[4])){if($segments[4]!==''){$make='"'.str_replace("-"," ",$segments[4]).'"';}}
 			if(isset($segments[5])){
 				if($segments[5]!==''){
@@ -198,7 +198,7 @@ include('left_search.php');
 							//echo preg_replace('~[#/?"<>&]~','','namas # ksjk/slsjd?iwwo9998');
 							?>
 							  
-							  <a href="/items<?php if($cat1!=''){echo '/'.str_replace(' ','-',$cat1);} if($cat22!=''){echo '/'.str_replace(' ','-',$cat2);}?>/<?php echo preg_replace('~[#/?"<>&]~','',$title2);?>?item=<?php echo $id; ?>">
+							  <a href="/items<?php if($cat1!=''){$cat1=str_replace('&','and',$cat1);echo '/'.str_replace(' ','-',$cat1);} if($cat22!=''){$cat2=str_replace('&','and',$cat2);echo '/'.str_replace(' ','-',$cat2);}?>/<?php echo preg_replace('~[#/?"<>&]~','',$title2);?>?item=<?php echo $id; ?>">
                               <div class="item-img-grid">
                                  <img itemprop="image" alt="<?php echo $title;?>" src="<?php echo '/ads_images/'.$cover; ?>" class="img-responsive img-center ad_image">
                               </div>

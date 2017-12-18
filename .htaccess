@@ -1,3 +1,8 @@
 RewriteEngine ON
 
-ErrorDocument 404 /index.php
+RewriteRule ^([a-zA-Z0-9_-]+)$ /index.php?pageid=$1
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)$ /index.php?projectid=$1&do1=$2
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)$ /index.php?projectid=$1&do1=$2&do2=$3
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)$ /index.php?projectid=$1&do1=$2&do2=$3&do3=$4
+
+ErrorDocument 404 /index1.php

@@ -14,7 +14,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                <ul class="nav navbar-nav">
                   <li><a href="/">Home</a></li>
-				  <li><a href="/items.php">All Ads</a></li>
+				  <li><a href="/items">All Ads</a></li>
 				  <li><a href="/edit">Edit Ad</a></li>
                   <li><a href="/blog">Blog</a></li>
                   <li><a href="/faq">FAQ</a></li>
@@ -68,7 +68,7 @@ if(isset($_SESSION['user_id'])){
 		echo '<div class="user-login pull-right">
                   <a href="/signup">SIGN UP</a>
                   <span>or</span>  
-                  <a class="btn btn-md btn-primary" href="/login/">Log In</a>
+                  <a class="btn btn-md btn-primary" href="/login">Log In</a>
                </div>';
 			   }
 ?>

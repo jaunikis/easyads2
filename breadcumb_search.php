@@ -52,11 +52,11 @@ $json = json_decode($string, true);
 					echo '<li><i class="fa fa-angle-right" aria-hidden="true"></i></li>';
 					echo '<li><a href="/items">All items</a></li>';
 					if(isset($item)){
-						$link='items/'.str_replace(' ','-',$cat1);
+						$link='items/'.str_replace(' ','-',str_replace("&","and",$cat1));
 						echo '<li><i class="fa fa-angle-right" aria-hidden="true"></i></li>';
 						echo '<li><a href="/'.$link.'">'.str_replace("-"," ",$cat1).'</a></li>';
 						
-						if($cat2!=='' && substr($cat2,0,3)!='All'){$link.='/'.str_replace(' ','-',$cat2);
+						if($cat2!=='' && substr($cat2,0,3)!='All'){$link.='/'.str_replace(' ','-',str_replace("&","and",$cat2));
 							echo '<li><i class="fa fa-angle-right" aria-hidden="true"></i></li>';
 							echo '<li><a href="/'.$link.'">'.str_replace("-"," ",$cat2).'</a></li>';
 						}

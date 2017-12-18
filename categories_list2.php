@@ -77,7 +77,7 @@ $_SESSION['cat_count2']=$cat_count2;
                   </div>
                      <div id="owl-carousel-featured" class="owl-carousel categories-list-page">
     <?php
-	$sql="SELECT id,title,cover1file,price,location,timestamp2,cat1,cat2 FROM skelbimai WHERE active='Active' ORDER BY timestamp2 DESC LIMIT 6";
+	$sql="SELECT id,title,cover1file,price,location,timestamp2,cat1,cat2 FROM skelbimai WHERE active='Active' ORDER BY timestamp2 DESC LIMIT 8";
 	$result=sqlconnect($sql);
 	while ($row = $result->fetch_assoc()) {
 				$id=$row['id'];
@@ -95,7 +95,7 @@ $_SESSION['cat_count2']=$cat_count2;
 				$color=$col[$x];
 	?>
 						<div class="item">
-						<a href="/items.php?item=<?php echo $id;?>">
+						<a href="/items/<?php echo str_replace(" ","-",str_replace(str_split('/?&'),'',$title));?>?item=<?php echo $id;?>">
                            <div class="item-ads-grid icon-<?php echo $color;?>">
                               <div class="item-img-grid">
                                  <img itemprop="image" alt="<?php echo $title;?>" src="<?php echo 'ads_images/'.$cover;?>" class="img-responsive img-center">
