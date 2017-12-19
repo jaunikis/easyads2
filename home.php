@@ -20,26 +20,26 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Free Quick and Easy Classified Ads in Ireland, Buy and Sell Cars, House & DIY, Mobile Phones, Laptops, Pets">
-    <meta name="author" content="Marius Vorosilovas">
+    <meta name="description" content="Ireland's Free classifieds ads online to sell your items. Free local business advertising, Post Free Classifieds, Buy and Sell Cars, House & DIY, Electronics, Mobile Phones, Laptops, Pets, Real Estate, Jobs and etc.">
+    <meta name="author" content="mvmedia">
 	  
 	<meta name="keywords" content="free ads, free ads Ireland, used cars, buy and sell, buy or sell, sell second hand, sell, buy, adverts, place ad, sell online, online shopping, free ads, jewellery, antiques, arts and crafts, baby and
 	nursery, books, cars, motorbikes, boats, clothes, shoes, bags, computers, tablets, iPads, consoles, games, photography, appliances, DVD, Electronics, Home and Garden, Furniture, DIY, marketplace,
 	watches, jobs, phones, instruments, musical equipment, bikes, cameras, toys, property, sports and fitness, tickets, wedding, tools">
 	
-	<meta name="keyphrases" content="free ads, free ads Ireland, used cars, buy and sell, buy or sell, sell second hand, sell, buy, adverts, place ad, sell online, online shopping, free ads, jewellery, antiques, arts and crafts, baby and
-	nursery, books, cars, motorbikes, boats, clothes, shoes, bags, computers, tablets, iPads, consoles, games, photography, appliances, DVD, Electronics, Home and Garden, Furniture, DIY, marketplace,
-	watches, jobs, phones, instruments, musical equipment, bikes, cameras, toys, property, sports and fitness, tickets, wedding, tools">
 	<meta name="geo.country" content="IE">
 	
 	<meta name="rating" content="general">
 	<meta http-equiv="content-language" content="en">
 	<meta name="robots" content="index,follow">
 	<meta name="distribution" content="global">
+
+
+<link rel="canonical" href="https://www.easyads.ie/">
 	
 	
 	
-    <title>Free Quick and Easy Classified Ads in Ireland, Buy and Sell Cars, House & DIY, Mobile Phones, Laptops, Pets..</title>
+    <title>Free Quick and Easy Local Classified Ads in Ireland</title>
       
 	<script src="/js/jquery-3.2.1.js"></script>
 	  
