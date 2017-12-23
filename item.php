@@ -111,7 +111,7 @@ $cat2=addslashes($cat2);
                                  <div class="item-meta">
                                     <ul>
                                        <li class="item-date"><i class="fa fa-clock-o"></i> <?php echo elapsed($timestamp2);?></li>
-                                       <li class="item-cat"><i class="fa fa-book"></i> <a href="/items/<?php echo clean_string_url($cat1);?>"><?php echo $cat1;?></a> , <a href="/items/<?php echo clean_string_url($cat1).'/'.clean_string_url($cat2);?>"><?php echo $cat2; ?></a></li>
+                                       <li class="item-cat"><i class="fa fa-book"></i> <a href="/items/<?php echo clean_string_url($cat1);?>" data-placement="top" data-toggle="tooltip" data-original-title="All <?php echo $cat1;?>"><?php echo $cat1;?></a><?php if(substr($cat2,0,3)!='All'){?> , <a href="/items/<?php echo clean_string_url($cat1).'/'.clean_string_url($cat2);?>" data-placement="top" data-toggle="tooltip" data-original-title="All <?php echo $cat2;?>"><?php echo $cat2; ?></a><?php } ?></li>
                                        <li class="item-location"><a href="/items?location=<?php echo $location3;?>" data-placement="top" data-toggle="tooltip" data-original-title="All items in <?php echo $location3;?>"><i class="fa fa-map-marker"></i> <?php echo $location3;?> </a></li>
                                        <li class="item-type"><i class="fa fa-bookmark"></i> <?php echo $condition2;?></li>
                                     </ul>

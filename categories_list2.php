@@ -1,5 +1,6 @@
       <!-- Index2 List Page -->
 <?php
+include('incl/clean_string.php');
 require_once ('incl/server.php');
 require_once ('incl/elapsed.php');
 //get all ad count
@@ -95,7 +96,7 @@ $_SESSION['cat_count2']=$cat_count2;
 				$color=$col[$x];
 	?>
 						<div class="item">
-						<a href="/items/<?php echo str_replace(" ","-",str_replace(str_split('/?&'),'',$title));?>?item=<?php echo $id;?>">
+						<a href="/items/<?php echo clean_string_url($title);?>?item=<?php echo $id;?>">
                            <div class="item-ads-grid icon-<?php echo $color;?>">
                               <div class="item-img-grid">
                                  <img itemprop="image" alt="<?php echo $title;?>" src="<?php echo 'ads_images/'.$cover;?>" class="img-responsive img-center">
@@ -108,8 +109,8 @@ $_SESSION['cat_count2']=$cat_count2;
                               <div class="item-meta">
                                  <ul>
                                     <li class="item-date"><i class="fa fa-clock-o"></i> <?php echo elapsed($timestamp2); ?></li>
-                                    <li class="item-cat"><i class="fa fa-list-ul"></i> <a href="/items/<?php echo $cat1;?>"><?php echo $cat1; ?></a> > <a href="/items/<?php echo $cat1.'/'.$cat2;?>"><?php echo $cat2; ?></a></li>
-                                    <li class="item-location"><a href="categories.html"><i class="fa fa-map-marker"></i> <?php echo $location; ?> </a></li>
+                                    <li class="item-cat"><i class="fa fa-list-ul"></i> <a href="/items/<?php echo clean_string_url($cat1);?>"><?php echo $cat1; ?></a> > <a href="/items/<?php echo clean_string_url($cat1).'/'.clean_string_url($cat2);?>"><?php echo $cat2; ?></a></li>
+                                    <li class="item-location"><a href="/items?location=<?php echo $location;?>"><i class="fa fa-map-marker"></i> <?php echo $location; ?> </a></li>
                                     
                                  </ul>
                               </div>

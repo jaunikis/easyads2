@@ -69,6 +69,8 @@ require_once ('incl/elapsed.php');
 			//echo '<h1>'.$make.'</h1>';
 			//echo '<h1>'.$model.'</h1>';
 			
+			if($location=='"All locations"'){$location='location';}
+			
 			$sort='timestamp2 DESC';$sortTxt='Recently Published';
 			if(isset($sortBy)){if($sortBy=='priceLow'){$sort='price ASC';$sortTxt='Low Price First';}}
 			if(isset($sortBy)){if($sortBy=='priceHigh'){$sort='price DESC';$sortTxt='High Price First';}}
