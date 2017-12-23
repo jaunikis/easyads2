@@ -1,4 +1,5 @@
 <?php
+include('incl/clean_string.php');
 //$path=$_SERVER["QUERY_STRING"];
 $actual_link = "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 $segments = explode('?', $actual_link);
@@ -55,7 +56,7 @@ $cat2=addslashes($cat2);
 				$currency2=$row['currency'];
 ?>
 						   <div class="similar-ads">
-                              <a href="/items?item=<?php echo $id2;?>">
+                              <a href="/items/<?php echo clean_string_url($title2);?>?item=<?php echo $id2;?>">
                                  <div class="similar-ad-left">
                                     <img class="img-responsive img-center" src="<?php echo '/ads_images/'.$cover2;?>" alt="<?php echo strip_tags($title2);?>">
                                  </div>
@@ -110,8 +111,8 @@ $cat2=addslashes($cat2);
                                  <div class="item-meta">
                                     <ul>
                                        <li class="item-date"><i class="fa fa-clock-o"></i> <?php echo elapsed($timestamp2);?></li>
-                                       <li class="item-cat"><i class="fa fa-book"></i> <a href="/items/<?php echo str_replace(" ","-",$cat1);?>"><?php echo $cat1;?></a> , <a href="/items/<?php echo str_replace(" ","-",$cat1).'/'.str_replace(" ","-",$cat2);?>"><?php echo $cat2; ?></a></li>
-                                       <li class="item-location"><a href="#"><i class="fa fa-map-marker"></i> <?php echo $location3;?> </a></li>
+                                       <li class="item-cat"><i class="fa fa-book"></i> <a href="/items/<?php echo clean_string_url($cat1);?>"><?php echo $cat1;?></a> , <a href="/items/<?php echo clean_string_url($cat1).'/'.clean_string_url($cat2);?>"><?php echo $cat2; ?></a></li>
+                                       <li class="item-location"><a href="/items?location=<?php echo $location3;?>" data-placement="top" data-toggle="tooltip" data-original-title="All items in <?php echo $location3;?>"><i class="fa fa-map-marker"></i> <?php echo $location3;?> </a></li>
                                        <li class="item-type"><i class="fa fa-bookmark"></i> <?php echo $condition2;?></li>
                                     </ul>
                                  </div>

@@ -2,6 +2,7 @@
 
 
 <?php
+include('incl/clean_string.php');
 require_once ('incl/server.php');
 require_once ('incl/elapsed.php');
 
@@ -187,18 +188,20 @@ include('left_search.php');
                               </div>
 							<?php
 							}
-							$title2=str_replace(str_split(' /?&'),'-',$title);
-							$title2=preg_replace('/(.)\\1+/', '$1', $title2);
-							$title2=rtrim($title2,'-');
-							$title2=str_replace(',-','-',$title2);
+							//$title2=str_replace(str_split(' /?&'),'-',$title);
+							//$title2=preg_replace('/(.)\\1+/', '$1', $title2);
+							//$title2=rtrim($title2,'-');
+							//$title2=str_replace(',-','-',$title2);
 							$cat22=$cat2;
 							if($cat2=='cat2'){$cat22='';}
 							if($cat2=='Cat2'){$cat22='';}
 							if(substr($cat2,0,3)=='All'){$cat22='';}
 							//echo preg_replace('~[#/?"<>&]~','','namas # ksjk/slsjd?iwwo9998');
+							
+							//echo preg_replace('~[#/?"<>&]~','',$title2);
 							?>
 							  
-							  <a href="/items<?php if($cat1!=''){$cat1=str_replace('&','and',$cat1);echo '/'.str_replace(' ','-',$cat1);} if($cat22!=''){$cat2=str_replace('&','and',$cat2);echo '/'.str_replace(' ','-',$cat2);}?>/<?php echo preg_replace('~[#/?"<>&]~','',$title2);?>?item=<?php echo $id; ?>">
+							  <a href="/items<?php if($cat1!=''){echo '/'.clean_string_url($cat1);} if($cat22!=''){echo '/'.clean_string_url($cat2);}?>/<?php echo clean_string_url($title);?>?item=<?php echo $id; ?>">
                               <div class="item-img-grid">
                                  <img itemprop="image" alt="<?php echo $title;?>" src="<?php echo '/ads_images/'.$cover; ?>" class="img-responsive img-center ad_image">
                               </div>
@@ -217,8 +220,8 @@ include('left_search.php');
                               <div class="item-meta">
                                  <ul>
                                     <li class="item-date"><i class="fa fa-clock-o"></i><?php echo elapsed($timestamp2); ?>
-									 <a href="/items?location=<?php echo $location;?>"><i class="fa fa-map-marker"></i><?php echo $location; ?> </a>
-									 <a href="/items/<?php echo str_replace(" ","-",$cat1);?>"><i class="fa fa-book"></i><?php echo $cat1; ?></a> , <a href="/items/<?php echo str_replace(" ","-",$cat1).'/'.str_replace(" ","-",$cat2);?>"><?php echo $cat2; ?></a>
+									 <a href="/items?location=<?php echo $location;?>" data-placement="top" data-toggle="tooltip" data-original-title="All items in <?php echo $location;?>"><i class="fa fa-map-marker"></i><?php echo $location; ?> </a>
+									 <a href="/items/<?php echo clean_string_url($cat1);?>" data-placement="top" data-toggle="tooltip" data-original-title="All <?php echo $cat1;?>"><i class="fa fa-book"></i><?php echo $cat1; ?></a><?php if(substr($cat2,0,3)!='All'){?> , <a href="/items/<?php echo clean_string_url($cat1);?>/<?php echo clean_string_url($cat2);?>" data-placement="top" data-toggle="tooltip" data-original-title="All <?php echo $cat2;?>"><?php echo $cat2; ?></a><?php }?>
 									 </li>
                                     
                                    

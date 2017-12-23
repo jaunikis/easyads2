@@ -58,7 +58,7 @@ $json = json_decode($string, true);
                </div>
                <div class="top-categories">
                   <h4>Popular Categories</h4>
-                  <a href="/items/Cars-&-Motor/Cars">
+                  <a href="/items/Cars-and-Motor/Cars">
                   <i class="fa fa-car"></i>Cars
                   </a>
                   <a href="/items/Jobs">
