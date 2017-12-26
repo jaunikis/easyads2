@@ -46,7 +46,7 @@ while ($row = $result->fetch_assoc()) {
                      </div>
                      <div class="widget-body">
                         <ul class="trends">
-						<li><a href="/items/Cars-&-Motor/Cars">Cars <span class="item-numbers"><?php echo $count_cars;?></span></a></li>
+						<li><a href="/items/Cars-and-Motor/Cars">Cars <span class="item-numbers"><?php echo $count_cars;?></span></a></li>
 		<?php
 $sql="SELECT COUNT(id), cat1
 FROM skelbimai
@@ -62,7 +62,7 @@ while ($row = $result->fetch_assoc()) {
 	$cat_count2[]=$count_id;
 	
 ?>	
-                           <li><a href="/items/<?php echo str_replace(' ','-',$cat1).'">'.$cat1;?> <span class="item-numbers"><?php echo $count_id;?></span></a></li>
+                           <li><a href="/items/<?php echo clean_string_url($cat1).'">'.$cat1;?> <span class="item-numbers"><?php echo $count_id;?></span></a></li>
 <?php } 
 $_SESSION['categ']=$categ;
 $_SESSION['cat_count2']=$cat_count2;

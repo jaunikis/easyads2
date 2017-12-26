@@ -2,7 +2,7 @@
 
 
 <?php
-include('incl/clean_string.php');
+//include('incl/clean_string.php');
 require_once ('incl/server.php');
 require_once ('incl/elapsed.php');
 
@@ -48,6 +48,10 @@ require_once ('incl/elapsed.php');
 			if(isset($segments[2])){if($segments[2]!==''){$cat1='"'.str_replace("-"," ",str_replace("and","&",$segments[2])).'"';}}
 			if($cat1=='"Cars"'){$cat1='"Cars & Motor"';$cat2='"Cars"';}
 			if(isset($segments[3])){if($segments[3]!==''){$cat2='"'.str_replace("-"," ",str_replace("and","&",$segments[3])).'"';}}
+			if($cat2=='"TVs"'){$cat2='"TV\'s"';}
+			if($cat2=='"Mens"'){$cat2='"Men\'s"';}
+			if($cat2=='"Womens"'){$cat2='"Women\'s"';}
+			if($cat2=='"Childrens"'){$cat2='"Children\'s"';}
 			if(isset($segments[4])){if($segments[4]!==''){$make='"'.str_replace("-"," ",$segments[4]).'"';}}
 			if(isset($segments[5])){
 				if($segments[5]!==''){
@@ -223,7 +227,7 @@ include('left_search.php');
                                  <ul>
                                     <li class="item-date"><i class="fa fa-clock-o"></i><?php echo elapsed($timestamp2); ?>
 									 <a href="/items?location=<?php echo $location;?>" data-placement="top" data-toggle="tooltip" data-original-title="All items in <?php echo $location;?>"><i class="fa fa-map-marker"></i><?php echo $location; ?> </a>
-									 <a href="/items/<?php echo clean_string_url($cat1);?>" data-placement="top" data-toggle="tooltip" data-original-title="All <?php echo $cat1;?>"><i class="fa fa-book"></i><?php echo $cat1; ?></a><?php if(substr($cat2,0,3)!='All'){?> , <a href="/items/<?php echo clean_string_url($cat1);?>/<?php echo clean_string_url($cat2);?>" data-placement="top" data-toggle="tooltip" data-original-title="All <?php echo $cat2;?>"><?php echo $cat2; ?></a><?php }?>
+									 <a href="/items<?php if($cat1!=''){echo '/'.clean_string_url($cat1);}?>" data-placement="top" data-toggle="tooltip" data-original-title="All <?php echo $cat1;?>"><i class="fa fa-book"></i><?php echo $cat1; ?></a><?php if(substr($cat2,0,3)!='All' && $cat2!='cat2'){?> , <a href="/items/<?php echo clean_string_url($cat1);?>/<?php echo clean_string_url($cat2);?>" data-placement="top" data-toggle="tooltip" data-original-title="All <?php echo $cat2;?>"><?php echo $cat2; ?></a><?php }?>
 									 </li>
                                     
                                    

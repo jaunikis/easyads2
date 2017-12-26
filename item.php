@@ -1,5 +1,5 @@
 <?php
-include('incl/clean_string.php');
+//include('incl/clean_string.php');
 //$path=$_SERVER["QUERY_STRING"];
 $actual_link = "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 $segments = explode('?', $actual_link);
