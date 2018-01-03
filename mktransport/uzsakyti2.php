@@ -90,8 +90,8 @@ $result=sqlconnect($sql);
 if($result>0){
 //siunciam maila
 function send_mail($salis,$miestas,$from,$subject,$msg){
-	if($from==''){$from='info@mk-transport.lt';}
-	$to = "jaunikis@icloud.com";
+	if($from==''){$from='mktransport1313@gmail.com';}
+	$to = "jaunikis@icloud.com, mktransport1313@gmail.com";
 	$headers = "MIME-Version: 1.0" . "\r\n";
 	$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 	$headers .= 'From: <'.$from.'>' . "\r\n";
