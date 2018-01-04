@@ -359,9 +359,9 @@ while ($row = $result3->fetch_assoc()) {
 		//$("#refine").submit();
 		var link='';
 		if($("#cat1").val()=='Cars'){
-			link='Cars-&-Motor/Cars';
+			link='Cars-and-Motor/Cars';
 		}else{
-			if($("#cat1").val()!=='All Category'){li=$("#cat1").val();link=li.replace(/ /g, "-");}
+			if($("#cat1").val()!=='All Category'){li=$("#cat1").val();link=li.replace(/ /g, "-");link=link.replace(/&/g, "and");}
 		}
 		var vars='?';
 		if($("#location").val().substring(0,3)!=='All'){vars+='&location='+$("#location").val();}
@@ -403,7 +403,7 @@ while ($row = $result3->fetch_assoc()) {
 			//$("#refine").submit();
 			var li=$("#cat1").val();link=li.replace(/ /g, "-");
 			//alert(link);
-			if($("#cat2").val().substring(0,3)!=='All'){li='/'+$("#cat2").val(); link+=li.replace(/ /g, "-");}
+			if($("#cat2").val().substring(0,3)!=='All'){li='/'+$("#cat2").val(); link+=li.replace(/ /g, "-");link=link.replace(/&/g, "and");}
 			//alert(link);
 			var vars='?';
 		if($("#location").val().substring(0,3)!=='All'){vars+='&location='+$("#location").val();}
@@ -441,7 +441,7 @@ while ($row = $result3->fetch_assoc()) {
 			//$("#refine").submit();
 			var li=$("#cat1").val(); link=li.replace(/ /g, "-");
 			li='/'+$("#cat2").val(); link+=li.replace(/ /g, "-");
-			if($("#cat3").val().substring(0,3)!=='All'){li='/'+$("#cat3").val(); link+=li.replace(/ /g, "-");}
+			if($("#cat3").val().substring(0,3)!=='All'){li='/'+$("#cat3").val(); link+=li.replace(/ /g, "-");link=link.replace(/&/g, "and");}
 			var vars='?';
 		if($("#location").val().substring(0,3)!=='All'){vars+='&location='+$("#location").val();}
 		if($("#yearMin").val().substring(0,2)!=='No'){vars+='&yearMin='+$("#yearMin").val();}
@@ -460,7 +460,7 @@ while ($row = $result3->fetch_assoc()) {
 	$("#cat4").change(function(){
 			var li=$("#cat1").val();
 			li+='/'+$("#cat2").val();
-			li+='/'+$("#cat3").val();link=li.replace(/ /g, "-");
+			li+='/'+$("#cat3").val();link=li.replace(/ /g, "-");link=link.replace(/&/g, "and");
 			if($(this).val().substring(0,3)!=='All'){link+='/'+$("#cat4").val();}
 			var vars='?';
 		if($("#location").val().substring(0,3)!=='All'){vars+='&location='+$("#location").val();}
