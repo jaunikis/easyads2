@@ -50,6 +50,7 @@
       <link rel="icon" type="image/png" href="/images/favicon.png">
       <!-- Bootstrap CSS -->    
 	  <link href="/css/bootstrap.min.css" rel="stylesheet">
+	  
 	  <!-- Google Font -->
       <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:regular,700,600&amp;latin" type="text/css" />
       <!-- Custom CSS -->

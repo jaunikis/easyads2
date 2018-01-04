@@ -1,0 +1,164 @@
+Recognize common email traps and avoid dangerous links
+
+What Are the Dangers of Email Links?
+Attackers send emails with links to:
+Verify that your email is valid (and consequently send you more dangerous emails)
+Trick you into visiting a fake website and entering your credentials for a well-known website
+Exploit your web browser to take control of your computer or download malicious code (like ransomware)
+
+How URLs Work
+URLs are the complete addresses to specific websites.
+www.dailydelicious.net/recipes/spider-cookies/
+
+How Links Work
+Links point to a specific URL. Links make URLs clickable.
+Links can point to URLs in clickable text.
+Links can also be displayed in full: https://www.marigoldbank.com
+Links can even be graphics or buttons: Home
+
+How Domains Work
+http://www.wombank.com
+In a URL, the domain name—in this example, wombank.com—works like an online home address for a website.
+
+
+Attackers Manipulate URLs to Trick Users
+Manipulating a URL goes beyond using the right words to trick you. Attackers will often change links in other ways to look like valid URLs.
+If you see any of these warning signs in an email link, look, but don’t click unless you are absolutely certain you can trust the URL.
+
+Shortened URLs
+http://bit1y.com/7P43bh2
+Shortened URLs are forwarding addresses for longer links. Attackers use link shortening tools on the Web to conceal a link’s true destination.
+If you suspect you’ve been given a shortened URL, you can search the web for a URL expander. Copy the URL and paste it into the tool to find out where the URL really goes.
+
+Number-based links
+Companies like to use words, not numbers, in their domain name.
+Avoid links that contain four sets of numbers separated by dots after the ://.
+http://57.39.125.43
+Scammers can use number-based URLs to hide malicious sites. If you don’t know exactly where a number-based URL goes, do not click it.
+
+Look-alikes
+Attackers will deceive users by substituting letters and numbers to make a URL appear identical to a legitimate site. For example, 0 (the number) and O (the letter), l (lowercase L) and I (uppercase i), or vv (as w).
+Here’s an example of a look-alike:
+www.gigarnartonline.com
+www.gigamartonline.com
+At first glance, these two domains look almost identical, making it easy to overlook the substitutions (rn for m).
+
+Hyphens
+http://www.my-wombank-online.com
+Attackers often add hyphens to official brand domains, creating malicious links.
+Note: Some legitimate sites use hyphens in their domain name, but don’t click on the URL if it doesn’t look like the one you know and trust.
+
+Don’t Ignore the Domain
+Carefully examining a URL can help you determine if the domain is a scam or legitimate. If you want to know where a URL really goes, look at the part of the URL after the :// but before the first /. Read this part from right to left, starting at the first /.
+http://perchaseonline.verifier-sure.com/myAccount/index.html
+
+Read Between the Dots
+http://essexhealthsystem.shandite.com
+You can also start with the text to the right of the first dot after the ://—shandite.com is the true domain. It’s the site you’d visit if you click on the link.
+
+What to Do Instead of Clicking
+Only click on email links if you’re expecting them (such as a product confirmation order).
+If you trust the name of the organization who sent the email, type the URL you know and trust into your browser or use your bookmark. This way you can see if there’s something that needs taking care of without the risk of navigating to a dangerous site.
+Make hovering over links a habit. Rest your cursor over the link and read the URL that appears, but do not click the link.
+Use your favorite search engine to verify the site. When you search for a fraudulent domain, the top result’s domain should match what you’ve entered.
+
+
+
+
+Email security:
+Sender details
+You can't tell if an email is legitimate just from the sender. Scammers can put anything they want in an email, including the sender information, in order to make it look more official.
+
+Subject line
+Senders, whether legitimate businesses or scammers, often use catchy subject lines to get you to read their messages.
+
+Logos and names
+Company logos and personal greetings are used in many emails. These items can be faked by scammers, so don't rely on them to judge the safety of an email.
+
+Links
+Safe, legitimate links can be verified through experience or an online search. It pays to study links carefully, and only click those you know to be safe.
+
+Signatures and contact info
+Safe, legitimate contact information should be easy to verify. You should always confirm phone numbers are accurate before calling service centers.
+
+Public email Addresses
+Reputable companies (particularly large organizations) generally do not use public email services like Gmail and Yahoo. Be alert for this possible trap.
+
+Offers of money
+Beware of emails promising you money. This is a favorite trap scammers use to get people to act without thinking.
+
+Poor grammar and spelling
+The spelling and grammar problems in this email are warning signs. Legitimate companies generally do not make these kinds of mistakes.
+
+Requests for sensitive information
+Beware of requests to supply account numbers or verify information. These are common traps. Legitimate companies are highly unlikely to send you requests of this nature.
+
+Dangerous links
+Study links carefully before clicking; scammers use known brands to create realistic-looking links. This link is a trap; tilburybank411.site is not the same as tilburybank.com.
+
+Rushing a response
+Scammers love to use this trap to push you into acting quickly without thinking.
+
+
+
+
+This training will enable you to recognize email traps and avoid phishing scams.
+
+What Is Phishing?
+Phishing is a social engineering activity:
+Phishing tricks users to provide sensitive information to cyber criminals via email (the bait)
+The emails appear to be from legitimate companies or your best friend or boss
+The primary goal is to acquire credentials, financial information, or other sensitive data
+
+Phishing Is a Craft
+Phishing emails prey on emotions: greed, curiosity, or fear.
+The emails look like they come from a trustworthy individual or credible organization.
+They also look realistic. This is why it’s so tough to identify phishing emails.
+
+Why Are Phishing Emails Harmful?
+Phishing is associated with virus infections, ransomware, identity theft, data theft, and more. Scammers who send phishing emails can use your computer to attack your organization.
+
+Are Phishing Emails Just Spam?
+Phish
+Phish are targeted and deceptive emails sent to you in order to gain information, access, or money.
+The intent is malicious.
+
+Spam
+Spam is unsolicited email that attempts to sell you a product or service.
+It’s mainly a nuisance, but not necessarily harmful.
+
+How Phish and Spam Are Alike
+They’re both unwanted emails and how you interact with either type is important.
+
+Phishing Needs Your Help to Succeed
+Phishing emails have changed a lot over the last decade. They look more legitimate than they did just several years ago.
+While foreign royalty doesn’t really need your help in transferring funds, people still fall for schemes like this.
+
+Why are they asking for that?
+Don’t give up personal information. Email is not a secure way to share sensitive or confidential information. Legitimate businesses will not ask you to send passwords or any other personal information through email.
+
+Am I being promised money for little or no effort on my part?
+Many offers are meant to compromise your security. Don’t interact with emails promoting an offer that’s too good to be true.
+You can’t win a contest you didn’t enter. And foreign royalty doesn’t need your help in managing their funds.
+
+Am I expecting a package?
+These phishing emails claim there was a shipping issue with your package, but clicking that link could take you to a malicious website or attachment.
+
+Is there an attachment?
+Be wary of attachments you didn’t expect. An attachment can be malicious even if you know the sender.
+
+Is the salutation or greeting blank?
+Some phishing emails will simply address you as Valued Customer, while others use greetings like Hello and Good day. Be wary of generic greetings, but analyze the rest of the content and email tone to judge if it’s real.
+
+Are there misspellings, typos, or unfamiliar language?
+An email from a professional organization should be well-written. If the grammar is incorrect and the tone does not match the nature of the email, it may be a phish.
+
+Does the website link look credible or malicious?
+Make hovering over web addresses a habit. This allows you to see the real URL. Even if a link looks valid, don’t click it. You could be redirected to a malicious website.
+
+Does the email contain a graphic like a logo?
+Company logos are used in many emails. These graphics can be faked by scammers, so don’t rely on them to judge the safety of an email.
+
+Investigate It
+If the email looks suspicious, but comes from a source you would typically trust, don’t be afraid to investigate. Call or send a new message to the person who you think sent the email. Never reply directly to the email.
+Don’t rely on customer service at organizations to verify an email. It’s better to type in the known URL for the organization in your browser.
