@@ -1,4 +1,4 @@
-Recognize common email traps and avoid dangerous links
+"Recognize common email traps and avoid dangerous links"
 
 What Are the Dangers of Email Links?
 Attackers send emails with links to:
@@ -6,19 +6,25 @@ Verify that your email is valid (and consequently send you more dangerous emails
 Trick you into visiting a fake website and entering your credentials for a well-known website
 Exploit your web browser to take control of your computer or download malicious code (like ransomware)
 
+"
 How URLs Work
 URLs are the complete addresses to specific websites.
 www.dailydelicious.net/recipes/spider-cookies/
+"
 
+"
 How Links Work
 Links point to a specific URL. Links make URLs clickable.
 Links can point to URLs in clickable text.
 Links can also be displayed in full: https://www.marigoldbank.com
 Links can even be graphics or buttons: Home
+"
 
+"
 How Domains Work
 http://www.wombank.com
 In a URL, the domain name—in this example, wombank.com—works like an online home address for a website.
+"
 
 
 Attackers Manipulate URLs to Trick Users
@@ -81,20 +87,26 @@ Safe, legitimate links can be verified through experience or an online search. I
 Signatures and contact info
 Safe, legitimate contact information should be easy to verify. You should always confirm phone numbers are accurate before calling service centers.
 
+"
 Public email Addresses
 Reputable companies (particularly large organizations) generally do not use public email services like Gmail and Yahoo. Be alert for this possible trap.
+"
 
 Offers of money
 Beware of emails promising you money. This is a favorite trap scammers use to get people to act without thinking.
 
+"
 Poor grammar and spelling
 The spelling and grammar problems in this email are warning signs. Legitimate companies generally do not make these kinds of mistakes.
+"
 
 Requests for sensitive information
 Beware of requests to supply account numbers or verify information. These are common traps. Legitimate companies are highly unlikely to send you requests of this nature.
 
+"
 Dangerous links
 Study links carefully before clicking; scammers use known brands to create realistic-looking links. This link is a trap; tilburybank411.site is not the same as tilburybank.com.
+"
 
 Rushing a response
 Scammers love to use this trap to push you into acting quickly without thinking.
@@ -137,9 +149,9 @@ While foreign royalty doesn’t really need your help in transferring funds, peo
 Why are they asking for that?
 Don’t give up personal information. Email is not a secure way to share sensitive or confidential information. Legitimate businesses will not ask you to send passwords or any other personal information through email.
 
-Am I being promised money for little or no effort on my part?
+"Am I being promised money for little or no effort on my part?
 Many offers are meant to compromise your security. Don’t interact with emails promoting an offer that’s too good to be true.
-You can’t win a contest you didn’t enter. And foreign royalty doesn’t need your help in managing their funds.
+You can’t win a contest you didn’t enter. And foreign royalty doesn’t need your help in managing their funds."
 
 Am I expecting a package?
 These phishing emails claim there was a shipping issue with your package, but clicking that link could take you to a malicious website or attachment.
@@ -162,3 +174,8 @@ Company logos are used in many emails. These graphics can be faked by scammers, 
 Investigate It
 If the email looks suspicious, but comes from a source you would typically trust, don’t be afraid to investigate. Call or send a new message to the person who you think sent the email. Never reply directly to the email.
 Don’t rely on customer service at organizations to verify an email. It’s better to type in the known URL for the organization in your browser.
+
+
+https://www.wombatsecurity.com/security-education/free-security-awareness-resources
+
+https://info.wombatsecurity.com/blog/ransomware-and-phishing-attacks-why-anti-virus-software-cant-save-you

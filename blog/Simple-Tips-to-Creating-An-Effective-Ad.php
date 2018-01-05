@@ -7,10 +7,10 @@
 							<div class="panel-heading">
 								<h4>Simple Tips to Creating An Effective Ad </h4>
 								<small>Following these tips will help you get the results that you’re hoping for.</small>
-								<div class="text-muted small">
+								<!--<div class="text-muted small">
 									Created by: <span class="font-bold">Mike Smith</span>
 									21.03.2017, 06:45 pm
-								</div>
+								</div> -->
 							</div>
 							<div class="panel-image">
 								<img class="img-responsive" src="/images/blog/blog-01.jpg" alt="">
@@ -292,9 +292,9 @@
 								
 							</div>
 							<div class="panel-footer">
-								<span class="pull-right">
-								<i class="fa fa-comments-o"> </i> 22 comments
-								</span>
+								<!-- <span class="pull-right">
+								<i class="fa fa-comments-o"></i> 22 comments
+								</span> -->
 								<i class="fa fa-eye"> </i> 142 views
 							</div>
 						</div>

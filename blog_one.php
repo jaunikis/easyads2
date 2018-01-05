@@ -90,10 +90,11 @@
 <img style="display:none" src="/images/fblogo.jpg">
  <div id="fb-root"></div>
 <?php
+//echo $segments[2];
 require('head_home.php');
 require('top_nav.php');
 $_SESSION['heading']='Blog';
 require('breadcumb.php');
-require('blog1.php');
+require('blog/'.$segments[2].'.php');
 require('footer_short.php');
 ?>
