@@ -48,16 +48,15 @@
 								<h3 id="Most common types of froud adverts">Most common types of fraud adverts:</h3>
 								<br>
 								<div class="row">
-								<div class="col-sm-6 col-sm-offset-3">
-										<img class="img-responsive img-thumbnail" src="/images/blog/froud1.jpg" alt="Online safety">
+								<div class="col-sm-10 col-sm-offset-1">
+										<img class="img-responsive img-thumbnail" src="/images/blog/scam1.jpg" alt="Online safety">
 								</div>
 								</div>
 								<div class="row">
 									<p>
-									<h4>Offer looks too good to be true.</h4>
-									Am I being promised money for little or no effort on my part?
-									Many offers are meant to compromise your security. Like easy loan offers, too cheap, unreal prices, etc..
-									Don’t interact with adverts promoting an offer that’s too good to be true. 
+									<h4>Example of fraud advert.</h4>
+									Scammers asking for small sum of €100-€300 as necessary first deposit.  
+									Looks like small sum if you promised of €10.000 €20.000 loan.
 									</p>
 								</div>
 								<br><hr>
@@ -67,7 +66,7 @@
 								
 								<div class="row">
 									<div class="col-sm-6 col-sm-offset-0">
-										<img class="img-responsive img-thumbnail" src="/images/blog/froud1.jpg" alt="Online safety">
+										<img class="img-responsive img-thumbnail" src="/images/blog/scam2.jpg" alt="Scam. too good to be true">
 									</div>
 									<p>
 									<h4>Offer looks too good to be true.</h4>
@@ -80,13 +79,13 @@
 								
 								<div class="row">
 									<div class="col-sm-6 pull-right">
-										<img class="img-responsive img-thumbnail" src="/images/blog/froud1.jpg" alt="Online safety">
+										<img class="img-responsive img-thumbnail" src="/images/blog/scam3.jpg" alt="Scam. not provided phone number">
 									</div>
 									<p>
 									<h4>Seller not provided phone number.</h4>
 									Only email provided in advert!? Be careful and examine advert if it is real more suspiciously.
-									Check the phone number if it is real and it is Irish number.
-									Call the seller if possible. (some scammers comes not from Ireland and dont know Irish phone codes.) 
+									Check the phone number if it is real and it is Irish number. 
+									Call the seller if possible and it is Irish phone number. (some scammers comes not from Ireland and dont know Irish phone codes and put random numbers.) 
 									
 									</p>
 								</div>
@@ -94,7 +93,7 @@
 								
 								<div class="row">
 									<div class="col-sm-6 col-sm-offset-0">
-										<img class="img-responsive img-thumbnail" src="/images/blog/froud1.jpg" alt="Online safety">
+										<img class="img-responsive img-thumbnail" src="/images/blog/scam4.jpg" alt="Scam. Public email address">
 									</div>
 									<h4>Public email Address</h4>
 									<p>

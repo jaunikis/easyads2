@@ -26,7 +26,7 @@ http://www.wombank.com
 In a URL, the domain name—in this example, wombank.com—works like an online home address for a website.
 "
 
-
+"
 Attackers Manipulate URLs to Trick Users
 Manipulating a URL goes beyond using the right words to trick you. Attackers will often change links in other ways to look like valid URLs.
 If you see any of these warning signs in an email link, look, but don’t click unless you are absolutely certain you can trust the URL.
@@ -50,7 +50,7 @@ www.gigamartonline.com
 At first glance, these two domains look almost identical, making it easy to overlook the substitutions (rn for m).
 
 Hyphens
-http://www.my-wombank-online.com
+http://www.bank-of-ireland.com
 Attackers often add hyphens to official brand domains, creating malicious links.
 Note: Some legitimate sites use hyphens in their domain name, but don’t click on the URL if it doesn’t look like the one you know and trust.
 

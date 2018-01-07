@@ -88,6 +88,5 @@
    }(document, 'script', 'facebook-jssdk'));
 </script>
 
-
 <img style="display:none" src="/images/fblogo.jpg">
  <div id="fb-root"></div>

@@ -60,7 +60,10 @@
       <link rel="stylesheet" href="/plugins/owl-carousel/owl.theme.css">
       <!-- Font Awesome   -->
       <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-	  
+	
+	 <!-- TrustBox script -->
+<script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+<!-- End Trustbox script -->
 	 
    </head>
 
