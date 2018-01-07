@@ -137,14 +137,14 @@
 									</div>
 									<p>
 									<h4>Dangerous links</h4>
-									Study links carefully before clicking; scammers use known brands to create realistic-looking links. This link is a trap; bank-of-ireland.site is not the same as bankofireland.ie.
+									Study links carefully before clicking; scammers use known brands to create realistic-looking links. This link is a trap; aib.payments211.ie is not the same as aib.ie
 									</p>
 								</div>
 								<br>
 								
 								<hr>
 								
-								<h3 id="Most common types of froud adverts">Links</h3>
+								<h3 id="Links">Links</h3>
 								<br>
 								<div class="row">
 								<div class="col-sm-6 col-sm-offset-3">
@@ -173,6 +173,73 @@
 									<p>
 									http://www.easyads.ie/blog/<br>
 									The domain name in this example "easyads.ie" works like an online home address for a website.
+									</p>
+									<h4>Attackers Manipulate URLs to Trick Users</h4>
+									<p>
+									Manipulating a URL goes beyond using the right words to trick you. Attackers will often change links in other ways to look like valid URLs.
+									If you see any of these warning signs in an link, look, but don’t click unless you are absolutely certain you can trust the URL.
+									</p>
+									<div class="row">
+										<div class="col-sm-6">
+											<h4>Shortened URLs</h4>
+											<p>
+											<div class="well well-sm" style="margin:5px;">http://bit1y.com/2P13uh2</div>
+											Shortened URLs are forwarding addresses for longer links. Attackers use link shortening tools on the Web to conceal a link’s true destination.
+											If you suspect you’ve been given a shortened URL, you can search the web for a URL expander. Copy the URL and paste it into the tool to find out where the URL really goes.
+											</p>
+										</div>
+										<div class="col-sm-6">
+											<h4>Number-based links</h4>
+											<p>
+											<div class="well well-sm" style="margin:5px;">http://194.135.86.241</div>
+											Scammers can use number-based URLs to hide malicious sites. If you don’t know exactly where a number-based URL goes, do not click it.
+											</p>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-6">
+											<h4>Look-alikes</h4>
+											<p>
+											<div class="well well-sm" style="margin:5px;">
+											www.bankofireland.com<br>
+											www.Bank0fIreland.com
+											</div>
+											At first glance, these two domains look almost identical, making it easy to overlook the substitutions (0 for o). Also can be (rn for m).
+											</p>
+										</div>
+										<div class="col-sm-6">
+											<h4>Hyphens</h4>
+											<p>
+											<div class="well well-sm" style="margin:5px;">www.bank-of-ireland.com</div>
+											Attackers often add hyphens to official brand domains, creating malicious links.
+											Note: Some legitimate sites use hyphens in their domain name, but don’t click on the URL if it doesn’t look like the one you know and trust.</p>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-6">
+											<h4>Don’t Ignore the Domain</h4>
+											<p>
+											<div class="well well-sm" style="margin:5px;">http://www.aib.payments211.ie/customers-validate/</div>
+											Carefully examining a URL can help you determine if the domain is a scam or legitimate. If you want to know where a URL really goes, 
+											look at the part of the URL after the :// but before the first /. Read this part from right to left tofirst dot. You should get (payments211.ie) that is not legit domain name. 
+											</p>
+										</div>
+										<div class="col-sm-6">
+											<h4>Read Between the Dots</h4>
+											<p>
+											<div class="well well-sm" style="margin:5px;">http://aib.payments211.ie</div>
+											You can also start with the text to the right of the first dot after the :// payments211.ie is the true domain. It’s the site you’d visit if you click on the link. "aib" here is subdomain, that is can be any word. 
+											For example www.bankofireland.payments211.ie you visit same payments211.ie not legit website.
+											</p>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<h4>What to Do Instead of Clicking</h4>
+									<p>
+									Only click on links if you’re trust them.
+									Make hovering over links a habit. Rest your cursor over the link and read the URL that appears in bottom of the page, but do not click the link.
+									Use your favorite search engine to verify the site. When you search for a fraudulent domain, the top result’s domain should match what you’ve entered.
 									</p>
 								</div>
 								<br><hr>
