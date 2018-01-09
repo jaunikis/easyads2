@@ -21,15 +21,26 @@
 								<li><a href="#Introduction">Introduction</a></li>
 								<li><a href="#Most common types of froud adverts">Most common types of fraud adverts</a></li>
 								<li><a href="#How to identify that advert is fraud">How to identify that advert is fraud</a></li>
-								<li><a href="#Talk About The Benefits">Talk About The Benefits</a></li>
-								<li><a href="#Tell Your News">Tell Your News</a></li>
-								<li><a href="#Take Away Their Fear">Take Away Their Fear</a></li>
-								<li><a href="#Call To Action">Call To Action</a></li>
-								<li><a href="#Make It Seem Urgent">Make It Seem Urgent</a></li>
-								<li><a href="#Use Testimonials">Use Testimonials</a></li>
-								<li><a href="#Use Exciting Graphics and Images">Use Exciting Graphics and Images</a></li>
-								<li><a href="#Complete Contact Information">Complete Contact Information</a></li>
-								<li><a href="#Always DELIVER">Always Deliver</a></li>
+								<li><a href="#Offer looks too good to be true">- Offer looks too good to be true</a></li>
+								<li><a href="#Seller not provided phone number">- Seller not provided phone number</a></li>
+								<li><a href="#Public email Address">- Public email Address</a></li>
+								<li><a href="#Poor grammar and spelling">- Poor grammar and spelling</a></li>
+								<li><a href="#Seller asking for deposit">- Seller asking for deposit</a></li>
+								<li><a href="#Dangerous links">- Dangerous links</a></li>
+								<li><a href="#Links">Links</a></li>
+								<li><a href="#What Are the Dangers of Links">- What Are the Dangers of Links?</a></li>
+								<li><a href="#What is URL">- What is URL?</a></li>
+								<li><a href="#What is links">- What is links?</a></li>
+								<li><a href="#What is domain name">- What is domain name?</a></li>
+								<li><a href="#Shortened URLs">- Shortened URLs</a></li>
+								<li><a href="#Number-based links">- Number-based links</a></li>
+								<li><a href="#Look-alikes links">- Look-alikes links</a></li>
+								<li><a href="#Hyphens">- Hyphens</a></li>
+								<li><a href="#Don’t Ignore the Domain">- Don’t Ignore the Domain</a></li>
+								<li><a href="#Read Between the Dots">- Read Between the Dots</a></li>
+								<li><a href="#What to Do Instead of Clicking">- What to Do Instead of Clicking</a></li>
+								<li><a href="#"></a></li>
+								<li><a href="#"></a></li>
 							</ol>
 							</h4>
 							<hr>
@@ -54,8 +65,9 @@
 								</div>
 								<div class="row">
 									<p>
-									<h4>Example of fraud advert.</h4>
-									Scammers asking for small sum of €100-€300 as necessary first deposit.  
+									<h4>Example of fraud advert</h4>
+									Easy loan offer. 
+									Scammers asking for small sum of €100-€300 as first deposit to open account.  
 									Looks like small sum if you promised of €10.000 €20.000 loan.
 									</p>
 								</div>
@@ -66,10 +78,10 @@
 								
 								<div class="row">
 									<div class="col-sm-6 col-sm-offset-0">
-										<img class="img-responsive img-thumbnail" src="/images/blog/scam2.jpg" alt="Scam. too good to be true">
+										<a href="/images/blog/scam2.jpg"><img class="img-responsive img-thumbnail" src="/images/blog/scam2.jpg" alt="Scam. too good to be true"></a>
 									</div>
 									<p>
-									<h4>Offer looks too good to be true.</h4>
+									<h4 id="Offer looks too good to be true">Offer looks too good to be true</h4>
 									Am I being promised money for little or no effort on my part?
 									Many offers are meant to compromise your security. Like easy loan offers, too cheap, unreal prices, etc..
 									Don’t interact with adverts promoting an offer that’s too good to be true. 
@@ -82,7 +94,7 @@
 										<img class="img-responsive img-thumbnail" src="/images/blog/scam3.jpg" alt="Scam. not provided phone number">
 									</div>
 									<p>
-									<h4>Seller not provided phone number.</h4>
+									<h4 id="Seller not provided phone number">Seller not provided phone number or phone number is wrong.</h4>
 									Only email provided in advert!? Be careful and examine advert if it is real more suspiciously.
 									Check the phone number if it is real and it is Irish number. 
 									Call the seller if possible and it is Irish phone number. (some scammers comes not from Ireland and dont know Irish phone codes and put random numbers.) 
@@ -93,9 +105,9 @@
 								
 								<div class="row">
 									<div class="col-sm-6 col-sm-offset-0">
-										<img class="img-responsive img-thumbnail" src="/images/blog/scam4.jpg" alt="Scam. Public email address">
+										<a href="/images/blog/scam4.jpg"><img class="img-responsive img-thumbnail" src="/images/blog/scam4.jpg" alt="Scam. Public email address"></a>
 									</div>
-									<h4>Public email Address</h4>
+									<h4 id="Public email Address">Public email Address</h4>
 									<p>
 									Reputable companies (particularly large organizations) 
 									generally do not use public email services like Gmail and Yahoo. Be alert for this possible trap.
@@ -105,10 +117,10 @@
 								
 								<div class="row">
 									<div class="col-sm-6 pull-right">
-										<img class="img-responsive img-thumbnail" src="/images/blog/froud1.jpg" alt="Online safety">
+										<img class="img-responsive img-thumbnail" src="/images/blog/check_spell.jpeg" alt="Online safety">
 									</div>
 									<p>
-									<h4>Poor grammar and spelling</h4>
+									<h4 id="Poor grammar and spelling">Poor grammar and spelling</h4>
 									The spelling and grammar problems in this email are warning signs. Legitimate companies generally do not make these kinds of mistakes.
 									</p>
 								</div>
@@ -116,9 +128,9 @@
 								
 								<div class="row">
 									<div class="col-sm-6 col-sm-offset-0">
-										<img class="img-responsive img-thumbnail" src="/images/blog/froud1.jpg" alt="Online safety">
+										<a href="/images/blog/deposit.png"><img class="img-responsive img-thumbnail" width="60%" src="/images/blog/deposit.png" alt="deposit"></a>
 									</div>
-									<h4>Seller asking for deposit.</h4>
+									<h4 id="Seller asking for deposit">Seller asking for deposit</h4>
 									<p>
 									Even if price and phone numbers are real. You can't trust seller 100%.<br>
 									Scammers mostly asking deposit in front for Pets, Cars, Money loans, job offers..<br>
@@ -132,10 +144,10 @@
 								
 								<div class="row">
 									<div class="col-sm-6 pull-right">
-										<img class="img-responsive img-thumbnail" src="/images/blog/froud1.jpg" alt="Online safety">
+										<a href="/images/blog/danger_link.png"><img class="img-responsive img-thumbnail" src="/images/blog/danger_link.png" alt="dangerous links"></a>
 									</div>
 									<p>
-									<h4>Dangerous links</h4>
+									<h4 id="Dangerous links">Dangerous links</h4>
 									Study links carefully before clicking; scammers use known brands to create realistic-looking links. This link is a trap; aib.payments211.ie is not the same as aib.ie
 									</p>
 								</div>
@@ -147,28 +159,28 @@
 								<br>
 								<div class="row">
 								<div class="col-sm-6 col-sm-offset-3">
-										<img class="img-responsive img-thumbnail" src="/images/blog/froud1.jpg" alt="Online safety">
+										<img class="img-responsive img-thumbnail" src="/images/blog/http_img.jpg" alt="Online safety">
 								</div>
 								</div>
 								<div class="row">
-									<h4>What Are the Dangers of Links?</h4>
+									<h4 id="What Are the Dangers of Links">What Are the Dangers of Links?</h4>
 									<p>
 									Trick you into visiting a fake website and entering your credentials for a well-known website<br>
 									Exploit your web browser to take control of your computer or download malicious code (like ransomware)
 									</p>
-									<h4>What is URL?</h4>
+									<h4 id="What is URL">What is URL?</h4>
 									<p>
 									URLs are the complete addresses to specific websites.<br>
 									www.easyads.ie/blog/Online-Safety-Tips
 									</p>
-									<h4>What is links?</h4>
+									<h4 id="What is links">What is links?</h4>
 									<p>
 									Links point to a specific URL. Links make URLs clickable.<br>
 									Links can point to URLs in clickable text.<br>
 									Links can also be displayed in full: https://www.easyads.ie<br>
 									Links can even be graphics or buttons: <button>Home</button>
 									</p>
-									<h4>What is domain name?</h4>
+									<h4 id="What is domain name">What is domain name?</h4>
 									<p>
 									http://www.easyads.ie/blog/<br>
 									The domain name in this example "easyads.ie" works like an online home address for a website.
@@ -180,7 +192,7 @@
 									</p>
 									<div class="row">
 										<div class="col-sm-6">
-											<h4>Shortened URLs</h4>
+											<h4 id="Shortened URLs">Shortened URLs</h4>
 											<p>
 											<div class="well well-sm" style="margin:5px;">http://bit1y.com/2P13uh2</div>
 											Shortened URLs are forwarding addresses for longer links. Attackers use link shortening tools on the Web to conceal a link’s true destination.
@@ -188,7 +200,7 @@
 											</p>
 										</div>
 										<div class="col-sm-6">
-											<h4>Number-based links</h4>
+											<h4 id="Number-based links">Number-based links</h4>
 											<p>
 											<div class="well well-sm" style="margin:5px;">http://194.135.86.241</div>
 											Scammers can use number-based URLs to hide malicious sites. If you don’t know exactly where a number-based URL goes, do not click it.
@@ -197,7 +209,7 @@
 									</div>
 									<div class="row">
 										<div class="col-sm-6">
-											<h4>Look-alikes</h4>
+											<h4 id="Look-alikes links">Look-alikes links</h4>
 											<p>
 											<div class="well well-sm" style="margin:5px;">
 											www.bankofireland.com<br>
@@ -207,7 +219,7 @@
 											</p>
 										</div>
 										<div class="col-sm-6">
-											<h4>Hyphens</h4>
+											<h4 id="Hyphens">Hyphens</h4>
 											<p>
 											<div class="well well-sm" style="margin:5px;">www.bank-of-ireland.com</div>
 											Attackers often add hyphens to official brand domains, creating malicious links.
@@ -216,7 +228,7 @@
 									</div>
 									<div class="row">
 										<div class="col-sm-6">
-											<h4>Don’t Ignore the Domain</h4>
+											<h4 id="Don’t Ignore the Domain">Don’t Ignore the Domain</h4>
 											<p>
 											<div class="well well-sm" style="margin:5px;">http://www.aib.payments211.ie/customers-validate/</div>
 											Carefully examining a URL can help you determine if the domain is a scam or legitimate. If you want to know where a URL really goes, 
@@ -224,7 +236,7 @@
 											</p>
 										</div>
 										<div class="col-sm-6">
-											<h4>Read Between the Dots</h4>
+											<h4 id="Read Between the Dots">Read Between the Dots</h4>
 											<p>
 											<div class="well well-sm" style="margin:5px;">http://aib.payments211.ie</div>
 											You can also start with the text to the right of the first dot after the :// payments211.ie is the true domain. It’s the site you’d visit if you click on the link. "aib" here is subdomain, that is can be any word. 
@@ -234,14 +246,22 @@
 									</div>
 								</div>
 								<div class="row">
-									<h4>What to Do Instead of Clicking</h4>
+									<h4 id="What to Do Instead of Clicking">What to Do Instead of Clicking</h4>
 									<p>
 									Only click on links if you’re trust them.
 									Make hovering over links a habit. Rest your cursor over the link and read the URL that appears in bottom of the page, but do not click the link.
 									Use your favorite search engine to verify the site. When you search for a fraudulent domain, the top result’s domain should match what you’ve entered.
 									</p>
 								</div>
-								<br><hr>
+								<div class="row">
+									<div class="col-sm-4 col-sm-offset-4">
+										<a href="http://www.easyads.ie">
+										<img class="img-responsive" src="/images/blog/easyads.png" alt="easyads">
+										</a>
+									</div>
+								</div>
+								<hr>
+								
 								
 								
 								
