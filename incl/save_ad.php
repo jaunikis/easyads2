@@ -34,6 +34,7 @@ if($saved_ads!==''){
 if(count($arr)>1){$saved_ads=implode(',',$arr);}else{$saved_ads=$arr[0];}
 $sql="UPDATE users SET saved='$saved_ads' WHERE email='$email'";
 sqlconnect($sql);
+$_SESSION['saved']=$saved_ads;
 //if (!$result = $conn->query($sql)) {echo "Sorry, the website is experiencing problems.";}else{$_SESSION['saved']=$saved_ads;}
 
 //$perziureta++;

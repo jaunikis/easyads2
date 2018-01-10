@@ -51,7 +51,7 @@
 	  <link href="/css/style2-2.css" rel="stylesheet">
 	  <!-- favourites, myads CSS -->
       <link href="/css/myfav.css" rel="stylesheet">
-      <!-- Owl Carousel -->
+      <!-- Owl Carousel 
       <link rel="stylesheet" href="/plugins/owl-carousel/owl.carousel.css">
       <link rel="stylesheet" href="/plugins/owl-carousel/owl.theme.css">
       <!-- Font Awesome   -->
@@ -61,30 +61,11 @@
    </head>
 
 <body>
-<!-- facebook sdk app id -->
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '113602379360573',
-      xfbml      : true,
-      version    : 'v2.10'
-    });
-    FB.AppEvents.logPageView();
-  };
 
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
-<img style="display:none" src="/images/fblogo.jpg">
- <div id="fb-root"></div>
+
  
 <?php
-require('head_home.php');
+//require('head_home.php');
 require('top_nav.php');
 $_SESSION['heading']='Blog';
 require('breadcumb.php');
