@@ -1,12 +1,5 @@
-      <!-- TrustBox widget - Micro Review Count -->
-<div class="trustpilot-widget" data-locale="en-GB" data-template-id="5419b6a8b0d04a076446a9ad" data-businessunit-id="5a521809b894c90c84c0c2c3" data-style-height="20px" data-style-width="100%" data-theme="light">
-<a href="https://uk.trustpilot.com/review/easyads.ie" target="_blank">Trustpilot</a>
-</div>
-<!-- End TrustBox widget -->
-	 
-	 <!-- Footer -->
+     <!-- Footer -->
       <footer>
-	  
          <section class="footer-Content">
             <div class="container">
                <div class="row">
@@ -25,12 +18,13 @@
                         <h3 class="block-title">Quick Links</h3>
                         <ul class="menu">
                            <li><a href="home">Home</a></li>
-                           <li><a href="">About</a></li>
+                           <li><a href="about">About</a></li>
                            <li><a href="faq">FAQ</a></li>
-                           
+                           <li><a href="careers">Careers</a></li>
+                           <li><a href="pricing">Pricing Plans</a></li>
                            <li><a href="items">Categories</a></li>
-                           
-                           <li><a href="">Team</a></li>
+                           <li><a href="services">Services</a></li>
+                           <li><a href="team">Team</a></li>
                            <li><a href="contact">Contact</a></li>
                            <li><a href="blog">Blog</a></li>
                            <li><a href="faq">Help</a></li>
@@ -80,14 +74,6 @@
 	
 	?>
 			   <center>
-<p>	   
-<!-- TrustBox widget - Review Collector -->
-<div class="trustpilot-widget" data-locale="en-GB" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="5a521809b894c90c84c0c2c3" data-style-height="52px" data-style-width="100%">
-<a href="https://uk.trustpilot.com/review/easyads.ie" target="_blank">Trustpilot</a>
-</div>
-<!-- End TrustBox widget -->
-</p><br>
-			   
 			   <p>
 			   <div class="badge">Visits today: <?php echo $today;?></div>
 			   <div class="badge">Visits tootal: <?php echo $tootal+5653;?></div>

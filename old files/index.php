@@ -136,11 +136,10 @@ case 'items':
       
       <!-- Custom js--> 
       <script src="/js/custom.js"></script>
-      <!-- Bootstrap JavaScript-->
-	  <script src="/js/bootstrap.min.js"></script>  
-	  
-	  
-
+      <!-- Bootstrap JavaScript <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>  
+	  -->
+<script src="/js/bootstrap.min.js"></script> 
+      
       <!-- Owl Carousel -->
       <script src="/plugins/owl-carousel/owl.carousel2.js"></script>
 

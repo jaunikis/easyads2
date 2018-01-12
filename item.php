@@ -119,7 +119,7 @@ $cat2=addslashes($cat2);
                               </div>
                               <div class="item-img-grid">
                                  <div class="favourite-icon">
-                                    <a class="fav-btn" onclick="save_ad(this,<?php echo $id;?>)" title="" data-placement="bottom" data-toggle="tooltip" data-original-title="Save Ad"><?php echo $saved; ?> <i class="fa fa-heart"></i></a>
+                                    <a style="cursor:pointer;" class="fav-btn" onclick="save_ad(this,<?php echo $id;?>)" title="" data-placement="bottom" data-toggle="tooltip" data-original-title="Save Ad"><?php echo $saved; ?> <i class="fa fa-heart"></i></a>
                                  </div>
 								 
 							
