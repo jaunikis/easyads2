@@ -43,12 +43,10 @@ $des.=' for sale in '.$location;}
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="<?php echo $des;?>">
+    <meta name="description" content="Free adverts in Ireland. All <?php echo $des;?>, classified ads list.">
     <meta name="author" content="Marius Vorosilovas">
 	  
-	<meta name="keywords" content="<?php echo $des;?>, buy, adverts, free ads, antiques, arts and crafts, baby and
-	nursery, cars, clothes, shoes, computers, tablets, iPads, consoles, games, appliances, DVD, Electronics, Home and Garden, Furniture, DIY, marketplace,
-	watches, jobs, phones, instruments, musical equipment, bikes, cameras, toys, property, sports and fitness, tickets, wedding, tools">
+	<meta name="keywords" content="<?php echo $des;?>, adverts in ireland, classified list">
 	
 	
 	<meta name="geo.country" content="IE">
@@ -60,7 +58,7 @@ $des.=' for sale in '.$location;}
 	
 	
 	
-    <title><?php echo $des;?></title>
+    <title><?php echo $des;?> | easyads.ie</title>
       
 	<script src="/js/jquery-3.2.1.js"></script>
 	  
@@ -82,6 +80,9 @@ $des.=' for sale in '.$location;}
       <!-- Font Awesome   -->
       <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	  
+	 <!-- TrustBox script -->
+<script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+<!-- End Trustbox script -->
 	 
    </head>
 

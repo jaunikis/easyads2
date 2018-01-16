@@ -64,7 +64,7 @@ function generateRandomString($length = 10) {
     return substr(str_shuffle(str_repeat($x='123456789abcdefghijklmnopqrstuvwxyz', ceil($length/strlen($x)) )),1,$length);
 }
 
-$ad_code=generateRandomString(6);
+$ad_code=generateRandomString(5);
 
 $valid_till=intval($timestamp2+(86400*180));
 
@@ -96,7 +96,7 @@ if($ad_count>2){if($active=='Active'){$active='';}$active.='to_many';}
 //if country !=Ireland {not active}
 if($country!='Ireland' && $country!='United Kingdom'){if($active=='Active'){$active='';}$active.='country';}
 
-	
+/*
 if($active!='Active'){
 	$sql="UPDATE skelbimai SET active='$active' WHERE id='$ad_id'";
 	sqlconnect($sql);
@@ -108,6 +108,7 @@ if($active!='Active'){
 		$_SESSION['mail_timestamp']=$timestamp2;
 	}
 }
+*/
 
 //siunciam email kiekvienam skelbimui
 $mail_timestamp=0;
@@ -116,7 +117,8 @@ if(isset($_SESSION['mail_timestamp'])){$mail_timestamp=$_SESSION['mail_timestamp
 if($mail_timestamp<$timestamp2-60 && $ip!='127.0.0.1'){
 	$msg='<b>Ad Id:</b> '.$ad_id.'<br>'.'<b>ip:</b> '.$ip.'<br>'.'<b>Country: </b>'.$country.'<br>';
 	$msg.='<img width="200px" src="http://www.easyads.ie/ads_images/'.$images1file[$cover].'"></img><br>';
-	$msg.='<hr>'.$title.'<br>'.$description.'<br><br>'.$currency.$price.'<br><br>'.$name.'<br>'.$phone;
+	$msg.='<p>'.$cat1.' '.$cat2;
+	$msg.='<hr><b>'.$title.'</b><br>'.$description.'<br><br>'.$currency.$price.'<br><br>'.$name.'<br>'.$phone;
 	send_mail('easyads.ie '.$active.' ad.',$msg);
 	//echo $msg;
 	$_SESSION['mail_timestamp']=$timestamp2;

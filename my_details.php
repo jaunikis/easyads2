@@ -21,8 +21,14 @@
                               <label class="col-sm-3 control-label">Phone Number </label>
                               <div class="col-sm-9">
                                  <div class="input-group">
-                                    <input name="phone" type="text" class="form-control border-form" value="<?php if(isset($_SESSION['phone'])){echo $_SESSION['phone'];}?>" required="required" placeholder="e.g. 123456789">
+                                    <input name="phone" type="text" class="form-control border-form" value="<?php if(isset($_SESSION['phone'])){echo $_SESSION['phone'];}?>" placeholder="e.g. 123456789">
                                  </div>
+                              </div>
+                           </div>
+						   <div class="form-group">
+                              <label class="col-sm-3 control-label">Website </label>
+                              <div class="col-sm-9">
+                                 <input name="website" class="form-control border-form" type="text" value="<?php if(isset($_SESSION['website'])){echo $_SESSION['website'];}?>" placeholder="e.g. www.yoursite.com">
                               </div>
                            </div>
                            <div class="form-group">
@@ -55,14 +61,18 @@
                               </div>
 							  <div id="images-div"></div>
                            </div>
+				<?php
+				if($password!=''){
+				?>
 						   <div id="pass1" class="form-group">
                               <label class="col-sm-3 control-label">Old Password <span class="required">*</span></label>
                               <div class="col-sm-9">
-                                 <input onkeyup="check_password(this.value)" name="old_password" class="form-control border-form" type="password" value="" placeholder="Enter Password">
+                                 <input onkeyup="check_password(this.value)" name="old_password" class="form-control border-form" type="password" placeholder="Enter Password">
 								<span id="pass2" class=""></span>
-								<div id="test"></div>
+								
 							  </div>
                            </div>
+				<?php }?>
                            <div class="form-group">
                               <label class="col-sm-3 control-label">New Password </label>
                               <div class="col-sm-9">

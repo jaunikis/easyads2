@@ -40,7 +40,14 @@
                         </div>
 						</form>
                      </div>
+					 <br><br>
+						<div style="display:block;margin:auto;text-align:center;">Or</div>
+						<div class="login-with-sites">
+							<button id="login_fb" onclick="login()" class="btn-facebook login-icons btn-lg btn-block"> <i class="fa fa-facebook"></i> Login With Facebook</button>
+				<!--		<button class="btn-google login-icons btn-lg btn-block"> <i class="fa fa-google"></i> Login With Google</button>  -->
+						</div>
                   </div>
+				  
                   <p class="text-center"><a href="/login"><strong>Have an account? </strong></a></p>
                </div>
             </div>

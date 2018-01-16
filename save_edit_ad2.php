@@ -1,11 +1,32 @@
 <?php
 require_once ('incl/server.php');
+require_once ('incl/mail.php');
 session_start();
 
 $date = new DateTime();$timestamp2=$date->getTimestamp();
 $tdate=date("d/m/Y");
 $time=date("H:i:sa");
-$ip=$_SERVER['REMOTE_ADDR'];
+
+//get ip address
+if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+			$ip = $_SERVER['HTTP_CLIENT_IP'];
+		} elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+			$ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+		} else {
+			$ip = $_SERVER['REMOTE_ADDR'];
+		}
+
+$browser=$_SERVER['HTTP_USER_AGENT'];
+
+//getting country, city
+	$country='';//$city='';$countryCode='';
+	if($ip!='127.0.0.1'){
+		$query = @unserialize(file_get_contents('http://ip-api.com/php/'.$ip));
+		if($query && $query['status'] == 'success') {
+			$country=$query['country'];
+		}
+	}else{$country='Ireland';}
+
 $user='test user';
 $cat1='cat1';$cat2='cat2';
 $make='';$model='';$year=0;$fuel='';$condition='';
@@ -13,7 +34,7 @@ $price='';$location='All';
 $images=[''];$cover=0;
 $name='';$email='';$phone='';
 $transmission='';$bodyType='';$color='';
-$description='';
+$description='';$active='';
 
 if(isset($_POST['cover'])){$cover=$_POST['cover'];if($cover==''){$cover=0;}}
 if(isset($_POST['title'])){$title=strip_tags(addslashes($_POST['title']));}
@@ -33,6 +54,8 @@ if(isset($_POST['name'])){$name=strip_tags(addslashes($_POST['name']));}
 if(isset($_POST['email'])){$email=strip_tags(addslashes($_POST['email']));}
 if(isset($_POST['phone'])){$phone=strip_tags(addslashes($_POST['phone']));}
 if(isset($_POST['ad_id'])){$ad_id=$_POST['ad_id'];}
+if(isset($_POST['active'])){$active=$_POST['active'];}
+
 
 if(isset($_SESSION['user'])){$user=$_SESSION['user'];}
 
@@ -117,14 +140,14 @@ $sql="UPDATE images SET cover='cover' WHERE images1file='$coveris'";
 $res=sqlconnect($sql);
 
 //tikriname keiksmazodzius
-$active='Active';
+//$active='Active';
 require_once ('incl/swear.php');
 if($active!='Active'){	
 	$mail_timestamp=0;
 	if(isset($_SESSION['mail_timestamp'])){$mail_timestamp=$_SESSION['mail_timestamp'];}
 	if($mail_timestamp<$timestamp2-360){
-		$msg='<b>Ad Id:</b> '.$ad_id.'<br>'.'<b>ip:</b> '.$ip.'<br>';
-		send_mail('easyads.ie '.$active,$msg);
+		$msg='<h4>Edited Ad.</h4><br><b>Ad Id:</b> '.$ad_id.'<br>'.'<b>ip:</b> '.$ip.'<br><b>Country: </b>'.$country.'<br><b>Browser: </b>'.$browser.'<br><h2>'.$title.'</h2><p>'.$description.'</p>';
+		send_mail('Edited Ad. easyads.ie '.$active,$msg);
 		$_SESSION['mail_timestamp']=$timestamp2;
 	}
 }

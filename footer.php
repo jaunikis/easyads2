@@ -1,6 +1,6 @@
       <!-- TrustBox widget - Micro Review Count -->
 <div class="trustpilot-widget" data-locale="en-GB" data-template-id="5419b6a8b0d04a076446a9ad" data-businessunit-id="5a521809b894c90c84c0c2c3" data-style-height="20px" data-style-width="100%" data-theme="light">
-<a href="https://uk.trustpilot.com/review/easyads.ie" target="_blank">Trustpilot</a>
+<a href="https://uk.trustpilot.com/review/easyads.ie" target="_blank"></a>
 </div>
 <!-- End TrustBox widget -->
 	 
@@ -14,8 +14,8 @@
                      <div class="footer-widget">
                         <h3 class="block-title">About</h3>
                         <div class="textwidget">
-							<p style="margin-bottom:15px;"> <span style="color:steelBlue;font-size:16px;">Easyads.ie</span> is easy and <strong><a href="post_ad">free</a></strong> classified website.</p>
-						   <p>Easyads.ie is all about you. Our aim is to empower every person in Ireland to independently connect with buyers and sellers online. We care about you — and the transactions that bring you closer to your dreams. Want to buy your first car? We’re here for you. Want to sell commercial property to buy your dream home? We’re here for you. Whatever job you’ve got, we promise to get it done.</p>
+							<p style="margin-bottom:15px;"> <span style="color:steelBlue;font-size:16px;">Easyads.ie</span> is quick, easy and <strong><a href="post_ad">free</a></strong> classified website.</p>
+						   <p>Easyads.ie is all about you. Our aim is to empower every person in Ireland to independently connect with buyers and sellers online. We care about you — and the transactions that bring you closer to your dreams. Want to buy your car? We’re here for you. Want to sell commercial property to buy your dream home? We’re here for you. Whatever job you’ve got, we promise to get it done.</p>
 						 
                         </div>
                      </div>
@@ -24,17 +24,18 @@
                      <div class="footer-widget">
                         <h3 class="block-title">Quick Links</h3>
                         <ul class="menu">
-                           <li><a href="home">Home</a></li>
-                           <li><a href="">About</a></li>
-                           <li><a href="faq">FAQ</a></li>
+                           <li><a href="/home">Home</a></li>
+                           <li><a href="/">About</a></li>
+                           <li><a href="/faq">FAQ</a></li>
                            
-                           <li><a href="items">Categories</a></li>
+                           <li><a href="/items">Categories</a></li>
                            
                            <li><a href="">Team</a></li>
-                           <li><a href="contact">Contact</a></li>
-                           <li><a href="blog">Blog</a></li>
-                           <li><a href="faq">Help</a></li>
-                           <li><a href="post_ad">Advertise With Us</a></li>
+                           <li><a href="/contact">Contact</a></li>
+                           <li><a href="/blog">Blog</a></li>
+                           <li><a href="/faq">Help</a></li>
+						   <li><a href="/blog/Online-Safety-Tips">Safety Tips</a></li>
+                           <li><a href="/post_ad">Advertise With Us</a></li>
                         </ul>
                      </div>
                   </div>
@@ -83,7 +84,7 @@
 <p>	   
 <!-- TrustBox widget - Review Collector -->
 <div class="trustpilot-widget" data-locale="en-GB" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="5a521809b894c90c84c0c2c3" data-style-height="52px" data-style-width="100%">
-<a href="https://uk.trustpilot.com/review/easyads.ie" target="_blank">Trustpilot</a>
+<a href="https://uk.trustpilot.com/review/easyads.ie" target="_blank">Review us on Trustpilot</a>
 </div>
 <!-- End TrustBox widget -->
 </p><br>
@@ -97,7 +98,7 @@
                      <div class="site-info text-center">
                         <div class="fb-share-button" data-source="/images/logo.png" data-href="http://www.easyads.ie" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Share</a></div>
 						<br><br>
-						<span style="font-size:10px;">All Copyrights Reserved @ 2017 - Made by <a href="#">mvmedia</a></span>
+						<span style="font-size:10px;">All Copyrights Reserved @ 2018 - Made by <a href="#">mvmedia</a></span>
 						<br>
 						
 						
@@ -119,11 +120,11 @@
 	
             </div>
 			 
-		</center>
+		
          </div>
 		 
 		 <div class="fb-like" style="position:absolute;padding:16px;" data-share="true" data-width="60" data-show-faces="true"></div>
-				
+		</center>	
       </footer>
       <!-- End Footer -->
     

@@ -21,14 +21,15 @@ $result=sqlconnect($sql);
 //$conn = new mysqli($servername, $username, $password,$dbname);
 //if ($conn->connect_errno) {echo "Sorry, this website is experiencing problems.";exit;}
 //if (!$result = $conn->query($sql)) {echo "Sorry, the website is experiencing problems.";}
+$saved_ads='';
 $row = $result->fetch_assoc();
 $saved_ads=$row['saved'];
 if($saved_ads!==''){
 	$arr=explode(',',$saved_ads);
 	$sa=array_search($id,$arr);
-	if($sa=='' && $sa!==0){$arr[]+=$id;$perziureta++;}
-		
-	}else{$arr=array($id);}
+	if($sa=='' && $sa!==0){$arr[]+=$id;$perziureta++;}	
+}else{$arr=array($id);$perziureta++;}
+
 
 //$saved_ads=$sa;
 if(count($arr)>1){$saved_ads=implode(',',$arr);}else{$saved_ads=$arr[0];}

@@ -11,58 +11,61 @@
 if(!isset($_SESSION['user_id'])){$_SESSION['link']='/my_ads';echo('<script>window.location = "/login";</script>');exit;}
 
 $user_id=$_SESSION['user_id'];
-require_once ('/incl/server.php');
+require_once ('incl/server.php');
 require_once ('incl/elapsed.php');
-if(isset($_SESSION['saved'])){$saved=$_SESSION['saved'];}else{$saved='';}
+//if(isset($_SESSION['saved'])){$saved=$_SESSION['saved'];}else{$saved='';}
 //echo $saved;
-$sql="SELECT * FROM skelbimai WHERE id IN ($saved) ORDER BY id DESC";
-//$sql="SELECT * FROM skelbimai";
-$result=sqlconnect($sql);
-while ($row = $result->fetch_assoc()) {
-				$id=$row['id'];
-				$title=$row['title'];
-				$cover=$row['cover1file'];if($cover==''){$cover='ads_images/no-image.png';}
-				$price=$row['price'];
-				$location=$row['location'];
-				$timestamp=$row['timestamp'];
-				$description=$row['description'];
-				$make=$row['make'];
-				$model=$row['model'];
-				$timestamp2=$row['timestamp2'];
-				$cat1=$row['cat1'];
-				$cat2=$row['cat2'];
-				$active=$row['active'];
-?>
-   <div class="remas">
-     
-			
-		<img class="list-image" src="<?php echo 'ads_images/'.$cover; ?>" class="" alt="<?php echo $title;?>">
-	
-	
-		<div class=""><a href="/items?item=<?php echo $id; ?>"><strong><?php echo $title;?></strong></a></div>
-                                    <div class="">
-										<div><span class=""><?php echo substr($description, 0, 44); ?>...</span></div>
-									
-                                          <span class=""><i class="fa fa-clock-o"></i> <?php echo elapsed($timestamp2); ?> |</span>
-                                          <span class=""><a href="#"><i class="fa fa-map-marker"></i> <?php echo $location;?></a> |</span>
-										  <span class=""><strong>€<?php echo $price;?></strong></span>
-							</div>
-							
-										 
+
+if($saved!=''){
+	$sql="SELECT * FROM skelbimai WHERE id IN ($saved) ORDER BY id DESC";
+	//$sql="SELECT * FROM skelbimai";
+	$result=sqlconnect($sql);
+	while ($row = $result->fetch_assoc()) {
+					$id=$row['id'];
+					$title=$row['title'];
+					$cover=$row['cover1file'];if($cover==''){$cover='ads_images/no-image.png';}
+					$price=$row['price'];
+					$location=$row['location'];
+					$timestamp=$row['timestamp'];
+					$description=$row['description'];
+					$make=$row['make'];
+					$model=$row['model'];
+					$timestamp2=$row['timestamp2'];
+					$cat1=$row['cat1'];
+					$cat2=$row['cat2'];
+					$active=$row['active'];
+	?>
+	   <div class="remas">
+		 
+				
+			<img class="list-image" src="<?php echo 'ads_images/'.$cover; ?>" class="" alt="<?php echo $title;?>">
+		
+		
+			<div class=""><a href="/items?item=<?php echo $id; ?>"><strong><?php echo $title;?></strong></a></div>
+										<div class="">
+											<div><span class=""><?php echo substr($description, 0, 44); ?>...</span></div>
 										
-										<div class="skelbimo-status">
-										Status: <?php if($active=='Active'){echo '<b><span style="color:green">'.$active.'</span></b>';}else{echo '<b><span style="color:orange">'.$active.'</span></b>';}?>
+											  <span class=""><i class="fa fa-clock-o"></i> <?php echo elapsed($timestamp2); ?> |</span>
+											  <span class=""><a href="#"><i class="fa fa-map-marker"></i> <?php echo $location;?></a> |</span>
+											  <span class=""><strong>€<?php echo $price;?></strong></span>
+								</div>
 								
-							<span> | </span>
-										
-											<span class="" data-placement="top" data-toggle="tooltip" onclick="unfavourite(<?php echo $id; ?>,this)" data-original-title="Unfavourite">Unsave <i class="fa fa-close"></i></span>
-										</div>
-                                       
-	
-	
-   </div>    
- 
+											 
+											
+											<div class="skelbimo-status">
+											Status: <?php if($active=='Active'){echo '<b><span style="color:green">'.$active.'</span></b>';}else{echo '<b><span style="color:orange">'.$active.'</span></b>';}?>
+									
+								<span> | </span>
+											
+												<span style="cursor:pointer;" data-placement="top" data-toggle="tooltip" onclick="unfavourite(event,<?php echo $id; ?>,this)" data-original-title="Unfavourite">Unsave <i class="fa fa-close"></i></span>
+											</div>
+										   
+		
+		
+	   </div>    
+	 
 <?php
+	}
 }
 ?>
                            
@@ -75,7 +78,7 @@ while ($row = $result->fetch_assoc()) {
 	  <div id="wait" style="display:none;width:69px;height:89px;border:1px solid black;position:absolute;top:50%;left:50%;padding:2px;"><img src='/images/loading3.gif' width="64" height="64" /><br>Loading..</div>
 	  
 <script>
-function unfavourite(a,th){
+function unfavourite(event,a,th){
 //alert(a);
 var hr = new XMLHttpRequest();
 		// Create some variables we need to send to our PHP file
@@ -90,7 +93,7 @@ var hr = new XMLHttpRequest();
 
 			if(hr.readyState == 4 && hr.status == 200) {
 				var return_data = hr.responseText;
-				var p=th.parentNode.parentNode.parentNode;
+				var p=th.parentNode.parentNode;
 				p.parentNode.removeChild(p);
 				//alert(return_data);
 				wait.style.display="none";
@@ -98,6 +101,11 @@ var hr = new XMLHttpRequest();
 		}
 		// Send the data to PHP now... and wait for response to update the status div
 		hr.send(vars); // Actually execute the request
+		var yy = event.clientY;
+		var top = $(window).scrollTop();
+		//alert(top);
+		var y=top+yy-6;
+		wait.style.top=y+"px";
 		wait.style.display="block";
 }
 </script>

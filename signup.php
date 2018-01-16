@@ -57,22 +57,63 @@
 <body>
 <!-- facebook sdk app id -->
 <script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '113602379360573',
-      xfbml      : true,
-      version    : 'v2.10'
-    });
-    FB.AppEvents.logPageView();
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
+ // initialize and setup facebook js sdk
+		window.fbAsyncInit = function() {
+		    FB.init({
+		      appId      : '113602379360573',
+		      xfbml      : true,
+		      version    : 'v2.5'
+		    });
+		    //FB.getLoginStatus(function(response) {
+		    //	if (response.status === 'connected') {
+		    //		document.getElementById('status').innerHTML = 'We are connected.';
+		    //		document.getElementById('login_fb').style.visibility = 'hidden';
+		    //	} else if (response.status === 'not_authorized') {
+		    //		document.getElementById('status').innerHTML = 'We are not logged in.'
+		    //	} else {
+		    //		document.getElementById('status').innerHTML = 'You are not logged into Facebook.';
+		    //	}
+		    //});
+		};
+		(function(d, s, id){
+		    var js, fjs = d.getElementsByTagName(s)[0];
+		    if (d.getElementById(id)) {return;}
+		    js = d.createElement(s); js.id = id;
+		    js.src = "//connect.facebook.net/en_US/sdk.js";
+		    fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+		
+		// login with facebook with extra permissions
+		function login() {
+			FB.login(function(response) {
+				if (response.status === 'connected') {
+					getInfo();
+		    	} else if (response.status === 'not_authorized') {
+		    		alert('You are not logged in.');
+		    	} else {
+		    		alert('You are not logged into Facebook.');
+		    	}
+			}, {scope: 'email'});
+		}
+		
+		// getting basic user info
+		function getInfo() {
+			FB.api('/me', 'GET', {fields: 'first_name,last_name,name,email,id,picture.width(150).height(150)'}, function(response) {
+				$.post("fb-login2.php",
+					{
+						secret: '425611',
+						id: response.id,
+					  first_name: response.first_name,
+					  last_name: response.last_name,
+					  email: response.email
+					},
+					function(data,status){
+						//alert("Data: " + data + "\nStatus: " + status);
+						if(data=='ok'){window.location.replace("/my_ads");}
+					});
+				});
+				
+		}
 </script>
 
 

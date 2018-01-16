@@ -46,11 +46,15 @@ while ($row = $result_my_ads->fetch_assoc()) {
                              <div class="skelbimo-status">
 								Status: <?php if($active=='Active'){echo '<b><span style="color:green">'.$active.'</span></b>';}else{echo '<b><span style="color:orange">'.$active.'</span></b>';}?>
 								<span> |  </span>
-								 <?php if($active=='Active'){echo '<span style="cursor:pointer;" onclick="enable_disable('.$id.',this) "class="label label-warning" title="" data-placement="top" data-toggle="tooltip" data-original-title="Disable">Disable: <i class="fa fa-close"></i></span>';}
+								 <?php 
+								if($active=="Active" || $active=="Not active"){
+								 if($active=='Active'){echo '<span style="cursor:pointer;" onclick="enable_disable('.$id.',this) "class="label label-warning" title="" data-placement="top" data-toggle="tooltip" data-original-title="Disable">Disable: <i class="fa fa-close"></i></span>';}
 										else{echo '<span style="cursor:pointer;" onclick="enable_disable('.$id.',this)" class="label label-success" title="" data-placement="top" data-toggle="tooltip" data-original-title="Enable">Enable: <i class="fa fa-check"></i></span>';
 										}
+									echo '<span> | </span>';
+								}
 								?>
-							<span> | </span>
+							
 							<a href="/edit?id=<?php echo $id;?>"><span style="cursor:pointer;" class="label label-primary" title="" data-placement="top" data-toggle="tooltip" data-original-title="Edit Ad">Edit: <i class="fa fa-pencil"></i></span></a>
 							<span> | </span>
 							<span style="cursor:pointer;" class="label label-danger" onclick="delete_ad(<?php echo $id; ?>,this)" title="" data-placement="top" data-toggle="tooltip"  data-original-title="Delete"><i class="fa fa-trash"></i></span>

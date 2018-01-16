@@ -2,12 +2,12 @@ RewriteEngine ON
 
 RewriteRule ^(all)(/)?$ /items [R]
 
+
 RewriteRule ^([a-zA-Z0-9_-]+)(/)?$ /index.php?pageid=$1
 RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)(/)?$ /index.php?projectid=$1&do1=$2
 RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)(/)?$ /index.php?projectid=$1&do1=$2&do2=$3
 RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)(/)?$ /index.php?projectid=$1&do1=$2&do2=$3&do3=$4
 RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)(/)?$ /index.php?projectid=$1&do1=$2&do2=$3&do3=$4&do4=$5
-
 
 
 ErrorDocument 404 /404.php

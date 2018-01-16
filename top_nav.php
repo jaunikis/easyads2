@@ -9,7 +9,7 @@
                <span class="icon-bar"></span>
                <span class="icon-bar"></span>
                </button>
-               <a class="navbar-brand" href="/"><img itemprop="image" alt="easyads.ie logo" src="/images/logo2.png" ></a>
+               <a class="navbar-brand" href="/"><img itemprop="image" alt="easyads logo" src="/images/logo2.png" ></a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                <ul class="nav navbar-nav">
@@ -19,7 +19,7 @@
                   <li><a href="/blog">Blog</a></li>
                   <li><a href="/faq">FAQ</a></li>
 				  <li><a href="/contact">Contact</a></li>
-                  <li><a href="/post.php"><button class="btn btn-success" type="submit"><i class="fa fa-save"></i> Post Free Ad</button></a></li>
+                  <li><a href="/post"><button class="btn btn-success" type="submit"><i class="fa fa-save"></i> Post Free Ad</button></a></li>
                </ul>
 			   
 		   

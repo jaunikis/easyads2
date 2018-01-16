@@ -12,7 +12,7 @@ $json = json_decode($string, true);
          <div class="container">
             <div class="row">
                <div class="main-search-box text-center">
-                  <h1 class="intro-title">Ireland's number one fast growing classifieds website</h1>
+                  <h1 class="intro-title">Free Local Classified Ads in Ireland</h1>
                   <h2 class="sub-title">Buy and sell everything from used cars to mobile phones and computers, or search for property, jobs and more</h2>
                   
 					<div class="home_banner">

@@ -40,13 +40,13 @@ if($active!='Active' && $user_email!='admin'){exit('<p><center><h3>This advert i
 ?>
                      <div id="similar" class="widget listing-filter-block">
                         <div class="widget-header">
-                           <h1>Similar ads</h1>
+                           <h2>Similar ads</h2>
                         </div>
                         <div class="widget-body">
 <?php
 $cat2=addslashes($cat2);
 			require_once ('incl/server.php');
-			$sql="SELECT id,title,price,currency,cover1file FROM skelbimai WHERE active='Active' AND cat2='$cat2' ORDER BY timestamp2 DESC LIMIT 5";
+			$sql="SELECT cat1,id,title,price,currency,cover1file FROM skelbimai WHERE active='Active' AND cat2='$cat2' ORDER BY timestamp2 DESC LIMIT 5";
 			$result=sqlconnect($sql);
 			while ($row = $result->fetch_assoc()) {
 				$id2=$row['id'];
@@ -54,9 +54,10 @@ $cat2=addslashes($cat2);
 				$cover2=$row['cover1file'];if($cover2==''){$cover2='no-image.png';}
 				$price2=$row['price'];
 				$currency2=$row['currency'];
+				$cat11=$row['cat1'];
 ?>
 						   <div class="similar-ads">
-                              <a href="/items/<?php echo clean_string_url($title2);?>?item=<?php echo $id2;?>">
+                              <a href="/items<?php if($cat11!=''){echo '/'.clean_string_url($cat11);} if($cat2!=''){echo '/'.clean_string_url($cat2);}?>/<?php echo clean_string_url($title2);?>?item=<?php echo $id2;?>">
                                  <div class="similar-ad-left">
                                     <img class="img-responsive img-center" src="<?php echo '/ads_images/'.$cover2;?>" alt="<?php echo strip_tags($title2);?>">
                                  </div>
@@ -106,7 +107,7 @@ $cat2=addslashes($cat2);
 						  </div>
                               <div class="item-title">
                                  
-                                    <h2><?php echo $title;?></h2>
+                                    <h1><?php echo $title;?></h1>
                                  
                                  <div class="item-meta">
                                     <ul>
@@ -119,7 +120,7 @@ $cat2=addslashes($cat2);
                               </div>
                               <div class="item-img-grid">
                                  <div class="favourite-icon">
-                                    <a style="cursor:pointer;" class="fav-btn" onclick="save_ad(this,<?php echo $id;?>)" title="" data-placement="bottom" data-toggle="tooltip" data-original-title="Save Ad"><?php echo $saved; ?> <i class="fa fa-heart"></i></a>
+                                    <a style="cursor:pointer;" class="fav-btn" onclick="save_ad(event,this,<?php echo $id;?>)" title="" data-placement="bottom" data-toggle="tooltip" data-original-title="Save Ad"><?php echo $saved; ?> <i class="fa fa-heart"></i></a>
                                  </div>
 								 
 							
@@ -260,16 +261,26 @@ echo '<div class="item"><a onclick="large_photos('.$i.');" style="cursor:zoom-in
 					}
 					?>
 							<!--<button onclick="send_msg('<?php echo $email;?>');" class="btn btn-warning btn-block"><i class="fa fa-envelope"></i> Send Message</button>-->
+						
+						   
 						   </div>
                         </div>
                      </div>
                   </div>
                   <div class="widget listing-filter-block filter-categories">
                      <div class="widget-header">
-                        <h1>Safety Tips</h1>
+                        <h2>Safety Tips</h2>
                      </div>
                      <div class="widget-body">
+					 <div>
+						<a href="/blog/Online-Safety-Tips"><img src="/images/avoid fraud ads.jpg" alt="Avoid fraud ads"></a>
+					</div>
+					<hr>
+					
                         <ul class="trends">
+						<?php
+						if($cat2=='Cars'){
+						?>
 							<li><i class="fa fa-check" aria-hidden="true"></i> Don't view a car in the rain, in poor light or at night</li>
 							<li><i class="fa fa-check" aria-hidden="true"></i> Ask about service history</li>
 							<li><i class="fa fa-check" aria-hidden="true"></i> Test drive</li>
@@ -277,9 +288,13 @@ echo '<div class="item"><a onclick="large_photos('.$i.');" style="cursor:zoom-in
 							<li><i class="fa fa-check" aria-hidden="true"></i> Don't be pressured into buying</li>
 							<li><i class="fa fa-check" aria-hidden="true"></i> Have the Car Inspected</li>
 							<hr>
-                           <li><a href="http://www.citizensinformation.ie/en/consumer_affairs/motoring/advice_on_buying_a_used_car_in_ireland.html"><i class="fa fa-fw fa-key"></i> Buying a used car</li>
-							<li><a href="http://www.mywheels.ie/buying-privately-top-5-tips/"><i class="fa fa-fw fa-key"></i> 5 Tips Buying used car</li>
-							<li><a href=""><svg src="http://www.w3.org/2000/svg"></a></li>
+                           <li><a href="http://www.citizensinformation.ie/en/consumer_affairs/motoring/advice_on_buying_a_used_car_in_ireland.html"><i class="fa fa-fw fa-key"></i> Buying a used car</a></li>
+							<li><a href="http://www.mywheels.ie/buying-privately-top-5-tips/"><i class="fa fa-fw fa-key"></i> 5 Tips Buying used car</a></li>
+						<?php
+						echo '<hr>';
+						}
+						?>
+						<li><a href="https://info.wombatsecurity.com/blog/ransomware-and-phishing-attacks-why-anti-virus-software-cant-save-you">Why antivirus software can't save you</a></li>
                         </ul>
                      </div>
                   </div>
@@ -292,7 +307,7 @@ echo '<div class="item"><a onclick="large_photos('.$i.');" style="cursor:zoom-in
 	  <div id="myModal" class="modal">
 		<div id="m_content" class="modal-content">
 			<span class="close2" style="z-index:101">&times;</span>
-			<h1 id="m_title" class="m_title"><?php echo $title;?></h1>
+			<h2 id="m_title" class="m_title"><?php echo $title;?></h2>
 			<h2 id="m_number" class="m_number">1/6</h2>
 			<a style="z-index: 14;" id="left" class="left carousel-control">
 			  <span class="glyphicon glyphicon-chevron-left"></span>
@@ -575,7 +590,7 @@ jQuery.fn.center = function () {
     return this;
 }
 
-function save_ad(a,id){
+function save_ad(event,a,id){
 		$("#wait").center();
 		$("#wait").show();
 	var wait=document.getElementById("wait");
@@ -591,9 +606,15 @@ function save_ad(a,id){
 		   }
         };
 		
+		var yy = event.clientY;
+		var top = $(window).scrollTop();
+		//alert(top);
+		var y=top+yy-6;
+		wait.style.top=y+"px";
+		wait.style.display="block";
         xmlhttp.open("GET", "/incl/save_ad.php?id=" + id, true);
         xmlhttp.send();
-		wait.style.display="block";
+		
 		
 	
 	//alert(id);

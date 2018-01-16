@@ -50,12 +50,12 @@ if($ad_count<3){
 	$_SESSION['location']='All Locations';
 	$_SESSION['user_id']=$res;
 			//$_SESSION['phone']=$row['phone'];
-			//$_SESSION['registered']=$row['registered'];
+			$_SESSION['website']='';
 			$_SESSION['email']=$email;
 			//$_SESSION['photo']=$row['photo'];
 			//$_SESSION['active']=$row['active'];
 			//$_SESSION['location']=$row['location'];
-			//$_SESSION['saved']=$row['saved'];
+			$_SESSION['saved']='';
 			$_SESSION['photo_blob']='';
 			$_SESSION['user_name']=$name;
 }else{

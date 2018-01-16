@@ -24,11 +24,11 @@
     <meta name="description" content="Post ad | Ireland's Free Classified Ads, Sell and Buy adverts">
     <meta name="author" content="Marius Vorosilovas">
 	  
-	<meta name="keywords" content="free car ads, free ads, post ad, post new ad, post advert, post free ad, post classified,free ads, post free ad, post new free ad, post free advert, post free classified, place ad, place new ad, place advert, place free ad, place classified">
+	<meta name="keywords" content="post ad, post new ad, post advert, post free ad, post classified,free ads, post free ad, post new free ad, post free advert, post free classified, place ad, place new ad, place advert, place free ad, place classified">
 	
 	<meta name="geo.country" content="IE">
 	
-    <title>Post ad | Ireland's Free Classified Ads, Sell and Buy adverts</title>
+    <title>Post free advert | easyads.ie</title>
       
 	<script src="/js/jquery-3.2.1.js"></script>
 	  

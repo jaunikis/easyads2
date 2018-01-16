@@ -262,13 +262,13 @@ for($i=date("Y")-20;$i<date("Y")+1;$i++){
 									<div class="form-group">
 										<label class="col-sm-3 control-label">Ad Description <span class="required">*</span></label>
 										<div class="col-sm-9">
-											<textarea style="line-height: 110%" rows="8" id="description" name="description" value="description1" placeholder="Include the brand, model, age and any included accessories." class="form-control border-form"><?php if(isset($description)){echo $description;}?></textarea>
+											<textarea style="line-height: 110%" rows="10" id="description" name="description" value="description1" placeholder="Include the brand, model, age and any included accessories." class="form-control border-form"><?php if(isset($description)){echo $description;}?></textarea>
 										</div>
 									</div>
 									<div class="form-group">
 										<label class="col-sm-3 control-label">Name</label>
 										<div class="col-sm-9">
-											<input value="<?php if(isset($name)){echo $name;}?>" id="name" name="name" type="text" value="<?php if(isset($_SESSION['user_name'])){echo $_SESSION['user_name'];} ?>" class="form-control1 border-form">
+											<input id="name" name="name" type="text" value="<?php if(isset($_SESSION['user_name'])){echo $_SESSION['user_name'];} ?>" class="form-control1 border-form">
 										</div>
 									</div>
 									<div class="form-group">
@@ -278,9 +278,9 @@ for($i=date("Y")-20;$i<date("Y")+1;$i++){
 										</div>
 									</div>
 									<div class="form-group">
-										<label class="col-sm-3 control-label">Web site (optional)</label>
+										<label class="col-sm-3 control-label">Website (optional)</label>
 										<div class="col-sm-9">
-											<input id="www" name="www" type="text" placeholder="www.yourWebsite.com" value="<?php if(isset($_SESSION['www'])){echo $_SESSION['www'];}elseif(isset($www)){echo $www;} ?>" class="form-control1 border-form">
+											<input id="www" name="www" type="text" placeholder="www.yourWebsite.com" value="<?php if(isset($_SESSION['website'])){echo $_SESSION['website'];} ?>" class="form-control1 border-form">
 										</div>
 									</div>
 									<div class="form-group">

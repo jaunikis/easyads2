@@ -69,10 +69,10 @@ while ($row = $result->fetch_assoc()) {
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Ireland's Free Classified Ads, Sell and Buy adverts">
+    <meta name="description" content="<?php echo $title;?>. <?php echo $cat1;?>, <?php echo $cat2;?>. Ireland's Free Classified Ads, Sell and Buy adverts">
     <meta name="author" content="Marius Vorosilovas">
 	  
-	<meta name="keywords" content="<?php echo $cat1;?> for sale in Ireland, <?php echo $cat2;?> for sale in Ireland, <?php echo $cat1.' '.$cat2;?> for sale in Ireland, <?php echo $cat1;?>, <?php echo $cat2;?>, <?php echo $title;?>">
+	<meta name="keywords" content="Advert, <?php echo $cat1;?> for sale in Ireland, <?php echo $cat2;?>, <?php echo $cat1;?>, <?php echo $cat2;?>, <?php echo $title;?>">
 	
 	<meta name="geo.country" content="IE">
 	
@@ -83,7 +83,7 @@ while ($row = $result->fetch_assoc()) {
 	
 	
 	
-    <title><?php echo $title;?></title>
+    <title><?php echo $title;?> | easyads.ie</title>
       
 	<script src="/js/jquery-3.2.1.js"></script>
 	  
@@ -105,6 +105,9 @@ while ($row = $result->fetch_assoc()) {
       <!-- Font Awesome   -->
       <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	  
+	  <!-- TrustBox script -->
+<script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+<!-- End Trustbox script -->
 	 
    </head>
 
@@ -112,6 +115,7 @@ while ($row = $result->fetch_assoc()) {
 <!-- facebook sdk app id -->
 
 
-
-<img style="display:none" src="/images/fblogo.jpg">
+<!--
+<img style="display:none" src="/images/fblogo.jpg" alt="easyads logo">
  <div id="fb-root"></div>
+ -->

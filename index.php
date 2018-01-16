@@ -1,4 +1,9 @@
 <?php 
+
+if(isset($_GET['pageid'])){
+	if($_GET['pageid']=='generator'){require('generator/index.php');}
+}
+
 session_start();
 include_once("incl/analytics_tracking.php");
 
@@ -131,7 +136,7 @@ case 'items':
 }
 ?>
 	  <!-- Post Ad -->	
-      <a href="/post_ad/" data-toggle="tooltip" data-placement="left" title="Post Your Ad" class="btn btn-primary btn-lg post-free-add-btn" style="z-index: 2;"><i class="fa fa-pencil"></i></a>
+      <a href="/post_ad" data-toggle="tooltip" data-placement="left" title="Post Your Ad" class="btn btn-primary btn-lg post-free-add-btn" style="z-index: 2;"><i class="fa fa-pencil"></i></a>
       <!-- jQuery -->
       
       <!-- Custom js--> 

@@ -15,8 +15,6 @@ while ($row = $result->fetch_assoc()) {
 	if($user_email==$email && $user_password==$password){
 		//iraso i sesija
 		$_SESSION['user_id']=$row['id'];
-		//$_SESSION['email']=$user_email;
-		//$_SESSION['password']=$password;
 		$_SESSION['phone']=$row['phone'];
 		$_SESSION['registered']=$row['registered'];
 		$_SESSION['email']=$row['email'];
@@ -26,6 +24,7 @@ while ($row = $result->fetch_assoc()) {
 		$_SESSION['saved']=$row['saved'];
 		$_SESSION['photo_blob']=$row['photo_blob'];
 		$_SESSION['user_name']=$row['name'];
+		$_SESSION['website']=$row['website'];
 		
 		if($remember=='on'){setcookie('user', $user, time() + (86400 * 90));} // 86400 = 1 day
 		

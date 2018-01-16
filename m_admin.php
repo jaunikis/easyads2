@@ -107,7 +107,11 @@ while ($row = $result->fetch_assoc()) {
 							<a href="/edit?id=<?php echo $id;?>"><span style="cursor:pointer;" class="label label-primary" title="" data-placement="top" data-toggle="tooltip" data-original-title="Edit Ad">Edit: <i class="fa fa-pencil"></i></span></a>
 							<span> | </span>
 							<span style="cursor:pointer;" class="label label-danger" onclick="delete_ad(<?php echo $id; ?>,this)" title="" data-placement="top" data-toggle="tooltip"  data-original-title="Delete"><i class="fa fa-trash"></i></span>
+							
+							<span> | </span>
+							<span style="cursor:pointer;" class="label label-danger" onclick="ban_ad(<?php echo $id; ?>,this)" title="" data-placement="top" data-toggle="tooltip"  data-original-title="Ban Ad"><i class="fa fa-ban"></i> Ban Ad</span>
 							<span style="color:white">.</span>
+							
 							</div>
 							
                                       
@@ -158,3 +162,23 @@ while ($row = $result->fetch_assoc()) {
 	  <div id="wait" style="display:none;width:69px;height:89px;border:1px solid black;position:absolute;top:50%;left:50%;padding:2px;"><img src='/images/loading3.gif' width="64" height="64" /><br>Loading..</div>
 
 <script src="/js/my_ads_1.js"></script>
+<script>
+function ban_ad(id,th){
+	$.post("incl/ban_ad.php",
+		{
+			secret: '425611',
+			id: id
+		},
+		function(data,status){
+			var el=th.parentNode;
+			if(data==1){
+				el.childNodes[1].innerHTML='<b><span style="color:orange">banned</span></b>';
+				el.childNodes[5].className="label label-success";
+				el.childNodes[5].innerHTML='Enable: <i class="fa fa-check"></i>';
+			}
+			//alert("Data: " + data + "\nStatus: " + status);
+			//if(data=='ok'){window.location.replace("/my_ads");}
+		});
+	//alert(id);
+}
+</script>

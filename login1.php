@@ -6,12 +6,13 @@
 						<div class="login-panel widget">
 							<div class="login-body">
 								<div>
-								<center><img src="/images/logo.png"></center>
+								<center><img src="/images/logo.png"></center><br>
 								</div>
 								<div class="login-with-sites">
-								<!--	<button class="btn-facebook login-icons btn-lg btn-block"> <i class="fa fa-facebook"></i> Login With Facebook</button>
-										<button class="btn-google login-icons btn-lg btn-block"> <i class="fa fa-google"></i> Login With Google</button>  -->
+									<button id="login_fb" onclick="login()" class="btn-facebook login-icons btn-lg btn-block"> <i class="fa fa-facebook"></i> Login With Facebook</button>
+								<!--		<button class="btn-google login-icons btn-lg btn-block"> <i class="fa fa-google"></i> Login With Google</button>  -->
 								</div>
+								<div><center>Or</center></div>
 								<form action="/login2.php" method="post">
 									<div class="form-group">
 										<input name="email" type="text" placeholder="Email or Username" class="form-control border-form">

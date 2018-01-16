@@ -11,10 +11,12 @@ $result_my_ads=sqlconnect($sql);
 $my_ads = $result_my_ads->num_rows;
 
 //saved
-$sql="SELECT saved FROM users WHERE id='$user_id'";
+$sql="SELECT saved,password FROM users WHERE id='$user_id'";
 $result=sqlconnect($sql);
 $row = $result->fetch_assoc();
 $saved=$row['saved'];
+$password=$row['password'];
+$_SESSION['password']=$password;
 
 $sql="SELECT * FROM skelbimai WHERE id IN ($saved) ORDER BY id DESC";
 //$sql="SELECT * FROM skelbimai WHERE id IN (SELECT saved FROM users WHERE email='as') ORDER BY id DESC";
@@ -55,7 +57,7 @@ $favourite = $result_favourite->num_rows;
                            <span class="label label-success"><?php echo $favourite; ?></span>
                            <i class="fa fa-fw fa-heart"></i> Favourite Ads
                            </a>
-                           <a class="list-group-item" href="ad-alerts.html">
+                           <a class="list-group-item" href="ad-alerts">
                            <i class="fa fa-fw fa-clock-o"></i> Ad Alerts
                            </a>
                            <a class="list-group-item" href="/my_details">

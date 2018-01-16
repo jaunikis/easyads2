@@ -45,7 +45,7 @@ if(isset($id)){
 	}
 	}
 	//db skelbimai result
-	$sql="SELECT id,email,title,cover1file,price,cat1,cat2,make,model,year,fuel,transmission,bodyType,color,location,condition2,ad_views,description,saved,phone,name,user_id,timestamp2 FROM skelbimai WHERE id='$ad_id'";
+	$sql="SELECT active,id,email,title,cover1file,price,cat1,cat2,make,model,year,fuel,transmission,bodyType,color,location,condition2,ad_views,description,saved,phone,name,user_id,timestamp2 FROM skelbimai WHERE id='$ad_id'";
 	edit_ad($sql);
 }else { //if isset id
 echo('<script>location.href = "/my_ads";</script>');
@@ -55,7 +55,7 @@ echo('<script>location.href = "/my_ads";</script>');
 if(isset($_SESSION['ad_code_validate'])){
 	$ad_code=$_SESSION['ad_code_validate'];
 	unset($_SESSION['ad_code_validate']);
-	$sql="SELECT id,email,title,cover1file,price,cat1,cat2,make,model,year,fuel,transmission,bodyType,color,location,condition2,ad_views,description,saved,phone,name,user_id,timestamp2 FROM skelbimai WHERE ad_code='$ad_code'";
+	$sql="SELECT active,id,email,title,cover1file,price,cat1,cat2,make,model,year,fuel,transmission,bodyType,color,location,condition2,ad_views,description,saved,phone,name,user_id,timestamp2 FROM skelbimai WHERE ad_code='$ad_code'";
 	edit_ad($sql);
 }else{
 	?>
@@ -116,6 +116,7 @@ $name=$row['name'];
 $email=$row['email'];
 $user_id=$row['user_id'];
 $timestamp2=$row['timestamp2'];
+$active=$row['active'];
 
 //db images result
 $images1=[];$images2=[];
@@ -140,6 +141,7 @@ $json = json_decode($string, true);
 						<div class="login-panel widget top-space">
 							<div class="login-body">
 								<form id="forma" action="/save_edit_ad2.php" method="POST" class="row">
+								<input style="display:none;" name="active" type="text" value="<?php echo $active;?>">
 									<div class="form-group">
 										<label class="col-sm-3 control-label">Ad Title <span class="required">*</span></label>
 										<div class="col-sm-9">

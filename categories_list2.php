@@ -42,7 +42,7 @@ while ($row = $result->fetch_assoc()) {
                   <div class="widget blue-widget">
                      <div class="widget-header">
                         <small><?php echo $ad_count;?> Ads</small>
-                        <h1><i class="fa fa-list-ul shortcut-icon icon-blue"></i> Categories</h1>
+                        <h3 style="color:white;"><i class="fa fa-list-ul shortcut-icon icon-blue"></i> Categories</h3>
                      </div>
                      <div class="widget-body">
                         <ul class="trends">
@@ -74,7 +74,7 @@ $_SESSION['cat_count2']=$cat_count2;
                <div class="col-lg-9 col-md-9 col-sm-9">
                   <div class="single-categorie">
 				  <div class="carousel-section-header">
-                     <h1>Latest Ads <a href="/items" class="btn btn-md btn-primary pull-right">Show All Ads <b><?php echo $ad_count; ?></b> <i class="fa fa-arrow-right"></i></a></h1>
+                     <h2>Latest Ads <a href="/items" class="btn btn-md btn-primary pull-right">Show All Ads <b><?php echo $ad_count; ?></b> <i class="fa fa-arrow-right"></i></a></h2>
                   </div>
                      <div id="owl-carousel-featured" class="owl-carousel categories-list-page">
     <?php

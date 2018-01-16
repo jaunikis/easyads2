@@ -70,8 +70,6 @@ require_once ('incl/elapsed.php');
 					if($make=='"Toyota"'){$model=str_replace(' ','-',$model);}
 				}
 			}
-			//echo '<h1>'.$make.'</h1>';
-			//echo '<h1>'.$model.'</h1>';
 			
 			if($location=='"All locations"'){$location='location';}
 			
@@ -109,15 +107,15 @@ require_once ('incl/elapsed.php');
          <div class="container">
             <div class="row">
           
-                  <div class="listing-actions clearfix row">
-                     <div class="tags col-xs-6 text-left">
-                        <span><?php echo $ad_count; ?> Ads</span>
+                  <div class="listing-actions clearfix">
+                     <div class="tags col-sm-3 text-left">
+                        <span><?php echo $ad_count.' Ads'; ?></span>
                         <span onclick="toggle_show()" class="mobile_refine"><i class="fa fa-search" aria-hidden="true"></i></span>
-                        
                      </div>
-                     <ul class="listing-actions-nav col-xs-6 text-right">
-                        
-						
+					 <div class="tags col-sm-5 text-center">
+                        <h1 style="font-size:18px;"><?php echo $des;?></h1>
+                     </div>
+                     <ul class="listing-actions-nav col-sm-4 text-right">
                         <li class="dropdown">
                            <a style="cursor:pointer;" id="sort" aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown"> <?php echo $sortTxt; ?> <b class="caret"></b></a>
                            <ul class="dropdown-menu">
@@ -143,7 +141,7 @@ include('left_search.php');
                <div class="col-lg-9 col-md-9 col-sm-9">
                   <div class="row">
                      <div class="col-lg-12a">
-                       
+                     
 			<?php
 			
 			while ($row = $result->fetch_assoc()) {
