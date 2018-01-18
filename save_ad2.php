@@ -76,6 +76,8 @@ $active='Active';
 //tikriname keiksmazodzius
 require_once ('incl/swear.php');
 
+//if country !=Ireland {not active}
+if($country!='Ireland' && $country!='United Kingdom'){if($active=='Active'){$active='';}$active.='country';}
 
 //atimame rand idejimo laika
 //$minus=rand(1,43000);$timestamp2=-$minus;
@@ -93,8 +95,7 @@ $result=sqlconnect($sql);
 $ad_count = $result->num_rows;
 if($ad_count>2){if($active=='Active'){$active='';}$active.='to_many';}
 
-//if country !=Ireland {not active}
-if($country!='Ireland' && $country!='United Kingdom'){if($active=='Active'){$active='';}$active.='country';}
+
 
 /*
 if($active!='Active'){
