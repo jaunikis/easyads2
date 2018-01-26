@@ -33,7 +33,7 @@
                      </div>
                      <div class="login-footer">
                         <div class="checkbox checkbox-primary pull-left">
-                           <input id="checkbox2" name="terms" type="checkbox" required>
+                           <input id="checkbox2" name="terms" type="checkbox">
                            <label for="checkbox2">
                            I Agree with Terms and Conditions
                            </label>
